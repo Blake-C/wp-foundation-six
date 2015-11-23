@@ -1,0 +1,62 @@
+body{
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+}
+
+/* Skip to content link (Accessibility) */
+#skip-link{
+	a{
+		position: absolute;
+		left: -10000px;
+		top: auto;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		&:focus{
+			position: static; 
+			width: auto; 
+			height: auto; 
+		}
+	}
+}
+
+.hidden{
+	display: none;
+}
+
+/* Foundation figure was coming out of the layout container */
+figure {
+	margin: 0;
+	width: auto !important;
+	max-width: 100% !important;
+	padding: 1em 20px;
+	background: rgb(245, 245, 245);
+	figcaption {
+		font-size: 12px;
+		text-align: center;
+		margin: 13px 0 0;
+	}
+}
+
+/* Wordpress styles */
+.alignright{
+	margin: 0 0 0 25px;
+	@extend .float-right;
+}
+
+.alignleft{
+	margin: 0 25px 0 0;
+	@extend .float-left;
+}
+
+.aligncenter{
+	@extend .float-center;
+}
+
+pre{
+	@extend code;
+}
+
+[type="text"] {
+	height: 2.48rem;
+}

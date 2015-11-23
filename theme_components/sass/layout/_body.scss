@@ -1,0 +1,19 @@
+.container{
+	@include grid-row;
+}
+
+.main{
+	@include grid-col;
+
+	@include breakpoint( medium ) {
+		@include grid-col-size(8);
+	}
+}
+
+.sidebar{
+	@include grid-col;
+
+	@include breakpoint( medium ) {
+		@include grid-col-size(4);
+	}
+}

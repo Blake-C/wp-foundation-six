@@ -1,0 +1,35 @@
+/* 
+    http://thesassway.com/intermediate/understanding-placeholder-selectors
+    http://www.sitepoint.com/sass-mixin-placeholder/
+ */
+
+%clearfix {
+    &:before, &:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        overflow: hidden;
+    }
+    &:after {
+        clear: both;
+    }
+} // to use: @extend %clearfix;
+
+%hiddenText {
+    text-indent: -9999px;
+    overflow: hidden;
+    text-decoration: none;
+    display: block;
+    font-size: 0;
+    text-align: start;
+} // to use: @extend %hiddenText;
+
+%cover {
+    // http://css-tricks.com/perfect-full-page-background-image/
+    background-repeat: no-repeat;
+    background-position: top center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+} // to use: @extend %cover;

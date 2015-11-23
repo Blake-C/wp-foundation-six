@@ -1,0 +1,74 @@
+/*!
+	Theme Name: WP Foundation 6
+	Theme URI:
+	Author:
+	Author URI:
+	Description: Custom Foundation 6 theme for advanced theme development
+	Version: 1.0-wpcom
+	License: GNU General Public License v2 or later
+	License URI: http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+@charset 'UTF-8';
+
+/* Custom variables should be brought in early */
+@import 'helpers/variables';
+@import 'vendors/foundation-settings';
+
+/* Import Foundation Assets, does not output actual styles */
+@import 'foundation';
+
+/* Include the parts of foundation that you need */
+@include foundation-global-styles;
+@include foundation-grid;
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+@include foundation-accordion;
+@include foundation-accordion-menu;
+@include foundation-badge;
+@include foundation-breadcrumbs;
+@include foundation-button-group;
+@include foundation-callout;
+@include foundation-close-button;
+@include foundation-drilldown-menu;
+@include foundation-dropdown;
+@include foundation-dropdown-menu;
+@include foundation-flex-video;
+@include foundation-label;
+@include foundation-media-object;
+@include foundation-menu;
+@include foundation-off-canvas;
+@include foundation-orbit;
+@include foundation-pagination;
+@include foundation-progress-bar;
+@include foundation-slider;
+@include foundation-sticky;
+@include foundation-reveal;
+@include foundation-switch;
+@include foundation-table;
+@include foundation-tabs;
+@include foundation-thumbnail;
+@include foundation-title-bar;
+@include foundation-tooltip;
+@include foundation-top-bar;
+
+@import
+	'helpers/fonts',
+	'helpers/mixins',
+	'helpers/functions',
+	'helpers/helpers';
+
+@import
+	'layout/header',
+	'layout/body',
+	'layout/sidebar',
+	'layout/footer',
+	'layout/comments';
+
+@import
+	'partials/generic-styles',
+	'partials/ie',
+	'partials/shame';

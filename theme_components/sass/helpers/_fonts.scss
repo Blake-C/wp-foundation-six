@@ -1,0 +1,23 @@
+/* Used to show where each template file is generating the current page */
+html body div#placeHolderPosition{
+	top: 0;
+	background: rgb(236, 234, 234);
+	color: rgba(0, 0, 0, 0.4);
+	font-size: 12px;
+	padding: 5px 25px;
+	display: none;
+}
+
+/* Click button for displaying page template parts */
+.regions{
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	background: rgba(0, 0, 0, 0.1);
+	color: rgb(255, 255, 255);
+	padding: 10px 20px;
+	z-index: 2000000;
+	&:hover, &:focus{
+		color: rgb(255,255,255);
+	}
+}

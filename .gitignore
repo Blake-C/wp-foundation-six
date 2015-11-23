@@ -1,0 +1,137 @@
+# Created by http://www.gitignore.io
+
+### Bower ###
+
+bower_components
+
+### Vagrant stuff ###
+
+acceptance_config.yml
+vagrant-spec.config.rb
+.vagrant
+
+### OSX ###
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+### Icon must end with two \r ###
+
+Icon
+
+### Thumbnails ###
+
+._*
+
+### Files that might appear on external disk ###
+
+.Spotlight-V100
+.Trashes
+
+### Directories potentially created on remote AFP share ###
+
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### Created by http://www.gitignore.io ###
+
+.sass-cache
+*.css.map
+.tmp
+.zip
+dist
+node_modules
+logs
+cache
+
+### WordPress Ignores by https://github.com/github/gitignore/blob/master/WordPress.gitignore ###
+
+*.log
+sitemap.xml
+sitemap.xml.gz
+wp-config.php
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/
+wp-content/wp-cache-config.php
+wp-content/plugins/hello.php
+
+### Sitefinity Ingores ###
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# Visual Studo 2015 cache/options directory
+.vs/
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# NUNIT
+*.VisualState.xml
+TestResult.xml
+
+# Build Results of an ATL Project
+[Dd]ebugPS/
+[Rr]eleasePS/
+dlldata.c
+
+*_i.c
+*_p.c
+*_i.h
+*.ilk
+*.meta
+*.obj
+*.pch
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.tlb
+*.tli
+*.tlh
+*.tmp
+*.tmp_proj
+*.log
+*.vspscc
+*.vssscc
+.builds
+*.pidb
+*.svclog
+*.scc
+
+## Sitefinity Specific
+# Sitefinity Logs
+*.log
+
+# Search
+App_Data/Sitefinity/Search*
+.phpintel
