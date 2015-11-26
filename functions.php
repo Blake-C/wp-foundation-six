@@ -103,7 +103,7 @@ function wp_foundation_six_scripts() {
 
 
 	/* If IE8 and below support is needed you need to load modernizer at the top of the page, default to bottom */
-	get_cdn_asset( 'wp-foundation-six-modernizr', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', '/js/modernizr-min.js', array(), '21112015', true );
+	get_cdn_asset( 'wp-foundation-six-modernizr', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', '/js/modernizr-min.js', array(), null, true );
 
 
 	/* Register jQuery, Utility Function */
