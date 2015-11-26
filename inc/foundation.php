@@ -1,6 +1,9 @@
 <?php
 
+/* Foundation Core */
 wp_register_script( 'foundation-core', get_template_directory_uri() . '/js/foundation/foundation.core-min.js', array('jquery'), '21112015', true);
+
+/* Foundation 6 Component Registration */
 wp_register_script( 'foundation-abide', get_template_directory_uri() . '/js/foundation/foundation.abide-min.js', array('foundation-core', 'jquery'), '21112015', true);
 wp_register_script( 'foundation-accordion', get_template_directory_uri() . '/js/foundation/foundation.accordion-min.js', array('foundation-core', 'jquery', 'foundation-util-keyboard', 'foundation-util-motion'), '21112015', true);
 wp_register_script( 'foundation-accordionMenu', get_template_directory_uri() . '/js/foundation/foundation.accordionMenu-min.js', array('foundation-core', 'jquery', 'foundation-util-keyboard', 'foundation-util-motion', 'foundation-util-nest'), '21112015', true);
@@ -21,6 +24,7 @@ wp_register_script( 'foundation-tabs', get_template_directory_uri() . '/js/found
 wp_register_script( 'foundation-toggler', get_template_directory_uri() . '/js/foundation/foundation.toggler-min.js', array('foundation-core', 'jquery', 'foundation-util-motion'), '21112015', true);
 wp_register_script( 'foundation-tooltip', get_template_directory_uri() . '/js/foundation/foundation.tooltip-min.js', array('foundation-core', 'jquery', 'foundation-util-box', 'foundation-util-triggers', 'foundation-util-mediaQuery', 'foundation-util-motion'), '21112015', true);
 
+/* Foundation 6 Utilities */
 wp_register_script( 'foundation-util-box', get_template_directory_uri() . '/js/foundation/foundation.util.box-min.js', array('foundation-core', 'jquery'), '21112015', true);
 wp_register_script( 'foundation-util-keyboard', get_template_directory_uri() . '/js/foundation/foundation.util.keyboard-min.js', array('foundation-core', 'jquery'), '21112015', true);
 wp_register_script( 'foundation-util-mediaQuery', get_template_directory_uri() . '/js/foundation/foundation.util.mediaQuery-min.js', array('foundation-core', 'jquery'), '21112015', true);
@@ -29,7 +33,6 @@ wp_register_script( 'foundation-util-nest', get_template_directory_uri() . '/js/
 wp_register_script( 'foundation-util-timerAndImageLoader', get_template_directory_uri() . '/js/foundation/foundation.util.timerAndImageLoader-min.js', array('foundation-core', 'jquery'), '21112015', true);
 wp_register_script( 'foundation-util-touch', get_template_directory_uri() . '/js/foundation/foundation.util.touch-min.js', array('foundation-core', 'jquery'), '21112015', true);
 wp_register_script( 'foundation-util-triggers', get_template_directory_uri() . '/js/foundation/foundation.util.triggers-min.js', array('foundation-core', 'jquery'), '21112015', true);
-
 
 /* Uncomment assets needed */
 wp_enqueue_script('foundation-abide');
@@ -51,11 +54,3 @@ wp_enqueue_script('foundation-sticky');
 wp_enqueue_script('foundation-tabs');
 wp_enqueue_script('foundation-toggler');
 wp_enqueue_script('foundation-tooltip');
-wp_enqueue_script('foundation-util-box');
-wp_enqueue_script('foundation-util-keyboard');
-wp_enqueue_script('foundation-util-mediaQuery');
-wp_enqueue_script('foundation-util-motion');
-wp_enqueue_script('foundation-util-nest');
-wp_enqueue_script('foundation-util-timerAndImageLoader');
-wp_enqueue_script('foundation-util-touch');
-wp_enqueue_script('foundation-util-triggers');
