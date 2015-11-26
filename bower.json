@@ -16,7 +16,7 @@
   ],
   "dependencies": {
     "adaptive-images": "*",
-    "foundation-sites": "~6.0.3",
+    "foundation-sites": "~6.0.4",
     "jquery-legacy": "jquery#1.11.3",
     "jquery-migrate": "~1.2.1",
     "matchHeight": "~0.6.0",
