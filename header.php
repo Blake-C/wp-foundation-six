@@ -84,6 +84,15 @@
 
 <body <?php body_class(); ?>>
 	<a class="skip-link show-for-sr" href="#content">Skip to content</a>
+
+	<?php if ( get_bloginfo('name') ) : ?>
+		<h1 class="show-for-sr"><?php bloginfo('name'); ?></h1>
+	<?php endif; ?>
+
+	<?php if ( get_bloginfo('description') ) : ?>
+		<p class="show-for-sr"><?php bloginfo('description'); ?></p>
+	<?php endif; ?>
+
 	<!--[if lt IE 8]><p class=chromeframe>Your browser is <em>not</em> supported. <a href="http://browsehappy.com/">Upgrade to a different browser</a> to experience this site.</p><![endif]-->
 	
 	<?php if ( is_super_admin() ) : ?>
