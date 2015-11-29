@@ -1,5 +1,7 @@
 <?php dev_helper( pathinfo(__FILE__, PATHINFO_FILENAME) ); ?>
 
+<h2 class="show-for-sr">Search Bar</h2>
+
 <form role="search" method="get" id="searchform" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 	<div class="row collapse">
 		<div class="small-8 columns">
