@@ -13,7 +13,7 @@ get_header(); ?>
 
 	<div class="container">
 
-		<main class="main" role="main">
+		<main class="main" role="main" id="content">
 
 			<section class="error-404 not-found">
 				<header class="page-header">

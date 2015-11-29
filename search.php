@@ -13,7 +13,7 @@ get_header(); ?>
 
 	<section class="container">
 
-		<main class="main" role="main">
+		<main class="main" role="main" id="content">
 			<?php if ( have_posts() ) : ?>
 
 				<header class="page-header">
