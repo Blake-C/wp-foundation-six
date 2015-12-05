@@ -89,8 +89,10 @@
 		<h1 class="show-for-sr"><?php bloginfo('name'); ?></h1>
 	<?php endif; ?>
 
-	<?php if ( get_bloginfo('description') ) : ?>
-		<p class="show-for-sr"><?php bloginfo('description'); ?></p>
+	<?php if ( is_front_page() ) : ?>
+		<?php if ( get_bloginfo('description') ) : ?>
+			<p class="show-for-sr"><?php bloginfo('description'); ?></p>
+		<?php endif; ?>
 	<?php endif; ?>
 
 	<!--[if lt IE 8]><p class=chromeframe>Your browser is <em>not</em> supported. <a href="http://browsehappy.com/">Upgrade to a different browser</a> to experience this site.</p><![endif]-->
