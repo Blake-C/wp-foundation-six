@@ -1,4 +1,7 @@
+// Foundation Core
 // @codekit-prepend "../../../bower_components/foundation-sites/js/foundation.core.js
+
+// Foundation Plugins
 // @codekit-prepend "../../../bower_components/foundation-sites/js/foundation.abide.js
 // @codekit-prepend "../../../bower_components/foundation-sites/js/foundation.accordion.js
 // @codekit-prepend "../../../bower_components/foundation-sites/js/foundation.accordionMenu.js
@@ -18,6 +21,8 @@
 // @codekit-prepend "../../../bower_components/foundation-sites/js/foundation.tabs.js
 // @codekit-prepend "../../../bower_components/foundation-sites/js/foundation.toggler.js
 // @codekit-prepend "../../../bower_components/foundation-sites/js/foundation.tooltip.js
+
+// Foundation Utilities
 // @codekit-prepend "../../../bower_components/foundation-sites/js/foundation.util.box.js
 // @codekit-prepend "../../../bower_components/foundation-sites/js/foundation.util.keyboard.js
 // @codekit-prepend "../../../bower_components/foundation-sites/js/foundation.util.mediaQuery.js
