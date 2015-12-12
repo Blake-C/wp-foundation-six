@@ -36,7 +36,7 @@ if ( !function_exists( 'wp_foundation_six_setup' ) ) {
 		add_theme_support( 'post-thumbnails' );
 
 		/**
-		 *
+		 * Custom thumbnail sizes.
 		 *
 		 * @link https://developer.wordpress.org/reference/functions/add_image_size/
 		 */
