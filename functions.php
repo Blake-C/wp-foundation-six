@@ -121,7 +121,7 @@ function wp_foundation_six_scripts() {
 	require get_template_directory() . '/inc/foundation.php';
 
 	/* Import Scripts (Keep to a minimum or import into scripts file) */
-	wp_enqueue_script( 'wp-foundation-six-global', get_template_directory_uri() . '/js/global-scripts-min.js', array('jquery'), '21112015', true );
+	wp_enqueue_script( 'wp-foundation-six-global', get_template_directory_uri() . '/js/global-scripts-min.js', array('jquery'), null, true );
 
 
 	/**
