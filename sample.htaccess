@@ -767,14 +767,12 @@ ServerSignature Off
     # Force compression for mangled `Accept-Encoding` request headers
     # https://developer.yahoo.com/blogs/ydn/pushing-beyond-gzipping-25601.html
 
-    # Uncomment !!!!!!!!!!!!!
-
-    # <IfModule mod_setenvif.c>
-    #     <IfModule mod_headers.c>
-    #         SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
-    #         RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
-    #     </IfModule>
-    # </IfModule>
+    <IfModule mod_setenvif.c>
+        <IfModule mod_headers.c>
+            SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s*,?\s*)+|[X~-]{4,13}$ HAVE_Accept-Encoding
+            RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
+        </IfModule>
+    </IfModule>
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
