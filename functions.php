@@ -35,6 +35,13 @@ if ( !function_exists( 'wp_foundation_six_setup' ) ) {
 		 */
 		add_theme_support( 'post-thumbnails' );
 
+		/**
+		 *
+		 *
+		 * @link https://developer.wordpress.org/reference/functions/add_image_size/
+		 */
+		// add_image_size( 'unique_name', 490, 240, array('center', 'top') );
+
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'primary' => __( 'Primary Menu', 'theme' ),
@@ -107,7 +114,7 @@ function wp_foundation_six_scripts() {
 
 
 	/* Register jQuery, Utility Function */
-	get_jquery_cdn( 
+	get_jquery_cdn(
 		array(
 			'modern_jquery_cdn' 	=> 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js',
 			'modern_jquery_local' 	=> '/js/jquery-min.js',
