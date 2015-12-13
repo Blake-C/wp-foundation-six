@@ -9,7 +9,7 @@
 
 ?>
 
-<?php dev_helper( pathinfo(__FILE__, PATHINFO_FILENAME) ); ?>
+<?php wp_foundation_six_dev_helper( pathinfo(__FILE__, PATHINFO_FILENAME) ); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">

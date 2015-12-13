@@ -12,7 +12,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<?php dev_helper( pathinfo(__FILE__, PATHINFO_FILENAME) ); ?>
+<?php wp_foundation_six_dev_helper( pathinfo(__FILE__, PATHINFO_FILENAME) ); ?>
 
 <div class="sidebar" role="complementary">
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>

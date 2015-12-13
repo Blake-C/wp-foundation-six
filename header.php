@@ -25,7 +25,7 @@
 
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-	
+
 	<?php // https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag ?>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8">
 	<?php // http://www.validatethis.co.uk/news/fix-bad-value-x-ua-compatible-once-and-for-all/ ?>
@@ -52,7 +52,7 @@
 	<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/icons/mstile-144x144.png">
 	<meta name="msapplication-config" content="<?php echo get_template_directory_uri(); ?>/icons/browserconfig.xml">
 	<meta name="theme-color" content="#1c2185">
-	
+
 	<?php // App Title ?>
 	<meta name="apple-mobile-web-app-title" content="<?php echo get_bloginfo('name'); ?>">
 	<meta name="application-name" content="<?php echo get_bloginfo('name'); ?>">
@@ -62,7 +62,7 @@
 		 * Go the extra mile
 		 * http://msdn.microsoft.com/en-us/library/ie/gg491732(v=vs.85).aspx -->
 		*/
-		
+
 		// echo '<meta name="msapplication-tooltip" content="Additional tooltip text">';
 		// echo '<meta name="msapplication-window" content="width=1024;height=768">';
 		// echo '<meta name="msapplication-starturl" content="./">';
@@ -96,12 +96,12 @@
 	<?php endif; ?>
 
 	<!--[if lt IE 8]><p class=chromeframe>Your browser is <em>not</em> supported. <a href="http://browsehappy.com/">Upgrade to a different browser</a> to experience this site.</p><![endif]-->
-	
+
 	<?php if ( is_super_admin() ) : ?>
 		<a href="#" class="regions">Show Regions</a>
 	<?php endif; ?>
 
-	<?php dev_helper( pathinfo(__FILE__, PATHINFO_FILENAME) ); ?>
+	<?php wp_foundation_six_dev_helper( pathinfo(__FILE__, PATHINFO_FILENAME) ); ?>
 
 	<?php
 		/**

@@ -86,11 +86,14 @@ add_filter( 'clean_url', 'add_async', 11, 1 );
  * Custom function that helps to identify the template parts of the theme.
  *
 */
-function dev_helper( $file ) {
-	if ( is_super_admin() ) {
-		echo '<div id="placeHolderPosition" class="placeHolderPosition">' . $file . '.php</div>';
+if ( !function_exists('wp_foundation_six_dev_helper') ){
+	function wp_foundation_six_dev_helper( $file ) {
+		if ( is_super_admin() ) {
+			echo '<div id="placeHolderPosition" class="placeHolderPosition">' . $file . '.php</div>';
+		}
 	}
 }
+
 
 /**
  * Upscale thumbnails when the source image is smaller than the thumbnail size.

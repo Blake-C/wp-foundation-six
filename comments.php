@@ -20,7 +20,7 @@ if ( post_password_required() ) {
 }
 ?>
 
-<?php dev_helper( pathinfo(__FILE__, PATHINFO_FILENAME) ); ?>
+<?php wp_foundation_six_dev_helper( pathinfo(__FILE__, PATHINFO_FILENAME) ); ?>
 
 <div id="comments" class="comments-area">
 
@@ -40,7 +40,7 @@ if ( post_password_required() ) {
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 			<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
 				<h2 class="show-for-sr">Comment navigation</h2>
-				
+
 				<div class="nav-links">
 
 					<div class="nav-previous"><?php previous_comments_link( 'Older Comments' ); ?></div>
@@ -52,11 +52,11 @@ if ( post_password_required() ) {
 
 		<ol class="comment-list">
 			<?php
-				wp_list_comments( 
+				wp_list_comments(
 					array(
 						'style'      => 'ol',
 						'short_ping' => true,
-					) 
+					)
 				);
 			?>
 		</ol><!-- .comment-list -->

@@ -8,8 +8,8 @@
  */
 
 get_header(); ?>
-	
-	<?php dev_helper( pathinfo(__FILE__, PATHINFO_FILENAME) ); ?>
+
+	<?php wp_foundation_six_dev_helper( pathinfo(__FILE__, PATHINFO_FILENAME) ); ?>
 
 	<div class="container">
 
