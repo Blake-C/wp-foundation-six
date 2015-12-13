@@ -207,3 +207,7 @@ require get_template_directory() . '/inc/custom-admin.php';
 
 // Custom template tags for this theme.
 require get_template_directory() . '/inc/template-tags.php';
+
+
+// Custom browser classes.
+require get_template_directory() . '/inc/browser-classes.php';

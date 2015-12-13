@@ -9660,6 +9660,15 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/inc\/browser-classes.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/inc\/browser-classes.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/inc\/custom-admin.php": {
 		"fileType": 8192,
 		"ignore": 0,
