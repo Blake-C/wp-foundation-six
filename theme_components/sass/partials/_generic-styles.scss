@@ -13,9 +13,9 @@ body{
 		height: 1px;
 		overflow: hidden;
 		&:focus{
-			position: static; 
-			width: auto; 
-			height: auto; 
+			position: static;
+			width: auto;
+			height: auto;
 		}
 	}
 }
@@ -57,6 +57,7 @@ pre{
 	@extend code;
 }
 
-[type="text"] {
+[type="text"],
+[type="password"] {
 	height: 2.48rem;
 }

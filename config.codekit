@@ -10077,6 +10077,15 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/login\/login.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/login\/login.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/page-templates\/sample-template.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -10795,14 +10804,14 @@
 		"useLibsass": 0
 		},
 	"\/theme_components\/sass\/login.scss": {
-		"createSourceMap": 0,
+		"createSourceMap": 1,
 		"debugStyle": 0,
 		"decimalPrecision": 10,
 		"fileType": 4,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/theme_components\/sass\/login.scss",
-		"outputAbbreviatedPath": "\/css\/login.css",
+		"outputAbbreviatedPath": "\/login\/login.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 1,
 		"outputStyle": 3,
