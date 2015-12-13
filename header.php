@@ -120,6 +120,7 @@
 				<?php
 					/**
 					 * Custom menu
+					 *
 					 * @link https://codex.wordpress.org/Function_Reference/wp_nav_menu
 					*/
 					$menu_args = array(
@@ -138,10 +139,10 @@
 						'link_after'      => '',
 						'items_wrap'      => '<ul id="%1$s" class="%2$s" data-dropdown-menu><li class="menu-text">'. get_bloginfo('name') .'</li>%3$s</ul>',
 						'depth'           => 0,
-						'walker'          => new UL_Class_Walker()
+						'walker'          => new wp_foundation_six_custom_nav_class_walker()
 					);
 
-					wp_nav_menu( $menu_args ); 
+					wp_nav_menu( $menu_args );
 				?>
 			</div>
 		</div>
