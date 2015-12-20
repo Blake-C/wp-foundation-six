@@ -232,3 +232,7 @@ require get_template_directory() . '/inc/template-tags.php';
 
 // Custom browser classes.
 require get_template_directory() . '/inc/browser-classes.php';
+
+
+// Function to upscale thumbnails.
+require get_template_directory() . '/inc/thumbnail-upscale.php';
