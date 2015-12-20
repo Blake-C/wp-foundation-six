@@ -132,7 +132,8 @@ if ( !function_exists( 'wp_foundation_six_scripts' ) ) {
 
 
 		/* Include registered foundation scripts */
-		require get_template_directory() . '/inc/foundation.php';
+		require get_template_directory() . '/inc/foundation-scripts.php';
+
 
 		/* Import Scripts (Keep to a minimum or import into scripts file) */
 		wp_enqueue_script( 'wp-foundation-six-global', get_template_directory_uri() . '/js/global-scripts-min.js', array('jquery'), null, true );
@@ -151,88 +152,9 @@ if ( !function_exists( 'wp_foundation_six_scripts' ) ) {
 add_action( 'wp_enqueue_scripts', 'wp_foundation_six_scripts' );
 
 
-/**
- * Remove query strings from the end of files
- * Helps with caching
- *
- * Comment this function out if you need the cache busting of query string versions
- * However a butter way to cache bust is to change the name of the file
- *
- * @link http://www.sharepointjohn.com/technology/sharepoint/wordpress-remove-version-query-strings-from-javascript-js-and-css-stylesheet-files/
-*/
-if ( !function_exists( 'wp_foundation_six_remove_query_strings' ) ) {
-	function wp_foundation_six_remove_query_strings( $src ){
-		$parts = explode( '?', $src );
-		return $parts[0];
-	}
-}
-add_filter( 'script_loader_src', 'wp_foundation_six_remove_query_strings', 15, 1 );
-add_filter( 'style_loader_src', 'wp_foundation_six_remove_query_strings', 15, 1 );
-
-
-/**
- * Custom Excerpt Length.
- *
- * @link https://codex.wordpress.org/Function_Reference/the_excerpt
- */
-if ( !function_exists( 'wp_foundation_six_custom_excerpt_length' ) ) {
-	function wp_foundation_six_custom_excerpt_length( $length ) {
-		return 30;
-	}
-}
-add_filter( 'excerpt_length', 'wp_foundation_six_custom_excerpt_length', 999 );
-
-
-/**
- * Custom Excerpt More.
- *
- * @link https://codex.wordpress.org/Function_Reference/the_excerpt
- */
-if ( !function_exists( 'wp_foundation_six_new_excerpt_more' ) ) {
-	function wp_foundation_six_new_excerpt_more( $more ) {
-		return '...';
-	}
-}
-add_filter( 'excerpt_more', 'wp_foundation_six_new_excerpt_more' );
-
-
-/**
- * Load Gravity Forms Script in Footer
- *
- * This filter is executed during form load. When set to true,
- * the form init scripts are loaded in the footer of the site,
- * instead of the default location of which is in the page body
- * immediately after the form.
- *
- * @link https://www.gravityhelp.com/documentation/article/gform_init_scripts_footer/
- */
-if ( !function_exists( 'wp_foundation_six_gform_init_scripts' ) ) {
-	function wp_foundation_six_gform_init_scripts() {
-		return true;
-	}
-}
-add_filter( 'gform_init_scripts_footer', 'wp_foundation_six_gform_init_scripts' );
+// Include components
+require get_template_directory() . '/inc/includes.php';
 
 
 // Custom utility functions
 require get_template_directory() . '/inc/utility-functions.php';
-
-
-// Custom functions that act independently of the theme templates.
-require get_template_directory() . '/inc/extras.php';
-
-
-// Custom functions that act independently of the theme templates.
-require get_template_directory() . '/inc/custom-admin.php';
-
-
-// Custom template tags for this theme.
-require get_template_directory() . '/inc/template-tags.php';
-
-
-// Custom browser classes.
-require get_template_directory() . '/inc/browser-classes.php';
-
-
-// Function to upscale thumbnails.
-require get_template_directory() . '/inc/thumbnail-upscale.php';
