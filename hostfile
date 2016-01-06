@@ -1,0 +1,20 @@
+<VirtualHost *:80>
+
+        # Admin email, Server Name (domain name) and any aliases
+        ServerName  your-domain.com
+
+        # Index file and Document Root (where the public files are located)
+        DocumentRoot /var/www/public
+
+        # Custom log file locations
+        LogLevel warn
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+        # Allow overrides in .htaccess file
+        <Directory /var/www/public>
+                Options FollowSymLinks
+                AllowOverride All
+        </Directory>
+
+</VirtualHost>

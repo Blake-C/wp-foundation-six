@@ -31,21 +31,6 @@ RewriteRule . /index.php [L]
 </IfModule>
 # END WordPress
 
-# ######################################################################
-# # Force Files to Download (Not Open in Browser)                      #
-# ######################################################################
-
-# https://css-tricks.com/snippets/htaccess/force-files-to-download-not-open-in-browser/
-
-# AddType application/octet-stream .csv
-# AddType application/octet-stream .xls
-# AddType application/octet-stream .doc
-# AddType application/octet-stream .avi
-# AddType application/octet-stream .mpg
-# AddType application/octet-stream .mov
-# AddType application/octet-stream .pdf
-
-
 # Apache Server Configs v2.14.0 | MIT License
 # https://github.com/h5bp/server-configs-apache
 
