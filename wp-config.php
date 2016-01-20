@@ -4,12 +4,12 @@ ini_set( 'display_errors', 0 );
 // ===================================================
 // Load database info and local development parameters
 // ===================================================
-if ( file_exists( dirname( __FILE__ ) . '/../production-config.php' ) ) {
+if ( file_exists( dirname( __FILE__ ) . '/production-config.php' ) ) {
     define( 'WP_LOCAL_DEV', false );
-    include( dirname( __FILE__ ) . '/../production-config.php' );
+    include( dirname( __FILE__ ) . '/production-config.php' );
 } else {
     define( 'WP_LOCAL_DEV', true );
-    include( dirname( __FILE__ ) . '/../local-config.php' );
+    include( dirname( __FILE__ ) . '/local-config.php' );
 }
 
 // ========================

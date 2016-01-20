@@ -51,16 +51,14 @@ cache
 
 ### WordPress Ignores by https://github.com/github/gitignore/blob/master/WordPress.gitignore ###
 *.log
-/public/wp
-/public/wp-content/advanced-cache.php
-/public/wp-content/backup-db/
-/public/wp-content/backups/
-/public/wp-content/blogs.dir/
-/public/wp-content/cache/
-/public/wp-content/upgrade/
-/public/wp-content/uploads/
-/public/wp-content/wp-cache-config.php
-/public/wp-content/plugins/hello.php
+/wp/
+/wp-content/*/*
+/wp-content/mu-plugins/*
+/wp-content/plugins/*
 /vendor
 production-config.php
 local-config.php
+
+!/wp-content/themes/*
+!/wp-content/mu-plugins/index.php
+!/wp-content/plugins/index.php

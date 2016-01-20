@@ -18,11 +18,11 @@
          "wpackagist-plugin/akismet" : "*"
     },
     "extra": {
-        "wordpress-install-dir": "public/wp",
+        "wordpress-install-dir": "wp",
         "installer-paths": {
-            "public/wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
-            "public/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
-            "public/wp-content/themes/{$name}/": ["type:wordpress-theme"]
+            "wp-content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+            "wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+            "wp-content/themes/{$name}/": ["type:wordpress-theme"]
         }
     }
 }
