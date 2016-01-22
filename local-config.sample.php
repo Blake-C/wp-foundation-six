@@ -5,6 +5,8 @@ define( 'DB_USER', 'root' );
 define( 'DB_PASSWORD', 'root' );
 define( 'DB_HOST', 'localhost' );
 
+$table_prefix  = 'wp_';
+
 // ini_set( 'display_errors', E_ALL );
 // define( 'WP_DEBUG_DISPLAY', true );
 // define( 'WP_DEBUG', true );
