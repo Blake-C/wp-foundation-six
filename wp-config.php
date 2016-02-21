@@ -13,6 +13,11 @@ if ( file_exists( dirname( __FILE__ ) . '/production-config.php' ) ) {
 }
 
 // ========================
+// Prevent Admin Files Access
+// ========================
+define('DISALLOW_FILE_EDIT', true);
+
+// ========================
 // Custom Content Directory
 // ========================
 define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
