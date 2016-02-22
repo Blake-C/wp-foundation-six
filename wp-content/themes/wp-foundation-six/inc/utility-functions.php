@@ -29,7 +29,7 @@ if ( !function_exists('wp_foundation_six_get_jquery_cdn') ){
 		wp_deregister_script( 'jquery' );
 
 		// /* IF IE 8 */
-		if( !preg_match('/(?i)msie [1-8]/',$_SERVER['HTTP_USER_AGENT']) ) {
+		if( !preg_match('/(?i)msie [6-8]/',$_SERVER['HTTP_USER_AGENT']) ) {
 			// Load jQuery from cdn if available
 			if ( wp_foundation_six_get_http_response_code( $options['modern_jquery_cdn'] ) == 200 ) {
 				wp_register_script( 'jquery', $options['modern_jquery_cdn'], false, null, true );
