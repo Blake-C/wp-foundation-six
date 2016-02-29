@@ -15,7 +15,8 @@
          "wpackagist-plugin/regenerate-thumbnails" : "*",
          "wpackagist-plugin/disqus-comment-system" : "*",
          "wpackagist-plugin/worker" : "*",
-         "wpackagist-plugin/akismet" : "*"
+         "wpackagist-plugin/akismet" : "*",
+         "wpackagist-plugin/mailgun" : "*"
     },
     "extra": {
         "wordpress-install-dir": "wp",
