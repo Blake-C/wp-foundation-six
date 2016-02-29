@@ -113,7 +113,7 @@ add_action( 'widgets_init', 'wp_foundation_six_widgets_init' );
 if ( !function_exists( 'wp_foundation_six_scripts' ) ) {
 	function wp_foundation_six_scripts() {
 		/* Import CSS (Sass files are in the theme-components folder) */
-		wp_enqueue_style( 'wp-foundation-six-style', get_stylesheet_uri() );
+		wp_enqueue_style( 'wp-foundation-six-style', get_template_directory_uri() . '/build/css/global-styles.min.css' );
 
 
 		/* If IE8 and below support is needed you need to load modernizer at the top of the page, default to bottom */
