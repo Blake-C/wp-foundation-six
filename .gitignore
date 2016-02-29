@@ -62,3 +62,4 @@ local-config.php
 !/wp-content/themes/*
 !/wp-content/mu-plugins/index.php
 !/wp-content/plugins/index.php
+wp-content/themes/wp-foundation-six/build
