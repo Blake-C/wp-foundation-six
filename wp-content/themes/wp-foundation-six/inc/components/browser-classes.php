@@ -26,7 +26,7 @@ if ( !function_exists('wp_foundation_six_browser_body_class') ){
 		} elseif ( $is_IE ) {
 			$classes[] = 'ie';
 
-			if ( preg_match('/MSIE ([0-9]+)([a-zA-Z0-9.]+)/', $_SERVER['HTTP_USER_AGENT'], $browser_version) ){
+			if ( preg_match('/MSIE ([6-9]+)([a-zA-Z0-9.]+)/', $_SERVER['HTTP_USER_AGENT'], $browser_version) ){
 				$classes[] = 'ie' . $browser_version[1];
 			}
 		} else {
