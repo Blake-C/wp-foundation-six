@@ -207,7 +207,7 @@ gulp.task('copy', () => {
 		.pipe($.if(argv.build, gulp.dest(dir.build)));
 })
 
-gulp.task('build', ['styles', 'scripts', 'scripts:vendors', 'fonts', 'images', 'copy'], () => {
+gulp.task('build', ['styles', 'scripts', 'scripts:vendors', 'images', 'fonts', 'icons', 'copy'], () => {
 	return gulp.src(dir.build_assets + '/**/*')
 		.pipe($.size({title: 'build', gzip: true}))
 		.pipe(gulp.dest( dir.build_assets ))
