@@ -1,5 +1,23 @@
 # Created by http://www.gitignore.io
 
+### WordPress Ignores by https://github.com/github/gitignore/blob/master/WordPress.gitignore ###
+*.log
+/wp/
+/wp-content/*/*
+/wp-content/mu-plugins/*
+/wp-content/plugins/*
+/vendor
+production-config.php
+local-config.php
+
+!/wp-content/themes/*
+!/wp-content/mu-plugins/index.php
+!/wp-content/plugins/index.php
+
+/wp-content/themes/wp-foundation-six/assets
+/wp-content/themes/wp-foundation-six-build
+
+
 ### Bower ###
 bower_components
 
@@ -47,20 +65,3 @@ node_modules
 logs
 cache
 .phpintel
-
-
-### WordPress Ignores by https://github.com/github/gitignore/blob/master/WordPress.gitignore ###
-*.log
-/wp/
-/wp-content/*/*
-/wp-content/mu-plugins/*
-/wp-content/plugins/*
-/vendor
-production-config.php
-local-config.php
-
-!/wp-content/themes/*
-!/wp-content/mu-plugins/index.php
-!/wp-content/plugins/index.php
-wp-content/themes/wp-foundation-six/build
-*.DS_Store
