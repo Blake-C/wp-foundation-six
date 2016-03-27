@@ -52,7 +52,7 @@ gulp.task('scripts', () => {
 		.pipe($.if(!argv.build, reload({stream: true})));
 });
 
-gulp.task('scripts:vendors', ['scripts:ie', 'scripts:jquery-legacy', 'scripts:jquery', 'scripts:foundation']);
+gulp.task('scripts:vendors', ['scripts:ie', 'scripts:jquery-legacy', 'scripts:jquery', 'scripts:foundation', 'scripts:rem', 'scripts:modernizr']);
 
 gulp.task('scripts:ie', () => {
 	// Combines all the IE8 fallback scripts to be called in footer
@@ -90,6 +90,28 @@ gulp.task('scripts:jquery', () => {
 		.pipe($.rename({ suffix: '.min' }))
 		.pipe($.sourcemaps.write('.'))
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js/vendors/jquery`), gulp.dest(`${dir.dev}/js/vendors/jquery`)));
+});
+
+gulp.task('scripts:modernizr', () => {
+	// Sets up modern jQuery for WordPress to use in functions.php
+	return gulp.src('./bower_components/modernizr/modernizr.js')
+		.pipe($.plumber())
+		.pipe($.sourcemaps.init())
+		.pipe($.uglify())
+		.pipe($.rename({ suffix: '.min' }))
+		.pipe($.sourcemaps.write('.'))
+		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js/vendors`), gulp.dest(`${dir.dev}/js/vendors`)));
+});
+
+gulp.task('scripts:rem', () => {
+	// Sets up modern jQuery for WordPress to use in functions.php
+	return gulp.src('./bower_components/REM-unit-polyfill/js/rem.js')
+		.pipe($.plumber())
+		.pipe($.sourcemaps.init())
+		.pipe($.uglify())
+		.pipe($.rename({ suffix: '.min' }))
+		.pipe($.sourcemaps.write('.'))
+		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js/vendors`), gulp.dest(`${dir.dev}/js/vendors`)));
 });
 
 gulp.task('scripts:foundation', () => {

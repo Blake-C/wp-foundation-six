@@ -113,20 +113,20 @@ add_action( 'widgets_init', 'wp_foundation_six_widgets_init' );
 if ( !function_exists( 'wp_foundation_six_scripts' ) ) {
 	function wp_foundation_six_scripts() {
 		/* Import CSS (Sass files are in the theme-components folder) */
-		wp_enqueue_style( 'wp-foundation-six-style', get_template_directory_uri() . '/build/css/global-styles.min.css' );
+		wp_enqueue_style( 'wp-foundation-six-style', get_template_directory_uri() . '/assets/css/global-styles.min.css' );
 
 
 		/* If IE8 and below support is needed you need to load modernizer at the top of the page, default to bottom */
-		wp_foundation_six_get_cdn_asset( 'wp-foundation-six-modernizr', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', '/js/modernizr-min.js', array(), null, true );
+		wp_foundation_six_get_cdn_asset( 'wp-foundation-six-modernizr', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', '/assets/js/vendors/modernizr.min.js', array(), null, true );
 
 
 		/* Register jQuery, Utility Function */
 		wp_foundation_six_get_jquery_cdn(
 			array(
 				'modern_jquery_cdn' 	=> 'https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js',
-				'modern_jquery_local' 	=> '/js/jquery-min.js',
+				'modern_jquery_local' 	=> '/assets/js/vendors/jquery/jquery.min.js',
 				'legacy_jquery_cdn' 	=> 'https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js',
-				'legacy_jquery_local' 	=> '/js/jquery-legacy-min.js'
+				'legacy_jquery_local' 	=> '/assets/js/vendors/jquery-legacy/jquery.min.js'
 			)
 		);
 
@@ -136,7 +136,7 @@ if ( !function_exists( 'wp_foundation_six_scripts' ) ) {
 
 
 		/* Import Scripts (Keep to a minimum or import into scripts file) */
-		wp_enqueue_script( 'wp-foundation-six-global', get_template_directory_uri() . '/js/global-scripts-min.js', array('jquery'), null, true );
+		wp_enqueue_script( 'wp-foundation-six-global', get_template_directory_uri() . '/assets/js/global-scripts.min.js', array('jquery'), null, true );
 
 
 		/**
