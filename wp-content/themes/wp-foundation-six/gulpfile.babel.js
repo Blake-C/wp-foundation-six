@@ -62,9 +62,10 @@ gulp.task('scripts:ie', () => {
 			'./bower_components/respond/dest/respond.src.js'
 		])
 		.pipe($.plumber())
+		.pipe($.include()).on('error', console.log)
 		.pipe($.sourcemaps.init())
 		.pipe($.concat('ie-scripts.js'))
-		.pipe($.uglify())
+		.pipe($.if(argv.build, $.uglify()))
 		.pipe($.rename({ suffix: '.min' }))
 		.pipe($.sourcemaps.write('.'))
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js/vendors`), gulp.dest(`${dir.dev}/js/vendors`)));
@@ -74,6 +75,7 @@ gulp.task('scripts:jquery-legacy', () => {
 	// Sets up legacy jQuery for WordPress to use in functions.php
 	return gulp.src('./bower_components/jquery-legacy/dist/jquery.js')
 		.pipe($.plumber())
+		.pipe($.include()).on('error', console.log)
 		.pipe($.sourcemaps.init())
 		.pipe($.uglify())
 		.pipe($.rename({ suffix: '.min' }))
@@ -85,6 +87,7 @@ gulp.task('scripts:jquery', () => {
 	// Sets up modern jQuery for WordPress to use in functions.php
 	return gulp.src('./bower_components/jquery/dist/jquery.js')
 		.pipe($.plumber())
+		.pipe($.include()).on('error', console.log)
 		.pipe($.sourcemaps.init())
 		.pipe($.uglify())
 		.pipe($.rename({ suffix: '.min' }))
@@ -96,8 +99,9 @@ gulp.task('scripts:modernizr', () => {
 	// Sets up modern jQuery for WordPress to use in functions.php
 	return gulp.src('./bower_components/modernizr/modernizr.js')
 		.pipe($.plumber())
+		.pipe($.include()).on('error', console.log)
 		.pipe($.sourcemaps.init())
-		.pipe($.uglify())
+		.pipe($.if(argv.build, $.uglify()))
 		.pipe($.rename({ suffix: '.min' }))
 		.pipe($.sourcemaps.write('.'))
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js/vendors`), gulp.dest(`${dir.dev}/js/vendors`)));
@@ -107,8 +111,9 @@ gulp.task('scripts:rem', () => {
 	// Sets up modern jQuery for WordPress to use in functions.php
 	return gulp.src('./bower_components/REM-unit-polyfill/js/rem.js')
 		.pipe($.plumber())
+		.pipe($.include()).on('error', console.log)
 		.pipe($.sourcemaps.init())
-		.pipe($.uglify())
+		.pipe($.if(argv.build, $.uglify()))
 		.pipe($.rename({ suffix: '.min' }))
 		.pipe($.sourcemaps.write('.'))
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js/vendors`), gulp.dest(`${dir.dev}/js/vendors`)));
@@ -118,8 +123,10 @@ gulp.task('scripts:foundation', () => {
 	// Sets up foundation scripts for WordPress to use in functions.php
 	return gulp.src('./bower_components/foundation-sites/js/**/*')
 		.pipe($.plumber())
+		.pipe($.include()).on('error', console.log)
 		.pipe($.sourcemaps.init())
-		.pipe($.uglify())
+		.pipe($.babel())
+		.pipe($.if(argv.build, $.uglify()))
 		.pipe($.rename({ suffix: '.min' }))
 		.pipe($.sourcemaps.write('.'))
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js/vendors/foundation`), gulp.dest(`${dir.dev}/js/vendors/foundation`)));
