@@ -35,7 +35,7 @@ gulp.task('styles', () => {
 		.pipe($.if(argv.build, $.cssnano()))
 		.pipe($.sourcemaps.write('.'))
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/css`), gulp.dest(`${dir.dev}/css`)))
-		.pipe($.if(!argv.build, reload({stream: true})));
+		.pipe($.if(!argv.build, browserSync.stream({match: '**/*.css'})));
 });
 
 gulp.task('scripts', () => {
@@ -48,8 +48,7 @@ gulp.task('scripts', () => {
 		.pipe($.rename({ suffix: '.min' }))
 		.pipe($.if(argv.build, $.uglify()))
 		.pipe($.sourcemaps.write('.'))
-		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js`), gulp.dest(`${dir.dev}/js`)))
-		.pipe($.if(!argv.build, reload({stream: true})));
+		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js`), gulp.dest(`${dir.dev}/js`)));
 });
 
 gulp.task('scripts:vendors', ['scripts:ie', 'scripts:jquery-legacy', 'scripts:jquery', 'scripts:foundation', 'scripts:rem', 'scripts:modernizr']);
@@ -184,9 +183,9 @@ gulp.task('serve', ['styles', 'scripts', 'scripts:vendors', 'images', 'fonts', '
 	});
 
 	gulp.watch([`${dir.theme_components}/sass/**/*`], ['styles']);
-	gulp.watch([`${dir.theme_components}/js/**/*`], ['scripts']);
-	gulp.watch([`${dir.theme_components}/fonts/**/*`], ['fonts']);
-	gulp.watch([`${dir.theme_components}/images/**/*`], ['images']);
+	gulp.watch([`${dir.theme_components}/js/**/*`], ['scripts']).on('change', reload);
+	gulp.watch([`${dir.theme_components}/fonts/**/*`], ['fonts']).on('change', reload);
+	gulp.watch([`${dir.theme_components}/images/**/*`], ['images']).on('change', reload);
 });
 
 gulp.task('watch', ['styles', 'scripts', 'scripts:vendors', 'images', 'fonts', 'icons'], () => {
