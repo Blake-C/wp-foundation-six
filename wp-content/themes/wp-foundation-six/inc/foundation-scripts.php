@@ -5,7 +5,7 @@ wp_register_script( 'foundation-core', get_template_directory_uri() . '/assets/j
 
 /* Foundation 6 Component Registration */
 wp_register_script( 'foundation-abide', get_template_directory_uri() . '/assets/js/vendors/foundation/foundation.abide.min.js', array('foundation-core', 'jquery'), null, true);
-wp_register_script( 'foundation-accordion', get_template_directory_uri() . '/assets/js/vendors/foundation/foundation.accordion.min.js', array('foundation-core', 'jquery', 'foundation-util-keyboard', 'foundation-util-motion'), null, true);
+wp_register_script( 'foundation-accordion', get_template_directory_uri() . '/assets/js/vendors/foundation/foundation.accordion.min.js', array('foundation-core', 'jquery', 'foundation-util-keyboard', 'foundation-util-motion', 'foundation-util-mediaQuery'), null, true);
 wp_register_script( 'foundation-accordionMenu', get_template_directory_uri() . '/assets/js/vendors/foundation/foundation.accordionMenu.min.js', array('foundation-core', 'jquery', 'foundation-util-keyboard', 'foundation-util-motion', 'foundation-util-nest'), null, true);
 wp_register_script( 'foundation-drilldown', get_template_directory_uri() . '/assets/js/vendors/foundation/foundation.drilldown.min.js', array('foundation-core', 'jquery', 'foundation-util-keyboard', 'foundation-util-motion', 'foundation-util-nest'), null, true);
 wp_register_script( 'foundation-dropdown', get_template_directory_uri() . '/assets/js/vendors/foundation/foundation.dropdown.min.js', array('foundation-core', 'jquery', 'foundation-util-keyboard', 'foundation-util-box', 'foundation-util-triggers'), null, true);
