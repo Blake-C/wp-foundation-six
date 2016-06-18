@@ -11,7 +11,7 @@
 	<?php wp_footer(); ?>
 
 	<!--[if lt IE 9]>
-		<script src="<?php echo get_template_directory_uri() ?>/js/rem-min.js"></script>
+		<script src="<?php echo get_template_directory_uri() ?>/assets/js/vendors/rem.min.js"></script>
 	<![endif]-->
 
 </body>

@@ -8,7 +8,7 @@
  */
 if ( !function_exists('wp_foundation_six_login_page_styles') ){
 	function wp_foundation_six_login_page_styles() {
-		wp_enqueue_style( 'login_page_styles', get_template_directory_uri() . '/css/login.css' );
+		wp_enqueue_style( 'login_page_styles', get_template_directory_uri() . '/assets/css/login-admin.min.css' );
 	}
 }
 add_action( 'login_enqueue_scripts', 'wp_foundation_six_login_page_styles' );

@@ -44,7 +44,7 @@ if ( !function_exists('wp_foundation_six_get_jquery_cdn') ){
 				wp_register_script( 'jquery', get_template_directory_uri() . $options['legacy_jquery_local'], false, null, true );
 			}
 
-			wp_enqueue_style( 'foundation-IE8-columns', get_template_directory_uri() . '/css/ie8-grid-support.css' );
+			wp_enqueue_style( 'foundation-IE8-columns', get_template_directory_uri() . 'assets/css/ie8-grid-support.css' );
 		}
 
 		// Reregister jQuery

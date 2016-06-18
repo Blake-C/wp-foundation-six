@@ -1,5 +1,5 @@
-// @codekit-prepend "../../bower_components/jquery-migrate/jquery-migrate.js"
-// @codekit-prepend "_skip-link-focus-fix.js"
+//=require ../../bower_components/jquery-migrate/jquery-migrate.js
+//=require ./partials/_skip-link-focus-fix.js
 
 (function($){
 	$( document ).ready(function() {
@@ -16,7 +16,7 @@
 
 			$('.placeHolderPosition').slideToggle();
 		});
-		
+
 		/* Flex Video */
 		$('iframe[src*="player.vimeo.com"],[src*="www.youtube.com"],object[id="flashObj"]').each(function() {
 			if (!$(this).parent().hasClass('flex-video')) {
