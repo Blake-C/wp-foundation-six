@@ -32,7 +32,7 @@ gulp.task('styles', () => {
 		.on('error', $.sass.logError))
 		.pipe($.autoprefixer({browsers: ['> 1%', 'last 4 versions', 'Firefox ESR']}))
 		.pipe($.rename({ suffix: '.min' }))
-		.pipe(argv.build, $.cssnano())
+		.pipe($.cssnano())
 		.pipe($.sourcemaps.write('.'))
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/css`), gulp.dest(`${dir.dev}/css`)))
 		.pipe($.if(!argv.build, browserSync.stream({match: '**/*.css'})));
