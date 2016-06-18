@@ -1,4 +1,4 @@
-<?
+<?php
 
 if ( ! function_exists( 'wp_foundation_six_posted_on' ) ) {
 	/**
