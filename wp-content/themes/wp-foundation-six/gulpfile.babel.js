@@ -30,9 +30,9 @@ gulp.task('styles', () => {
 			includePaths: ['.']
 		})
 		.on('error', $.sass.logError))
-		.pipe($.if(argv.build, $.autoprefixer({browsers: ['> 1%', 'last 4 versions', 'Firefox ESR']})))
+		.pipe($.autoprefixer({browsers: ['> 1%', 'last 4 versions', 'Firefox ESR']}))
 		.pipe($.rename({ suffix: '.min' }))
-		.pipe($.if(argv.build, $.cssnano()))
+		.pipe(argv.build, $.cssnano())
 		.pipe($.sourcemaps.write('.'))
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/css`), gulp.dest(`${dir.dev}/css`)))
 		.pipe($.if(!argv.build, browserSync.stream({match: '**/*.css'})));
@@ -46,7 +46,7 @@ gulp.task('scripts', () => {
 		.pipe($.sourcemaps.init())
 		.pipe($.babel())
 		.pipe($.rename({ suffix: '.min' }))
-		.pipe($.if(argv.build, $.uglify()))
+		.pipe($.uglify())
 		.pipe($.sourcemaps.write('.'))
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js`), gulp.dest(`${dir.dev}/js`)));
 });
