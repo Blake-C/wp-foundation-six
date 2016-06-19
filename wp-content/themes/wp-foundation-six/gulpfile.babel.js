@@ -30,6 +30,7 @@ gulp.task('styles', () => {
 			includePaths: ['.']
 		})
 		.on('error', $.sass.logError))
+		.on('error', $.notify.onError({ message: 'Error: <%= error.message %>', onLast: true }))
 		.pipe($.autoprefixer({browsers: ['> 1%', 'last 4 versions', 'Firefox ESR']}))
 		.pipe($.rename({ suffix: '.min' }))
 		.pipe($.cssnano())
