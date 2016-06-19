@@ -1,0 +1,23 @@
+{
+  "root": true,
+  "extends": ["eslint:recommended"],
+  "env": {
+    "es6": true,
+    "node": true,
+    "browser": true,
+    "jquery": true
+  },
+  "rules": {
+    "eol-last": 0,
+    "no-console": 1,
+    "no-shadow": 0,
+    "no-underscore-dangle": 0,
+    "no-unused-vars": 1,
+    "semi": [1, "always"]
+  },
+  "globals": {
+    "jQuery": true,
+    "$": true,
+    "Modernizr": true
+  }
+}

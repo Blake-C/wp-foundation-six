@@ -1,5 +1,7 @@
-//=require ../../bower_components/jquery-migrate/jquery-migrate.js
-//=require ./partials/_skip-link-focus-fix.js
+/* eslint-disable */
+	//=include ../../bower_components/jquery-migrate/jquery-migrate.js
+	//=include ./partials/_skip-link-focus-fix.js
+/* eslint-enable */
 
 (function($){
 	$( document ).ready(function() {

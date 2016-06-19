@@ -45,10 +45,16 @@ gulp.task('scripts', () => {
 		.pipe($.include()).on('error', console.log)
 		.pipe($.sourcemaps.init())
 		.pipe($.babel())
+		.on('error', $.notify.onError({ message: 'Error: <%= error.message %>', onLast: true }))
+		.pipe($.eslint())
+		.pipe($.eslint.format())
+		.pipe($.eslint.failAfterError())
+		.on('error', $.notify.onError({ message: 'Error: <%= error.message %>', onLast: true }))
 		.pipe($.rename({ suffix: '.min' }))
 		.pipe($.uglify())
 		.pipe($.sourcemaps.write('.'))
-		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js`), gulp.dest(`${dir.dev}/js`)));
+		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js`), gulp.dest(`${dir.dev}/js`)))
+		.pipe($.if(!argv.build, reload({stream: true})));
 });
 
 gulp.task('scripts:vendors', ['scripts:ie', 'scripts:jquery-legacy', 'scripts:jquery', 'scripts:foundation', 'scripts:rem', 'scripts:modernizr']);
