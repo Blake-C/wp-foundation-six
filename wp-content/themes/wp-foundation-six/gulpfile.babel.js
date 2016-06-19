@@ -201,16 +201,16 @@ gulp.task('clean',
 
 gulp.task('copy', () => {
 	return gulp.src([
-			'./**/*',
-			'!./bower_components{,/**}',
-			'!./node_modules{,/**}',
-			'!./theme_components{,/**}',
-			'!./bower.json',
-			'!./codesniffer.ruleset.xml',
-			'!./gulpfile.babel.js',
-			'!./package.json',
-		])
-		.pipe($.if(argv.build, gulp.dest(dir.build)));
+		'./**/*',
+		'!./bower_components{,/**}',
+		'!./node_modules{,/**}',
+		'!./theme_components{,/**}',
+		'!./bower.json',
+		'!./codesniffer.ruleset.xml',
+		'!./gulpfile.babel.js',
+		'!./package.json',
+	])
+	.pipe($.if(argv.build, gulp.dest(dir.build)));
 })
 
 gulp.task('build', ['styles', 'scripts', 'scripts:vendors', 'images', 'fonts', 'icons', 'copy'], () => {
