@@ -11,8 +11,8 @@ const argv = yargs.argv;
 
 // Paths for source and distribution files
 const dir = {
-	theme_components: './theme_components',
-	dev: './assets',
+	theme_components: 'theme_components',
+	dev: 'assets',
 	build: '../wp-foundation-six-build',
 	build_assets: '../wp-foundation-six-build/assets'
 };
