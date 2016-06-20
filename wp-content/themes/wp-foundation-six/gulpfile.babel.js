@@ -35,6 +35,11 @@ gulp.task('styles', () => {
 		.pipe($.rename({ suffix: '.min' }))
 		.pipe($.cssnano())
 		.pipe($.sourcemaps.write('.'))
+		.pipe($.size({
+			title: 'Styles: ',
+			gzip: true,
+			pretty: true
+		}))
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/css`), gulp.dest(`${dir.dev}/css`)))
 		.pipe($.if(!argv.build, browserSync.stream({match: '**/*.css'})));
 });
@@ -54,6 +59,11 @@ gulp.task('scripts', () => {
 		.pipe($.rename({ suffix: '.min' }))
 		.pipe($.uglify())
 		.pipe($.sourcemaps.write('.'))
+		.pipe($.size({
+			title: 'Scripts: ',
+			gzip: true,
+			pretty: true
+		}))
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js`), gulp.dest(`${dir.dev}/js`)))
 		.pipe($.if(!argv.build, reload({stream: true})));
 });
