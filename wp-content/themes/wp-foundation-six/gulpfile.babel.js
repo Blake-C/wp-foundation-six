@@ -222,10 +222,9 @@ gulp.task('copy', () => {
 		'!./bower_components{,/**}',
 		'!./node_modules{,/**}',
 		'!./theme_components{,/**}',
-		'!./bower.json',
 		'!./codesniffer.ruleset.xml',
 		'!./gulpfile.babel.js',
-		'!./package.json',
+		'!./{,*}.json'
 	])
 	.pipe($.if(argv.build, gulp.dest(dir.build)));
 })
