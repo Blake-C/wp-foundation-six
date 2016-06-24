@@ -41,7 +41,8 @@ gulp.task('styles', () => {
 			pretty: true
 		}))
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/css`), gulp.dest(`${dir.dev}/css`)))
-		.pipe($.if(!argv.build, browserSync.stream({match: '**/*.css'})));
+		.pipe($.if(!argv.build, browserSync.stream({match: '**/*.css'})))
+		.pipe($.notify({ message: 'Styles Task Completed.', onLast: true }));
 });
 
 gulp.task('scripts', () => {
@@ -65,7 +66,8 @@ gulp.task('scripts', () => {
 			pretty: true
 		}))
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js`), gulp.dest(`${dir.dev}/js`)))
-		.pipe($.if(!argv.build, reload({stream: true})));
+		.pipe($.if(!argv.build, reload({stream: true})))
+		.pipe($.notify({ message: 'Scripts Task Completed.', onLast: true }));
 });
 
 gulp.task('scripts:vendors', ['scripts:ie', 'scripts:jquery-legacy', 'scripts:jquery', 'scripts:foundation', 'scripts:rem', 'scripts:modernizr']);
