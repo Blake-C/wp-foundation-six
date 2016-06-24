@@ -235,7 +235,7 @@ gulp.task('build', ['styles', 'scripts', 'scripts:vendors', 'images', 'fonts', '
 	return gulp.src(dir.build_assets + '/**/*')
 		.pipe($.size({title: 'build', gzip: true}))
 		.pipe(gulp.dest( dir.build_assets ))
-		.pipe($.notify({ message: 'Build task complete', onLast: true }));
+		.pipe($.notify({ message: 'Build Task Completed.', onLast: true }));
 });
 
 gulp.task('default', ['clean'], () => {
