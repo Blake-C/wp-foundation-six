@@ -31,9 +31,9 @@ gulp.task('styles', () => {
 		})
 		.on('error', $.sass.logError))
 		.on('error', $.notify.onError({ message: 'Error: <%= error.message %>', onLast: true }))
-		.pipe($.autoprefixer({browsers: ['> 1%', 'last 4 versions', 'Firefox ESR']}))
+		.pipe($.autoprefixer({browsers: ['last 4 versions', 'Firefox ESR', 'IE 8-11']}))
+		.pipe($.cssnano({ autoprefixer: false }))
 		.pipe($.rename({ suffix: '.min' }))
-		.pipe($.cssnano())
 		.pipe($.sourcemaps.write('.'))
 		.pipe($.size({
 			title: 'Styles: ',
