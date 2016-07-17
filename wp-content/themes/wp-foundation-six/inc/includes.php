@@ -21,7 +21,6 @@ require get_template_directory() . '/inc/components/gform-init-scripts.php';
 require get_template_directory() . '/inc/components/link-pages.php';
 require get_template_directory() . '/inc/components/password-form.php';
 require get_template_directory() . '/inc/components/post-classes.php';
-require get_template_directory() . '/inc/components/remove-query-strings.php';
 require get_template_directory() . '/inc/components/thumbnail-upscale.php';
 require get_template_directory() . '/inc/components/top-bar-navigation.php';
 
