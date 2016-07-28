@@ -19,7 +19,8 @@ local-config.php
 
 
 ### Docker ###
-/data/*
+data
+
 
 ### Bower ###
 bower_components

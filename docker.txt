@@ -1,0 +1,3 @@
+# https://codeable.io/wordpress-developers-intro-docker/#php-fpm-image
+# https://docs.docker.com/compose/wordpress/
+# https://visible.vc/engineering/docker-environment-for-wordpress/
