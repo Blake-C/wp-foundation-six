@@ -18,6 +18,9 @@ local-config.php
 /wp-content/themes/wp-foundation-six-build
 
 
+### Docker ###
+/data/*
+
 ### Bower ###
 bower_components
 
