@@ -18,7 +18,7 @@ const dir = {
 };
 
 // BrowserSync Dev URL to reload
-const proxy_target = 'foundation-six-gulpify';
+const proxy_target = 'wp-foundation-six';
 
 gulp.task('styles', () => {
 	return gulp.src(`${dir.theme_components}/sass/**/*.scss`)
