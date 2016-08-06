@@ -101,49 +101,48 @@
 		<a href="#" class="regions">Show Regions</a>
 	<?php endif; ?>
 
+
 	<?php wp_foundation_six_dev_helper( pathinfo(__FILE__, PATHINFO_FILENAME) ); ?>
 
-	<?php
-		/**
-		 * Consider Creating your own menu rather than using top bar
-		*/
-	?>
 
-	<div class="row columns hidden" id="main_menu">
-		<div class="title-bar" data-responsive-toggle="example_menu" data-hide-for="medium">
-			<button class="menu-icon" type="button" data-toggle></button>
-			<div class="title-bar-title">Menu</div>
-		</div>
+	<?php // Consider Creating your own menu rather than using top bar ?>
+	<?php if ( has_nav_menu( 'primary' ) ) : ?>
+		<div class="row columns hidden" id="main_menu">
+			<div class="title-bar" data-responsive-toggle="example_menu" data-hide-for="medium">
+				<button class="menu-icon" type="button" data-toggle></button>
+				<div class="title-bar-title">Menu</div>
+			</div>
 
-		<div class="top-bar" id="example_menu">
-			<div class="top-bar-left">
-				<?php
-					/**
-					 * Custom menu
-					 *
-					 * @link https://codex.wordpress.org/Function_Reference/wp_nav_menu
-					*/
-					$menu_args = array(
-						'theme_location'  => 'primary',
-						'menu'            => '',
-						'container'       => 'false',
-						'container_class' => '',
-						'container_id'    => '',
-						'menu_class'      => 'dropdown menu vertical medium-horizontal',
-						'menu_id'         => '',
-						'echo'            => true,
-						'fallback_cb'     => 'wp_page_menu',
-						'before'          => '',
-						'after'           => '',
-						'link_before'     => '',
-						'link_after'      => '',
-						'items_wrap'      => '<ul id="%1$s" class="%2$s" data-dropdown-menu><li class="menu-text">'. get_bloginfo('name') .'</li>%3$s</ul>',
-						'depth'           => 0,
-						'walker'          => new wp_foundation_six_custom_nav_class_walker()
-					);
+			<div class="top-bar" id="example_menu">
+				<div class="top-bar-left">
+					<?php
+						/**
+						 * Custom menu
+						 *
+						 * @link https://codex.wordpress.org/Function_Reference/wp_nav_menu
+						*/
+						$menu_args = array(
+							'theme_location'  => 'primary',
+							'menu'            => '',
+							'container'       => 'false',
+							'container_class' => '',
+							'container_id'    => '',
+							'menu_class'      => 'dropdown menu vertical medium-horizontal',
+							'menu_id'         => '',
+							'echo'            => true,
+							'fallback_cb'     => 'wp_page_menu',
+							'before'          => '',
+							'after'           => '',
+							'link_before'     => '',
+							'link_after'      => '',
+							'items_wrap'      => '<ul id="%1$s" class="%2$s" data-dropdown-menu><li class="menu-text">'. get_bloginfo('name') .'</li>%3$s</ul>',
+							'depth'           => 0,
+							'walker'          => new wp_foundation_six_custom_nav_class_walker()
+						);
 
-					wp_nav_menu( $menu_args );
-				?>
+						wp_nav_menu( $menu_args );
+					?>
+				</div>
 			</div>
 		</div>
-	</div>
+	<?php endif; ?>
