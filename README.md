@@ -1,25 +1,22 @@
 # WP Foundation Six Theme Developer Framework
----
 
-The WordPress Foundation 6 Theme Developer Framework is meant to be a starting point for developers to create projects without having third party code/modules within their git repo. This project uses composer to install WordPress core and default plugins as project dependencies. The base theme uses NPM and Bower to install dependencies, and Gulp as the build system. Gulp also uses [Babel](http://babeljs.io/) and [Webpack](https://webpack.github.io/) to transpile ES6 to ES5 so that you can use the latest [ECMAScript](https://en.wikipedia.org/wiki/ECMAScript) syntax.
+The WordPress Foundation 6 Theme Developer Framework is meant to be a starting point for developers to create projects without having third party code/modules within their git repo. This project uses composer to install WordPress and default plugins as project dependencies. The base theme uses NPM and Bower to install dependencies, and Gulp as the build system. Gulp also uses [Babel](http://babeljs.io/) and [Webpack](https://webpack.github.io/) to transpile ES6 to ES5 so that you can use the latest [ECMAScript](https://en.wikipedia.org/wiki/ECMAScript) syntax.
 
 
 ## Requirements
----
 
 - [Composer](https://getcomposer.org/)
 - [Node](https://nodejs.org/)
 - [NPM](https://www.npmjs.com/)
 - [Bower](https://bower.io/)
 - [Gulp](http://gulpjs.com/)
-- [LAMP Stack](https://en.wikipedia.org/wiki/LAMP_(software_bundle)
+- [LAMP Stack](https://en.wikipedia.org/wiki/LAMP_(software_bundle))
 	- [MAMP](https://www.mamp.info/en/)
 	- [WAMP](http://www.wampserver.com/en/)
 	- [AMPPS](http://www.ampps.com/)
 	- [Vagrant](https://www.vagrantup.com/)
 
 ## Installation
----
 
 Clone the project to your local machine to start a new project.
 
@@ -47,7 +44,6 @@ The following default plugins will be installed:
 Once composer has completed installing WordPress and the default Plugins, change directories to ```cd wp-content/themes/wp-foundation-six``` then you can run ```npm install```. This will install the node modules and bower components. When npm install is complete a post install script in the package.json file will automatically run bower install for you.
 
 ## Unit Test Data
----
 
 If you need unit test data to work with you can download it from here:
 
@@ -55,7 +51,6 @@ If you need unit test data to work with you can download it from here:
 - [More info can be found here](https://codex.wordpress.org/Theme_Unit_Test)
 
 ## What Now?
----
 
 - In the ```wp-content/themes/wp-foundation-six/theme-components/sass/global-styles.scss``` file you will need to update the theme name and other settings.
 - Update your app icons using [Favicon Generator](http://realfavicongenerator.net/)
