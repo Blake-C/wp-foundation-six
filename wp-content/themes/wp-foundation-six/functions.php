@@ -117,7 +117,7 @@ if ( !function_exists( 'wp_foundation_six_scripts' ) ) {
 
 
 		/* If IE8 and below support is needed you need to load modernizer at the top of the page, default to bottom */
-		wp_foundation_six_get_cdn_asset( 'wp-foundation-six-modernizr', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', '/assets/js/vendors/modernizr.min.js', array(), null, true );
+		wp_foundation_six_get_cdn_asset( 'wp-foundation-six-modernizr', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', '/assets/js/vendors/bundle.modernizr.js', array(), null, true );
 
 
 		/* Register jQuery, Utility Function */
@@ -136,7 +136,7 @@ if ( !function_exists( 'wp_foundation_six_scripts' ) ) {
 
 
 		/* Import Scripts (Keep to a minimum or import into scripts file) */
-		wp_enqueue_script( 'wp-foundation-six-global', get_template_directory_uri() . '/assets/js/global-scripts.min.js', array('jquery'), null, true );
+		wp_enqueue_script( 'wp-foundation-six-global', get_template_directory_uri() . '/assets/js/bundle.global-scripts.js', array('jquery'), null, true );
 
 
 		/**

@@ -1,7 +1,5 @@
-/* eslint-disable */
-	//=include ../../bower_components/jquery-migrate/jquery-migrate.js
-	//=include ./partials/_skip-link-focus-fix.js
-/* eslint-enable */
+import '../../bower_components/jquery-migrate/jquery-migrate.js';
+import './modules/_skip-link-focus-fix.js';
 
 (function($){
 	$( document ).ready(function() {
@@ -22,7 +20,7 @@
 		/* Flex Video */
 		$('iframe[src*="player.vimeo.com"],[src*="www.youtube.com"],object[id="flashObj"]').each(function() {
 			if (!$(this).parent().hasClass('flex-video')) {
-				$(this).wrap("<div class='flex-video widescreen'/>");
+				$(this).wrap('<div class="flex-video widescreen"/>');
 			}
 		});
 

@@ -1,23 +1,40 @@
 {
-  "root": true,
-  "extends": ["eslint:recommended"],
   "env": {
-    "es6": true,
-    "node": true,
     "browser": true,
-    "jquery": true
+    "commonjs": true,
+    "es6": true
   },
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "globals": {
+    "jQuery": true,
+    "$": true,
+    "Modernizr": true
+  },
+  "installedESLint": true,
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react"
+  ],
+  "root": true,
   "rules": {
+    "indent": ["warn", "tab"],
+    "linebreak-style": ["warn", "unix"],
+    "quotes": ["warn", "single"],
+    "semi": ["warn", "always"],
     "eol-last": 0,
     "no-console": 1,
     "no-shadow": 0,
     "no-underscore-dangle": 0,
     "no-unused-vars": 1,
-    "semi": [1, "always"]
-  },
-  "globals": {
-    "jQuery": true,
-    "$": true,
-    "Modernizr": true
+
+    // React Rules
+    "react/prefer-es6-class": 1,
+    "react/prop-types": 1
   }
 }
