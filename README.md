@@ -52,7 +52,7 @@ If you need unit test data to work with you can download it from here:
 
 ## What Now?
 
-- In the ```wp-content/themes/wp-foundation-six/theme-components/sass/global-styles.scss``` file you will need to update the theme name and other settings.
+- In the ```wp-content/themes/wp-foundation-six/style.css``` file you will need to update the theme name and other settings.
 - Update your app icons using [Favicon Generator](http://realfavicongenerator.net/)
 - Think about optimizing the load order of your scripts and how you might be able to combine files for fewer http requests.
 - Carefully organize your [Sass](http://sass-lang.com/) so that other developers can understand your code.
