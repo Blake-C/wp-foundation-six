@@ -3,14 +3,17 @@
 ### WordPress Ignores by https://github.com/github/gitignore/blob/master/WordPress.gitignore ###
 *.log
 /wp/
-/wp-content/**/*
-/wp-content/mu-plugins/**/*
-/wp-content/plugins/**/*
+/wp-content/*/*
+/wp-content/mu-plugins/*
+/wp-content/plugins/*
 /vendor
 production-config.php
 local-config.php
 
-!/wp-content/themes/**/*
+!/wp-content/themes
+!/wp-content/themes/*
+!/wp-content/themes/wp-foundation-six
+!/wp-content/themes/wp-foundation-six/*
 !/wp-content/mu-plugins/index.php
 !/wp-content/plugins/index.php
 
