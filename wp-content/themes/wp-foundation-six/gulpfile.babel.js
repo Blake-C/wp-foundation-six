@@ -4,8 +4,9 @@ import browserSync from 'browser-sync';
 import del from 'del';
 import yargs from 'yargs';
 import pngquant from 'imagemin-pngquant';
+import webpackConfig from "./webpack.config.js";
 
-const $ = gulpLoadPlugins();
+const $ = gulpLoadPlugins({pattern: ["*"]});
 const reload = browserSync.reload;
 const argv = yargs.argv;
 
@@ -18,7 +19,7 @@ const dir = {
 };
 
 // BrowserSync Dev URL to reload
-const proxy_target = 'foundation-six-gulpify';
+const proxy_target = 'wp-foundation-six';
 
 gulp.task('styles', () => {
 	return gulp.src(`${dir.theme_components}/sass/**/*.scss`)
@@ -46,31 +47,15 @@ gulp.task('styles', () => {
 });
 
 gulp.task('scripts', () => {
-	// Compiles custom scripts with exception to partials that are being included in main script files
-	return gulp.src([`${dir.theme_components}/js/**/*.js`, `!${dir.theme_components}/js/partials/**/*.js`])
+	return gulp.src([`${dir.theme_components}/js/global-scripts.js`])
 		.pipe($.plumber())
-		.pipe($.include()).on('error', console.log)
-		.pipe($.sourcemaps.init())
-		.pipe($.babel())
-		.on('error', $.notify.onError({ message: 'Error: <%= error.message %>', onLast: true }))
-		.pipe($.eslint())
-		.pipe($.eslint.format())
-		.pipe($.eslint.failAfterError())
-		.on('error', $.notify.onError({ message: 'Error: <%= error.message %>', onLast: true }))
-		.pipe($.rename({ suffix: '.min' }))
-		.pipe($.uglify())
-		.pipe($.sourcemaps.write('.'))
-		.pipe($.size({
-			title: 'Scripts: ',
-			gzip: true,
-			pretty: true
-		}))
+		.pipe($.webpackStream(webpackConfig, $.webpack))
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js`), gulp.dest(`${dir.dev}/js`)))
-		.pipe($.if(!argv.build, reload({stream: true})))
+		.pipe(reload({stream: true}))
 		.pipe($.notify({ message: 'Scripts Task Completed.', onLast: true }));
 });
 
-gulp.task('scripts:vendors', ['scripts:ie', 'scripts:jquery-legacy', 'scripts:jquery', 'scripts:foundation', 'scripts:rem', 'scripts:modernizr']);
+gulp.task('scripts:vendors', ['scripts:ie', 'scripts:jquery-legacy', 'scripts:jquery', 'scripts:foundation', 'scripts:rem']);
 
 gulp.task('scripts:ie', () => {
 	// Combines all the IE8 fallback scripts to be called in footer
@@ -80,7 +65,6 @@ gulp.task('scripts:ie', () => {
 			'./bower_components/respond/dest/respond.src.js'
 		])
 		.pipe($.plumber())
-		.pipe($.include()).on('error', console.log)
 		.pipe($.sourcemaps.init())
 		.pipe($.concat('ie-scripts.js'))
 		.pipe($.if(argv.build, $.uglify()))
@@ -93,7 +77,6 @@ gulp.task('scripts:jquery-legacy', () => {
 	// Sets up legacy jQuery for WordPress to use in functions.php
 	return gulp.src('./bower_components/jquery-legacy/dist/jquery.js')
 		.pipe($.plumber())
-		.pipe($.include()).on('error', console.log)
 		.pipe($.sourcemaps.init())
 		.pipe($.uglify())
 		.pipe($.rename({ suffix: '.min' }))
@@ -105,7 +88,6 @@ gulp.task('scripts:jquery', () => {
 	// Sets up modern jQuery for WordPress to use in functions.php
 	return gulp.src('./bower_components/jquery/dist/jquery.js')
 		.pipe($.plumber())
-		.pipe($.include()).on('error', console.log)
 		.pipe($.sourcemaps.init())
 		.pipe($.uglify())
 		.pipe($.rename({ suffix: '.min' }))
@@ -113,23 +95,10 @@ gulp.task('scripts:jquery', () => {
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js/vendors/jquery`), gulp.dest(`${dir.dev}/js/vendors/jquery`)));
 });
 
-gulp.task('scripts:modernizr', () => {
-	// Sets up modern jQuery for WordPress to use in functions.php
-	return gulp.src('./bower_components/modernizr/modernizr.js')
-		.pipe($.plumber())
-		.pipe($.include()).on('error', console.log)
-		.pipe($.sourcemaps.init())
-		.pipe($.if(argv.build, $.uglify()))
-		.pipe($.rename({ suffix: '.min' }))
-		.pipe($.sourcemaps.write('.'))
-		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js/vendors`), gulp.dest(`${dir.dev}/js/vendors`)));
-});
-
 gulp.task('scripts:rem', () => {
 	// Sets up modern jQuery for WordPress to use in functions.php
 	return gulp.src('./bower_components/REM-unit-polyfill/js/rem.js')
 		.pipe($.plumber())
-		.pipe($.include()).on('error', console.log)
 		.pipe($.sourcemaps.init())
 		.pipe($.if(argv.build, $.uglify()))
 		.pipe($.rename({ suffix: '.min' }))
@@ -141,7 +110,6 @@ gulp.task('scripts:foundation', () => {
 	// Sets up foundation scripts for WordPress to use in functions.php
 	return gulp.src('./bower_components/foundation-sites/js/**/*')
 		.pipe($.plumber())
-		.pipe($.include()).on('error', console.log)
 		.pipe($.sourcemaps.init())
 		.pipe($.babel())
 		.pipe($.if(argv.build, $.uglify()))

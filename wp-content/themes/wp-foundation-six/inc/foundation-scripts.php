@@ -9,7 +9,7 @@ wp_register_script( 'foundation-accordion', get_template_directory_uri() . '/ass
 wp_register_script( 'foundation-accordionMenu', get_template_directory_uri() . '/assets/js/vendors/foundation/foundation.accordionMenu.min.js', array('foundation-core', 'jquery', 'foundation-util-keyboard', 'foundation-util-motion', 'foundation-util-nest'), null, true);
 wp_register_script( 'foundation-drilldown', get_template_directory_uri() . '/assets/js/vendors/foundation/foundation.drilldown.min.js', array('foundation-core', 'jquery', 'foundation-util-keyboard', 'foundation-util-motion', 'foundation-util-nest'), null, true);
 wp_register_script( 'foundation-dropdown', get_template_directory_uri() . '/assets/js/vendors/foundation/foundation.dropdown.min.js', array('foundation-core', 'jquery', 'foundation-util-keyboard', 'foundation-util-box', 'foundation-util-triggers'), null, true);
-wp_register_script( 'foundation-dropdownMenu', get_template_directory_uri() . '/assets/js/vendors/foundation/foundation.dropdownMenu.min.js', array('foundation-core', 'jquery', 'foundation-util-keyboard', 'foundation-util-motion', 'foundation-util-box', 'foundation-util-nest'), null, true);
+wp_register_script( 'foundation-dropdownMenu', get_template_directory_uri() . '/assets/js/vendors/foundation/foundation.dropdownMenu.min.js', array('foundation-core', 'jquery', 'foundation-util-keyboard', 'foundation-util-motion', 'foundation-util-box', 'foundation-util-nest', 'foundation-util-mediaQuery'), null, true);
 wp_register_script( 'foundation-equalizer', get_template_directory_uri() . '/assets/js/vendors/foundation/foundation.equalizer.min.js', array('foundation-core', 'jquery'), null, true);
 wp_register_script( 'foundation-interchange', get_template_directory_uri() . '/assets/js/vendors/foundation/foundation.interchange.min.js', array('foundation-core', 'jquery', 'foundation-util-triggers', 'foundation-util-timerAndImageLoader'), null, true);
 wp_register_script( 'foundation-magellan', get_template_directory_uri() . '/assets/js/vendors/foundation/foundation.magellan.min.js', array('foundation-core', 'jquery', 'foundation-util-motion'), null, true);
@@ -34,23 +34,29 @@ wp_register_script( 'foundation-util-timerAndImageLoader', get_template_director
 wp_register_script( 'foundation-util-touch', get_template_directory_uri() . '/assets/js/vendors/foundation/foundation.util.touch.min.js', array('foundation-core', 'jquery'), null, true);
 wp_register_script( 'foundation-util-triggers', get_template_directory_uri() . '/assets/js/vendors/foundation/foundation.util.triggers.min.js', array('foundation-core', 'jquery'), null, true);
 
-/* Uncomment assets needed */
-wp_enqueue_script('foundation-abide');
-wp_enqueue_script('foundation-accordion');
-wp_enqueue_script('foundation-accordionMenu');
-wp_enqueue_script('foundation-drilldown');
-wp_enqueue_script('foundation-dropdown');
-wp_enqueue_script('foundation-dropdownMenu');
-wp_enqueue_script('foundation-equalizer');
-wp_enqueue_script('foundation-interchange');
-wp_enqueue_script('foundation-magellan');
-wp_enqueue_script('foundation-offcanvas');
-wp_enqueue_script('foundation-orbit');
-wp_enqueue_script('foundation-responsiveMenu');
+/**
+ * Copy the assets wp_enqueue_script into your template if the assets are needed.
+ *
+ * Alterntivly you can import the files into a single js file and use gulp to
+ * create a single HTTP request rather than the 4+ HTTP request needed for the
+ * wp_enqueue_script method.
+ */
+// wp_enqueue_script('foundation-abide');
+// wp_enqueue_script('foundation-accordion');
+// wp_enqueue_script('foundation-accordionMenu');
+// wp_enqueue_script('foundation-drilldown');
+// wp_enqueue_script('foundation-dropdown');
+// wp_enqueue_script('foundation-dropdownMenu');
+// wp_enqueue_script('foundation-equalizer');
+// wp_enqueue_script('foundation-interchange');
+// wp_enqueue_script('foundation-magellan');
+// wp_enqueue_script('foundation-offcanvas');
+// wp_enqueue_script('foundation-orbit');
+// wp_enqueue_script('foundation-responsiveMenu');
 wp_enqueue_script('foundation-responsiveToggle');
-wp_enqueue_script('foundation-reveal');
-wp_enqueue_script('foundation-slider');
-wp_enqueue_script('foundation-sticky');
-wp_enqueue_script('foundation-tabs');
-wp_enqueue_script('foundation-toggler');
-wp_enqueue_script('foundation-tooltip');
+// wp_enqueue_script('foundation-reveal');
+// wp_enqueue_script('foundation-slider');
+// wp_enqueue_script('foundation-sticky');
+// wp_enqueue_script('foundation-tabs');
+// wp_enqueue_script('foundation-toggler');
+// wp_enqueue_script('foundation-tooltip');

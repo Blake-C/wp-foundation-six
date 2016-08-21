@@ -13,10 +13,7 @@
      "wpackagist-plugin/google-analytics-for-wordpress" : "*",
      "wpackagist-plugin/redirection" : "*",
      "wpackagist-plugin/regenerate-thumbnails" : "*",
-     "wpackagist-plugin/disqus-comment-system" : "*",
-     "wpackagist-plugin/worker" : "*",
-     "wpackagist-plugin/akismet" : "*",
-     "wpackagist-plugin/mailgun" : "*"
+     "wpackagist-plugin/akismet" : "*"
   },
   "extra": {
     "wordpress-install-dir": "wp",

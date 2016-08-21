@@ -10,7 +10,10 @@
 production-config.php
 local-config.php
 
+!/wp-content/themes
 !/wp-content/themes/*
+!/wp-content/themes/wp-foundation-six
+!/wp-content/themes/wp-foundation-six/*
 !/wp-content/mu-plugins/index.php
 !/wp-content/plugins/index.php
 
