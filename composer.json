@@ -9,11 +9,11 @@
     "php": ">=5.4",
     "composer/installers": "1.*",
     "johnpbloch/wordpress": "*",
-     "wpackagist-plugin/wordpress-seo" : "*",
-     "wpackagist-plugin/google-analytics-for-wordpress" : "*",
-     "wpackagist-plugin/redirection" : "*",
-     "wpackagist-plugin/regenerate-thumbnails" : "*",
-     "wpackagist-plugin/akismet" : "*"
+    "wpackagist-plugin/wordpress-seo" : "*",
+    "wpackagist-plugin/google-analytics-for-wordpress" : "*",
+    "wpackagist-plugin/redirection" : "*",
+    "wpackagist-plugin/regenerate-thumbnails" : "*",
+    "wpackagist-plugin/akismet" : "*"
   },
   "extra": {
     "wordpress-install-dir": "wp",
