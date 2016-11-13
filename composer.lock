@@ -221,16 +221,16 @@
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
-            "version": "5.5.2",
+            "version": "5.5.4",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
-                "reference": "tags/5.5.2"
+                "reference": "tags/5.5.4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.5.2.zip",
-                "reference": "tags/5.5.2",
+                "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.5.4.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -281,15 +281,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "3.5",
+            "version": "3.8",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/3.5"
+                "reference": "tags/3.8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.8.zip",
                 "reference": null,
                 "shasum": null
             },
