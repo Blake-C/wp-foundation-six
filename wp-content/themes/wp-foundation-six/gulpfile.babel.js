@@ -194,6 +194,7 @@ gulp.task('copy', () => {
 		'!./theme_components{,/**}',
 		'!./codesniffer.ruleset.xml',
 		'!./gulpfile.babel.js',
+		'!./webpack.config.js',
 		'!./{,*}.json'
 	])
 	.pipe($.if(argv.build, gulp.dest(dir.build)));
