@@ -1,5 +1,4 @@
 body{
-	-ms-word-wrap: break-word;
 	word-wrap: break-word;
 }
 
@@ -39,22 +38,29 @@ figure {
 }
 
 /* Wordpress styles */
-.alignright{
+.alignright {
 	margin: 0 0 0 25px;
-	@extend .float-right;
+	float: right;
 }
 
-.alignleft{
+.alignleft {
 	margin: 0 25px 0 0;
-	@extend .float-left;
+	float: left;
 }
 
-.aligncenter{
-	@extend .float-center;
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;;
 }
 
-pre{
-	@extend code;
+pre {
+	font-family: $code-font-family;
+	font-weight: $code-font-weight;
+	color: $code-color;
+	background-color: $code-background;
+	border: $code-border;
+	padding: $code-padding;
 }
 
 [type="text"],
