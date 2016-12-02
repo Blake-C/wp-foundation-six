@@ -1,83 +1,87 @@
-body{
+body {
 	word-wrap: break-word;
 }
 
 /* Click button for displaying page template parts */
-.regions{
-	position: fixed;
+.regions {
+	background: rgba($black, 0.1);
 	bottom: 10px;
-	right: 10px;
-	background: rgba(0, 0, 0, 0.1);
-	color: rgb(255, 255, 255);
+	color: $white;
 	padding: 10px 20px;
+	position: fixed;
+	right: 10px;
 	z-index: 2000000;
-	&:hover, &:focus{
-		color: rgb(255,255,255);
+
+	&:hover,
+	&:focus{
+		color: $white;
 	}
 }
 
 /* Skip to content link (Accessibility) */
-#skip-link{
-	a{
-		position: absolute;
+#skip-link {
+	a {
+		height: 1px;
 		left: -10000px;
+		overflow: hidden;
+		position: absolute;
 		top: auto;
 		width: 1px;
-		height: 1px;
-		overflow: hidden;
+
 		&:focus{
+			height: auto;
 			position: static;
 			width: auto;
-			height: auto;
 		}
 	}
 }
 
-.hidden{
+.hidden {
 	display: none;
 }
 
 /* Foundation figure was coming out of the layout container */
 figure {
+	background: $gray244;
 	margin: 0;
-	width: auto !important;
 	max-width: 100% !important;
 	padding: 1em 20px;
-	background: rgb(245, 245, 245);
+	width: auto !important;
+
 	figcaption {
 		font-size: 12px;
-		text-align: center;
 		margin: 13px 0 0;
+		text-align: center;
 	}
 }
 
 /* Wordpress styles */
 .alignright {
-	margin: 0 0 0 25px;
 	float: right;
+	margin: 0 0 0 25px;
 }
 
 .alignleft {
-	margin: 0 25px 0 0;
 	float: left;
+	margin: 0 25px 0 0;
 }
 
 .aligncenter {
 	display: block;
 	margin-left: auto;
-	margin-right: auto;;
+	margin-right: auto;
 }
 
 pre {
-	font-family: $code-font-family;
-	font-weight: $code-font-weight;
-	color: $code-color;
 	background-color: $code-background;
 	border: $code-border;
+	color: $code-color;
+	font-family: $code-font-family;
+	font-weight: $code-font-weight;
 	padding: $code-padding;
 }
 
-[type="text"],
-[type="password"] {
+[type='text'],
+[type='password'] {
 	height: 2.48rem;
 }
