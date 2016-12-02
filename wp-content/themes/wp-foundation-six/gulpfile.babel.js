@@ -32,7 +32,12 @@ gulp.task('styles', ['lint:sass'], () => {
 		})
 		.on('error', $.sass.logError))
 		.on('error', $.notify.onError({ message: 'Error: <%= error.message %>', onLast: true }))
-		.pipe($.autoprefixer({browsers: ['last 4 versions', 'Firefox ESR', 'IE 8-11']}))
+		.pipe($.autoprefixer({browsers: [
+			'last 3 versions',
+			'ie >= 8',
+			'Android >= 2.3',
+			'ios >= 7'
+		]}))
 		.pipe($.cssnano({ autoprefixer: false }))
 		.pipe($.rename({ suffix: '.min' }))
 		.pipe($.sourcemaps.write('.'))
