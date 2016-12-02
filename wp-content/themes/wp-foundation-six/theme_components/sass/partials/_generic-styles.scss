@@ -18,24 +18,6 @@ body {
 	}
 }
 
-/* Skip to content link (Accessibility) */
-.skip-link {
-	a {
-		height: 1px;
-		left: -10000px;
-		overflow: hidden;
-		position: absolute;
-		top: auto;
-		width: 1px;
-
-		&:focus {
-			height: auto;
-			position: static;
-			width: auto;
-		}
-	}
-}
-
 .hidden {
 	display: none;
 }
