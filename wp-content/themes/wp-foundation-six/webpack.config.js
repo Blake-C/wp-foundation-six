@@ -54,6 +54,8 @@ const webpackConfig = validaate({
 	/**
 	 * Plugins
 	 *
+	 * List of Modernizr feature detects can be found here:
+	 * @link https://github.com/Modernizr/Modernizr/blob/master/lib/config-all.json
 	 */
 	plugins: [
 		new webpack.optimize.DedupePlugin(),
