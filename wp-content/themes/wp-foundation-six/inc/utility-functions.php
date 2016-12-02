@@ -97,7 +97,7 @@ add_filter( 'clean_url', 'wp_foundation_six_add_async', 11, 1 );
 if ( !function_exists('wp_foundation_six_dev_helper') ){
 	function wp_foundation_six_dev_helper( $file ) {
 		if ( is_super_admin() ) {
-			echo '<div id="placeHolderPosition" class="placeHolderPosition">' . $file . '.php</div>';
+			echo '<div class="placeHolderPosition" style="top: 0; background: rgb(236, 234, 234); color: rgba(0, 0, 0, 0.4); font-size: 12px; padding: 5px 25px; display: none;">' . $file . '.php</div>';
 		}
 	}
 }
