@@ -37,14 +37,16 @@ const webpackConfig = validaate({
 			{
 				test: /\.jsx?$/,
 				loader: 'eslint-loader',
+				// I do not want to lint assets from npm and bower
 				exclude: /(node_modules|bower_components')/
 			}
 		],
 		loaders: [
 			{
 				test: /\.jsx?$/,
-				loader: 'babel',
-				exclude: /(node_modules|bower_components)/
+				loader: 'babel'
+				// I want to transpile assets from npm and bower
+				// exclude: /(node_modules|bower_components)/
 			}
 		]
 	},

@@ -40,5 +40,8 @@
     "webpack-stream": "^3.2.0",
     "webpack-validator": "^2.2.7",
     "yargs": "^4.3.2"
+  },
+  "dependencies": {
+    "foundation-sites": "^6.2.4"
   }
 }
