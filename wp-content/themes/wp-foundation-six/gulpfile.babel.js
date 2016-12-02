@@ -5,7 +5,6 @@ import del from 'del';
 import yargs from 'yargs';
 import pngquant from 'imagemin-pngquant';
 import webpackConfig from "./webpack.config.js";
-import scss from 'postcss-scss';
 
 const $ = gulpLoadPlugins({pattern: ["*"]});
 const reload = browserSync.reload;
@@ -39,7 +38,7 @@ gulp.task('styles', ['lint:sass'], () => {
 				'ios >= 7'
 			]}),
 			$.cssnano()
-		], {syntax: scss}))
+		]))
 		.pipe($.rename({ suffix: '.min' }))
 		.pipe($.sourcemaps.write('.'))
 		.pipe($.size({
