@@ -16,7 +16,8 @@
 
 	@if not $flex {
 		@include foundation-grid;
-	} @else {
+	}
+	@else {
 		@include foundation-flex-grid;
 	}
 

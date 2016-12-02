@@ -13,13 +13,13 @@ body {
 	z-index: 2000000;
 
 	&:hover,
-	&:focus{
+	&:focus {
 		color: $white;
 	}
 }
 
 /* Skip to content link (Accessibility) */
-#skip-link {
+.skip-link {
 	a {
 		height: 1px;
 		left: -10000px;
@@ -28,7 +28,7 @@ body {
 		top: auto;
 		width: 1px;
 
-		&:focus{
+		&:focus {
 			height: auto;
 			position: static;
 			width: auto;

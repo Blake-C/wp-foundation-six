@@ -21,7 +21,7 @@ const dir = {
 // BrowserSync Dev URL to reload
 const proxy_target = 'wp-foundation-six';
 
-gulp.task('styles', () => {
+gulp.task('styles', ['lint:sass'], () => {
 	return gulp.src(`${dir.theme_components}/sass/**/*.scss`)
 		.pipe($.plumber())
 		.pipe($.sourcemaps.init())
@@ -44,6 +44,16 @@ gulp.task('styles', () => {
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/css`), gulp.dest(`${dir.dev}/css`)))
 		.pipe($.if(!argv.build, browserSync.stream({match: '**/*.css'})))
 		.pipe($.notify({ message: 'Styles Task Completed.', onLast: true }));
+});
+
+gulp.task('lint:sass', function() {
+  return gulp.src(`${dir.theme_components}/sass/**/*.scss`)
+	.pipe($.plumber())
+	.pipe($.sassLint({
+		config: './.sass-lint.yml'
+	}))
+	.pipe($.sassLint.format())
+	.pipe($.sassLint.failOnError())
 });
 
 gulp.task('scripts', () => {
