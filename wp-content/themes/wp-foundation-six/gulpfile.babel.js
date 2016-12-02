@@ -5,6 +5,7 @@ import del from 'del';
 import yargs from 'yargs';
 import pngquant from 'imagemin-pngquant';
 import webpackConfig from "./webpack.config.js";
+import scss from 'postcss-scss';
 
 const $ = gulpLoadPlugins({pattern: ["*"]});
 const reload = browserSync.reload;
@@ -27,18 +28,18 @@ gulp.task('styles', ['lint:sass'], () => {
 		.pipe($.sourcemaps.init())
 		.pipe($.sass.sync({
 			outputStyle: 'compact',
-			precision: 10,
-			includePaths: ['.']
-		})
-		.on('error', $.sass.logError))
+			precision: 10
+		}).on('error', $.sass.logError))
 		.on('error', $.notify.onError({ message: 'Error: <%= error.message %>', onLast: true }))
-		.pipe($.autoprefixer({browsers: [
-			'last 3 versions',
-			'ie >= 8',
-			'Android >= 2.3',
-			'ios >= 7'
-		]}))
-		.pipe($.cssnano({ autoprefixer: false }))
+		.pipe($.postcss([
+			$.autoprefixer({ browsers: [
+				'last 3 versions',
+				'ie >= 8',
+				'Android >= 2.3',
+				'ios >= 7'
+			]}),
+			$.cssnano()
+		], {syntax: scss}))
 		.pipe($.rename({ suffix: '.min' }))
 		.pipe($.sourcemaps.write('.'))
 		.pipe($.size({
@@ -70,7 +71,7 @@ gulp.task('scripts', () => {
 		.pipe($.notify({ message: 'Scripts Task Completed.', onLast: true }));
 });
 
-gulp.task('scripts:vendors', ['scripts:ie', 'scripts:jquery-legacy', 'scripts:jquery', 'scripts:foundation', 'scripts:rem']);
+gulp.task('scripts:vendors', ['scripts:ie', 'scripts:jquery-legacy', 'scripts:jquery', 'scripts:rem']);
 
 gulp.task('scripts:ie', () => {
 	// Combines all the IE8 fallback scripts to be called in footer
@@ -119,18 +120,6 @@ gulp.task('scripts:rem', () => {
 		.pipe($.rename({ suffix: '.min' }))
 		.pipe($.sourcemaps.write('.'))
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js/vendors`), gulp.dest(`${dir.dev}/js/vendors`)));
-});
-
-gulp.task('scripts:foundation', () => {
-	// Sets up foundation scripts for WordPress to use in functions.php
-	return gulp.src('./bower_components/foundation-sites/js/**/*')
-		.pipe($.plumber())
-		.pipe($.sourcemaps.init())
-		.pipe($.babel())
-		.pipe($.if(argv.build, $.uglify()))
-		.pipe($.rename({ suffix: '.min' }))
-		.pipe($.sourcemaps.write('.'))
-		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js/vendors/foundation`), gulp.dest(`${dir.dev}/js/vendors/foundation`)));
 });
 
 gulp.task('images', () => {
