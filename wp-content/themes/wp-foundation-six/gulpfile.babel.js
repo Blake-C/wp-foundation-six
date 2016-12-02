@@ -106,7 +106,7 @@ gulp.task('scripts:jquery', () => {
 });
 
 gulp.task('scripts:rem', () => {
-	// Sets up modern jQuery for WordPress to use in functions.php
+	// Sets up rem unit polyfill for WordPress to use in functions.php
 	return gulp.src('./bower_components/REM-unit-polyfill/js/rem.js')
 		.pipe($.plumber())
 		.pipe($.sourcemaps.init())
