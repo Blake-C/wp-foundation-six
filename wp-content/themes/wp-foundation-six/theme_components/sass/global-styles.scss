@@ -74,20 +74,17 @@
  */
 @include foundation-everything($flex: false);
 
-@import
-	'helpers/fonts',
-	'helpers/mixins',
-	'helpers/functions',
-	'helpers/helpers';
+@import 'helpers/fonts';
+@import 'helpers/mixins';
+@import 'helpers/functions';
+@import 'helpers/helpers';
 
-@import
-	'layout/header',
-	'layout/body',
-	'layout/sidebar',
-	'layout/footer',
-	'layout/comments';
+@import 'layout/header';
+@import 'layout/body';
+@import 'layout/sidebar';
+@import 'layout/footer';
+@import 'layout/comments';
 
-@import
-	'partials/generic-styles',
-	'partials/ie',
-	'partials/shame';
+@import 'partials/generic-styles';
+@import 'partials/ie';
+@import 'partials/shame';
