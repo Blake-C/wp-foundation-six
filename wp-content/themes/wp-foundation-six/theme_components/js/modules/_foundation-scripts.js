@@ -1,5 +1,10 @@
-/*************** Foundation Scripts ***************/
+import '../../../node_modules/foundation-sites/js/foundation.core.js';
+import '../../../node_modules/foundation-sites/js/foundation.util.mediaQuery.js';
+import '../../../node_modules/foundation-sites/js/foundation.responsiveToggle.js';
+
 /**
+ * Notes:
+ *
  * Read the foundation docs on what to include for different
  * foundation components
  *
@@ -15,9 +20,6 @@
  *
  * @link https://webpack.github.io/docs/code-splitting.html
  */
-import '../../../node_modules/foundation-sites/js/foundation.core.js';
-import '../../../node_modules/foundation-sites/js/foundation.util.mediaQuery.js';
-import '../../../node_modules/foundation-sites/js/foundation.responsiveToggle.js';
 
 (function($){
 	$(document).foundation();
