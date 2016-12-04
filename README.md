@@ -124,6 +124,20 @@ Be sure to use ```../``` as many times as you nest directories within the theme_
 
 If you need to add a new script file to be exported as a new bundle then create your file within the theme_components/js directory and add the name of your file to the scripts-list.js file within that same directory. This file has a const that is imported into the Webpack config as an object of exported bundles.
 
+## Gulp Tasks
+
+To compile the theme code you can run the ```gulp``` task. This will build the themes JavaScript, SCSS, and Images. The default ```gulp``` task does not persist and will stop once done.
+
+To watch the files for changes as you develope you can run the ```gulp watch``` task. 
+
+If you have a local development environment setup you can add your local domain as the proxy_target const at the top of the gulpfile.babel.js file. Then you can run ```gulp serve``` to start up the local dev server to have autoreload and style injection when developing in the browser.
+
+When you are done building your theme you can run the ```gulp --build``` task. This will create a directory next to the build theme called ```wp-foundation-six-build``` this will only contain the files that should be added to the server. The node_modules, theme_components, and any dot files will that are only needed for development will not be included within the built theme. Once you upload the built theme to the server you can remove the -build from the end of the theme name so that you can FTP into it can you local theme so make updates.
+
+If you want to clean up your development environment of built assets just run the ```gulp clean``` task to delete the built theme, and assets directory. 
+
+There are a number of sub tasks that get initiated with the main tasks that can be run individually as needed. All tasks can be found in the gulpfile.babel.js file.
+
 ## Unit Test Data
 
 If you need unit test data to work with you can download it from here:
