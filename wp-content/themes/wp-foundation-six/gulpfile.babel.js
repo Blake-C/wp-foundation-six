@@ -52,13 +52,13 @@ gulp.task('styles', ['lint:sass'], () => {
 });
 
 gulp.task('lint:sass', function() {
-  return gulp.src(`${dir.theme_components}/sass/**/*.scss`)
-	.pipe($.plumber())
-	.pipe($.sassLint({
-		config: './.sass-lint.yml'
-	}))
-	.pipe($.sassLint.format())
-	.pipe($.sassLint.failOnError())
+	return gulp.src(`${dir.theme_components}/sass/**/*.scss`)
+		.pipe($.plumber())
+		.pipe($.sassLint({
+			config: './.sass-lint.yml'
+		}))
+		.pipe($.sassLint.format())
+		.pipe($.sassLint.failOnError())
 });
 
 gulp.task('scripts', () => {
@@ -70,14 +70,14 @@ gulp.task('scripts', () => {
 		.pipe($.notify({ message: 'Scripts Task Completed.', onLast: true }));
 });
 
-gulp.task('scripts:vendors', ['scripts:ie', 'scripts:jquery-legacy', 'scripts:jquery', 'scripts:rem']);
+gulp.task('scripts:vendors', ['scripts:ie', 'scripts:jquery', 'scripts:rem']);
 
 gulp.task('scripts:ie', () => {
 	// Combines all the IE8 fallback scripts to be called in footer
 	return gulp.src([
-			'./bower_components/nwmatcher/src/nwmatcher.js',
-			'./bower_components/selectivizr/selectivizr.js',
-			'./bower_components/respond/dest/respond.src.js'
+			'./node_modules/nwmatcher/src/nwmatcher.js',
+			'./theme_components/js/vendors-legacy/selectivizr.js', // not on npm, saved in project for now
+			'./node_modules/Respond.js/dest/respond.src.js'
 		])
 		.pipe($.plumber())
 		.pipe($.sourcemaps.init())
@@ -88,20 +88,13 @@ gulp.task('scripts:ie', () => {
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js/vendors`), gulp.dest(`${dir.dev}/js/vendors`)));
 });
 
-gulp.task('scripts:jquery-legacy', () => {
-	// Sets up legacy jQuery for WordPress to use in functions.php
-	return gulp.src('./bower_components/jquery-legacy/dist/jquery.js')
-		.pipe($.plumber())
-		.pipe($.sourcemaps.init())
-		.pipe($.uglify())
-		.pipe($.rename({ suffix: '.min' }))
-		.pipe($.sourcemaps.write('.'))
-		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js/vendors/jquery-legacy`), gulp.dest(`${dir.dev}/js/vendors/jquery-legacy`)));
-});
+/**
+ * Removed jquery legacy reference. The only legacy jquery will be referenced from a CDN sourse.
+ */
 
 gulp.task('scripts:jquery', () => {
 	// Sets up modern jQuery for WordPress to use in functions.php
-	return gulp.src('./bower_components/jquery/dist/jquery.js')
+	return gulp.src('./node_modules/jquery/dist/jquery.js')
 		.pipe($.plumber())
 		.pipe($.sourcemaps.init())
 		.pipe($.uglify())
@@ -112,7 +105,7 @@ gulp.task('scripts:jquery', () => {
 
 gulp.task('scripts:rem', () => {
 	// Sets up rem unit polyfill for WordPress to use in functions.php
-	return gulp.src('./bower_components/REM-unit-polyfill/js/rem.js')
+	return gulp.src('./node_modules/rem/js/rem.js')
 		.pipe($.plumber())
 		.pipe($.sourcemaps.init())
 		.pipe($.if(argv.build, $.uglify()))

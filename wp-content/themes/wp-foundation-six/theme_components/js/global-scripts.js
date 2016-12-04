@@ -1,4 +1,4 @@
-import '../../bower_components/jquery-migrate/jquery-migrate.js';
+import '../../node_modules/jquery-migrate/dist/jquery-migrate.js';
 import './modules/_skip-link-focus-fix.js';
 
 /*************** Foundation Scripts ***************/
