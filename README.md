@@ -84,17 +84,17 @@ composer update
 
 The default packages are installed using the most recent versions, you can change this if needed by uninstalling and reinstalled the package to set the version number. Otherwise you can open up the composer.json file and manually set the version number needed.
 
-If you need to include premium plugins in your project that are not listed in the public WordPress plugin directory, then you can either host your own repo of premium plugins and include the path in the composer.json file as long as the project is private on GitHub or wherever you keep your shared code. Alternatively, you can just commit the premium plugin into the project, once again only if your project is private. If your project is not private to your team then do not keep premium plugins pathed or within the project. You will need to find a different means of storing/sharing premium plugins with your team. You will be subject to the terms and conditions of the premium plugins and your use of them.
+If you need to include premium plugins in your project that are not listed in the public WordPress plugin directory, then you can either host your own repo of premium plugins and include the path in the composer.json file as long as the project is private on GitHub or wherever you keep your shared code. Alternatively, you can just commit the premium plugins into the project, once again only if your project is private. If your project is not private to your team then do not keep premium plugins pathed or within the project. You will need to find a different means of storing/sharing premium plugins with your team. You will be subject to the terms and conditions of the premium plugins and your use of them.
 
 ## Working with JavaScript
 
 This section is only relevant if you intend to use the built in wp-foundation-six base theme.
 
-The base theme included in this project comes with the [Gulp](http://gulpjs.com/) task manager that will run a [Webpack](https://webpack.github.io/) task that will use [Babel](https://babeljs.io/) to transpile [ES2015](https://babeljs.io/docs/learn-es2015/) code. This means you can use the ES2015 ```import``` way of including modules into your project. 
+The base theme includes the [Gulp](http://gulpjs.com/) task manager that will run a [Webpack](https://webpack.github.io/) task that will use [Babel](https://babeljs.io/) to transpile [ES6/ES2015](https://babeljs.io/docs/learn-es2015/) into ES5. This means you can use ES2015 ```import``` to include modules into your project. 
 
-jQuery has been set as a global script because of the use of third party WordPress plugins. Since we never know when a required WordPress plugin will need the use of jQuery we need to leave it in the global scope. When using jQuery within your custom scripts you do not need to ```import``` it in. You can use the ```$``` as you normally would. 
+jQuery has been set as a global script for third party WordPress plugins. Since we never know when a WordPress plugin will require jQuery we need to leave it in the global/window scope. When using jQuery within your custom scripts you do not need to ```import``` it in, you can use the ```$``` as you normally would. 
 
-The scripts that run through the Gulp task will also be subject to [ESLint](http://eslint.org/) for code quality control. This is to keep the project scripts within a set standard for the development team and to catch any errors before the projects goes to production.
+The scripts that run through the Gulp tasks will also be subject to [ESLint](http://eslint.org/) for code quality control. This is to keep the project scripts within a set standard for the development team and to catch any errors before the projects goes to production.
 
 To require a new JavaScript package use [NPM](https://www.npmjs.com/) to install it:
 
@@ -102,13 +102,13 @@ To require a new JavaScript package use [NPM](https://www.npmjs.com/) to install
 npm install name-of-package --save
 ```
 
-Or if you have [Yarn](https://www.npmjs.com/package/yarn) install:
+Or if you have [Yarn](https://www.npmjs.com/package/yarn) installed:
 
 ```
 yarn add name-of-package
 ```
 
-If the NPM package uses ES2015 modular loaders then you can import the package using the name of the package. Otherwise you will need to path your import to the desired scripts file from within the node_modules directory.
+If the NPM package uses ES2015 module loaders then you can import the package using the name of the package. Otherwise you will need to path your import to the desired script file from within the node_modules directory.
 
 ```
 import custom-name from name-of-package
@@ -124,19 +124,26 @@ Be sure to use ```../``` as many times as you nest directories within the theme_
 
 If you need to add a new script file to be exported as a new bundle then create your file within the theme_components/js directory and add the name of your file to the scripts-list.js file within that same directory. This file has a const that is imported into the Webpack config as an object of exported bundles.
 
+```
+const scripts_list = {
+	'global-scripts': './theme_components/js/global-scripts.js',
+	'my-new-scripts': './theme_components/js/my-new-scripts.js'
+}
+```
+
 ## Gulp Tasks
 
 To compile the theme code you can run the ```gulp``` task. This will build the themes JavaScript, SCSS, and Images. The default ```gulp``` task does not persist and will stop once done.
 
 To watch the files for changes as you develope you can run the ```gulp watch``` task. 
 
-If you have a local development environment setup you can add your local domain as the proxy_target const at the top of the gulpfile.babel.js file. Then you can run ```gulp serve``` to start up the local dev server to have autoreload and style injection when developing in the browser.
+If you have a local development environment setup you can add your local domain as the proxy_target const at the top of the ```gulpfile.babel.js``` file. Then you can run ```gulp serve``` to start up the local dev server to have autoreload and style injection when developing in the browser.
 
-When you are done building your theme you can run the ```gulp --build``` task. This will create a directory next to the build theme called ```wp-foundation-six-build``` this will only contain the files that should be added to the server. The node_modules, theme_components, and any dot files will that are only needed for development will not be included within the built theme. Once you upload the built theme to the server you can remove the -build from the end of the theme name so that you can FTP into it can you local theme so make updates.
+When you are done building your theme you can run the ```gulp --build``` task. This will create a directory next to the development theme called ```wp-foundation-six-build``` this will only contain the files that should be added to the server. The node_modules, theme_components, and any dot files that are needed for development will not be included within the built theme. Once you upload the built theme to the server you can remove the -build from the end of the theme name so that you can FTP into it and the development version to make updates.
 
 If you want to clean up your development environment of built assets just run the ```gulp clean``` task to delete the built theme, and assets directory. 
 
-There are a number of sub tasks that get initiated with the main tasks that can be run individually as needed. All tasks can be found in the gulpfile.babel.js file.
+There are a number of sub tasks that get initiated with the main tasks that can be run individually as needed. All tasks can be found in the ```gulpfile.babel.js``` file.
 
 ## Unit Test Data
 
