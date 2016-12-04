@@ -33,6 +33,14 @@ rm -rf .git
 git init
 ```
 
+Commit the inital state of the project and push to the remote repo if one exists.
+
+```
+git add .
+git commit -m "Initial Commit"
+git push origin master
+```
+
 Now you can run ```composer install``` within your name-of-your-project directory. This will install WordPress into the wp directory and install plugins into the wp-content/plugins directory.
 
 The following default plugins will be installed:
@@ -75,6 +83,8 @@ composer update
 ```
 
 The default packages are installed using the most recent versions, you can change this if needed by uninstalling and reinstalled the package to set the version number. Otherwise you can open up the composer.json file and manually set the version number needed.
+
+If you need to include premium plugins in your project that are not listed in the public WordPress plugin directory, then you can either host your own repo of premium plugins and include the path in the composer.json file as long as the project is private on GitHub or wherever you keep your shared code. Alternatively, you can just commit the premium plugin into the project, once again only if your project is private. If your project is not private to your team then do not keep premium plugins pathed or within the project. You will need to find a different means of storing/sharing premium plugins with your team. You will be subject to the terms and conditions of the premium plugins and your use of them.
 
 ## Working with JavaScript
 
