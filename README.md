@@ -1,7 +1,6 @@
 # WP Foundation Six Developer Framework
 
-The WordPress Foundation 6 Developer Framework is meant to be a starting point for developers to create projects without having third party code/modules within their git repo. This project uses composer to install WordPress and default plugins as project dependencies. The base theme uses NPM and Bower to install dependencies, and Gulp as the build system. Gulp also uses [Babel](http://babeljs.io/) and [Webpack](https://webpack.github.io/) to transpile ES6 to ES5 so that you can use the latest [ECMAScript](https://en.wikipedia.org/wiki/ECMAScript) syntax.
-
+The WordPress Foundation 6 Developer Framework is meant to be a starting point for developers to create projects without having third party code/modules within their git repo. This project uses composer to install WordPress and default plugins as project dependencies. The base theme uses NPM to install dependencies, and Gulp as the build system. Gulp also uses [Babel](http://babeljs.io/) and [Webpack](https://webpack.github.io/) to transpile ES6 to ES5 so that you can use the latest [ECMAScript](https://en.wikipedia.org/wiki/ECMAScript) syntax.
 
 ## Requirements
 
@@ -15,6 +14,8 @@ The WordPress Foundation 6 Developer Framework is meant to be a starting point f
 	- [WAMP](http://www.wampserver.com/en/)
 	- [AMPPS](http://www.ampps.com/)
 	- [Vagrant](https://www.vagrantup.com/)
+	- [Docker](https://www.docker.com/)
+		- In the future I plan on working Docker into this project so that we have a portable LAMP stack
 
 ## Installation
 
@@ -41,7 +42,77 @@ The following default plugins will be installed:
 - regenerate-thumbnails
 - akismet
 
-Once composer has completed installing WordPress and the default Plugins, change directories to ```cd wp-content/themes/wp-foundation-six``` then you can run ```npm install```. This will install the node modules and bower components. When npm install is complete a post install script in the package.json file will automatically run bower install for you.
+Once composer has completed installing WordPress and the default Plugins, change directories to ```cd wp-content/themes/wp-foundation-six``` then you can run ```npm install```. This will install the node modules.
+
+## Add/Remove composer packages/modules
+
+To install new WordPress plugins you can use composer to install them so that when another developer downloods the project and runs the composer install command they will have the same WordPress plugins to match your own development environment.
+
+Install existing packages in the composer.json file:
+
+```
+composer install
+```
+
+Add new composer package:
+
+```
+composer require wpackagist-plugin/name-of-plugin
+```
+
+All public WordPress plugins that are listed in the WordPress plugin directory can be installed using composer with the vendor name: ```wpackagist-plugin```. For a full list of public WordPress plugins that can be installed using composer please refer to [wpackagist.org](https://wpackagist.org/).
+
+Remove composer package:
+
+```
+composer remove wpackagist-plugin/name-of-plugin
+```
+
+To update any composer packages that are set to a specific version use:
+
+```
+composer update
+```
+
+The default packages are installed using the most recent versions, you can change this if needed by uninstalling and reinstalled the package to set the version number. Otherwise you can open up the composer.json file and manually set the version number needed.
+
+## Working with JavaScript
+
+This section is only relevant if you intend to use the built in wp-foundation-six base theme.
+
+The base theme included in this project comes with the [Gulp](http://gulpjs.com/) task manager that will run a [Webpack](https://webpack.github.io/) task that will use [Babel](https://babeljs.io/) to transpile [ES2015](https://babeljs.io/docs/learn-es2015/) code. This means you can use the ES2015 ```import``` way of including modules into your project. 
+
+jQuery has been set as a global script because of the use of third party WordPress plugins. Since we never know when a required WordPress plugin will need the use of jQuery we need to leave it in the global scope. When using jQuery within your custom scripts you do not need to ```import``` it in. You can use the ```$``` as you normally would. 
+
+The scripts that run through the Gulp task will also be subject to [ESLint](http://eslint.org/) for code quality control. This is to keep the project scripts within a set standard for the development team and to catch any errors before the projects goes to production.
+
+To require a new JavaScript package use [NPM](https://www.npmjs.com/) to install it:
+
+```
+npm install name-of-package --save
+```
+
+Or if you have [Yarn](https://www.npmjs.com/package/yarn) install:
+
+```
+yarn add name-of-package
+```
+
+If the NPM package uses ES2015 modular loaders then you can import the package using the name of the package. Otherwise you will need to path your import to the desired scripts file from within the node_modules directory.
+
+```
+import custom-name from name-of-package
+```
+
+or 
+
+```
+import '../../../node_modules/name-of-package/js/index.js';
+```
+
+Be sure to use ```../``` as many times as you nest directories within the theme_components/js directory.
+
+If you need to add a new script file to be exported as a new bundle then create your file within the theme_components/js directory and add the name of your file to the scripts-list.js file within that same directory. This file has a const that is imported into the Webpack config as an object of exported bundles.
 
 ## Unit Test Data
 
