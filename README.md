@@ -1,8 +1,8 @@
 # WP Foundation Six Developer Framework
 
-The WordPress Foundation 6 Developer Framework is meant to be a starting point for developers to create projects without having third party code/modules within their git repo. This project uses composer to install WordPress and default plugins as project dependencies. The base theme uses NPM to install dependencies, and Gulp as the build system. Gulp also uses [Babel](http://babeljs.io/) and [Webpack](https://webpack.github.io/) to transpile ES6 to ES5 so that you can use the latest [ECMAScript](https://en.wikipedia.org/wiki/ECMAScript) syntax.
+The WordPress Foundation 6 Developer Framework is meant to be a starting point for developers to create projects without having third party code/modules within their git repo. This project uses [Composer](https://getcomposer.org/) to install [WordPress](https://wordpress.org/) and default plugins as project dependencies. The base theme uses [NPM](https://www.npmjs.com/) to install dependencies, and [Gulp](http://gulpjs.com/) as the build system. Gulp also uses [Babel](http://babeljs.io/) and [Webpack](https://webpack.github.io/) to transpile ES6/ES2015 to ES5 so that you can use the latest [ECMAScript](https://en.wikipedia.org/wiki/ECMAScript) syntax.
 
-## Requirements
+## Global Requirements
 
 - [Composer](https://getcomposer.org/)
 - [Node](https://nodejs.org/)
@@ -44,13 +44,13 @@ git push origin master
 Now you can run ```composer install``` within your name-of-your-project directory. This will install WordPress into the wp directory and install plugins into the wp-content/plugins directory.
 
 The following default plugins will be installed:
-- wordpress-seo
-- google-analytics-for-wordpress
-- redirection
-- regenerate-thumbnails
-- akismet
+- [wordpress-seo](https://wordpress.org/plugins/wordpress-seo/)
+- [google-analytics-for-wordpress](https://wordpress.org/plugins/google-analytics-for-wordpress/)
+- [redirection](https://wordpress.org/plugins/redirection/)
+- [regenerate-thumbnails](https://wordpress.org/plugins/regenerate-thumbnails/)
+- [akismet](https://wordpress.org/plugins/akismet/)
 
-Once composer has completed installing WordPress and the default Plugins, change directories to ```cd wp-content/themes/wp-foundation-six``` then you can run ```npm install```. This will install the node modules.
+Once composer has completed installing WordPress and the default Plugins, change directories to ```cd wp-content/themes/wp-foundation-six``` then you can run ```npm install```. This will install the node modules so that Gulp can run its tasks. Jump down to the Gulp Tasks section to learn more about the tasks.
 
 ## Add/Remove composer packages/modules
 
