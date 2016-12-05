@@ -54,7 +54,7 @@ Once composer has completed installing WordPress and the default Plugins, change
 
 ## Add/Remove composer packages/modules
 
-To install new WordPress plugins you can use composer to install them so that when another developer downloods the project and runs the composer install command they will have the same WordPress plugins to match your own development environment.
+To install new WordPress plugins you can use composer to install them so that when another developer downloads the project and runs the composer install command they will have the same WordPress plugins to match your own development environment.
 
 Install existing packages in the composer.json file:
 
