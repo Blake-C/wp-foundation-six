@@ -25,6 +25,7 @@ gulp.task('styles', ['lint:sass'], () => {
 	return gulp.src(`${dir.theme_components}/sass/**/*.scss`)
 		.pipe($.plumber())
 		.pipe($.sourcemaps.init())
+		.pipe($.sassGlob())
 		.pipe($.sass.sync({
 			outputStyle: 'compact',
 			precision: 10
