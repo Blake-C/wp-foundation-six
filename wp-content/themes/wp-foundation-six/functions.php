@@ -127,7 +127,14 @@ if ( !function_exists( 'wp_foundation_six_scripts' ) ) {
 
 		/* Import Scripts (Keep to a minimum or import into scripts file) */
 		wp_enqueue_script( 'wp-foundation-six-global', get_template_directory_uri() . '/assets/js/bundle.global-scripts.js', array('jquery'), null, true );
-		wp_enqueue_script( 'wp-foundation-six-modernizr', get_template_directory_uri() . '/assets/js/vendors/bundle.modernizr.js', null, null, true );
+
+
+		/* If IE8 and lower load Modernizr in the header */
+		if( !preg_match('/(?i)msie [6-8]/',$_SERVER['HTTP_USER_AGENT']) ) {
+			wp_enqueue_script( 'wp-foundation-six-modernizr', get_template_directory_uri() . '/assets/js/vendors/bundle.modernizr.js', null, null, true );
+		} else {
+			wp_enqueue_script( 'wp-foundation-six-modernizr', get_template_directory_uri() . '/assets/js/vendors/bundle.modernizr.js', null, null, false );
+		}
 
 
 		/**

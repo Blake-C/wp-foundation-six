@@ -60,7 +60,7 @@ const webpackConfig = validaate({
 		new webpack.optimize.OccurenceOrderPlugin(),
 		new webpack.optimize.UglifyJsPlugin({
 			compress: {
-				screw_ie8: true,
+				screw_ie8: false,
 				warnings: false
 			}
 		}),
@@ -72,14 +72,17 @@ const webpackConfig = validaate({
 					beautify: false
 				}
 			},
+			'options': [
+				'setClasses',
+				'html5shiv',
+				'html5printshiv'
+			],
 			'feature-detects': [
 				'svg',
 				'css/transforms',
 				'css/transforms3d',
-				'css/transitions'
-			],
-			'options': [
-				'setClasses'
+				'css/transitions',
+				'ie8compat'
 			]
 		})
 	]
