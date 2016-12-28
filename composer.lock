@@ -116,16 +116,16 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.6.1",
+            "version": "4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "aca8da84b4a699b16b8bcc96d2bc794a4c7b5ae3"
+                "reference": "b327faa6feea3a4058178dee7ac8b512bd957e92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/aca8da84b4a699b16b8bcc96d2bc794a4c7b5ae3",
-                "reference": "aca8da84b4a699b16b8bcc96d2bc794a4c7b5ae3",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/b327faa6feea3a4058178dee7ac8b512bd957e92",
+                "reference": "b327faa6feea3a4058178dee7ac8b512bd957e92",
                 "shasum": ""
             },
             "require": {
@@ -149,7 +149,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2016-09-07 15:01:47"
+            "time": "2016-12-06 18:46:46"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -210,7 +210,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/akismet.3.2.zip",
-                "reference": null,
+                "reference": "tags/3.2",
                 "shasum": null
             },
             "require": {
@@ -230,7 +230,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.5.4.zip",
-                "reference": null,
+                "reference": "tags/5.5.4",
                 "shasum": null
             },
             "require": {
@@ -241,16 +241,16 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "2.4.5",
+            "version": "2.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/2.4.5"
+                "reference": "tags/2.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.2.4.5.zip",
-                "reference": "tags/2.4.5",
+                "url": "https://downloads.wordpress.org/plugin/redirection.2.5.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -281,15 +281,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "3.9",
+            "version": "4.0.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/3.9"
+                "reference": "tags/4.0.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.3.9.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.0.2.zip",
                 "reference": null,
                 "shasum": null
             },
