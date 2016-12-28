@@ -26,11 +26,16 @@ if ( ! function_exists( 'wp_foundation_six_entry_footer' ) ) {
 			echo '</span>';
 		}
 
+		/**
+		 * @link: https://codex.wordpress.org/Function_Reference/edit_post_link
+		 */
 		edit_post_link(
 			/* translators: %s: Name of current post */
 			sprintf( 'Edit %s', the_title( '<span class="screen-reader-text">"', '"</span>', false ) ),
 			'<span class="edit-link">',
-			'</span>'
+			'</span>',
+			'', // ID
+			'button' // Class
 		);
 	}
 }
