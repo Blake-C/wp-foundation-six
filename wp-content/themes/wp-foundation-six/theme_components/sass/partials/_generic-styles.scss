@@ -61,6 +61,7 @@ pre {
 	font-family: $code-font-family;
 	font-weight: $code-font-weight;
 	padding: $code-padding;
+	white-space: pre-wrap;
 }
 
 [type='text'],

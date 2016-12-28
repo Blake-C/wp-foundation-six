@@ -8,7 +8,7 @@
  */
 if ( !function_exists('wp_foundation_six_embed_video_html') ){
 	function wp_foundation_six_embed_video_html( $html ) {
-	    return '<div class="flex-video">' . $html . '</div>';
+	    return '<div class="responsive-embed">' . $html . '</div>';
 	}
 }
 add_filter( 'embed_oembed_html', 'wp_foundation_six_embed_video_html', 10, 3 );

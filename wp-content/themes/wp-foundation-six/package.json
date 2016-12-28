@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "Respond.js": "https://github.com/scottjehl/Respond/tarball/master",
-    "foundation-sites": "^6.2.4",
+    "foundation-sites": "^6.3.0",
     "jquery": "^3.1.1",
     "jquery-match-height": "^0.7.0",
     "jquery-migrate": "^3.0.0",
