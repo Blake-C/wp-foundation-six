@@ -21,19 +21,25 @@ const dir = {
 // BrowserSync Dev URL to reload
 const proxy_target = 'wp-foundation-six';
 
-gulp.task('styles', () => {
+gulp.task('styles', ['lint:sass'], () => {
 	return gulp.src(`${dir.theme_components}/sass/**/*.scss`)
 		.pipe($.plumber())
 		.pipe($.sourcemaps.init())
+		.pipe($.sassGlob())
 		.pipe($.sass.sync({
 			outputStyle: 'compact',
-			precision: 10,
-			includePaths: ['.']
-		})
-		.on('error', $.sass.logError))
+			precision: 10
+		}).on('error', $.sass.logError))
 		.on('error', $.notify.onError({ message: 'Error: <%= error.message %>', onLast: true }))
-		.pipe($.autoprefixer({browsers: ['last 4 versions', 'Firefox ESR', 'IE 8-11']}))
-		.pipe($.cssnano({ autoprefixer: false }))
+		.pipe($.postcss([
+			$.autoprefixer({ browsers: [
+				'last 3 versions',
+				'ie >= 8',
+				'Android >= 2.3',
+				'ios >= 7'
+			]}),
+			$.cssnano()
+		]))
 		.pipe($.rename({ suffix: '.min' }))
 		.pipe($.sourcemaps.write('.'))
 		.pipe($.size({
@@ -46,6 +52,16 @@ gulp.task('styles', () => {
 		.pipe($.notify({ message: 'Styles Task Completed.', onLast: true }));
 });
 
+gulp.task('lint:sass', function() {
+	return gulp.src(`${dir.theme_components}/sass/**/*.scss`)
+		.pipe($.plumber())
+		.pipe($.sassLint({
+			config: './.sass-lint.yml'
+		}))
+		.pipe($.sassLint.format())
+		.pipe($.sassLint.failOnError())
+});
+
 gulp.task('scripts', () => {
 	return gulp.src([`${dir.theme_components}/js/global-scripts.js`])
 		.pipe($.plumber())
@@ -55,14 +71,14 @@ gulp.task('scripts', () => {
 		.pipe($.notify({ message: 'Scripts Task Completed.', onLast: true }));
 });
 
-gulp.task('scripts:vendors', ['scripts:ie', 'scripts:jquery-legacy', 'scripts:jquery', 'scripts:foundation', 'scripts:rem']);
+gulp.task('scripts:vendors', ['scripts:ie', 'scripts:jquery', 'scripts:rem']);
 
 gulp.task('scripts:ie', () => {
 	// Combines all the IE8 fallback scripts to be called in footer
 	return gulp.src([
-			'./bower_components/nwmatcher/src/nwmatcher.js',
-			'./bower_components/selectivizr/selectivizr.js',
-			'./bower_components/respond/dest/respond.src.js'
+			'./node_modules/nwmatcher/src/nwmatcher.js',
+			'./theme_components/js/vendors-legacy/selectivizr.js', // not on npm, saved in project for now
+			'./node_modules/Respond.js/dest/respond.src.js'
 		])
 		.pipe($.plumber())
 		.pipe($.sourcemaps.init())
@@ -73,20 +89,13 @@ gulp.task('scripts:ie', () => {
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js/vendors`), gulp.dest(`${dir.dev}/js/vendors`)));
 });
 
-gulp.task('scripts:jquery-legacy', () => {
-	// Sets up legacy jQuery for WordPress to use in functions.php
-	return gulp.src('./bower_components/jquery-legacy/dist/jquery.js')
-		.pipe($.plumber())
-		.pipe($.sourcemaps.init())
-		.pipe($.uglify())
-		.pipe($.rename({ suffix: '.min' }))
-		.pipe($.sourcemaps.write('.'))
-		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js/vendors/jquery-legacy`), gulp.dest(`${dir.dev}/js/vendors/jquery-legacy`)));
-});
+/**
+ * Removed jquery legacy reference. The only legacy jquery will be referenced from a CDN sourse.
+ */
 
 gulp.task('scripts:jquery', () => {
 	// Sets up modern jQuery for WordPress to use in functions.php
-	return gulp.src('./bower_components/jquery/dist/jquery.js')
+	return gulp.src('./node_modules/jquery/dist/jquery.js')
 		.pipe($.plumber())
 		.pipe($.sourcemaps.init())
 		.pipe($.uglify())
@@ -96,26 +105,14 @@ gulp.task('scripts:jquery', () => {
 });
 
 gulp.task('scripts:rem', () => {
-	// Sets up modern jQuery for WordPress to use in functions.php
-	return gulp.src('./bower_components/REM-unit-polyfill/js/rem.js')
+	// Sets up rem unit polyfill for WordPress to use in functions.php
+	return gulp.src('./node_modules/rem/js/rem.js')
 		.pipe($.plumber())
 		.pipe($.sourcemaps.init())
 		.pipe($.if(argv.build, $.uglify()))
 		.pipe($.rename({ suffix: '.min' }))
 		.pipe($.sourcemaps.write('.'))
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js/vendors`), gulp.dest(`${dir.dev}/js/vendors`)));
-});
-
-gulp.task('scripts:foundation', () => {
-	// Sets up foundation scripts for WordPress to use in functions.php
-	return gulp.src('./bower_components/foundation-sites/js/**/*')
-		.pipe($.plumber())
-		.pipe($.sourcemaps.init())
-		.pipe($.babel())
-		.pipe($.if(argv.build, $.uglify()))
-		.pipe($.rename({ suffix: '.min' }))
-		.pipe($.sourcemaps.write('.'))
-		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js/vendors/foundation`), gulp.dest(`${dir.dev}/js/vendors/foundation`)));
 });
 
 gulp.task('images', () => {
@@ -194,6 +191,8 @@ gulp.task('copy', () => {
 		'!./theme_components{,/**}',
 		'!./codesniffer.ruleset.xml',
 		'!./gulpfile.babel.js',
+		'!./webpack.config.js',
+		'!./yarn.lock',
 		'!./{,*}.json'
 	])
 	.pipe($.if(argv.build, gulp.dest(dir.build)));

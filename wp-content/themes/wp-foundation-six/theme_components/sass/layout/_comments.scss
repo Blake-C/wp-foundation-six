@@ -1,32 +1,41 @@
-.comment-list, .comment {
+.comment-list,
+.comment {
 	list-style-type: none;
 	margin-left: 0;
 }
 
-.comment-list{
+.comment-list {
 	.comment {
-		background: rgb(244, 244, 244);
-		margin: 15px 0px;
-		padding: 20px 0px 20px 15px;
+		background: $gray244;
+		margin: 15px 0;
+		padding: 20px 0 20px 15px;
 	}
 
 	.children {
-		background: rgb(255,255,255);
-		margin: 15px 0px 0px 15px;
-		padding: 5px 0px 0px 15px;
+		background: $white;
+		margin: 15px 0 0 15px;
+		padding: 5px 0 0 15px;
 	}
+
 	.comment-body {
-		padding: 15px 20px 15px 20px;
+		padding: 15px 20px;
 	}
-	.comment-content p:last-child{
-		margin: 0;
+
+	.comment-content {
+		p {
+			&:last-child {
+				margin: 0;
+			}
+		}
 	}
 }
 
 /*
- * 
- * No easy was to get at Wordpresses default submit buttons on comments 
+ *
+ * No easy was to get at Wordpresses default submit buttons on comments
  * Addeding the submit class to the button stylings for foundation
  *
 */
-.submit { @include button; }
+.submit {
+	@include button;
+}

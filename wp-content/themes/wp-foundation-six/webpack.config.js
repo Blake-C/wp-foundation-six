@@ -52,13 +52,15 @@ const webpackConfig = validaate({
 	/**
 	 * Plugins
 	 *
+	 * List of Modernizr feature detects can be found here:
+	 * @link https://github.com/Modernizr/Modernizr/blob/master/lib/config-all.json
 	 */
 	plugins: [
 		new webpack.optimize.DedupePlugin(),
 		new webpack.optimize.OccurenceOrderPlugin(),
 		new webpack.optimize.UglifyJsPlugin({
 			compress: {
-				screw_ie8: true,
+				screw_ie8: false,
 				warnings: false
 			}
 		}),
@@ -70,14 +72,17 @@ const webpackConfig = validaate({
 					beautify: false
 				}
 			},
+			'options': [
+				'setClasses',
+				'html5shiv',
+				'html5printshiv'
+			],
 			'feature-detects': [
 				'svg',
 				'css/transforms',
 				'css/transforms3d',
-				'css/transitions'
-			],
-			'options': [
-				'setClasses'
+				'css/transitions',
+				'ie8compat'
 			]
 		})
 	]

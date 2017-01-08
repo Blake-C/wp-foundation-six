@@ -13,52 +13,47 @@
 	}
 
 	@include foundation-global-styles;
-
 	@if not $flex {
 		@include foundation-grid;
-	} @else {
+	}
+	@else {
 		@include foundation-flex-grid;
 	}
-
-	/**
-	 * Turn off and on the part of
-	 * Foundation you need.
-	 *
-	 */
-	@include foundation-button;
-	@include foundation-float-classes;
-	@include foundation-forms;
 	@include foundation-typography;
+	@include foundation-forms;
+	@include foundation-button;
 	@include foundation-visibility-classes;
+	@include foundation-float-classes;
+	@include foundation-table;
+	@include foundation-responsive-embed;
 
-	// Top bar
+	// Top Bar
 	@include foundation-menu;
-	@include foundation-top-bar;
-	@include foundation-title-bar;
 	@include foundation-menu-icon;
+	@include foundation-title-bar;
+	@include foundation-top-bar;
 
-	// @include foundation-accordion-menu;
 	// @include foundation-accordion;
+	// @include foundation-accordion-menu;
 	// @include foundation-badge;
 	// @include foundation-breadcrumbs;
 	// @include foundation-button-group;
 	// @include foundation-callout;
+	// @include foundation-card;
 	// @include foundation-close-button;
 	// @include foundation-drilldown-menu;
-	// @include foundation-dropdown-menu;
 	// @include foundation-dropdown;
-	// @include foundation-flex-video;
+	// @include foundation-dropdown-menu;
 	// @include foundation-label;
 	// @include foundation-media-object;
 	// @include foundation-off-canvas;
 	// @include foundation-orbit;
 	// @include foundation-pagination;
 	// @include foundation-progress-bar;
-	// @include foundation-reveal;
 	// @include foundation-slider;
 	// @include foundation-sticky;
+	// @include foundation-reveal;
 	// @include foundation-switch;
-	// @include foundation-table;
 	// @include foundation-tabs;
 	// @include foundation-thumbnail;
 	// @include foundation-tooltip;
@@ -74,20 +69,17 @@
  */
 @include foundation-everything($flex: false);
 
-@import
-	'helpers/fonts',
-	'helpers/mixins',
-	'helpers/functions',
-	'helpers/helpers';
+@import 'helpers/fonts';
+@import 'helpers/mixins';
+@import 'helpers/functions';
+@import 'helpers/helpers';
 
-@import
-	'layout/header',
-	'layout/body',
-	'layout/sidebar',
-	'layout/footer',
-	'layout/comments';
+@import 'layout/header';
+@import 'layout/body';
+@import 'layout/sidebar';
+@import 'layout/footer';
+@import 'layout/comments';
 
-@import
-	'partials/generic-styles',
-	'partials/ie',
-	'partials/shame';
+@import 'partials/generic-styles';
+@import 'partials/ie';
+@import 'partials/shame';
