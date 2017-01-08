@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bab8279f688ddddb6d998cf19944eeaa",
-    "content-hash": "b69f289e9047c1e6bccc7a0e31571df4",
+    "hash": "8e176a8de95ea5c8871a973b0781cc95",
+    "content-hash": "ebffe8f266c0288aa69542b3d03276e3",
     "packages": [
         {
             "name": "composer/installers",
@@ -240,6 +240,26 @@
             "homepage": "https://wordpress.org/plugins/google-analytics-for-wordpress/"
         },
         {
+            "name": "wpackagist-plugin/members",
+            "version": "1.1.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/members/",
+                "reference": "tags/1.1.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/members.1.1.2.zip",
+                "reference": "tags/1.1.2",
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/members/"
+        },
+        {
             "name": "wpackagist-plugin/redirection",
             "version": "2.5",
             "source": {
@@ -250,7 +270,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/redirection.2.5.zip",
-                "reference": null,
+                "reference": "tags/2.5",
                 "shasum": null
             },
             "require": {
@@ -290,7 +310,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.0.2.zip",
-                "reference": null,
+                "reference": "tags/4.0.2",
                 "shasum": null
             },
             "require": {
