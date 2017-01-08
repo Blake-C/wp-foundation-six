@@ -31,9 +31,9 @@ if ( ! function_exists( 'wp_foundation_six_entry_footer' ) ) {
 		 */
 		edit_post_link(
 			/* translators: %s: Name of current post */
-			sprintf( 'Edit %s', the_title( '<span class="screen-reader-text">"', '"</span>', false ) ),
-			'<span class="edit-link">',
-			'</span>',
+			sprintf( 'Edit %s', the_title( '<span class="show-for-sr">"', '"</span>', false ) ),
+			'<p class="edit-link">',
+			'</p>',
 			'', // ID
 			'button' // Class
 		);
