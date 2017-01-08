@@ -41,7 +41,7 @@ git commit -m "Initial Commit"
 git push origin master
 ```
 
-Now you can run ```composer install``` within your name-of-your-project directory. This will install WordPress into the wp directory and install plugins into the wp-content/plugins directory.
+Now you can run ```composer install``` then ```composer update``` within your name-of-your-project directory. This will install WordPress into the wp directory and install plugins into the wp-content/plugins directory.
 
 The following default plugins will be installed:
 - [wordpress-seo](https://wordpress.org/plugins/wordpress-seo/)
@@ -49,6 +49,7 @@ The following default plugins will be installed:
 - [redirection](https://wordpress.org/plugins/redirection/)
 - [regenerate-thumbnails](https://wordpress.org/plugins/regenerate-thumbnails/)
 - [akismet](https://wordpress.org/plugins/akismet/)
+- [members](https://wordpress.org/plugins/members/)
 
 Once composer has completed installing WordPress and the default Plugins, change directories to ```cd wp-content/themes/wp-foundation-six``` then you can run ```npm install```. This will install the node modules so that Gulp can run its tasks. Jump down to the Gulp Tasks section to learn more about the tasks.
 
