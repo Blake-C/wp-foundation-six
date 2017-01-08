@@ -21,9 +21,9 @@ if ( ! function_exists( 'wp_foundation_six_entry_footer' ) ) {
 		}
 
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
+			echo '<p class="comments-link">';
 			comments_popup_link( 'Leave a comment', '1 Comment', '% Comments' );
-			echo '</span>';
+			echo '</p>';
 		}
 
 		/**
