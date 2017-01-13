@@ -1,15 +1,15 @@
 version: '2'
 services:
-  dev-nginx:
+  nginx:
     build: .
     volumes:
       - .:/var/www/html
     ports:
       - "8080:80"
     links:
-      - dev-php
+      - php
 
-  dev-php:
+  php:
     build:
       context: .
       dockerfile: Dockerfile.php-fpm
@@ -18,12 +18,12 @@ services:
     ports:
       - "9000:9000"
     links:
-      - dev-mysql
+      - mysql
 
-  dev-mysql:
+  mysql:
     image: mariadb:5.5
     volumes:
-      - ./data:/var/lib/mysql
+      - ./data/mysql:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: wp
