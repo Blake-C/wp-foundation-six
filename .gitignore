@@ -2,27 +2,30 @@
 
 ### WordPress Ignores by https://github.com/github/gitignore/blob/master/WordPress.gitignore ###
 *.log
-/wp/
-/wp-content/*/*
-/wp-content/mu-plugins/*
-/wp-content/plugins/*
-/vendor
+/public_html/wp/
+/public_html/wp-content/*/*
+/public_html/wp-content/mu-plugins/*
+/public_html/wp-content/plugins/*
+/public_html/vendor
 production-config.php
 local-config.php
 
-!/wp-content/themes
-!/wp-content/themes/*
-!/wp-content/themes/wp-foundation-six
-!/wp-content/themes/wp-foundation-six/*
-!/wp-content/mu-plugins/index.php
-!/wp-content/plugins/index.php
+!/public_html/wp-content/themes
+!/public_html/wp-content/themes/*
+!/public_html/wp-content/themes/wp-foundation-six
+!/public_html/wp-content/themes/wp-foundation-six/*
+!/public_html/wp-content/mu-plugins/index.php
+!/public_html/wp-content/plugins/index.php
 
-/wp-content/themes/wp-foundation-six/assets
-/wp-content/themes/wp-foundation-six-build
+/public_html/wp-content/themes/wp-foundation-six/assets
+/public_html/wp-content/themes/wp-foundation-six-build
 
 
 ### Docker ###
-data
+/data/*
+!/data/backups/.gitit
+!/data/mysql/.gitit
+!/data/redis/.gitit
 
 
 ### Bower ###

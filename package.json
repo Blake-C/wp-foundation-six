@@ -1,0 +1,17 @@
+{
+  "name": "wp-foundation-six",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "docker": "docker-compose up -d && npm run docker-ports", 
+    "docker-stop": "npm run docker-db-dump && CURRENT_DIR_NAME=$(basename \"$PWD\" | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]') && docker stop ${CURRENT_DIR_NAME}_nginx_php_1 ${CURRENT_DIR_NAME}_phpmyadmin_1 ${CURRENT_DIR_NAME}_mysql_1 ${CURRENT_DIR_NAME}_redis_1",
+    "docker-rm": " npm run docker-stop && CURRENT_DIR_NAME=$(basename \"$PWD\" | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]') && docker rm ${CURRENT_DIR_NAME}_nginx_php_1 ${CURRENT_DIR_NAME}_phpmyadmin_1 ${CURRENT_DIR_NAME}_mysql_1 ${CURRENT_DIR_NAME}_redis_1",
+    "docker-ports": "CURRENT_DIR_NAME=$(basename \"$PWD\" | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]') && NGINXPORT=$(docker port ${CURRENT_DIR_NAME}_nginx_php_1 80) && PHPMYADMINPORT=$(docker port ${CURRENT_DIR_NAME}_phpmyadmin_1 80) && echo server: $NGINXPORT  && echo phpmyadmin: $PHPMYADMINPORT && open -a 'Google Chrome' http://$PHPMYADMINPORT http://$NGINXPORT",
+    "docker-db-dump": "CURRENT_DIR_NAME=$(basename \"$PWD\" | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]') && docker exec ${CURRENT_DIR_NAME}_mysql_1 sh -c 'exec mysqldump --databases wp_foundation_six -uroot -p\"$MYSQL_ROOT_PASSWORD\"' > ./data/backups/wp_foundation_six_$(date +\"%Y%m%d%H%M%s\")_database.sql",
+    "docker-stop-all": "docker stop $(docker ps --format '{{.ID}}')",
+    "docker-rm-all": "docker rm $(docker ps -a -q)"
+  }
+}

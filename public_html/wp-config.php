@@ -12,6 +12,10 @@ if ( file_exists( dirname( __FILE__ ) . '/production-config.php' ) ) {
     include( dirname( __FILE__ ) . '/local-config.php' );
 }
 
+define('DISABLE_WP_CRON', true);
+define('WP_REDIS_HOST', 'redis');
+define('WP_CACHE_KEY_SALT', 'my-redis-salt-');
+
 // ========================
 // Prevent Admin Files Access
 // ========================
