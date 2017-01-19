@@ -12,6 +12,7 @@
     "docker-ports": "CURRENT_DIR_NAME=$(basename \"$PWD\" | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]') && NGINXPORT=$(docker port ${CURRENT_DIR_NAME}_nginx_php_1 80) && PHPMYADMINPORT=$(docker port ${CURRENT_DIR_NAME}_phpmyadmin_1 80) && echo server: $NGINXPORT  && echo phpmyadmin: $PHPMYADMINPORT && open -a 'Google Chrome' http://$PHPMYADMINPORT http://$NGINXPORT",
     "docker-db-dump": "CURRENT_DIR_NAME=$(basename \"$PWD\" | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]') && docker exec ${CURRENT_DIR_NAME}_mysql_1 sh -c 'exec mysqldump --databases wp_foundation_six -uroot -p\"$MYSQL_ROOT_PASSWORD\"' > ./data/backups/wp_foundation_six_$(date +\"%Y%m%d%H%M%s\")_database.sql",
     "docker-stop-all": "docker stop $(docker ps --format '{{.ID}}')",
-    "docker-rm-all": "docker rm $(docker ps -a -q)"
+    "docker-rm-all": "docker rm $(docker ps -a -q)",
+    "docker-sh": "CURRENT_DIR_NAME=$(basename \"$PWD\" | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]') && docker exec -it ${CURRENT_DIR_NAME}_nginx_php_1 /bin/sh"
   }
 }
