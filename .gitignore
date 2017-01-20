@@ -8,7 +8,6 @@
 /public_html/wp-content/plugins/*
 /public_html/vendor
 production-config.php
-local-config.php
 
 !/public_html/wp-content/themes
 !/public_html/wp-content/themes/*
