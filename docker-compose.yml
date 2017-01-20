@@ -1,7 +1,7 @@
 version: '2'
 services:
   nginx_php:
-    image: digitalblake/docker-wp:1.0.2
+    image: digitalblake/docker-wp:1.0.3
     volumes:
       - ./public_html:/var/www/html
     ports:
