@@ -21,6 +21,7 @@ production-config.php
 
 
 ### Docker ###
+/html/
 /data/*/*
 !/data/backups/.gitit
 !/data/mysql/.gitit
