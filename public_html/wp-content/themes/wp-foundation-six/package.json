@@ -21,7 +21,6 @@
     "gulp-if": "^2.0.0",
     "gulp-imagemin": "^3.0.1",
     "gulp-load-plugins": "^1.2.4",
-    "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.0.1",
     "gulp-postcss": "^6.2.0",
     "gulp-rename": "^1.2.2",

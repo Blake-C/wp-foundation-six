@@ -19,7 +19,7 @@ const dir = {
 };
 
 // BrowserSync Dev URL to reload
-const proxy_target = 'wp-foundation-six';
+const proxy_target = '0.0.0.0:80';
 
 gulp.task('styles', ['lint:sass'], () => {
 	return gulp.src(`${dir.theme_components}/sass/**/*.scss`)
@@ -30,7 +30,7 @@ gulp.task('styles', ['lint:sass'], () => {
 			outputStyle: 'compact',
 			precision: 10
 		}).on('error', $.sass.logError))
-		.on('error', $.notify.onError({ message: 'Error: <%= error.message %>', onLast: true }))
+		// .on('error', $.notify.onError({ message: 'Error: <%= error.message %>', onLast: true }))
 		.pipe($.postcss([
 			$.autoprefixer({ browsers: [
 				'last 3 versions',
@@ -48,8 +48,8 @@ gulp.task('styles', ['lint:sass'], () => {
 			pretty: true
 		}))
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/css`), gulp.dest(`${dir.dev}/css`)))
-		.pipe($.if(!argv.build, browserSync.stream({match: '**/*.css'})))
-		.pipe($.notify({ message: 'Styles Task Completed.', onLast: true }));
+		.pipe($.if(!argv.build, browserSync.stream({match: '**/*.css'})));
+		// .pipe($.notify({ message: 'Styles Task Completed.', onLast: true }));
 });
 
 gulp.task('lint:sass', function() {
@@ -67,8 +67,8 @@ gulp.task('scripts', () => {
 		.pipe($.plumber())
 		.pipe($.webpackStream(webpackConfig, $.webpack))
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js`), gulp.dest(`${dir.dev}/js`)))
-		.pipe(reload({stream: true}))
-		.pipe($.notify({ message: 'Scripts Task Completed.', onLast: true }));
+		.pipe(reload({stream: true}));
+		// .pipe($.notify({ message: 'Scripts Task Completed.', onLast: true }));
 });
 
 gulp.task('scripts:vendors', ['scripts:ie', 'scripts:jquery', 'scripts:rem']);
@@ -162,6 +162,7 @@ gulp.task('serve', ['styles', 'scripts', 'scripts:vendors', 'images', 'fonts', '
 		proxy: {
 			target: proxy_target
 		},
+		open: false,
 		browser: 'google chrome',
 		notify: false
 	});
@@ -201,8 +202,8 @@ gulp.task('copy', () => {
 gulp.task('build', ['styles', 'scripts', 'scripts:vendors', 'images', 'fonts', 'icons', 'copy'], () => {
 	return gulp.src(dir.build_assets + '/**/*')
 		.pipe($.size({title: 'build', gzip: true}))
-		.pipe(gulp.dest( dir.build_assets ))
-		.pipe($.notify({ message: 'Build Task Completed.', onLast: true }));
+		.pipe(gulp.dest( dir.build_assets ));
+		// .pipe($.notify({ message: 'Build Task Completed.', onLast: true }));
 });
 
 gulp.task('default', ['clean'], () => {
