@@ -4,7 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "61ee3ff6502726b23313c3c0019fe19f",
     "content-hash": "77e41a0b09dd2bc22f2ad66279029529",
     "packages": [
         {
@@ -112,7 +111,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2016-08-13 20:53:52"
+            "time": "2016-08-13T20:53:52+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -149,7 +148,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2016-12-06 18:46:46"
+            "time": "2016-12-06T18:46:46+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -197,7 +196,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2015-06-11 15:15:30"
+            "time": "2015-06-11T15:15:30+00:00"
         },
         {
             "name": "wpackagist-plugin/akismet",
@@ -210,7 +209,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/akismet.3.2.zip",
-                "reference": "tags/3.2",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -230,7 +229,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.5.4.zip",
-                "reference": "tags/5.5.4",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -250,7 +249,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/members.1.1.2.zip",
-                "reference": "tags/1.1.2",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -270,7 +269,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/redirection.2.5.zip",
-                "reference": "tags/2.5",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -310,7 +309,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.2.2.6.zip",
-                "reference": "tags/2.2.6",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -321,16 +320,16 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "4.0.2",
+            "version": "4.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/4.0.2"
+                "reference": "tags/4.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.0.2.zip",
-                "reference": "tags/4.0.2",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.1.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
