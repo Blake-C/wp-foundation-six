@@ -8,7 +8,7 @@
   "require": {
     "php": ">=5.4",
     "composer/installers": "1.*",
-    "johnpbloch/wordpress": "4.7",
+    "johnpbloch/wordpress": "^4.7",
     "wpackagist-plugin/wordpress-seo" : "^4.0",
     "wpackagist-plugin/google-analytics-for-wordpress" : "^5.5",
     "wpackagist-plugin/redirection" : "^2.5",
