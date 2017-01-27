@@ -13,7 +13,6 @@
  *
  */
 require get_template_directory() . '/inc/components/body-classes.php';
-require get_template_directory() . '/inc/components/browser-classes.php';
 require get_template_directory() . '/inc/components/embed-video-container.php';
 require get_template_directory() . '/inc/components/excerpt-length.php';
 require get_template_directory() . '/inc/components/excerpt-more.php';
