@@ -24,14 +24,18 @@ define('DISALLOW_FILE_EDIT', true);
 // ========================
 // Custom Content Directory
 // ========================
-define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
-define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content' );
+if ( !defined( 'WP_CLI' ) ) {
+	define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
+	define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content' );
+}
 
 // ========================
 // Custom Plugin Directory
 // ========================
-define( 'WP_PLUGIN_DIR', dirname( __FILE__ ) . '/wp-content/plugins' );
-define( 'WP_PLUGIN_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content/plugins' );
+if ( !defined( 'WP_CLI' ) ) {
+	define( 'WP_PLUGIN_DIR', dirname( __FILE__ ) . '/wp-content/plugins' );
+	define( 'WP_PLUGIN_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content/plugins' );
+}
 
 // ================================================
 // You almost certainly do not want to change these
