@@ -7,9 +7,12 @@ define( 'DB_HOST', 'mysql' );
 
 $table_prefix  = 'wp_';
 
-ini_set( 'display_errors', E_ALL );
-define( 'WP_DEBUG_DISPLAY', true );
-define( 'WP_DEBUG', true );
+if ( !defined( 'WP_CLI' ) ) {
+	ini_set( 'display_errors', E_ALL );
+	define( 'WP_DEBUG_DISPLAY', true );
+	define( 'WP_DEBUG', true );
+	define( 'WP_DEBUG_LOG', true );
+}
 
 define('AUTH_KEY',         ',7jxG`)ZYM/m1OB6G/&z)gL=oW={,B1-&xcGuySKE.vQh_-fI)j$y^222Hs8cR&W');
 define('SECURE_AUTH_KEY',  '=3/+qt|eD2>(|nx@-p|vp&8T*n6;ZKZ1[91m`a^-PbV+wzbiK ,gyNe&iTpHI(+1');
