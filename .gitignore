@@ -1,7 +1,6 @@
 # Created by http://www.gitignore.io
 
 ### WordPress Ignores by https://github.com/github/gitignore/blob/master/WordPress.gitignore ###
-*.log
 /public_html/wp/
 /public_html/wp-content/*/*
 /public_html/wp-content/mu-plugins/*
@@ -72,6 +71,8 @@ Temporary Items
 *.zip
 dist
 node_modules
+.log
+object-cache.php
 logs
 cache
 .phpintel
