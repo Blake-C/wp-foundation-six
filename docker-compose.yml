@@ -1,7 +1,13 @@
 version: '2'
 services:
-  nginx_php:
-    image: digitalblake/docker-wp:1.0.6
+  cli_tools:
+    image: digitalblake/general-cli:0.0.0
+    volumes:
+      - ./:/var/www/
+    tty: true
+
+  nginx:
+    image: digitalblake/wp-foundation-six-nginx:0.0.0
     volumes:
       - ./:/var/www/
     ports:
@@ -9,6 +15,14 @@ services:
     links:
       - mysql
       - redis
+      - php
+
+  php:
+    image: digitalblake/wp-foundation-six-php:0.0.0
+    volumes:
+      - ./:/var/www/
+    ports:
+      - "9000:9000"
 
   mysql:
     image: mariadb:10.1.20
