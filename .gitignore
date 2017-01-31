@@ -71,7 +71,7 @@ Temporary Items
 *.zip
 dist
 node_modules
-.log
+*.log
 object-cache.php
 logs
 cache
