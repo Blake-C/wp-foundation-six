@@ -9,13 +9,8 @@ The WordPress Foundation 6 Developer Framework is meant to be a starting point f
 	- [NPM](https://www.npmjs.com/)
 		- [Bower](https://bower.io/)
 		- [Gulp](http://gulpjs.com/)
-- [LAMP Stack](https://en.wikipedia.org/wiki/LAMP_(software_bundle))
-	- [MAMP](https://www.mamp.info/en/)
-	- [WAMP](http://www.wampserver.com/en/)
-	- [AMPPS](http://www.ampps.com/)
-	- [Vagrant](https://www.vagrantup.com/)
+- [LAMP/LEMP Stack](https://en.wikipedia.org/wiki/LAMP_(software_bundle))
 	- [Docker](https://www.docker.com/)
-		- In the future I plan on working Docker into this project so that we have a portable LAMP stack
 
 ## Installation
 
@@ -40,6 +35,65 @@ git add .
 git commit -m "Initial Commit"
 git push origin master
 ```
+
+## Docker
+
+You can use MAMP, XAMP, WAMP, or AMPPS as your LAMP stack, however I have structured this project in a way to use Docker. If you use another tool for your server just serve that public_html directory as your root. This project has a docker-composer.yml file at the root of the install, this file contains the instructions for creating 6 services that can be used as your LEMP stack. Once you install [Docker](https://www.docker.com/) on your host machine run the following command to start the services.
+
+```sh 
+docker-composer up -d
+```
+
+Use the following command to list the all services
+
+```sh
+docker ps -a
+```
+
+To stop all Docker service/containers use 
+
+```sh 
+docker stop $(docker ps --format '{{.ID}}')
+```
+
+To remove all Docker service/containers after they have been stopped use 
+
+```sh 
+docker rm $(docker ps -a -q)
+```
+
+The default URL for this project will be served under `0.0.0.0:8080`, to access phpmyadmin go to `0.0.0.0:8000`. I have included one service that will allow you to run all the commandline tools needed to start up the project. After running `docker ps -a`, you'll see a service with the image name digitalblake/general-cli. Take the ID for this container and run the following command:
+
+```sh 
+docker exec -it put_the_id_here zsh
+``` 
+
+This will enter this service using ZSH and will give you access to vim, git, Composer, NPM, Bower, WP-CLI, Yarn, and Gulp. This way you don't have to install these CLI tools on your host machine.
+
+## Useful Docker Tips
+
+I usually add the following to my `~/.bash_profile` or `~/.zshrc` file depending on what system I am using. These functions and alias's are meant to help me quickly run the commands that I use most often with Docker. They might help you as well:
+
+```sh 
+# Docker Commands
+alias dps="docker ps --format \"table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}\" -a"
+alias dimg="docker image list"
+alias dup="docker-compose up -d"
+
+dstop () {
+	docker stop $(docker ps --format '{{.ID}}')
+}
+
+drm () {
+	docker rm $(docker ps -a -q)
+}
+
+dstart () {
+	docker start $(docker ps -a -q)
+}
+```
+
+## Composer
 
 Now you can run ```composer install``` then ```composer update``` within your name-of-your-project directory. This will install WordPress into the wp directory and install plugins into the wp-content/plugins directory.
 
