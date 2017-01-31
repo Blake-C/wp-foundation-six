@@ -38,13 +38,13 @@ git push origin master
 
 ## Docker
 
-You can use MAMP, XAMP, WAMP, or AMPPS as your LAMP stack, however I have structured this project in a way to use Docker. If you use another tool for your server just serve that public_html directory as your root. This project has a docker-composer.yml file at the root of the install, this file contains the instructions for creating 6 services that can be used as your LEMP stack. Once you install [Docker](https://www.docker.com/) on your host machine run the following command to start the services.
+You can use MAMP, XAMP, WAMP, or AMPPS as your LAMP stack, however I have structured this project in a way to use Docker. If you use another tool for your server just serve the public_html directory as your root. This project has a docker-composer.yml file at the root of the install, this file contains the instructions for creating 6 service/container that can be used as your LEMP stack. Once you install [Docker](https://www.docker.com/) on your host machine run the following command to start the service/container.
 
 ```sh 
 docker-composer up -d
 ```
 
-Use the following command to list the all services
+Use the following command to list the all service/container
 
 ```sh
 docker ps -a
@@ -62,13 +62,13 @@ To remove all Docker service/containers after they have been stopped use
 docker rm $(docker ps -a -q)
 ```
 
-The default URL for this project will be served under `0.0.0.0:8080`, to access phpmyadmin go to `0.0.0.0:8000`. I have included one service that will allow you to run all the commandline tools needed to start up the project. After running `docker ps -a`, you'll see a service with the image name digitalblake/general-cli. Take the ID for this container and run the following command:
+The default URL for this project will be served under `0.0.0.0:8080`, to access phpmyadmin go to `0.0.0.0:8000`. I have included one service/container that will allow you to run all the commandline tools needed to start up the project. After running `docker ps -a`, you'll see a service with the image named digitalblake/general-cli. Take the ID for this service/container and run the following command:
 
 ```sh 
 docker exec -it put_the_id_here zsh
 ``` 
 
-This will enter this service using ZSH and will give you access to vim, git, Composer, NPM, Bower, WP-CLI, Yarn, and Gulp. This way you don't have to install these CLI tools on your host machine.
+This will take you into the service/container using ZSH and will give you access to vim, git, Composer, NPM, Bower, WP-CLI, Yarn, and Gulp. This way you don't have to install these CLI tools on your host machine. WARNING: You will be running under root when in this container, never use `rm -rf` and be mindful of what you are doing.
 
 ## Useful Docker Tips
 
