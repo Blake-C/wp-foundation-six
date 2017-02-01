@@ -73,6 +73,8 @@ dist
 node_modules
 *.log
 object-cache.php
+advanced-cache.php
+db.php
 logs
 cache
 .phpintel
