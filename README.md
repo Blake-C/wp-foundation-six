@@ -7,10 +7,11 @@ The WordPress Foundation 6 Developer Framework is meant to be a starting point f
 - [Composer](https://getcomposer.org/)
 - [Node](https://nodejs.org/)
 	- [NPM](https://www.npmjs.com/)
-		- [Bower](https://bower.io/)
 		- [Gulp](http://gulpjs.com/)
 - [LAMP/LEMP Stack](https://en.wikipedia.org/wiki/LAMP_(software_bundle))
 	- [Docker](https://www.docker.com/)
+
+When using Docker there is a service/container named digitalblake/general-cli with Composer, Node, NPM, and Gulp. If you plan to use Docker you don't need to have those tools installed on your machine, you'll be able to run the commands inside the General CLI container.
 
 ## Installation
 
@@ -38,7 +39,7 @@ git push origin master
 
 ## Docker
 
-You can use MAMP, XAMP, WAMP, or AMPPS as your LAMP stack, however I have structured this project in a way to use Docker. If you use another tool for your server just serve the public_html directory as your root. This project has a docker-composer.yml file at the root of the install, this file contains the instructions for creating 6 service/container that can be used as your LEMP stack. Once you install [Docker](https://www.docker.com/) on your host machine run the following command to start the service/container.
+You can use MAMP, XAMP, WAMP, or AMPPS as your LAMP stack, however I have structured this project in a way to use Docker. If you use another tool for your server just serve the public_html directory as your root. This project has a docker-composer.yml file at the root of the install, this file contains the instructions for creating 5 service/container that can be used as your LEMP stack. Once you install [Docker](https://www.docker.com/) on your host machine run the following command to start the service/container.
 
 ```sh 
 docker-composer up -d
@@ -95,7 +96,7 @@ dstart () {
 
 ## Composer
 
-Now you can run ```composer install``` then ```composer update``` within your name-of-your-project directory. This will install WordPress into the wp directory and install plugins into the wp-content/plugins directory.
+Now you can run ```composer install``` then ```composer update``` within your name-of-your-project/public_html directory. This will install WordPress into the wp directory and install plugins into the wp-content/plugins directory.
 
 The following default plugins will be installed:
 - [wordpress-seo](https://wordpress.org/plugins/wordpress-seo/)
@@ -105,7 +106,7 @@ The following default plugins will be installed:
 - [akismet](https://wordpress.org/plugins/akismet/)
 - [members](https://wordpress.org/plugins/members/)
 
-Once composer has completed installing WordPress and the default Plugins, change directories to ```cd wp-content/themes/wp-foundation-six``` then you can run ```npm install```. This will install the node modules so that Gulp can run its tasks. Jump down to the Gulp Tasks section to learn more about the tasks.
+Once composer has completed installing WordPress and the default Plugins, change directories to ```cd public_html/wp-content/themes/wp-foundation-six``` then you can run ```npm install```. This will install the node modules so that Gulp can run its tasks. Jump down to the Gulp Tasks section to learn more about the tasks.
 
 ## Add/Remove composer packages/modules
 
