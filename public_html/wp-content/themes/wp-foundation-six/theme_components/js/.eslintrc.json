@@ -32,8 +32,6 @@
     "no-shadow": 0,
     "no-underscore-dangle": 0,
     "no-unused-vars": 1,
-
-    // React Rules
     "react/prefer-es6-class": 1,
     "react/prop-types": 1
   }
