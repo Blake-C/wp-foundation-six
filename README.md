@@ -17,21 +17,21 @@ When using Docker there is a service/container named digitalblake/general-cli wi
 
 Clone the project to your local machine to start a new project.
 
-```
-git clone --depth=1 --branch=master https://github.com/Blake-C/wp-foundation-six.git name-of-your-project
+```sh
+git clone --depth=1 https://github.com/Blake-C/wp-foundation-six.git name-of-your-project
 ```
 
 To start a new project cd into name-of-your-project and delete the .git directory. Then run a new git init.
 
-```
+```sh
 cd name-of-your-project
-rm -rf .git
+rm -r .git
 git init
 ```
 
 Commit the inital state of the project and push to the remote repo if one exists.
 
-```
+```sh
 git add .
 git commit -m "Initial Commit"
 git push origin master
@@ -39,41 +39,43 @@ git push origin master
 
 ## Docker
 
-You can use MAMP, XAMP, WAMP, or AMPPS as your LAMP stack, however I have structured this project in a way to use Docker. If you use another tool for your server just serve the public_html directory as your root. This project has a docker-composer.yml file at the root of the install, this file contains the instructions for creating 5 service/container that can be used as your LEMP stack. Once you install [Docker](https://www.docker.com/) on your host machine run the following command to start the service/container.
+WP Foundation Six Developer Framework uses docker for it's server stack, if you use MAMP, XAMP, WAMP, or AMPPS just set your project directory to start under the public_html directory.
+
+The ```./docker-composer.yml``` contains the instructions for creating 5 services/containers that will be used as your LEMP stack. Once you install [Docker](https://www.docker.com/) on your host machine run the following command to start the services/containers.
 
 ```sh
 docker-composer up -d
 ```
 
-Use the following command to list the all service/container
+Use the following command to list the all services/containers
 
 ```sh
 docker ps -a
 ```
 
-To stop all Docker service/containers use
+To stop all Docker services/containers use
 
 ```sh
 docker stop $(docker ps --format '{{.ID}}')
 ```
 
-To remove all Docker service/containers after they have been stopped use
+To remove all Docker services/containers after they have been stopped use
 
 ```sh
 docker rm $(docker ps -a -q)
 ```
 
-The default URL for this project will be served under `0.0.0.0:8080`, to access phpmyadmin go to `0.0.0.0:8000`. I have included one service/container that will allow you to run all the commandline tools needed to start up the project. After running `docker ps -a`, you'll see a service with the image named digitalblake/general-cli. Take the ID for this service/container and run the following command:
+The default URL for this project will be served under ```0.0.0.0:8080```, to access phpmyadmin go to ```0.0.0.0:8000```. I have included one service/container that will allow you to run all the commandline tools needed to start up the project. After running ```docker ps -a```, you'll see a service with the image named digitalblake/general-cli. Take the ID for this service/container and run the following command:
 
 ```sh
 docker exec -it put_the_id_here zsh
 ```
 
-This will take you into the service/container using ZSH and will give you access to vim, git, Composer, NPM, Bower, WP-CLI, Yarn, and Gulp. This way you don't have to install these CLI tools on your host machine. WARNING: You will be running under root when in this container, never use `rm -rf` and be mindful of what you are doing.
+This will take you into the service/container using ZSH and will give you access to vim, git, Composer, NPM, Bower, WP-CLI, Yarn, and Gulp. This way you don't have to install these CLI tools on your host machine. WARNING: You will be running under root when in this container, never use ```rm -rf``` and be mindful of what you are doing.
 
 ## Useful Docker Tips
 
-I usually add the following to my `~/.bash_profile` or `~/.zshrc` file depending on what system I am using. These functions and alias's are meant to help me quickly run the commands that I use most often with Docker. They might help you as well:
+I usually add the following to my ```~/.bash_profile``` or ```~/.zshrc``` file depending on what system I am using. These functions and alias's are meant to help me quickly run the commands that I use most often with Docker. They might help you as well:
 
 ```sh
 # Docker Commands
@@ -94,9 +96,19 @@ dstart () {
 }
 ```
 
+## MySQL - Databases
+
+To access phpmyadmin go to ```http://0.0.0.0:8000``` after starting the docker services/containers and login with the following credentials.
+
+Server: mysql
+Username: root
+Password: root
+
+This will log you into the phpmyadmin browser interface. When adding or creating a database be sure to set the site url in the options table to serve core WordPress from ```/wp```, the home url will stay at the root level ```/```. When you start up docker it will generate a new database called wp_foundation_six, this is what is setup to be used in the ```./public_html/local-config.php``` file.
+
 ## Composer
 
-Now you can run ```composer install``` then ```composer update``` within your name-of-your-project/public_html directory. This will install WordPress into the wp directory and install plugins into the wp-content/plugins directory.
+Now you can run ```composer install``` then ```composer update``` within your ```./public_html directory```. This will install WordPress into the ```./public_html/wp``` directory and install plugins into the ```./public_html/wp-content/plugins``` directory.
 
 The following default plugins will be installed:
 - [wordpress-seo](https://wordpress.org/plugins/wordpress-seo/)
@@ -113,13 +125,13 @@ To install new WordPress plugins you can use composer to install them so that wh
 
 Install existing packages in the composer.json file:
 
-```
+```sh
 composer install
 ```
 
 Add new composer package:
 
-```
+```sh
 composer require wpackagist-plugin/name-of-plugin
 ```
 
@@ -127,13 +139,13 @@ All public WordPress plugins that are listed in the WordPress plugin directory c
 
 Remove composer package:
 
-```
+```sh
 composer remove wpackagist-plugin/name-of-plugin
 ```
 
 To update any composer packages that are set to a specific version use:
 
-```
+```sh
 composer update
 ```
 
@@ -153,25 +165,25 @@ The scripts that run through the Gulp tasks will also be subject to [ESLint](htt
 
 To require a new JavaScript package use [NPM](https://www.npmjs.com/) to install it:
 
-```
+```sh
 npm install name-of-package --save
 ```
 
 Or if you have [Yarn](https://www.npmjs.com/package/yarn) installed:
 
-```
+```sh
 yarn add name-of-package
 ```
 
 If the NPM package uses ES2015 module loaders then you can import the package using the name of the package. Otherwise you will need to path your import to the desired script file from within the node_modules directory.
 
-```
-import custom-name from name-of-package
+```js
+import 'custom-name' from 'name-of-package'
 ```
 
 or
 
-```
+```js
 import '../../../node_modules/name-of-package/js/index.js';
 ```
 
@@ -179,7 +191,7 @@ Be sure to use ```../``` as many times as you nest directories within the theme_
 
 If you need to add a new script file to be exported as a new bundle then create your file within the theme_components/js directory and add the name of your file to the scripts-list.js file within that same directory. This file has a const that is imported into the Webpack config as an object of exported bundles.
 
-```
+```js
 const scripts_list = {
 	'global-scripts': './theme_components/js/global-scripts.js',
 	'my-new-scripts': './theme_components/js/my-new-scripts.js'
