@@ -41,7 +41,7 @@ git push origin master
 
 You can use MAMP, XAMP, WAMP, or AMPPS as your LAMP stack, however I have structured this project in a way to use Docker. If you use another tool for your server just serve the public_html directory as your root. This project has a docker-composer.yml file at the root of the install, this file contains the instructions for creating 5 service/container that can be used as your LEMP stack. Once you install [Docker](https://www.docker.com/) on your host machine run the following command to start the service/container.
 
-```sh 
+```sh
 docker-composer up -d
 ```
 
@@ -51,23 +51,23 @@ Use the following command to list the all service/container
 docker ps -a
 ```
 
-To stop all Docker service/containers use 
+To stop all Docker service/containers use
 
-```sh 
+```sh
 docker stop $(docker ps --format '{{.ID}}')
 ```
 
-To remove all Docker service/containers after they have been stopped use 
+To remove all Docker service/containers after they have been stopped use
 
-```sh 
+```sh
 docker rm $(docker ps -a -q)
 ```
 
 The default URL for this project will be served under `0.0.0.0:8080`, to access phpmyadmin go to `0.0.0.0:8000`. I have included one service/container that will allow you to run all the commandline tools needed to start up the project. After running `docker ps -a`, you'll see a service with the image named digitalblake/general-cli. Take the ID for this service/container and run the following command:
 
-```sh 
+```sh
 docker exec -it put_the_id_here zsh
-``` 
+```
 
 This will take you into the service/container using ZSH and will give you access to vim, git, Composer, NPM, Bower, WP-CLI, Yarn, and Gulp. This way you don't have to install these CLI tools on your host machine. WARNING: You will be running under root when in this container, never use `rm -rf` and be mindful of what you are doing.
 
@@ -75,7 +75,7 @@ This will take you into the service/container using ZSH and will give you access
 
 I usually add the following to my `~/.bash_profile` or `~/.zshrc` file depending on what system I am using. These functions and alias's are meant to help me quickly run the commands that I use most often with Docker. They might help you as well:
 
-```sh 
+```sh
 # Docker Commands
 alias dps="docker ps --format \"table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}\" -a"
 alias dimg="docker image list"
@@ -104,7 +104,6 @@ The following default plugins will be installed:
 - [redirection](https://wordpress.org/plugins/redirection/)
 - [regenerate-thumbnails](https://wordpress.org/plugins/regenerate-thumbnails/)
 - [akismet](https://wordpress.org/plugins/akismet/)
-- [members](https://wordpress.org/plugins/members/)
 
 Once composer has completed installing WordPress and the default Plugins, change directories to ```cd public_html/wp-content/themes/wp-foundation-six``` then you can run ```npm install```. This will install the node modules so that Gulp can run its tasks. Jump down to the Gulp Tasks section to learn more about the tasks.
 
@@ -146,9 +145,9 @@ If you need to include premium plugins in your project that are not listed in th
 
 This section is only relevant if you intend to use the built in wp-foundation-six base theme.
 
-The base theme includes the [Gulp](http://gulpjs.com/) task manager that will run a [Webpack](https://webpack.github.io/) task that will use [Babel](https://babeljs.io/) to transpile [ES6/ES2015](https://babeljs.io/docs/learn-es2015/) into ES5. This means you can use ES2015 ```import``` to include modules into your project. 
+The base theme includes the [Gulp](http://gulpjs.com/) task manager that will run a [Webpack](https://webpack.github.io/) task that will use [Babel](https://babeljs.io/) to transpile [ES6/ES2015](https://babeljs.io/docs/learn-es2015/) into ES5. This means you can use ES2015 ```import``` to include modules into your project.
 
-jQuery has been set as a global script for third party WordPress plugins. Since we never know when a WordPress plugin will require jQuery we need to leave it in the global/window scope. When using jQuery within your custom scripts you do not need to ```import``` it in, you can use the ```$``` as you normally would. 
+jQuery has been set as a global script for third party WordPress plugins. Since we never know when a WordPress plugin will require jQuery we need to leave it in the global/window scope. When using jQuery within your custom scripts you do not need to ```import``` it in, you can use the ```$``` as you normally would.
 
 The scripts that run through the Gulp tasks will also be subject to [ESLint](http://eslint.org/) for code quality control. This is to keep the project scripts within a set standard for the development team and to catch any errors before the projects goes to production.
 
@@ -170,7 +169,7 @@ If the NPM package uses ES2015 module loaders then you can import the package us
 import custom-name from name-of-package
 ```
 
-or 
+or
 
 ```
 import '../../../node_modules/name-of-package/js/index.js';
@@ -191,7 +190,7 @@ const scripts_list = {
 
 To compile the theme code you can run the ```gulp``` task. This will build the themes JavaScript, SCSS, and Images. The default ```gulp``` task does not persist and will stop once done.
 
-To watch the files for changes as you develope you can run the ```gulp watch``` task. 
+To watch the files for changes as you develope you can run the ```gulp watch``` task.
 
 If you have a local development environment setup you can add your local domain as the proxy_target const at the top of the ```gulpfile.babel.js``` file. Your local domain should not contain "http://" or the ending "/". Then you can run ```gulp serve``` to start up the local dev server to have autoreload and style injection when developing in the browser.
 
@@ -204,7 +203,7 @@ const proxy_target = 'wp-foundation-six';
 
 When you are done building your theme you can run the ```gulp --build``` task. This will create a directory next to the development theme called ```wp-foundation-six-build``` this will only contain the files that should be added to the server. The node_modules, theme_components, and any dot files that are needed for development will not be included within the built theme. Once you upload the built theme to the server you can remove the -build from the end of the theme name so that you can FTP into it and the development version to make updates.
 
-If you want to clean up your development environment of built assets just run the ```gulp clean``` task to delete the built theme, and assets directory. 
+If you want to clean up your development environment of built assets just run the ```gulp clean``` task to delete the built theme, and assets directory.
 
 There are a number of sub tasks that get initiated with the main tasks that can be run individually as needed. All tasks can be found in the ```gulpfile.babel.js``` file.
 
