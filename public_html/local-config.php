@@ -5,6 +5,7 @@
  * TODO: Create script to automate inital wp setup
  * TODO: Create eject script for production build
  * TODO: Create database eject script with WP-CLI and search-replace
+ * TODO: Update Webpack to Webpack 2
  */
 
 define( 'DB_NAME', 'wp_foundation_six' );
