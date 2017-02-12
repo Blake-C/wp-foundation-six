@@ -39,7 +39,7 @@ git push origin master
 
 ## Docker
 
-WP Foundation Six Developer Framework uses docker for it's server stack, if you use MAMP, XAMP, WAMP, or AMPPS just set your project directory to start under the public_html directory.
+WP Foundation Six Developer Framework uses docker for it's server stack, if you use MAMP, XAMP, WAMP, or AMPPS just set your project directory to start under the public_html directory. DO NOT use these docker services/containers in a production environment, these are only meant to support a development workflow.
 
 The ```./docker-composer.yml``` contains the instructions for creating 5 services/containers that will be used as your LEMP stack. Once you install [Docker](https://www.docker.com/) on your host machine run the following command to start the services/containers.
 
@@ -65,7 +65,7 @@ To remove all Docker services/containers after they have been stopped use
 docker rm $(docker ps -a -q)
 ```
 
-The default URL for this project will be served under ```0.0.0.0:8080```, to access phpmyadmin go to ```0.0.0.0:8000```. I have included one service/container that will allow you to run all the commandline tools needed to start up the project. After running ```docker ps -a```, you'll see a service with the image named digitalblake/general-cli. Take the ID for this service/container and run the following command:
+The default URL for this project will be served under ```0.0.0.0:8080```, to access phpmyadmin go to ```0.0.0.0:8000```. I have included one service/container that will allow you to run all the command line tools needed to start up the project. After running ```docker ps -a```, you'll see a service with the image named digitalblake/general-cli. Take the ID for this service/container and run the following command:
 
 ```sh
 docker exec -it put_the_id_here zsh
@@ -151,7 +151,7 @@ composer update
 
 The default packages are installed using the most recent versions, you can change this if needed by uninstalling and reinstalled the package to set the version number. Otherwise you can open up the composer.json file and manually set the version number needed.
 
-If you need to include premium plugins in your project that are not listed in the public WordPress plugin directory, then you can either host your own repo of premium plugins and include the path in the composer.json file as long as the project is private on GitHub or wherever you keep your shared code. Alternatively, you can just commit the premium plugins into the project, once again only if your project is private. If your project is not private to your team then do not keep premium plugins pathed or within the project. You will need to find a different means of storing/sharing premium plugins with your team. You will be subject to the terms and conditions of the premium plugins and your use of them.
+If you need to include premium plugins in your project that are not listed in the public WordPress plugin directory, then you can either host your own repo of premium plugins and include the path in the composer.json file as long as the project is private on GitHub or wherever you keep your shared code. Alternatively, you can just commit the premium plugins into the project, once again only if your project is private. If your project is not private, do not keep premium plugins in your project repo. You will need to find a different means of storing/sharing premium plugins with your team. You will be subject to the terms and conditions of the premium plugins and your use of them.
 
 ## Working with JavaScript
 
@@ -187,7 +187,7 @@ or
 import '../../../node_modules/name-of-package/js/index.js';
 ```
 
-Be sure to use ```../``` as many times as you nest directories within the theme_components/js directory.
+Be sure to use ```../``` as many times as you nest directories within the ```theme_components/js``` directory.
 
 If you need to add a new script file to be exported as a new bundle then create your file within the theme_components/js directory and add the name of your file to the scripts-list.js file within that same directory. This file has a const that is imported into the Webpack config as an object of exported bundles.
 
@@ -226,8 +226,6 @@ gulp # <- same as "gulp build" without hyphens
 gulp styles
 gulp scripts
 gulp images
-gulp fonts
-gulp icons
 gulp serve
 gulp watch
 gulp watch:code # <- only watches scripts and styles
@@ -236,7 +234,7 @@ gulp build:code # <- only builds scripts and styles
 gulp --build
 ```
 
-These are not all the commands, but just a list of the major tasks you might want to run individually to save time.
+These are not all the tasks, but just a list of the major tasks you might want to run individually to save time. The watch tasks do not work inside of docker services/containers at the moment.
 
 ## Unit Test Data
 
@@ -247,7 +245,7 @@ If you need unit test data to work with you can download it from here:
 
 ## What Now?
 
-- In the ```wp-content/themes/wp-foundation-six/style.css``` file you will need to update the theme name and other settings.
+- In the ```public_html/wp-content/themes/wp-foundation-six/style.css``` file you will need to update the theme name and other settings.
 - Update your app icons using [Favicon Generator](http://realfavicongenerator.net/)
 - Think about optimizing the load order of your scripts and how you might be able to combine files for fewer http requests.
 - Carefully organize your [Sass](http://sass-lang.com/) so that other developers can understand your code.
