@@ -230,7 +230,9 @@ gulp fonts
 gulp icons
 gulp serve
 gulp watch
+gulp watch:code # <- only watches scripts and styles
 gulp clean
+gulp build:code # <- only builds scripts and styles
 gulp --build
 ```
 
