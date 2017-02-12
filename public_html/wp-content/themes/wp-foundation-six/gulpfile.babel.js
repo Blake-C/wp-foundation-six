@@ -180,6 +180,11 @@ gulp.task('watch', ['styles', 'scripts', 'scripts:vendors', 'images', 'fonts', '
 	gulp.watch([`${dir.theme_components}/images/**/*`], ['images']);
 });
 
+gulp.task('watch:code', ['styles', 'scripts'], () => {
+	gulp.watch([`${dir.theme_components}/sass/**/*`], ['styles']);
+	gulp.watch([`${dir.theme_components}/js/**/*`], ['scripts']);
+});
+
 gulp.task('clean',
 	del.bind(null, [dir.build, dir.dev], {force : true})
 );
@@ -205,6 +210,8 @@ gulp.task('build', ['styles', 'scripts', 'scripts:vendors', 'images', 'fonts', '
 		.pipe(gulp.dest( dir.build_assets ));
 		// .pipe($.notify({ message: 'Build Task Completed.', onLast: true }));
 });
+
+gulp.task('build:code', ['styles', 'scripts']);
 
 gulp.task('default', ['clean'], () => {
 	gulp.start('build');
