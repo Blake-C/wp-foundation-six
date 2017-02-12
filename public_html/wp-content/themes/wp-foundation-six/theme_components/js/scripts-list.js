@@ -5,6 +5,6 @@
 
 const scripts_list = {
 	'global-scripts': './theme_components/js/global-scripts.js'
-}
+};
 
 export default scripts_list;
