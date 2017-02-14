@@ -44,7 +44,7 @@ WP Foundation Six Developer Framework uses docker for it's server stack, if you 
 The ```./docker-composer.yml``` contains the instructions for creating 5 services/containers that will be used as your LEMP stack. Once you install [Docker](https://www.docker.com/) on your host machine run the following command to start the services/containers.
 
 ```sh
-docker-composer up -d
+docker-compose up -d
 ```
 
 Use the following command to list the all services/containers
