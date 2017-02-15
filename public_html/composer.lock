@@ -4,7 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c6fb789397223a63c1c388c917670967",
     "content-hash": "fbee3dc51b06e4d49ef73fa619830dc7",
     "packages": [
         {
@@ -112,7 +111,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2016-08-13 20:53:52"
+            "time": "2016-08-13T20:53:52+00:00"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -149,7 +148,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2017-01-26 18:32:19"
+            "time": "2017-01-26T18:32:19+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -197,7 +196,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2015-06-11 15:15:30"
+            "time": "2015-06-11T15:15:30+00:00"
         },
         {
             "name": "wpackagist-plugin/akismet",
@@ -301,16 +300,16 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "4.2",
+            "version": "4.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/4.2"
+                "reference": "tags/4.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.2.zip",
-                "reference": "tags/4.2",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.3.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
