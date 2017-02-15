@@ -41,10 +41,10 @@ git push origin master
 
 WP Foundation Six Developer Framework uses docker for it's server stack, if you use MAMP, XAMP, WAMP, or AMPPS just set your project directory to start under the public_html directory. DO NOT use these docker services/containers in a production environment, these are only meant to support a development workflow.
 
-The ```./docker-composer.yml``` contains the instructions for creating 5 services/containers that will be used as your LEMP stack. Once you install [Docker](https://www.docker.com/) on your host machine run the following command to start the services/containers.
+The ```./docker-compose.yml``` contains the instructions for creating 5 services/containers that will be used as your LEMP stack. Once you install [Docker](https://www.docker.com/) on your host machine run the following command to start the services/containers.
 
 ```sh
-docker-composer up -d
+docker-compose up -d
 ```
 
 Use the following command to list the all services/containers

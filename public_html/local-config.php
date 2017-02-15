@@ -6,6 +6,7 @@
  * TODO: Create eject script for production build
  * TODO: Create database eject script with WP-CLI and search-replace
  * TODO: Update Webpack to Webpack 2
+ * TODO: Add notes to readme for changing out some_development_domain to your development domain
  */
 
 /* These settings match what docker will use */
