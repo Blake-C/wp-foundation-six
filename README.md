@@ -83,16 +83,23 @@ alias dps="docker ps --format \"table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Ports
 alias dimg="docker image list"
 alias dup="docker-compose up -d"
 
-dstop () {
+dstop() {
 	docker stop $(docker ps --format '{{.ID}}')
 }
 
-drm () {
+drm() {
 	docker rm $(docker ps -a -q)
 }
 
-dstart () {
+dstart() {
 	docker start $(docker ps -a -q)
+}
+
+# This command is not particularly for this project,
+# but it shows the flexibility of docker containers
+# to be used in different circumstances
+dockit() {
+	docker run --rm -it -v $PWD:/var/www/public_html digitalblake/general-cli:0.0.0 zsh
 }
 ```
 
