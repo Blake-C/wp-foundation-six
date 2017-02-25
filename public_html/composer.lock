@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fbee3dc51b06e4d49ef73fa619830dc7",
+    "content-hash": "ddce2cae169c65a63d3efcbf910a6b67",
     "packages": [
         {
             "name": "composer/installers",
@@ -259,26 +259,6 @@
             "homepage": "https://wordpress.org/plugins/redirection/"
         },
         {
-            "name": "wpackagist-plugin/redis-cache",
-            "version": "1.3.5",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/redis-cache/",
-                "reference": "tags/1.3.5"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redis-cache.1.3.5.zip",
-                "reference": "tags/1.3.5",
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/redis-cache/"
-        },
-        {
             "name": "wpackagist-plugin/regenerate-thumbnails",
             "version": "2.2.6",
             "source": {
@@ -309,7 +289,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.3.zip",
-                "reference": null,
+                "reference": "tags/4.3",
                 "shasum": null
             },
             "require": {

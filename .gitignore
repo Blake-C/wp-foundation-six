@@ -25,7 +25,6 @@ production-config.php
 /data/*/*
 !/data/backups/.gitit
 !/data/mysql/.gitit
-!/data/redis/.gitit
 docker_php_error_log
 
 
