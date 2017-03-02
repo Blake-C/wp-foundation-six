@@ -65,7 +65,7 @@ To remove all Docker services/containers after they have been stopped use
 docker rm $(docker ps -a -q)
 ```
 
-The default URL for this project will be served under ```0.0.0.0:8080```, to access phpmyadmin go to ```0.0.0.0:8000```. I have included one service/container that will allow you to run all the command line tools needed to start up the project. After running ```docker ps -a```, you'll see a service with the image named digitalblake/general-cli. Take the ID for this service/container and run the following command:
+The default URL for this project will be served under ```http://localhost```, to access phpmyadmin go to ```http://localhost:8000```. I have included one service/container that will allow you to run all the command line tools needed to start up the project. After running ```docker ps -a```, you'll see a service with the image named digitalblake/general-cli. Take the ID for this service/container and run the following command:
 
 ```sh
 docker exec -it put_the_id_here zsh
@@ -105,7 +105,7 @@ dockit() {
 
 ## MySQL - Databases
 
-To access phpmyadmin go to ```http://0.0.0.0:8000``` after starting the docker services/containers and login with the following credentials.
+To access phpmyadmin go to ```http://localhost:8000``` after starting the docker services/containers and login with the following credentials.
 
 - Server: mysql
 - Username: root
