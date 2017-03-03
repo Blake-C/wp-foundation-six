@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ddce2cae169c65a63d3efcbf910a6b67",
+    "content-hash": "618f0398f90dc12b1345fd1694ce63cc",
     "packages": [
         {
             "name": "composer/installers",
@@ -209,7 +209,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/akismet.3.3.zip",
-                "reference": null,
+                "reference": "tags/3.3",
                 "shasum": null
             },
             "require": {
@@ -220,16 +220,16 @@
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
-            "version": "5.5.4",
+            "version": "6.0.14",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
-                "reference": "tags/5.5.4"
+                "reference": "tags/6.0.14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.5.4.zip",
-                "reference": "tags/5.5.4",
+                "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.6.0.14.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -289,7 +289,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.4.zip",
-                "reference": null,
+                "reference": "tags/4.4",
                 "shasum": null
             },
             "require": {
