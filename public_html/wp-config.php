@@ -25,7 +25,7 @@ if ( !defined( 'WP_CLI' ) ) {
 	define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content' );
 } else {
 	define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
-	define( 'WP_CONTENT_URL', 'http://0.0.0.0:8080/wp-content' );
+	define( 'WP_CONTENT_URL', 'http://localhost/wp-content' );
 }
 
 // ========================
@@ -36,7 +36,7 @@ if ( !defined( 'WP_CLI' ) ) {
 	define( 'WP_PLUGIN_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content/plugins' );
 } else {
 	define( 'WP_PLUGIN_DIR', dirname( __FILE__ ) . '/wp-content/plugins' );
-	define( 'WP_PLUGIN_URL', 'http://0.0.0.0:8080/wp-content/plugins' );
+	define( 'WP_PLUGIN_URL', 'http://localhost/wp-content/plugins' );
 }
 
 // ========================

@@ -19,7 +19,7 @@ const dir = {
 };
 
 // BrowserSync Dev URL to reload
-const proxy_target = '0.0.0.0:80';
+const proxy_target = 'localhost';
 
 gulp.task('styles', ['lint:sass'], () => {
 	return gulp.src(`${dir.theme_components}/sass/**/*.scss`)
