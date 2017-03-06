@@ -103,6 +103,8 @@ dockit() {
 }
 ```
 
+### General CLI Container Scripts
+
 Along with these useful docker commands that you can add to your host machine, the `general-cli` container has several shell scripts to help you with your WordPress development.
 
 ```sh
