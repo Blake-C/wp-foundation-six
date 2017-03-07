@@ -101,8 +101,10 @@ if ( !function_exists('wp_foundation_six_dev_helper') ){
  * To make it easier to write out pre tag for arrays
  *
  */
-function print_pre($data) {
-	echo '<pre>';
-		print_r($data);
-	echo '</pre>';
+if ( !function_exists('print_pre') ){
+	function print_pre($data) {
+		echo '<pre>';
+			print_r($data);
+		echo '</pre>';
+	}
 }
