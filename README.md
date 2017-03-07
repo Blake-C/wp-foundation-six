@@ -250,16 +250,7 @@ const scripts_list = {
 
 To compile the theme code you can run the ```gulp``` task. This will build the themes JavaScript, SCSS, and Images. The default ```gulp``` task does not persist and will stop once done.
 
-To watch the files for changes as you develope you can run the ```gulp watch``` task.
-
-If you have a local development environment setup you can add your local domain as the proxy_target const at the top of the ```gulpfile.babel.js``` file. Your local domain should not contain "http://" or the ending "/". Then you can run ```gulp serve``` to start up the local dev server to have autoreload and style injection when developing in the browser.
-
-The line to change proxy_target will look like the follow:
-
-```js
-// BrowserSync Dev URL to reload
-const proxy_target = 'wp-foundation-six';
-```
+To watch the files for changes as you develop you can run the ```gulp watch``` task.
 
 When you are done building your theme you can run the ```gulp --build``` task. This will create a directory next to the development theme called ```wp-foundation-six-build``` this will only contain the files that should be added to the server. The node_modules, theme_components, and any dot files that are needed for development will not be included within the built theme. Once you upload the built theme to the server you can remove the -build from the end of the theme name so that you can FTP into it and the development version to make updates.
 
