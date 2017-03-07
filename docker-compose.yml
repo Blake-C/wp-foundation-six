@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   cli_tools:
     image: digitalblake/general-cli:0.0.0
@@ -12,7 +12,7 @@ services:
       - ./:/var/www/
     ports:
       - "80:80"
-    links:
+    depends_on:
       - mysql
       - php
 
@@ -20,8 +20,8 @@ services:
     image: digitalblake/wp-foundation-six-php:0.0.0
     volumes:
       - ./:/var/www/
-    ports:
-      - "9000:9000"
+    expose:
+      - "9000"
 
   mysql:
     image: mariadb:10.1.20
@@ -35,7 +35,7 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     restart: always
-    links:
+    depends_on:
       - mysql
     ports:
       - "8000:80"
