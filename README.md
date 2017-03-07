@@ -50,22 +50,16 @@ docker-compose up -d
 Use the following command to list the all services/containers
 
 ```sh
-docker ps -a
+docker container list -a
 ```
 
-To stop all Docker services/containers use
+To stop and remove all Docker services/containers
 
 ```sh
-docker stop $(docker ps --format '{{.ID}}')
+docker-compose down
 ```
 
-To remove all Docker services/containers after they have been stopped use
-
-```sh
-docker rm $(docker ps -a -q)
-```
-
-The default URL for this project will be served under ```http://localhost```, to access phpmyadmin go to ```http://localhost:8000```. I have included one service/container that will allow you to run all the command line tools needed to start up the project. After running ```docker ps -a```, you'll see a service with the image named digitalblake/general-cli. Take the ID for this service/container and run the following command:
+The default URL for this project will be served under ```http://localhost```, to access phpmyadmin go to ```http://localhost:8000```. I have included one service/container that will allow you to run all the command line tools needed to start up the project. After running ```docker container list -a```, you'll see a service with the image named digitalblake/general-cli. Take the ID for this service/container and run the following command:
 
 ```sh
 docker exec -it put_the_id_here zsh
@@ -79,21 +73,10 @@ I usually add the following to my ```~/.bash_profile``` or ```~/.zshrc``` file d
 
 ```sh
 # Docker Commands
-alias dps="docker ps --format \"table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}\" -a"
+alias dps="docker container list -a --format \"table {{.ID}}\t{{.Image}}\t{{.Status}}\t{{.Ports}}\""
 alias dimg="docker image list"
 alias dup="docker-compose up -d"
-
-dstop() {
-	docker stop $(docker ps --format '{{.ID}}')
-}
-
-drm() {
-	docker rm $(docker ps -a -q)
-}
-
-dstart() {
-	docker start $(docker ps -a -q)
-}
+alias ddown="docker-compose down"
 
 # This command is not particularly for this project,
 # but it shows the flexibility of docker containers
