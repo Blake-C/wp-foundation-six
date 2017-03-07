@@ -2,9 +2,6 @@
 
 /*
  * TODO: Add Modernizr setup notes to read me file
- * TODO: Create script to automate inital wp setup
- * TODO: Create eject script for production build
- * TODO: Create database eject script with WP-CLI and search-replace
  * TODO: Update Webpack to Webpack 2
  * TODO: Add notes to readme for changing out some_development_domain to your development domain
  */
