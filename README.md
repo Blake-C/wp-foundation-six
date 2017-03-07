@@ -265,7 +265,6 @@ gulp # <- same as "gulp build" without hyphens
 gulp styles
 gulp scripts
 gulp images
-gulp serve
 gulp watch
 gulp watch:code # <- only watches scripts and styles
 gulp clean
