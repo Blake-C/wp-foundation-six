@@ -5,20 +5,6 @@
  * @package wp_foundation_six
  */
 
-
-/**
- * HTTP Headers repsonse function (200, 404...)
- *
- * @link http://php.net/manual/en/function.get-headers.php
- */
-if ( !function_exists('wp_foundation_six_get_http_response_code') ){
-	function wp_foundation_six_get_http_response_code( $theURL ) {
-		$headers = get_headers( $theURL);
-		return substr( $headers[0], 9, 3 );
-	}
-}
-
-
 /**
  * Check & Load jQuery on CDN
  *
@@ -30,12 +16,7 @@ if ( !function_exists('wp_foundation_six_get_jquery_cdn') ){
 
 		// /* IF IE 8 */
 		if( !preg_match('/(?i)msie [6-8]/',$_SERVER['HTTP_USER_AGENT']) ) {
-			// Load jQuery from cdn if available
-			if ( wp_foundation_six_get_http_response_code( $options['modern_jquery_cdn'] ) == 200 ) {
-				wp_register_script( 'jquery', $options['modern_jquery_cdn'], false, null, true );
-			} else {
-				wp_register_script( 'jquery', get_template_directory_uri() . $options['modern_jquery_local'], false, null, true );
-			}
+			wp_register_script( 'jquery', get_template_directory_uri() . $options['modern_jquery_local'], false, null, true );
 		} else {
 			wp_register_script( 'jquery', $options['legacy_jquery_cdn'], false, null, true );
 			wp_enqueue_style( 'foundation-IE8-columns', get_template_directory_uri() . '/assets/css/ie8-grid-support.css' );
@@ -45,23 +26,6 @@ if ( !function_exists('wp_foundation_six_get_jquery_cdn') ){
 		wp_enqueue_script( 'jquery' );
 	}
 }
-
-
-/**
- * Check & Load on CDN
- *
- */
-if ( !function_exists('wp_foundation_six_get_cdn_asset') ){
-	function wp_foundation_six_get_cdn_asset( $handle, $cdnLocation, $localLocation, $deps, $ver, $in_footer ) {
-		// Load from cdn if available
-		if ( wp_foundation_six_get_http_response_code( $cdnLocation ) == 200 ) {
-			wp_enqueue_script( $handle, $cdnLocation, $deps, $ver, $in_footer );
-		} else {
-			wp_enqueue_script( $handle, get_template_directory_uri() . $localLocation, $deps, $ver, $in_footer );
-		}
-	}
-}
-
 
 /**
  * Add async to js URLs
