@@ -9,7 +9,7 @@ Starting up:
 - `cd your-project-name`
 - `docker-compose up -d`
 - `docker container list -a`
-- get the id (############) of the general-cli container
+	- get the id (############) of the general-cli container
 - `docker exec -it ############ zsh`
 - `composer install`
 - `composer update`
@@ -17,10 +17,10 @@ Starting up:
 - `yarn`
 - `gulp`
 - site will load under http://localhost
-- database under http://localhost:8000
-	- server: mysql
-	- user: root
-	- password: root
+	- database under http://localhost:8000
+		- server: mysql
+		- user: root
+		- password: root
 
 When done:
 - `exit`
