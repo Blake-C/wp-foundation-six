@@ -2,7 +2,8 @@
 /*
  * TODO: Add Modernizr setup notes to read me file
  * TODO: Update Webpack to Webpack 2
- * TODO: Add notes to readme for changing out some_development_domain to your development domain
+ * TODO: Add notes to readme for changing out some_development_domain to your development domain in robots-dev.txt
+ * TODO: Add to wp-eject to setup the production wp-config.php file
  */
 
 // ========================
