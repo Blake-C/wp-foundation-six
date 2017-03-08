@@ -87,6 +87,8 @@ docker exec -it put_the_id_here zsh
 
 This will take you into the service/container using ZSH and will give you access to vim, git, Composer, NPM, Bower, WP-CLI, Yarn, and Gulp. This way you don't have to install these CLI tools on your host machine. WARNING: You will be running under root when in this container, never use `rm -rf` and be mindful of what you are doing.
 
+The docker images for this project can be found in this repo: [https://github.com/Blake-C/docker-images](https://github.com/Blake-C/docker-images)
+
 ## Useful Docker Tips
 
 I usually add the following to my `~/.bash_profile` or `~/.zshrc` file depending on what system I am using. These functions and alias's are meant to help me quickly run the commands that I use most often with Docker. They might help you as well:
