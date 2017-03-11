@@ -118,7 +118,6 @@ if ( !function_exists( 'wp_foundation_six_scripts' ) ) {
 		/* Register jQuery, Utility Function */
 		wp_foundation_six_get_jquery_cdn(
 			array(
-				'modern_jquery_cdn' 	=> 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js',
 				'modern_jquery_local' 	=> '/assets/js/vendors/jquery/jquery.min.js',
 				'legacy_jquery_cdn' 	=> 'https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js'
 			)
