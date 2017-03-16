@@ -26,6 +26,8 @@ production-config.php
 /data/*/*
 !/data/backups/.gitit
 !/data/mysql/.gitit
+/logs/**/*
+!/logs/.gitit
 docker_php_error_log
 
 
@@ -77,7 +79,6 @@ node_modules
 object-cache.php
 advanced-cache.php
 db.php
-logs
 cache
 .phpintel
 *.sql
