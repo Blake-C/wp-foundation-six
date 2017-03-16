@@ -5,6 +5,7 @@ The WordPress Foundation 6 Developer Framework is meant to be a starting point f
 ## TL;DR
 
 Starting up:
+
 - `git clone git@github.com:Blake-C/wp-foundation-six.git your-project-name`
 - `cd your-project-name`
 - `docker-compose up -d`
@@ -23,6 +24,7 @@ Starting up:
 		- password: root
 
 When done:
+
 - `exit`
 - `docker-compose down`
 
