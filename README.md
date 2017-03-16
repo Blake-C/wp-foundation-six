@@ -2,9 +2,10 @@
 
 The WordPress Foundation 6 Developer Framework is meant to be a starting point for developers to create projects without having third party code/modules within their git repo. This project uses [Composer](https://getcomposer.org/) to install [WordPress](https://wordpress.org/) and default plugins as project dependencies. The base theme uses [NPM](https://www.npmjs.com/) to install script dependencies, and [Gulp](http://gulpjs.com/) as the build system. Gulp also uses [Babel](http://babeljs.io/) and [Webpack](https://webpack.github.io/) to transpile ES6/ES2015 to ES5 so that you can use the latest [ECMAScript](https://en.wikipedia.org/wiki/ECMAScript) syntax.
 
-## TLDR
+## TL;DR
 
 Starting up:
+
 - `git clone git@github.com:Blake-C/wp-foundation-six.git your-project-name`
 - `cd your-project-name`
 - `docker-compose up -d`
@@ -23,19 +24,16 @@ Starting up:
 		- password: root
 
 When done:
+
 - `exit`
 - `docker-compose down`
 
 ## Global Requirements
 
-- [Composer](https://getcomposer.org/)
-- [Node](https://nodejs.org/)
-	- [NPM](https://www.npmjs.com/)
-		- [Gulp](http://gulpjs.com/)
-- [LAMP/LEMP Stack](https://en.wikipedia.org/wiki/LAMP_(software_bundle))
-	- [Docker](https://www.docker.com/)
+- [Docker](https://www.docker.com/)
+	- [Download Docker](https://store.docker.com/search?offering=community&type=edition)
 
-When using Docker there is a service/container named digitalblake/general-cli with Composer, Node, NPM, and Gulp. If you plan to use Docker you don't need to have those tools installed on your machine, you'll be able to run the commands inside the General CLI container.
+This project provides a docker container called `general-cli`, the general-cli container provides all the command line tools required to build the project and theme. The cli tools needed are Composer, Node, NPM, and Gulp. If you want to use this project on MAMP, WAMP, XAMPP, or AMPPS you will need to install these command line tools on your local machine and server the project from the public_html directory.
 
 ## Installation
 
@@ -65,7 +63,7 @@ git push origin master
 
 WP Foundation Six Developer Framework uses docker for it's server stack, if you use MAMP, XAMP, WAMP, or AMPPS just set your project directory to start under the public_html directory. DO NOT use these docker services/containers in a production environment, these are only meant to support a development workflow.
 
-The ```./docker-compose.yml``` contains the instructions for creating 5 services/containers that will be used as your LEMP stack. Once you install [Docker](https://www.docker.com/) on your host machine run the following command to start the services/containers.
+The `./docker-compose.yml` contains the instructions for creating 5 services/containers that will be used as your LEMP stack. Once you install [Docker](https://www.docker.com/) on your host machine run the following command to start the services/containers.
 
 ```sh
 docker-compose up -d
@@ -83,17 +81,19 @@ To stop and remove all Docker services/containers
 docker-compose down
 ```
 
-The default URL for this project will be served under ```http://localhost```, to access phpmyadmin go to ```http://localhost:8000```. I have included one service/container that will allow you to run all the command line tools needed to start up the project. After running ```docker container list -a```, you'll see a service with the image named digitalblake/general-cli. Take the ID for this service/container and run the following command:
+The default URL for this project will be served under `http://localhost`, to access phpmyadmin go to `http://localhost:8000`. I have included one service/container that will allow you to run all the command line tools needed to start up the project. After running `docker container list -a`, you'll see a service with the image named digitalblake/general-cli. Take the ID for this service/container and run the following command:
 
 ```sh
 docker exec -it put_the_id_here zsh
 ```
 
-This will take you into the service/container using ZSH and will give you access to vim, git, Composer, NPM, Bower, WP-CLI, Yarn, and Gulp. This way you don't have to install these CLI tools on your host machine. WARNING: You will be running under root when in this container, never use ```rm -rf``` and be mindful of what you are doing.
+This will take you into the service/container using ZSH and will give you access to vim, git, Composer, NPM, Bower, WP-CLI, Yarn, and Gulp. This way you don't have to install these CLI tools on your host machine. WARNING: You will be running under root when in this container, never use `rm -rf` and be mindful of what you are doing.
+
+The docker images for this project can be found in this repo: [https://github.com/Blake-C/docker-images](https://github.com/Blake-C/docker-images)
 
 ## Useful Docker Tips
 
-I usually add the following to my ```~/.bash_profile``` or ```~/.zshrc``` file depending on what system I am using. These functions and alias's are meant to help me quickly run the commands that I use most often with Docker. They might help you as well:
+I usually add the following to my `~/.bash_profile` or `~/.zshrc` file depending on what system I am using. These functions and alias's are meant to help me quickly run the commands that I use most often with Docker. They might help you as well:
 
 ```sh
 # Docker Commands
@@ -146,17 +146,17 @@ wp-eject
 
 ## MySQL - Databases
 
-To access phpmyadmin go to ```http://localhost:8000``` after starting the docker services/containers and login with the following credentials.
+To access phpmyadmin go to `http://localhost:8000` after starting the docker services/containers and login with the following credentials.
 
 - Server: mysql
 - Username: root
 - Password: root
 
-This will log you into the phpmyadmin browser interface. When adding or creating a database be sure to set the site url in the options table to serve core WordPress from ```/wp```, the home url will stay at the root level ```/```. When you start up docker it will generate a new database called wp_foundation_six, this is what is setup to be used in the ```./public_html/local-config.php``` file.
+This will log you into the phpmyadmin browser interface. When adding or creating a database be sure to set the site url in the options table to serve core WordPress from `/wp`, the home url will stay at the root level `/`. When you start up docker it will generate a new database called wp_foundation_six, this is what is setup to be used in the `./public_html/wp-config.php` file.
 
 ## Composer
 
-Now you can run ```composer install``` then ```composer update``` within your ```./public_html directory```. This will install WordPress into the ```./public_html/wp``` directory and install plugins into the ```./public_html/wp-content/plugins``` directory.
+Now you can run `composer install` then `composer update` within your `./public_html directory`. This will install WordPress into the `./public_html/wp` directory and install plugins into the `./public_html/wp-content/plugins` directory.
 
 The following default plugins will be installed:
 - [wordpress-seo](https://wordpress.org/plugins/wordpress-seo/)
@@ -165,7 +165,7 @@ The following default plugins will be installed:
 - [regenerate-thumbnails](https://wordpress.org/plugins/regenerate-thumbnails/)
 - [akismet](https://wordpress.org/plugins/akismet/)
 
-Once composer has completed installing WordPress and the default Plugins, change directories to ```cd public_html/wp-content/themes/wp-foundation-six``` then you can run ```npm install```. This will install the node modules so that Gulp can run its tasks. Jump down to the Gulp Tasks section to learn more about the tasks.
+Once composer has completed installing WordPress and the default Plugins, change directories to `cd public_html/wp-content/themes/wp-foundation-six` then you can run `npm install` or `yarn`. This will install the node modules so that Gulp can run its tasks. Jump down to the Gulp Tasks section to learn more about the tasks.
 
 ## Add/Remove composer packages/modules
 
@@ -183,7 +183,7 @@ Add new composer package:
 composer require wpackagist-plugin/name-of-plugin
 ```
 
-All public WordPress plugins that are listed in the WordPress plugin directory can be installed using composer with the vendor name: ```wpackagist-plugin```. For a full list of public WordPress plugins that can be installed using composer please refer to [wpackagist.org](https://wpackagist.org/).
+All public WordPress plugins that are listed in the WordPress plugin directory can be installed using composer with the vendor name: `wpackagist-plugin`. For a full list of public WordPress plugins that can be installed using composer please refer to [wpackagist.org](https://wpackagist.org/).
 
 Remove composer package:
 
@@ -205,9 +205,9 @@ If you need to include premium plugins in your project that are not listed in th
 
 This section is only relevant if you intend to use the built in wp-foundation-six base theme.
 
-The base theme includes the [Gulp](http://gulpjs.com/) task manager that will run a [Webpack](https://webpack.github.io/) task that will use [Babel](https://babeljs.io/) to transpile [ES6/ES2015](https://babeljs.io/docs/learn-es2015/) into ES5. This means you can use ES2015 ```import``` to include modules into your project.
+The base theme includes the [Gulp](http://gulpjs.com/) task manager that will run a [Webpack](https://webpack.github.io/) task that will use [Babel](https://babeljs.io/) to transpile [ES6/ES2015](https://babeljs.io/docs/learn-es2015/) into ES5. This means you can use ES2015 `import` to include modules into your project.
 
-jQuery has been set as a global script for third party WordPress plugins. Since we never know when a WordPress plugin will require jQuery we need to leave it in the global/window scope. When using jQuery within your custom scripts you do not need to ```import``` it in, you can use the ```$``` as you normally would.
+jQuery has been set as a global script for third party WordPress plugins. Since we never know when a WordPress plugin will require jQuery we need to leave it in the global/window scope. When using jQuery within your custom scripts you do not need to `import` it in, you can use the `$` as you normally would.
 
 The scripts that run through the Gulp tasks will also be subject to [ESLint](http://eslint.org/) for code quality control. This is to keep the project scripts within a set standard for the development team and to catch any errors before the projects goes to production.
 
@@ -235,7 +235,7 @@ or
 import '../../../node_modules/name-of-package/js/index.js';
 ```
 
-Be sure to use ```../``` as many times as you nest directories within the ```theme_components/js``` directory.
+Be sure to use `../` as many times as you nest directories within the `theme_components/js` directory.
 
 If you need to add a new script file to be exported as a new bundle then create your file within the theme_components/js directory and add the name of your file to the scripts-list.js file within that same directory. This file has a const that is imported into the Webpack config as an object of exported bundles.
 
@@ -248,15 +248,15 @@ const scripts_list = {
 
 ## Gulp Tasks
 
-To compile the theme code you can run the ```gulp``` task. This will build the themes JavaScript, SCSS, and Images. The default ```gulp``` task does not persist and will stop once done.
+To compile the theme code you can run the `gulp` task. This will build the themes JavaScript, SCSS, and Images. The default `gulp` task does not persist and will stop once done.
 
-To watch the files for changes as you develop you can run the ```gulp watch``` task.
+To watch the files for changes as you develop you can run the `gulp watch` task.
 
-When you are done building your theme you can run the ```gulp --build``` task. This will create a directory next to the development theme called ```wp-foundation-six-build``` this will only contain the files that should be added to the server. The node_modules, theme_components, and any dot files that are needed for development will not be included within the built theme. Once you upload the built theme to the server you can remove the -build from the end of the theme name so that you can FTP into it and the development version to make updates.
+When you are done building your theme you can run the `gulp --build` task. This will create a directory next to the development theme called `wp-foundation-six-build` this will only contain the files that should be added to the server. The node_modules, theme_components, and any dot files that are needed for development will not be included within the built theme. Once you upload the built theme to the server you can remove the -build from the end of the theme name so that you can FTP into it and the development version to make updates.
 
-If you want to clean up your development environment of built assets just run the ```gulp clean``` task to delete the built theme, and assets directory.
+If you want to clean up your development environment of built assets just run the `gulp clean` task to delete the built theme, and assets directory.
 
-There are a number of sub tasks that get initiated with the main tasks that can be run individually as needed. All tasks can be found in the ```gulpfile.babel.js``` file.
+There are a number of sub tasks that get initiated with the main tasks that can be run individually as needed. All tasks can be found in the `gulpfile.babel.js` file.
 
 List of Gulp Tasks:
 
@@ -272,7 +272,7 @@ gulp build:code # <- only builds scripts and styles
 gulp --build
 ```
 
-These are not all the tasks, but just a list of the major tasks you might want to run individually to save time. The watch tasks do not work inside of docker services/containers at the moment.
+These are not all the tasks, but just a list of the major tasks you might want to run individually to save time.
 
 ## Unit Test Data
 
@@ -283,7 +283,7 @@ If you need unit test data to work with you can download it from here:
 
 ## What Now?
 
-- In the ```public_html/wp-content/themes/wp-foundation-six/style.css``` file you will need to update the theme name and other settings.
+- In the `public_html/wp-content/themes/wp-foundation-six/style.css` file you will need to update the theme name and other settings.
 - Update your app icons using [Favicon Generator](http://realfavicongenerator.net/)
 - Think about optimizing the load order of your scripts and how you might be able to combine files for fewer http requests.
 - Carefully organize your [Sass](http://sass-lang.com/) so that other developers can understand your code.
