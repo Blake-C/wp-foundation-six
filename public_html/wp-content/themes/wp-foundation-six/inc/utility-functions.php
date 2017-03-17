@@ -6,28 +6,6 @@
  */
 
 /**
- * Check & Load jQuery on CDN
- *
- */
-if ( !function_exists('wp_foundation_six_get_jquery_cdn') ){
-	function wp_foundation_six_get_jquery_cdn( $options ) {
-		// Deregister the jquery version bundled with wordpress && add newer
-		wp_deregister_script( 'jquery' );
-
-		// /* IF IE 8 */
-		if( !preg_match('/(?i)msie [6-8]/',$_SERVER['HTTP_USER_AGENT']) ) {
-			wp_register_script( 'jquery', get_template_directory_uri() . $options['modern_jquery_local'], false, null, true );
-		} else {
-			wp_register_script( 'jquery', $options['legacy_jquery_cdn'], false, null, true );
-			wp_enqueue_style( 'foundation-IE8-columns', get_template_directory_uri() . '/assets/css/ie8-grid-support.css' );
-		}
-
-		// Reregister jQuery
-		wp_enqueue_script( 'jquery' );
-	}
-}
-
-/**
  * Add async to js URLs
  * Only use asyn on scripts that wont break if they are loaded after
  * the page or other scripts have loaded.
