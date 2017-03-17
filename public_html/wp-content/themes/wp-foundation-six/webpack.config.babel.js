@@ -10,10 +10,10 @@
 import path from 'path';
 import webpack from 'webpack';
 import ModernizrWebpackPlugin from 'modernizr-webpack-plugin';
-import scripts_list from './theme_components/js/scripts-list.js';
+import scriptsList from './theme_components/js/scripts-list.js';
 
 const webpackConfig = {
-	entry: scripts_list,
+	entry: scriptsList,
 	output: {
 		path: path.resolve(__dirname, './assets/js'),
 		filename: 'bundle.[name].js'
