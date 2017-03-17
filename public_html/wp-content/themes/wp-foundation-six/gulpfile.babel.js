@@ -38,7 +38,7 @@ gulp.task('scripts:jquery', () => {
 		.pipe($.uglify())
 		.pipe($.rename({ suffix: '.min' }))
 		.pipe($.sourcemaps.write('.'))
-		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js/vendors/jquery`), gulp.dest(`${dir.dev}/js/vendors/jquery`)));
+		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js/vendors`), gulp.dest(`${dir.dev}/js/vendors`)));
 });
 
 gulp.task('styles', ['lint:sass'], () => {
