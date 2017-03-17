@@ -162,8 +162,12 @@ gulp.task('copy', () => {
 		'!./codesniffer.ruleset.xml',
 		'!./gulpfile.babel.js',
 		'!./webpack.config.js',
+		'!./webpack.config.babel.js',
+		'!./package.json',
 		'!./yarn.lock',
-		'!./{,*}.json'
+		'!./.babelrc',
+		'!./.sass-lint.yml',
+		'!./.eslintrc.json'
 	])
 	.pipe($.if(argv.build, gulp.dest(dir.build)));
 })
