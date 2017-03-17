@@ -11,7 +11,6 @@ const modernizrFeatureDetects = [
 	'css/animations',
 	'css/backgroundsize',
 	'css/transforms',
-	'css/transforms',
 	'css/transforms3d',
 	'css/transitions',
 	'svg'
