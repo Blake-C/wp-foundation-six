@@ -240,10 +240,29 @@ Be sure to use `../` as many times as you nest directories within the `theme_com
 If you need to add a new script file to be exported as a new bundle then create your file within the theme_components/js directory and add the name of your file to the scripts-list.js file within that same directory. This file has a const that is imported into the Webpack config as an object of exported bundles.
 
 ```js
-const scripts_list = {
+// public_html/wp-content/themes/wp-foundation-six/theme_components/js/scripts-list.js
+
+const scriptsList = {
 	'global-scripts': './theme_components/js/global-scripts.js',
 	'my-new-scripts': './theme_components/js/my-new-scripts.js'
 }
+```
+
+If you or any third part scripts need Modernizr feature detects you'll want to add the feature you want to check to the modernizr-feature-detects.js file. For a list of proper feature detects you'll want to look at this list of [Modernizr configs](https://github.com/Modernizr/Modernizr/blob/master/lib/config-all.json). This file is pulled into the webpack.config.babal.js as an array for a custom modernizr build.
+
+```js
+// public_html/wp-content/themes/wp-foundation-six/theme_components/js/modernizr-feature-detects.js
+
+const modernizrFeatureDetects = [
+	'svg',
+	'css/transforms',
+	'css/transforms3d',
+	'css/transitions',
+	'css/transforms',
+	'css/animations'
+];
+
+export default modernizrFeatureDetects;
 ```
 
 ## Gulp Tasks
