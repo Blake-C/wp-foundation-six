@@ -9,6 +9,7 @@
 */
 import path from 'path';
 import webpack from 'webpack';
+import ModernizrWebpackPlugin from 'modernizr-webpack-plugin';
 import scripts_list from './theme_components/js/scripts-list.js';
 
 const webpackConfig = {
@@ -45,6 +46,26 @@ const webpackConfig = {
 				screw_ie8: true,
 				warnings: false
 			}
+		}),
+		new ModernizrWebpackPlugin({
+			filename: 'vendors/bundle.modernizr.js',
+			minify: {
+				output: {
+					comments: false,
+					beautify: false
+				}
+			},
+			'options': [
+				'setClasses',
+				'html5shiv',
+				'html5printshiv'
+			],
+			'feature-detects': [
+				'svg',
+				'css/transforms',
+				'css/transforms3d',
+				'css/transitions'
+			]
 		})
 	]
 };
