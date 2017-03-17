@@ -33,7 +33,7 @@ When done:
 - [Docker](https://www.docker.com/)
 	- [Download Docker](https://store.docker.com/search?offering=community&type=edition)
 
-This project provides a docker container called `general-cli`, the general-cli container provides all the command line tools required to build the project and theme. The cli tools needed are Composer, Node, NPM, and Gulp. If you want to use this project on MAMP, WAMP, XAMPP, or AMPPS you will need to install these command line tools on your local machine and server the project from the public_html directory.
+This project provides a docker container called `general-cli`, the general-cli container provides all the command line tools required to build the project and theme. The cli tools needed are Composer, Node, NPM, and Gulp. If you want to use this project on MAMP, WAMP, XAMPP, or AMPPS you will need to install the command line tools (composer, node, npm, yarn, gulp) on your local machine and server the project from the public_html directory.
 
 ## Installation
 
