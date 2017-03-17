@@ -117,10 +117,10 @@ if ( !function_exists( 'wp_foundation_six_scripts' ) ) {
 
 		/* Register Modern jQuery */
 		wp_deregister_script( 'jquery' );
-		wp_register_script( 'jquery', get_template_directory_uri() . '/assets/js/vendors/jquery.min.js', false, null, true );
+		wp_register_script( 'jquery', get_template_directory_uri() . '/assets/js/vendors/jquery.min.js', array('wp-foundation-six-modernizr'), null, true );
 		wp_enqueue_script( 'jquery' );
 
-		/* Import Scripts (Keep to a minimum or import into scripts file) */
+		/* Import Scripts (Keep to a minimum or import into global-scripts.js file) */
 		wp_enqueue_script( 'wp-foundation-six-global', get_template_directory_uri() . '/assets/js/bundle.global-scripts.js', array('jquery', 'wp-foundation-six-modernizr'), null, true );
 		wp_enqueue_script( 'wp-foundation-six-modernizr', get_template_directory_uri() . '/assets/js/vendors/bundle.modernizr.js', null, null, true );
 
