@@ -11,6 +11,7 @@ import path from 'path';
 import webpack from 'webpack';
 import ModernizrWebpackPlugin from 'modernizr-webpack-plugin';
 import scriptsList from './theme_components/js/scripts-list.js';
+import modernizrFeatureDetects from './theme_components/js/modernizr-feature-detects.js';
 
 const webpackConfig = {
 	entry: scriptsList,
@@ -60,12 +61,7 @@ const webpackConfig = {
 				'html5shiv',
 				'html5printshiv'
 			],
-			'feature-detects': [
-				'svg',
-				'css/transforms',
-				'css/transforms3d',
-				'css/transitions'
-			]
+			'feature-detects': modernizrFeatureDetects
 		})
 	]
 };
