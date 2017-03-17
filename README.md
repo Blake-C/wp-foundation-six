@@ -254,12 +254,13 @@ If you or any third part scripts need Modernizr feature detects you'll want to a
 // public_html/wp-content/themes/wp-foundation-six/theme_components/js/modernizr-feature-detects.js
 
 const modernizrFeatureDetects = [
-	'svg',
+	'css/animations',
+	'css/backgroundsize',
+	'css/transforms',
 	'css/transforms',
 	'css/transforms3d',
 	'css/transitions',
-	'css/transforms',
-	'css/animations'
+	'svg'
 ];
 
 export default modernizrFeatureDetects;

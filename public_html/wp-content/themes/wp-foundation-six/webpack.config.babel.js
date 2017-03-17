@@ -57,9 +57,10 @@ const webpackConfig = {
 				}
 			},
 			'options': [
-				'setClasses',
+				'html5printshiv',
 				'html5shiv',
-				'html5printshiv'
+				'prefixed'
+				'setClasses',
 			],
 			'feature-detects': modernizrFeatureDetects
 		})
