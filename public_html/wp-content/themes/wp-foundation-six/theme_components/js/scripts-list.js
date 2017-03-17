@@ -3,8 +3,8 @@
  * Path new scripts from root of theme.
  */
 
-const scripts_list = {
+const scriptsList = {
 	'global-scripts': './theme_components/js/global-scripts.js'
 };
 
-export default scripts_list;
+export default scriptsList;
