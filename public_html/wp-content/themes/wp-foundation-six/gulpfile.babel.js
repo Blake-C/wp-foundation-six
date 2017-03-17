@@ -1,14 +1,11 @@
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 // import browserSync from 'browser-sync';
-import del from 'del';
-import yargs from 'yargs';
-import pngquant from 'imagemin-pngquant';
 import webpackConfig from "./webpack.config.babel.js";
 
 const $ = gulpLoadPlugins({pattern: ["*"]});
 // const reload = browserSync.reload;
-const argv = yargs.argv;
+const argv = $.yargs.argv;
 
 // Paths for source and distribution files
 const dir = {
@@ -93,7 +90,7 @@ gulp.task('images', () => {
 			// don't remove IDs from SVGs, they are often used
 			// as hooks for embedding and styling
 			svgoPlugins: [{cleanupIDs: false}],
-			use: [pngquant({quality: '65-80', speed: 4})],
+			use: [$.imageminPngquant({quality: '65-80', speed: 4})],
 		})
 		.on('error', function (err) {
 			console.log(err);
@@ -153,7 +150,7 @@ gulp.task('watch:code', ['styles', 'scripts'], () => {
 });
 
 gulp.task('clean',
-	del.bind(null, [dir.build, dir.dev], {force : true})
+	$.del.bind(null, [dir.build, dir.dev], {force : true})
 );
 
 gulp.task('copy', () => {
