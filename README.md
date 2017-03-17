@@ -248,7 +248,7 @@ const scriptsList = {
 }
 ```
 
-If you or any third part scripts need Modernizr feature detects you'll want to add the feature you want to check to the modernizr-feature-detects.js file. For a list of proper feature detects you'll want to look at this list of [Modernizr configs](https://github.com/Modernizr/Modernizr/blob/master/lib/config-all.json). This file is pulled into the webpack.config.babal.js as an array for a custom modernizr build.
+If you or any third part scripts need [Modernizr](https://modernizr.com/) feature detects you'll want to add the feature you want to check to the modernizr-feature-detects.js file. For a list of proper feature detects you'll want to look at this list of [Modernizr configs](https://github.com/Modernizr/Modernizr/blob/master/lib/config-all.json). This file is pulled into the webpack.config.babel.js as an array for a custom modernizr build.
 
 ```js
 // public_html/wp-content/themes/wp-foundation-six/theme_components/js/modernizr-feature-detects.js
