@@ -1,24 +1,20 @@
 {
+  "root": true,
+  "extends": ["eslint:recommended"],
+  "installedESLint": true,
   "env": {
     "browser": true,
-    "commonjs": true,
+    "jquery": true,
     "es6": true
   },
-  "extends": ["eslint:recommended"],
-  "globals": {
-    "jQuery": true,
-    "$": true,
-    "Modernizr": true
-  },
-  "installedESLint": true,
   "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
       "jsx": true
-    },
-    "sourceType": "module"
+    }
   },
-  "root": true,
   "rules": {
     "indent": ["warn", "tab"],
     "linebreak-style": ["warn", "unix"],

@@ -18,7 +18,8 @@ const webpackConfig = {
 		filename: 'bundle.[name].js'
 	},
 	externals: {
-		jquery: "jQuery"
+		jquery: "jQuery",
+		modernizr: "Modernizr"
 	},
 	devtool: 'source-map',
 	module: {

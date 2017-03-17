@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 import '../../../node_modules/foundation-sites/dist/js/plugins/foundation.core.js';
 
 // import '../../../node_modules/foundation-sites/dist/js/plugins/foundation.util.box.js';
@@ -29,6 +31,7 @@ import '../../../node_modules/foundation-sites/dist/js/plugins/foundation.respon
 // import '../../../node_modules/foundation-sites/dist/js/plugins/foundation.toggler.js';
 // import '../../../node_modules/foundation-sites/dist/js/plugins/foundation.tooltip.js';
 // import '../../../node_modules/foundation-sites/dist/js/plugins/foundation.zf.responsiveAccordionTabs.js';
+
 /**
  * Notes:
  *
@@ -48,9 +51,7 @@ import '../../../node_modules/foundation-sites/dist/js/plugins/foundation.respon
  * @link https://webpack.github.io/docs/code-splitting.html
  */
 
-(function($){
-	$(document).foundation();
+$(document).foundation();
 
-	// Display menu once scripts have loaded
-	$('#main_menu').fadeIn();
-})(jQuery);
+// Display menu once scripts have loaded
+$('#main_menu').fadeIn();
