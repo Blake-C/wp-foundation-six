@@ -1,13 +1,13 @@
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
-import browserSync from 'browser-sync';
+// import browserSync from 'browser-sync';
 import del from 'del';
 import yargs from 'yargs';
 import pngquant from 'imagemin-pngquant';
-import webpackConfig from "./webpack.config.js";
+import webpackConfig from "./webpack.config.babel.js";
 
 const $ = gulpLoadPlugins({pattern: ["*"]});
-const reload = browserSync.reload;
+// const reload = browserSync.reload;
 const argv = yargs.argv;
 
 // Paths for source and distribution files
@@ -19,7 +19,27 @@ const dir = {
 };
 
 // BrowserSync Dev URL to reload
-const proxy_target = 'localhost';
+// const proxy_target = 'localhost';
+
+gulp.task('scripts', () => {
+	return gulp.src([`${dir.theme_components}/js/global-scripts.js`])
+		.pipe($.plumber())
+		.pipe($.webpackStream(webpackConfig, $.webpack))
+		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js`), gulp.dest(`${dir.dev}/js`)));
+		// .pipe(reload({stream: true}));
+		// .pipe($.notify({ message: 'Scripts Task Completed.', onLast: true }));
+});
+
+gulp.task('scripts:jquery', () => {
+	// Sets up modern jQuery for WordPress to use in functions.php
+	return gulp.src('./node_modules/jquery/dist/jquery.js')
+		.pipe($.plumber())
+		.pipe($.sourcemaps.init())
+		.pipe($.uglify())
+		.pipe($.rename({ suffix: '.min' }))
+		.pipe($.sourcemaps.write('.'))
+		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js/vendors/jquery`), gulp.dest(`${dir.dev}/js/vendors/jquery`)));
+});
 
 gulp.task('styles', ['lint:sass'], () => {
 	return gulp.src(`${dir.theme_components}/sass/**/*.scss`)
@@ -47,8 +67,8 @@ gulp.task('styles', ['lint:sass'], () => {
 			gzip: true,
 			pretty: true
 		}))
-		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/css`), gulp.dest(`${dir.dev}/css`)))
-		.pipe($.if(!argv.build, browserSync.stream({match: '**/*.css'})));
+		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/css`), gulp.dest(`${dir.dev}/css`)));
+		// .pipe($.if(!argv.build, browserSync.stream({match: '**/*.css'})));
 		// .pipe($.notify({ message: 'Styles Task Completed.', onLast: true }));
 });
 
@@ -60,59 +80,6 @@ gulp.task('lint:sass', function() {
 		}))
 		.pipe($.sassLint.format())
 		.pipe($.sassLint.failOnError())
-});
-
-gulp.task('scripts', () => {
-	return gulp.src([`${dir.theme_components}/js/global-scripts.js`])
-		.pipe($.plumber())
-		.pipe($.webpackStream(webpackConfig, $.webpack))
-		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js`), gulp.dest(`${dir.dev}/js`)))
-		.pipe(reload({stream: true}));
-		// .pipe($.notify({ message: 'Scripts Task Completed.', onLast: true }));
-});
-
-gulp.task('scripts:vendors', ['scripts:ie', 'scripts:jquery', 'scripts:rem']);
-
-gulp.task('scripts:ie', () => {
-	// Combines all the IE8 fallback scripts to be called in footer
-	return gulp.src([
-			'./node_modules/nwmatcher/src/nwmatcher.js',
-			'./theme_components/js/vendors-legacy/selectivizr.js', // not on npm, saved in project for now
-			'./node_modules/Respond.js/dest/respond.src.js'
-		])
-		.pipe($.plumber())
-		.pipe($.sourcemaps.init())
-		.pipe($.concat('ie-scripts.js'))
-		.pipe($.if(argv.build, $.uglify()))
-		.pipe($.rename({ suffix: '.min' }))
-		.pipe($.sourcemaps.write('.'))
-		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js/vendors`), gulp.dest(`${dir.dev}/js/vendors`)));
-});
-
-/**
- * Removed jquery legacy reference. The only legacy jquery will be referenced from a CDN sourse.
- */
-
-gulp.task('scripts:jquery', () => {
-	// Sets up modern jQuery for WordPress to use in functions.php
-	return gulp.src('./node_modules/jquery/dist/jquery.js')
-		.pipe($.plumber())
-		.pipe($.sourcemaps.init())
-		.pipe($.uglify())
-		.pipe($.rename({ suffix: '.min' }))
-		.pipe($.sourcemaps.write('.'))
-		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js/vendors/jquery`), gulp.dest(`${dir.dev}/js/vendors/jquery`)));
-});
-
-gulp.task('scripts:rem', () => {
-	// Sets up rem unit polyfill for WordPress to use in functions.php
-	return gulp.src('./node_modules/rem/js/rem.js')
-		.pipe($.plumber())
-		.pipe($.sourcemaps.init())
-		.pipe($.if(argv.build, $.uglify()))
-		.pipe($.rename({ suffix: '.min' }))
-		.pipe($.sourcemaps.write('.'))
-		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js/vendors`), gulp.dest(`${dir.dev}/js/vendors`)));
 });
 
 gulp.task('images', () => {
@@ -153,27 +120,27 @@ gulp.task('icons', () => {
  *
  *
 */
-gulp.task('serve', ['styles', 'scripts', 'scripts:vendors', 'images', 'fonts', 'icons'], () => {
-	var files = [
-		'**/*.php'
-	];
+// gulp.task('serve', ['styles', 'scripts', 'scripts:jquery', 'images', 'fonts', 'icons'], () => {
+// 	var files = [
+// 		'**/*.php'
+// 	];
 
-	browserSync(files, {
-		proxy: {
-			target: proxy_target
-		},
-		open: false,
-		browser: 'google chrome',
-		notify: false
-	});
+// 	browserSync(files, {
+// 		proxy: {
+// 			target: proxy_target
+// 		},
+// 		open: false,
+// 		browser: 'google chrome',
+// 		notify: false
+// 	});
 
-	gulp.watch([`${dir.theme_components}/sass/**/*`], ['styles']);
-	gulp.watch([`${dir.theme_components}/js/**/*`], ['scripts']).on('change', reload);
-	gulp.watch([`${dir.theme_components}/fonts/**/*`], ['fonts']).on('change', reload);
-	gulp.watch([`${dir.theme_components}/images/**/*`], ['images']).on('change', reload);
-});
+// 	gulp.watch([`${dir.theme_components}/sass/**/*`], ['styles']);
+// 	gulp.watch([`${dir.theme_components}/js/**/*`], ['scripts']).on('change', reload);
+// 	gulp.watch([`${dir.theme_components}/fonts/**/*`], ['fonts']).on('change', reload);
+// 	gulp.watch([`${dir.theme_components}/images/**/*`], ['images']).on('change', reload);
+// });
 
-gulp.task('watch', ['styles', 'scripts', 'scripts:vendors', 'images', 'fonts', 'icons'], () => {
+gulp.task('watch', ['styles', 'scripts', 'scripts:jquery', 'images', 'fonts', 'icons'], () => {
 	gulp.watch([`${dir.theme_components}/sass/**/*`], ['styles']);
 	gulp.watch([`${dir.theme_components}/js/**/*`], ['scripts']);
 	gulp.watch([`${dir.theme_components}/fonts/**/*`], ['fonts']);
@@ -204,7 +171,7 @@ gulp.task('copy', () => {
 	.pipe($.if(argv.build, gulp.dest(dir.build)));
 })
 
-gulp.task('build', ['styles', 'scripts', 'scripts:vendors', 'images', 'fonts', 'icons', 'copy'], () => {
+gulp.task('build', ['styles', 'scripts', 'scripts:jquery', 'images', 'fonts', 'icons', 'copy'], () => {
 	return gulp.src(dir.build_assets + '/**/*')
 		.pipe($.size({title: 'build', gzip: true}))
 		.pipe(gulp.dest( dir.build_assets ));
