@@ -134,7 +134,7 @@ if ( !function_exists( 'wp_foundation_six_scripts' ) ) {
 		 *
 		 * @link https://codex.wordpress.org/Template_Tags
 		*/
-		// if ( is_home_page() ) {
+		// if ( is_front_page() ) {
 		// 	wp_enqueue_script( 'wp-foundation-six-home-scripts', get_template_directory_uri() . '/assets/js/scripts-home-min.js', array('jquery'), '21112015', true );
 		// }
 	}
