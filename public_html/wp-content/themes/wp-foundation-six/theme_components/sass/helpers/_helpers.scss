@@ -3,20 +3,6 @@
 	http://www.sitepoint.com/sass-mixin-placeholder/
  */
 
-%clearfix {
-	&:before,
-	&:after {
-		content: '\0020';
-		display: block;
-		height: 0;
-		overflow: hidden;
-	}
-
-	&:after {
-		clear: both;
-	}
-} // to use: @extend %clearfix;
-
 %hidden-text {
 	display: block;
 	font-size: 0;
