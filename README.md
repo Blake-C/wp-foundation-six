@@ -286,12 +286,15 @@ gulp scripts
 gulp images
 gulp watch
 gulp watch:code # <- only watches scripts and styles
+gulp serve <- doesn't work while running in docker
 gulp clean
 gulp build:code # <- only builds scripts and styles
 gulp --build
 ```
 
 These are not all the tasks, but just a list of the major tasks you might want to run individually to save time.
+
+Regarding `gulp serve`, this task will not work while running within the docker general cli container/service. If you install node, npm, and gulp on your host machine this task can be ran from your host machine and the project served from docker. If you have run any of the style tasks from with in the docker container/service, you might need to run `npm rebuild node-sass` from the host machine if you start compiling styles from outside the general cli container. Similar to the serve task any gulp notifications will only work when running gulp on your host machine as notifications can not be passed from within the docker container/service to the host machine.
 
 ## Unit Test Data
 
