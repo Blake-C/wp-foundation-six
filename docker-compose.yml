@@ -41,7 +41,3 @@ services:
       - "8000:80"
     environment:
       PMA_ARBITRARY: 1
-
-volumes:
-  data:
-    driver: local
