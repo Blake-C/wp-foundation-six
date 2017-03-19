@@ -1,10 +1,9 @@
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
-// import browserSync from 'browser-sync';
 import webpackConfig from "./webpack.config.babel.js";
 
 const $ = gulpLoadPlugins({pattern: ["*"]});
-// const reload = browserSync.reload;
+const reload = $.browserSync.reload;
 const argv = $.yargs.argv;
 
 // Paths for source and distribution files
@@ -16,14 +15,14 @@ const dir = {
 };
 
 // BrowserSync Dev URL to reload
-// const proxy_target = 'localhost';
+const proxy_target = 'localhost';
 
 gulp.task('scripts', () => {
 	return gulp.src([`${dir.theme_components}/js/global-scripts.js`])
 		.pipe($.plumber())
 		.pipe($.webpackStream(webpackConfig, $.webpack))
-		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js`), gulp.dest(`${dir.dev}/js`)));
-		// .pipe(reload({stream: true}));
+		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js`), gulp.dest(`${dir.dev}/js`)))
+		.pipe(reload({stream: true}));
 		// .pipe($.notify({ message: 'Scripts Task Completed.', onLast: true }));
 });
 
@@ -64,8 +63,8 @@ gulp.task('styles', ['lint:sass'], () => {
 			gzip: true,
 			pretty: true
 		}))
-		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/css`), gulp.dest(`${dir.dev}/css`)));
-		// .pipe($.if(!argv.build, browserSync.stream({match: '**/*.css'})));
+		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/css`), gulp.dest(`${dir.dev}/css`)))
+		.pipe($.if(!argv.build, $.browserSync.stream({match: '**/*.css'})));
 		// .pipe($.notify({ message: 'Styles Task Completed.', onLast: true }));
 });
 
@@ -117,25 +116,25 @@ gulp.task('icons', () => {
  *
  *
 */
-// gulp.task('serve', ['styles', 'scripts', 'scripts:jquery', 'images', 'fonts', 'icons'], () => {
-// 	var files = [
-// 		'**/*.php'
-// 	];
+gulp.task('serve', ['styles', 'scripts', 'scripts:jquery', 'images', 'fonts', 'icons'], () => {
+	var files = [
+		'**/*.php'
+	];
 
-// 	browserSync(files, {
-// 		proxy: {
-// 			target: proxy_target
-// 		},
-// 		open: false,
-// 		browser: 'google chrome',
-// 		notify: false
-// 	});
+	$.browserSync(files, {
+		proxy: {
+			target: proxy_target
+		},
+		open: false,
+		browser: 'google chrome',
+		notify: false
+	});
 
-// 	gulp.watch([`${dir.theme_components}/sass/**/*`], ['styles']);
-// 	gulp.watch([`${dir.theme_components}/js/**/*`], ['scripts']).on('change', reload);
-// 	gulp.watch([`${dir.theme_components}/fonts/**/*`], ['fonts']).on('change', reload);
-// 	gulp.watch([`${dir.theme_components}/images/**/*`], ['images']).on('change', reload);
-// });
+	gulp.watch([`${dir.theme_components}/sass/**/*`], ['styles']);
+	gulp.watch([`${dir.theme_components}/js/**/*`], ['scripts']).on('change', reload);
+	gulp.watch([`${dir.theme_components}/fonts/**/*`], ['fonts']).on('change', reload);
+	gulp.watch([`${dir.theme_components}/images/**/*`], ['images']).on('change', reload);
+});
 
 gulp.task('watch', ['styles', 'scripts', 'scripts:jquery', 'images', 'fonts', 'icons'], () => {
 	gulp.watch([`${dir.theme_components}/sass/**/*`], ['styles']);
