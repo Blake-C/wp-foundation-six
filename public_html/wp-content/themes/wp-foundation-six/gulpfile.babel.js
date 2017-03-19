@@ -77,7 +77,7 @@ gulp.task('lint:sass', () => {
 			config: './.sass-lint.yml'
 		}))
 		.pipe($.sassLint.format())
-		.pipe($.sassLint.failOnError())
+		.pipe($.sassLint.failOnError());
 });
 
 gulp.task('images', () => {
