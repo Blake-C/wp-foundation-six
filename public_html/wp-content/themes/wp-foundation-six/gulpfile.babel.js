@@ -1,10 +1,12 @@
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import webpackConfig from "./webpack.config.babel.js";
+import os from 'os';
 
 const $ = gulpLoadPlugins({pattern: ["*"]});
 const reload = $.browserSync.reload;
 const argv = $.yargs.argv;
+const notifyOn = os.platform() !== 'linux' ? true : false;
 
 // Paths for source and distribution files
 const dir = {
@@ -22,8 +24,8 @@ gulp.task('scripts', () => {
 		.pipe($.plumber())
 		.pipe($.webpackStream(webpackConfig, $.webpack))
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js`), gulp.dest(`${dir.dev}/js`)))
-		.pipe(reload({stream: true}));
-		// .pipe($.notify({ message: 'Scripts Task Completed.', onLast: true }));
+		.pipe(reload({stream: true}))
+		.pipe($.if(notifyOn, $.notify({ message: 'Scripts Task Completed.', onLast: true })));
 });
 
 gulp.task('scripts:jquery', () => {
@@ -45,8 +47,8 @@ gulp.task('styles', ['lint:sass'], () => {
 		.pipe($.sass.sync({
 			outputStyle: 'compact',
 			precision: 10
-		}).on('error', $.sass.logError))
-		// .on('error', $.notify.onError({ message: 'Error: <%= error.message %>', onLast: true }))
+		})
+		.on('error', $.sass.logError))
 		.pipe($.postcss([
 			$.autoprefixer({ browsers: [
 				'last 3 versions',
@@ -64,11 +66,11 @@ gulp.task('styles', ['lint:sass'], () => {
 			pretty: true
 		}))
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/css`), gulp.dest(`${dir.dev}/css`)))
-		.pipe($.if(!argv.build, $.browserSync.stream({match: '**/*.css'})));
-		// .pipe($.notify({ message: 'Styles Task Completed.', onLast: true }));
+		.pipe($.if(!argv.build, $.browserSync.stream({match: '**/*.css'})))
+		.pipe($.if(notifyOn, $.notify({ message: 'Styles Task Completed.', onLast: true })));
 });
 
-gulp.task('lint:sass', function() {
+gulp.task('lint:sass', () => {
 	return gulp.src(`${dir.theme_components}/sass/**/*.scss`)
 		.pipe($.plumber())
 		.pipe($.sassLint({
@@ -174,8 +176,8 @@ gulp.task('copy', () => {
 gulp.task('build', ['styles', 'scripts', 'scripts:jquery', 'images', 'fonts', 'icons', 'copy'], () => {
 	return gulp.src(dir.build_assets + '/**/*')
 		.pipe($.size({title: 'build', gzip: true}))
-		.pipe(gulp.dest( dir.build_assets ));
-		// .pipe($.notify({ message: 'Build Task Completed.', onLast: true }));
+		.pipe(gulp.dest( dir.build_assets ))
+		.pipe($.if(notifyOn, $.notify({ message: 'Build Task Completed.', onLast: true })));
 });
 
 gulp.task('build:code', ['styles', 'scripts']);
