@@ -286,7 +286,7 @@ gulp scripts
 gulp images
 gulp watch
 gulp watch:code # <- only watches scripts and styles
-gulp serve <- doesn't work while running in docker
+gulp serve # <- doesn't work while running in docker
 gulp clean
 gulp build:code # <- only builds scripts and styles
 gulp --build
