@@ -1,9 +1,9 @@
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
-import webpackConfig from "./webpack.config.babel.js";
+import webpackConfig from './webpack.config.babel.js';
 import os from 'os';
 
-const $ = gulpLoadPlugins({pattern: ["*"]});
+const $ = gulpLoadPlugins({pattern: ['*']});
 const reload = $.browserSync.reload;
 const argv = $.yargs.argv;
 const notifyOn = os.platform() !== 'linux' ? true : false;
@@ -94,7 +94,7 @@ gulp.task('images', () => {
 			use: [$.imageminPngquant({quality: '65-80', speed: 4})],
 		})
 		.on('error', function (err) {
-			console.log(err);
+			console.log(err); // eslint-disable-line
 			this.end();
 		}))
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/images`), gulp.dest(`${dir.dev}/images`)));
@@ -171,7 +171,7 @@ gulp.task('copy', () => {
 		'!./.eslintrc.json'
 	])
 	.pipe($.if(argv.build, gulp.dest(dir.build)));
-})
+});
 
 gulp.task('build', ['styles', 'scripts', 'scripts:jquery', 'images', 'fonts', 'icons', 'copy'], () => {
 	return gulp.src(dir.build_assets + '/**/*')
