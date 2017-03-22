@@ -16,12 +16,12 @@ import modernizrFeatureDetects from './theme_components/js/modernizr-feature-det
 const webpackConfig = {
 	entry: scriptsList,
 	output: {
-		path: path.resolve(__dirname, './assets/js'),
+		path: path.resolve(__dirname, './assets/js'), // eslint-disable-line no-undef
 		filename: 'bundle.[name].js'
 	},
 	externals: {
-		jquery: "jQuery",
-		modernizr: "Modernizr"
+		jquery: 'jQuery',
+		modernizr: 'Modernizr'
 	},
 	devtool: 'source-map',
 	module: {
