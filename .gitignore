@@ -26,7 +26,7 @@ docker_php_error_log
 /logs/**/*
 !/data/backups/.gitit
 !/data/mysql/.gitit
-!/ejected/server-assets/*
+!/ejected/server-assets/**/*
 !/logs/.gitit
 
 ### Bower ###

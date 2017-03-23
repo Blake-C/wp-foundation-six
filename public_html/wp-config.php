@@ -1,8 +1,4 @@
 <?php
-/*
- * TODO: Add notes to readme for changing out some_development_domain to your development domain in robots-dev.txt
- * TODO: Add to wp-eject to setup the production wp-config.php file
- */
 
 // ========================
 // These settings match what
