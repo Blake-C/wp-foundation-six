@@ -11,7 +11,7 @@
 # BEGIN robots check
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteCond %{HTTP_HOST} ^(.*).some_development_domain.[com|net|cloud] [NC]
+RewriteCond %{HTTP_HOST} ^(.*).put_development_domain.[com|net|cloud] [NC]
 RewriteRule ^robots.txt$ /robots-dev.txt [L,NC]
 </IfModule>
 # END robots check
