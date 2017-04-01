@@ -16,9 +16,9 @@ get_header(); ?>
 
 	<?php wp_foundation_six_dev_helper( pathinfo(__FILE__, PATHINFO_FILENAME) ); ?>
 
-	<div class="container">
+	<div class="row">
 
-		<main class="main" role="main" id="content">
+		<main class="medium-8 columns" role="main" id="content">
 			<?php if ( have_posts() ) : ?>
 
 				<?php if ( is_home() && ! is_front_page() ) : ?>

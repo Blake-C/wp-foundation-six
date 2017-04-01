@@ -11,9 +11,9 @@ get_header(); ?>
 
 	<?php wp_foundation_six_dev_helper( pathinfo(__FILE__, PATHINFO_FILENAME) ); ?>
 
-	<div class="container">
+	<div class="row">
 
-		<main class="main" role="main" id="content">
+		<main class="medium-8 columns" role="main" id="content">
 
 			<section class="error-404 not-found">
 				<header class="page-header">
@@ -57,6 +57,9 @@ get_header(); ?>
 			</section><!-- .error-404 -->
 
 		</main><!-- #main -->
+
+		<?php get_sidebar(); ?>
+
 	</div><!-- #primary -->
 
 <?php get_footer(); ?>

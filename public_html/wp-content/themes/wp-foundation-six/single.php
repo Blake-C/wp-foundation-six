@@ -11,9 +11,9 @@ get_header(); ?>
 
 	<?php wp_foundation_six_dev_helper( pathinfo(__FILE__, PATHINFO_FILENAME) ); ?>
 
-	<div class="container">
+	<div class="row">
 
-		<main class="main" role="main" id="content">
+		<main class="medium-8 columns" role="main" id="content">
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php get_template_part( 'template-parts/content', 'single' ); ?>

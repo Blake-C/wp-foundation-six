@@ -14,6 +14,6 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 
 <?php wp_foundation_six_dev_helper( pathinfo(__FILE__, PATHINFO_FILENAME) ); ?>
 
-<div class="sidebar" role="complementary">
+<div class="medium-4 columns" role="complementary">
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 </div><!-- #secondary -->
