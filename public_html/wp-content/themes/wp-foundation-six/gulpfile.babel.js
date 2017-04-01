@@ -94,7 +94,7 @@ gulp.task('images', () => {
 			use: [$.imageminPngquant({quality: '65-80', speed: 4})],
 		})
 		.on('error', function (err) {
-			console.log(err); // eslint-disable-line
+			console.log(err); // eslint-disable-line no-console
 			this.end();
 		}))
 		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/images`), gulp.dest(`${dir.dev}/images`)));
