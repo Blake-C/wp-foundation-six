@@ -119,12 +119,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "eef7c0520b1e7187cd2cd7540dc997c4c3b0340a"
+                "reference": "9f1f8eb6c37d10d73b9d7946c0ab5425a5492a9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/eef7c0520b1e7187cd2cd7540dc997c4c3b0340a",
-                "reference": "eef7c0520b1e7187cd2cd7540dc997c4c3b0340a",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/9f1f8eb6c37d10d73b9d7946c0ab5425a5492a9a",
+                "reference": "9f1f8eb6c37d10d73b9d7946c0ab5425a5492a9a",
                 "shasum": ""
             },
             "require": {
@@ -220,15 +220,15 @@
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
-            "version": "6.0.16",
+            "version": "6.1.6",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
-                "reference": "tags/6.0.16"
+                "reference": "tags/6.1.6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.6.0.16.zip",
+                "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.6.1.6.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -280,16 +280,16 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "4.4",
+            "version": "4.5",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/4.4"
+                "reference": "tags/4.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.4.zip",
-                "reference": "tags/4.4",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.5.zip",
+                "reference": null,
                 "shasum": null
             },
             "require": {
