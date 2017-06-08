@@ -1,0 +1,18 @@
+.main-menu {
+	background-color: $light-gray;
+	margin: 0;
+
+	li {
+		display: inline-block;
+		list-style-type: none;
+	}
+
+	a {
+		display: block;
+		padding: 10px 20px;
+
+		&:hover {
+			background-color: $medium-gray;
+		}
+	}
+}

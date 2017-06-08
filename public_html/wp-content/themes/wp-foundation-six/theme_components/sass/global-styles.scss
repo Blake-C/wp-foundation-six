@@ -74,11 +74,12 @@
 @import 'helpers/functions';
 @import 'helpers/helpers';
 
-@import 'layout/header';
 @import 'layout/body';
-@import 'layout/sidebar';
-@import 'layout/footer';
 @import 'layout/comments';
+@import 'layout/footer';
+@import 'layout/header';
+@import 'layout/main-menu';
+@import 'layout/sidebar';
 
 @import 'partials/generic-styles';
 @import 'partials/ie';

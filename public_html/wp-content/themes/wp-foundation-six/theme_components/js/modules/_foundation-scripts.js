@@ -1,10 +1,10 @@
-import $ from 'jquery';
+// import $ from 'jquery';
 
-import 'foundation-sites/dist/js/plugins/foundation.core.js';
+// import 'foundation-sites/dist/js/plugins/foundation.core.js';
 
 // import 'foundation-sites/dist/js/plugins/foundation.util.box.js';
 // import 'foundation-sites/dist/js/plugins/foundation.util.keyboard.js';
-import 'foundation-sites/dist/js/plugins/foundation.util.mediaQuery.js';
+// import 'foundation-sites/dist/js/plugins/foundation.util.mediaQuery.js';
 // import 'foundation-sites/dist/js/plugins/foundation.util.motion.js';
 // import 'foundation-sites/dist/js/plugins/foundation.util.nest.js';
 // import 'foundation-sites/dist/js/plugins/foundation.util.timerAndImageLoader.js';
@@ -23,7 +23,7 @@ import 'foundation-sites/dist/js/plugins/foundation.util.mediaQuery.js';
 // import 'foundation-sites/dist/js/plugins/foundation.offcanvas.js';
 // import 'foundation-sites/dist/js/plugins/foundation.orbit.js';
 // import 'foundation-sites/dist/js/plugins/foundation.responsiveMenu.js';
-import 'foundation-sites/dist/js/plugins/foundation.responsiveToggle.js';
+// import 'foundation-sites/dist/js/plugins/foundation.responsiveToggle.js';
 // import 'foundation-sites/dist/js/plugins/foundation.reveal.js';
 // import 'foundation-sites/dist/js/plugins/foundation.slider.js';
 // import 'foundation-sites/dist/js/plugins/foundation.sticky.js';
@@ -51,7 +51,4 @@ import 'foundation-sites/dist/js/plugins/foundation.responsiveToggle.js';
  * @link https://webpack.github.io/docs/code-splitting.html
  */
 
-$(document).foundation();
-
-// Display menu once scripts have loaded
-$('#main_menu').fadeIn();
+// $(document).foundation();
