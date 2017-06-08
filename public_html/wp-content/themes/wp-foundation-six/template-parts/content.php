@@ -34,6 +34,9 @@
 		?>
 
 		<?php
+			/**
+			 * @link: https://codex.wordpress.org/Function_Reference/wp_link_pages
+			 */
 			wp_link_pages(
 				array(
 					'before' => '<div class="page-links">Pages: ',
