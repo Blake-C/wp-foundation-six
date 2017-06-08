@@ -1,8 +1,8 @@
 import $ from 'jquery';
 import Modernizr from 'modernizr';
-import '../../node_modules/jquery-migrate/dist/jquery-migrate.js';
-import './modules/_skip-link-focus-fix.js';
-import './modules/_foundation-scripts.js';
+import 'jquery-migrate/dist/jquery-migrate';
+import './modules/_skip-link-focus-fix';
+import './modules/_foundation-scripts';
 
 /**
  * Notes:

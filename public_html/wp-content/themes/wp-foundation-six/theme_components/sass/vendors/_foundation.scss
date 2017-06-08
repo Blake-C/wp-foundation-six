@@ -6,13 +6,13 @@
  */
 
 // Dependencies
-@import '../../node_modules/foundation-sites/_vendor/normalize-scss/sass/normalize';
-@import '../../node_modules/foundation-sites/_vendor/sassy-lists/stylesheets/helpers/missing-dependencies';
-@import '../../node_modules/foundation-sites/_vendor/sassy-lists/stylesheets/helpers/true';
-@import '../../node_modules/foundation-sites/_vendor/sassy-lists/stylesheets/functions/purge';
-@import '../../node_modules/foundation-sites/_vendor/sassy-lists/stylesheets/functions/remove';
-@import '../../node_modules/foundation-sites/_vendor/sassy-lists/stylesheets/functions/replace';
-@import '../../node_modules/foundation-sites/_vendor/sassy-lists/stylesheets/functions/to-list';
+@import 'foundation-sites/_vendor/normalize-scss/sass/normalize';
+@import 'foundation-sites/_vendor/sassy-lists/stylesheets/helpers/missing-dependencies';
+@import 'foundation-sites/_vendor/sassy-lists/stylesheets/helpers/true';
+@import 'foundation-sites/_vendor/sassy-lists/stylesheets/functions/purge';
+@import 'foundation-sites/_vendor/sassy-lists/stylesheets/functions/remove';
+@import 'foundation-sites/_vendor/sassy-lists/stylesheets/functions/replace';
+@import 'foundation-sites/_vendor/sassy-lists/stylesheets/functions/to-list';
 
 // Settings
 // import your own `settings` here or
@@ -20,46 +20,46 @@
 // @import 'settings/settings';
 
 // Sass utilities
-@import '../../node_modules/foundation-sites/scss/util/util';
+@import 'foundation-sites/scss/util/util';
 
 // Global variables and styles
-@import '../../node_modules/foundation-sites/scss/global';
+@import 'foundation-sites/scss/global';
 
 // Components
-@import '../../node_modules/foundation-sites/scss/grid/grid';
-@import '../../node_modules/foundation-sites/scss/typography/typography';
-@import '../../node_modules/foundation-sites/scss/forms/forms';
-@import '../../node_modules/foundation-sites/scss/components/visibility';
-@import '../../node_modules/foundation-sites/scss/components/float';
-@import '../../node_modules/foundation-sites/scss/components/button';
-@import '../../node_modules/foundation-sites/scss/components/button-group';
-@import '../../node_modules/foundation-sites/scss/components/accordion-menu';
-@import '../../node_modules/foundation-sites/scss/components/accordion';
-@import '../../node_modules/foundation-sites/scss/components/badge';
-@import '../../node_modules/foundation-sites/scss/components/breadcrumbs';
-@import '../../node_modules/foundation-sites/scss/components/callout';
-@import '../../node_modules/foundation-sites/scss/components/card';
-@import '../../node_modules/foundation-sites/scss/components/close-button';
-@import '../../node_modules/foundation-sites/scss/components/drilldown';
-@import '../../node_modules/foundation-sites/scss/components/dropdown-menu';
-@import '../../node_modules/foundation-sites/scss/components/dropdown';
-@import '../../node_modules/foundation-sites/scss/components/flex';
-@import '../../node_modules/foundation-sites/scss/components/responsive-embed';
-@import '../../node_modules/foundation-sites/scss/components/label';
-@import '../../node_modules/foundation-sites/scss/components/media-object';
-@import '../../node_modules/foundation-sites/scss/components/menu';
-@import '../../node_modules/foundation-sites/scss/components/menu-icon';
-@import '../../node_modules/foundation-sites/scss/components/off-canvas';
-@import '../../node_modules/foundation-sites/scss/components/orbit';
-@import '../../node_modules/foundation-sites/scss/components/pagination';
-@import '../../node_modules/foundation-sites/scss/components/progress-bar';
-@import '../../node_modules/foundation-sites/scss/components/reveal';
-@import '../../node_modules/foundation-sites/scss/components/slider';
-@import '../../node_modules/foundation-sites/scss/components/sticky';
-@import '../../node_modules/foundation-sites/scss/components/switch';
-@import '../../node_modules/foundation-sites/scss/components/table';
-@import '../../node_modules/foundation-sites/scss/components/tabs';
-@import '../../node_modules/foundation-sites/scss/components/title-bar';
-@import '../../node_modules/foundation-sites/scss/components/top-bar';
-@import '../../node_modules/foundation-sites/scss/components/thumbnail';
-@import '../../node_modules/foundation-sites/scss/components/tooltip';
+@import 'foundation-sites/scss/grid/grid';
+@import 'foundation-sites/scss/typography/typography';
+@import 'foundation-sites/scss/forms/forms';
+@import 'foundation-sites/scss/components/visibility';
+@import 'foundation-sites/scss/components/float';
+@import 'foundation-sites/scss/components/button';
+@import 'foundation-sites/scss/components/button-group';
+@import 'foundation-sites/scss/components/accordion-menu';
+@import 'foundation-sites/scss/components/accordion';
+@import 'foundation-sites/scss/components/badge';
+@import 'foundation-sites/scss/components/breadcrumbs';
+@import 'foundation-sites/scss/components/callout';
+@import 'foundation-sites/scss/components/card';
+@import 'foundation-sites/scss/components/close-button';
+@import 'foundation-sites/scss/components/drilldown';
+@import 'foundation-sites/scss/components/dropdown-menu';
+@import 'foundation-sites/scss/components/dropdown';
+@import 'foundation-sites/scss/components/flex';
+@import 'foundation-sites/scss/components/responsive-embed';
+@import 'foundation-sites/scss/components/label';
+@import 'foundation-sites/scss/components/media-object';
+@import 'foundation-sites/scss/components/menu';
+@import 'foundation-sites/scss/components/menu-icon';
+@import 'foundation-sites/scss/components/off-canvas';
+@import 'foundation-sites/scss/components/orbit';
+@import 'foundation-sites/scss/components/pagination';
+@import 'foundation-sites/scss/components/progress-bar';
+@import 'foundation-sites/scss/components/reveal';
+@import 'foundation-sites/scss/components/slider';
+@import 'foundation-sites/scss/components/sticky';
+@import 'foundation-sites/scss/components/switch';
+@import 'foundation-sites/scss/components/table';
+@import 'foundation-sites/scss/components/tabs';
+@import 'foundation-sites/scss/components/title-bar';
+@import 'foundation-sites/scss/components/top-bar';
+@import 'foundation-sites/scss/components/thumbnail';
+@import 'foundation-sites/scss/components/tooltip';

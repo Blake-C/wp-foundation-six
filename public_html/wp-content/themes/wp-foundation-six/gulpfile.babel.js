@@ -46,7 +46,10 @@ gulp.task('styles', ['lint:sass'], () => {
 		.pipe($.sassGlob())
 		.pipe($.sass.sync({
 			outputStyle: 'compact',
-			precision: 10
+			precision: 10,
+			includePaths: [
+				'node_modules'
+			]
 		})
 		.on('error', $.sass.logError))
 		.pipe($.postcss([
