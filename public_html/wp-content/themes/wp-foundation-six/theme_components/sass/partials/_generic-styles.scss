@@ -68,3 +68,16 @@ pre {
 [type='password'] {
 	height: 2.48rem;
 }
+
+.edit-link {
+	margin-bottom: 0;
+
+	.button {
+		margin-bottom: 0;
+		margin-top: 25px;
+	}
+}
+
+.screen-reader-text {
+	@include element-invisible;
+}
