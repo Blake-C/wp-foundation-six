@@ -30,6 +30,11 @@ figure {
 	padding: 1em 20px;
 	width: auto !important;
 
+	img {
+		display: block;
+		margin: 0 auto;
+	}
+
 	figcaption {
 		font-size: 12px;
 		margin: 13px 0 0;
