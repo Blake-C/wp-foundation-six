@@ -29,6 +29,19 @@ import './modules/_foundation-scripts';
  * can be found here:
  *
  * @link: http://benalman.com/news/2010/11/immediately-invoked-function-expression/
+ *
+ * When importing node modules that are not ES6 modules,
+ * you do not need to path them as '../../node_modules/'.
+ * Gulp knows about the node_modules directory, so all you need
+ * to do is path them as if you were already in the node_modules
+ * directory
+ *
+ * Instead of:
+ * import '../../node_modules/jquery-migrate/dist/jquery-migrate';
+ *
+ * Use:
+ * import 'jquery-migrate/dist/jquery-migrate';
+ *
  */
 
 /*************** SVG image replacement ***************/
