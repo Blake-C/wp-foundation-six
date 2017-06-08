@@ -122,16 +122,16 @@
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "4.7.4.1",
+            "version": "4.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "637b1c6e997b28bf8767e6c87611f869e12e246e"
+                "reference": "9a88a4b4c65f689d78789ef6ff77a7ca0239ec02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/637b1c6e997b28bf8767e6c87611f869e12e246e",
-                "reference": "637b1c6e997b28bf8767e6c87611f869e12e246e",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/9a88a4b4c65f689d78789ef6ff77a7ca0239ec02",
+                "reference": "9a88a4b4c65f689d78789ef6ff77a7ca0239ec02",
                 "shasum": ""
             },
             "require": {
@@ -155,7 +155,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2017-05-01T23:28:59+00:00"
+            "time": "2017-05-16T22:48:08+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -207,15 +207,15 @@
         },
         {
             "name": "wpackagist-plugin/akismet",
-            "version": "3.3.1",
+            "version": "3.3.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/akismet/",
-                "reference": "tags/3.3.1"
+                "reference": "tags/3.3.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/akismet.3.3.1.zip",
+                "url": "https://downloads.wordpress.org/plugin/akismet.3.3.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -227,15 +227,15 @@
         },
         {
             "name": "wpackagist-plugin/google-analytics-for-wordpress",
-            "version": "6.1.7",
+            "version": "6.2.0",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/google-analytics-for-wordpress/",
-                "reference": "tags/6.1.7"
+                "reference": "tags/6.2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.6.1.7.zip",
+                "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.6.2.0.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -247,15 +247,15 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "2.5",
+            "version": "2.6.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/2.5"
+                "reference": "tags/2.6.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.2.5.zip",
+                "url": "https://downloads.wordpress.org/plugin/redirection.2.6.1.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -287,15 +287,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "4.7",
+            "version": "4.9",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/4.7"
+                "reference": "tags/4.9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.7.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.9.zip",
                 "reference": null,
                 "shasum": null
             },
