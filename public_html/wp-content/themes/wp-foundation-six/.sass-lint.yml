@@ -10,7 +10,7 @@
 files:
   include: 'theme_components/sass/**/*.scss'
   ignore:
-    - 'theme_components/sass/ie8-grid-support.scss'
+    - 'theme_components/sass/vendors/**/*.scss'
 
 options:
   formatter: stylish
