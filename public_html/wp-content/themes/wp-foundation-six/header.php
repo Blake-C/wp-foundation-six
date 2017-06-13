@@ -22,9 +22,7 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 	<?php // https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag ?>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8">
-	<?php // http://www.validatethis.co.uk/news/fix-bad-value-x-ua-compatible-once-and-for-all/ ?>
-	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo get_template_directory_uri(); ?>/assets/icons/apple-touch-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="<?php echo get_template_directory_uri(); ?>/assets/icons/apple-touch-icon-60x60.png">
