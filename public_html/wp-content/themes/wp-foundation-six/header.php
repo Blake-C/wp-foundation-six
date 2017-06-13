@@ -72,7 +72,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<a class="skip-link show-for-sr" href="#content">Skip to content</a>
+	<a class="skip-link show-for-sr" href="#content"><?php _e( 'Skip to content', 'wp_foundation_six' ); ?></a>
 
 	<?php if ( get_bloginfo( 'name' ) ) : ?>
 		<h1 class="show-for-sr"><?php bloginfo( 'name' ); ?></h1>
@@ -87,7 +87,7 @@
 	<!--[if lt IE 9]><p class=chromeframe>Your browser is <em>not</em> supported. <a href="http://browsehappy.com/">Upgrade to a different browser</a> to experience this site.</p><![endif]-->
 
 	<?php if ( is_super_admin() ) : ?>
-		<a href="#" class="regions">Show Regions</a>
+		<a href="#" class="regions"><?php _e( 'Show Regions', 'wp_foundation_six' ); ?></a>
 	<?php endif; ?>
 
 

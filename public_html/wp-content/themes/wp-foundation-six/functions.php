@@ -16,6 +16,10 @@ if ( ! function_exists( 'wp_foundation_six_setup' ) ) {
 	 * as indicating support for post thumbnails.
 	 */
 	function wp_foundation_six_setup() {
+		/*
+		 * Make theme available for translation.
+		 */
+		load_theme_textdomain( 'wp_foundation_six' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -44,8 +48,8 @@ if ( ! function_exists( 'wp_foundation_six_setup' ) ) {
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'primary' => __( 'Primary Menu', 'theme' ),
-			'footer' => __( 'Footer Menu', 'theme' ),
+			'primary' => __( 'Primary Menu', 'wp_foundation_six' ),
+			'footer' => __( 'Footer Menu', 'wp_foundation_six' ),
 		) );
 
 		/**
@@ -94,7 +98,7 @@ add_filter( 'the_generator', '__return_false' );
 if ( ! function_exists( 'wp_foundation_six_widgets_init' ) ) {
 	function wp_foundation_six_widgets_init() {
 		register_sidebar( array(
-			'name'          => __( 'Primary Sidebar' ),
+			'name'          => __( 'Primary Sidebar', 'wp_foundation_six' ),
 			'id'            => 'sidebar-1',
 			'description'   => '',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
