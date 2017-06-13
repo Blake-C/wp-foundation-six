@@ -13,7 +13,7 @@
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h1 class="page-title">Nothing Found</h1>
+		<h2 class="page-title">Nothing Found</h2>
 	</header>
 
 	<div class="page-content">

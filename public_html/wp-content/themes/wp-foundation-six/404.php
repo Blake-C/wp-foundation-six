@@ -17,7 +17,7 @@ get_header(); ?>
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title">'Oops! That page can&rsquo;t be found.'</h1>
+					<h2 class="page-title">'Oops! That page can&rsquo;t be found.'</h2>
 				</header><!-- .page-header -->
 
 				<div class="page-content">
