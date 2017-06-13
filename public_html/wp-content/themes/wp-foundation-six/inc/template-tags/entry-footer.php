@@ -38,4 +38,4 @@ if ( ! function_exists( 'wp_foundation_six_entry_footer' ) ) {
 			'button' // Class
 		);
 	}
-}
+}// End if().
