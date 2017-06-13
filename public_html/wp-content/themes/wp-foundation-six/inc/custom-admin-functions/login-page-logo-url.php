@@ -5,7 +5,7 @@
  *
  * @link https://thomas.vanhoutte.be/miniblog/add-a-custom-logo-to-wordpress-wp-admin-login-page/
  */
-if ( !function_exists('wp_foundation_six_login_page_custom_link') ){
+if ( ! function_exists( 'wp_foundation_six_login_page_custom_link' ) ) {
 	function wp_foundation_six_login_page_custom_link() {
 		return site_url();
 	}

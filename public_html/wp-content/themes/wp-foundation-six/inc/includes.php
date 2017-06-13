@@ -12,16 +12,21 @@
  * Components
  *
  */
+require get_template_directory() . '/inc/classes/class-wp-foundation-six-custom-nav-class-walker.php';
+
+
+/**
+ * Components
+ *
+ */
 require get_template_directory() . '/inc/components/body-classes.php';
 require get_template_directory() . '/inc/components/embed-video-container.php';
 require get_template_directory() . '/inc/components/excerpt-length.php';
 require get_template_directory() . '/inc/components/excerpt-more.php';
 require get_template_directory() . '/inc/components/gform-init-scripts.php';
-require get_template_directory() . '/inc/components/link-pages.php';
 require get_template_directory() . '/inc/components/password-form.php';
 require get_template_directory() . '/inc/components/post-classes.php';
 require get_template_directory() . '/inc/components/thumbnail-upscale.php';
-require get_template_directory() . '/inc/components/top-bar-navigation.php';
 
 
 /**

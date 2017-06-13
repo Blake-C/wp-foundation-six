@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<?php wp_foundation_six_dev_helper( pathinfo(__FILE__, PATHINFO_FILENAME) ); ?>
+	<?php wp_foundation_six_dev_helper( pathinfo( __FILE__, PATHINFO_FILENAME ) ); ?>
 
 	<div class="row">
 
@@ -20,12 +20,10 @@ get_header(); ?>
 
 				<?php the_post_navigation(); ?>
 
-				<?php
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
-				?>
+				<?php // If comments are open or we have at least one comment, load up the comment template. ?>
+				<?php if ( comments_open() || get_comments_number() ) : ?>
+					<?php comments_template(); ?>
+				<?php endif; ?>
 
 			<?php endwhile; // End of the loop. ?>
 		</main><!-- #main -->

@@ -6,7 +6,7 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-if ( !function_exists('wp_foundation_six_body_classes') ){
+if ( ! function_exists( 'wp_foundation_six_body_classes' ) ) {
 	function wp_foundation_six_body_classes( $classes ) {
 		// Adds a class of group-blog to blogs with more than 1 published author.
 		if ( is_multi_author() ) {

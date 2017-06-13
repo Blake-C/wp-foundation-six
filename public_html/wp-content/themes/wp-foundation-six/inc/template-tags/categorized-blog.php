@@ -7,7 +7,9 @@
  */
 if ( ! function_exists( 'wp_foundation_six_categorized_blog' ) ) {
 	function wp_foundation_six_categorized_blog() {
-		if ( false === ( $all_the_cool_cats = get_transient( 'wp_foundation_six_categories' ) ) ) {
+		$all_the_cool_cats = get_transient( 'wp_foundation_six_categories' );
+
+		if ( false === $all_the_cool_cats ) {
 			// Create an array of all the categories that are attached to posts.
 			$all_the_cool_cats = get_categories( array(
 				'fields'     => 'ids',

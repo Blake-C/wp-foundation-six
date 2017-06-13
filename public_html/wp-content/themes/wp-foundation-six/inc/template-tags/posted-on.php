@@ -12,6 +12,7 @@ if ( ! function_exists( 'wp_foundation_six_posted_on' ) ) {
 			esc_html( get_the_date() )
 		);
 		$posted_on = sprintf(
+			/* translators: The post publish date */
 			esc_html_x( 'Posted: %s', 'post date', 'wp-foundation-six' ), $time_string
 		);
 		$posted_on_string = '<span class="posted-on post-meta">' . $posted_on . '</span>';
@@ -25,6 +26,7 @@ if ( ! function_exists( 'wp_foundation_six_posted_on' ) ) {
 				esc_html( get_the_modified_date() )
 			);
 			$updated_on = sprintf(
+				/* translators: The post updated date */
 				esc_html_x( 'Updated: %s', 'updated date', 'wp-foundation-six' ), $time_string_updated
 			);
 
@@ -33,10 +35,11 @@ if ( ! function_exists( 'wp_foundation_six_posted_on' ) ) {
 
 		// Author
 		$byline = sprintf(
+			/* translators: The post author, byline */
 			esc_html_x( 'by %s', 'post author', 'wp-foundation-six' ),
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
 		echo '<p>' . $posted_on_string . $updated_on_string . '<span class="byline post-meta"> ' . $byline . '</span></p>'; // WPCS: XSS OK.
 	}
-}
+}// End if().

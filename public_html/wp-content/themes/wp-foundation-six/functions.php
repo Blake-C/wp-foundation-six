@@ -7,7 +7,7 @@
  * @package wp_foundation_six
  */
 
-if ( !function_exists( 'wp_foundation_six_setup' ) ) {
+if ( ! function_exists( 'wp_foundation_six_setup' ) ) {
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -45,7 +45,7 @@ if ( !function_exists( 'wp_foundation_six_setup' ) ) {
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'primary' => __( 'Primary Menu', 'theme' ),
-			'footer' => __( 'Footer Menu', 'theme' )
+			'footer' => __( 'Footer Menu', 'theme' ),
 		) );
 
 		/**
@@ -74,7 +74,7 @@ if ( !function_exists( 'wp_foundation_six_setup' ) ) {
 		remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
 		remove_action( 'wp_head', 'wp_generator' ); // Display the XHTML generator that is generated on the wp_head hook, WP version
 	}
-}
+}// End if().
 add_action( 'after_setup_theme', 'wp_foundation_six_setup' );
 
 
@@ -91,7 +91,7 @@ add_filter( 'the_generator', '__return_false' );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-if ( !function_exists( 'wp_foundation_six_widgets_init' ) ) {
+if ( ! function_exists( 'wp_foundation_six_widgets_init' ) ) {
 	function wp_foundation_six_widgets_init() {
 		register_sidebar( array(
 			'name'          => __( 'Primary Sidebar' ),
@@ -110,20 +110,19 @@ add_action( 'widgets_init', 'wp_foundation_six_widgets_init' );
 /**
  * Enqueue scripts and styles.
  */
-if ( !function_exists( 'wp_foundation_six_scripts' ) ) {
+if ( ! function_exists( 'wp_foundation_six_scripts' ) ) {
 	function wp_foundation_six_scripts() {
 		/* Import CSS (Sass files are in the theme-components folder) */
 		wp_enqueue_style( 'wp-foundation-six-style', get_template_directory_uri() . '/assets/css/global-styles.min.css' );
 
 		/* Register Modern jQuery */
 		wp_deregister_script( 'jquery' );
-		wp_register_script( 'jquery', get_template_directory_uri() . '/assets/js/vendors/jquery.min.js', array('wp-foundation-six-modernizr'), null, true );
+		wp_register_script( 'jquery', get_template_directory_uri() . '/assets/js/vendors/jquery.min.js', array( 'wp-foundation-six-modernizr' ), null, true );
 		wp_enqueue_script( 'jquery' );
 
 		/* Import Scripts (Keep to a minimum or import into global-scripts.js file) */
-		wp_enqueue_script( 'wp-foundation-six-global', get_template_directory_uri() . '/assets/js/bundle.global-scripts.js', array('jquery', 'wp-foundation-six-modernizr'), null, true );
+		wp_enqueue_script( 'wp-foundation-six-global', get_template_directory_uri() . '/assets/js/bundle.global-scripts.js', array( 'jquery', 'wp-foundation-six-modernizr' ), null, true );
 		wp_enqueue_script( 'wp-foundation-six-modernizr', get_template_directory_uri() . '/assets/js/vendors/bundle.modernizr.js', null, null, true );
-
 
 		/**
 		 * Conditionally add scripts and styles to pages with template tags

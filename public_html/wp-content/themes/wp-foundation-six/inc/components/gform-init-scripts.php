@@ -10,7 +10,7 @@
  *
  * @link https://www.gravityhelp.com/documentation/article/gform_init_scripts_footer/
  */
-if ( !function_exists( 'wp_foundation_six_gform_init_scripts' ) ) {
+if ( ! function_exists( 'wp_foundation_six_gform_init_scripts' ) ) {
 	function wp_foundation_six_gform_init_scripts() {
 		return true;
 	}

@@ -49,8 +49,8 @@
 	<meta name="theme-color" content="#1c2185">
 
 	<?php // App Title ?>
-	<meta name="apple-mobile-web-app-title" content="<?php echo get_bloginfo('name'); ?>">
-	<meta name="application-name" content="<?php echo get_bloginfo('name'); ?>">
+	<meta name="apple-mobile-web-app-title" content="<?php echo get_bloginfo( 'name' ); ?>">
+	<meta name="application-name" content="<?php echo get_bloginfo( 'name' ); ?>">
 
 	<?php
 		/**
@@ -76,13 +76,13 @@
 <body <?php body_class(); ?>>
 	<a class="skip-link show-for-sr" href="#content">Skip to content</a>
 
-	<?php if ( get_bloginfo('name') ) : ?>
-		<h1 class="show-for-sr"><?php bloginfo('name'); ?></h1>
+	<?php if ( get_bloginfo( 'name' ) ) : ?>
+		<h1 class="show-for-sr"><?php bloginfo( 'name' ); ?></h1>
 	<?php endif; ?>
 
 	<?php if ( is_front_page() ) : ?>
-		<?php if ( get_bloginfo('description') ) : ?>
-			<p class="show-for-sr"><?php bloginfo('description'); ?></p>
+		<?php if ( get_bloginfo( 'description' ) ) : ?>
+			<p class="show-for-sr"><?php bloginfo( 'description' ); ?></p>
 		<?php endif; ?>
 	<?php endif; ?>
 
@@ -93,7 +93,7 @@
 	<?php endif; ?>
 
 
-	<?php wp_foundation_six_dev_helper( pathinfo(__FILE__, PATHINFO_FILENAME) ); ?>
+	<?php wp_foundation_six_dev_helper( pathinfo( __FILE__, PATHINFO_FILENAME ) ); ?>
 
 
 	<?php if ( has_nav_menu( 'primary' ) ) : ?>
@@ -118,7 +118,7 @@
 					'after'           => '',
 					'link_before'     => '',
 					'link_after'      => '',
-					'items_wrap'      => '<ul id="%1$s" class="%2$s" data-dropdown-menu><li class="menu-text">'. get_bloginfo('name') .'</li>%3$s</ul>',
+					'items_wrap'      => '<ul id="%1$s" class="%2$s" data-dropdown-menu><li class="menu-text">' . get_bloginfo( 'name' ) . '</li>%3$s</ul>',
 					'depth'           => 0,
 					'walker'          => '',
 				);
