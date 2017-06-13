@@ -13,7 +13,7 @@ get_header(); ?>
 
 	<div class="row">
 
-		<main class="medium-8 columns" role="main" id="content">
+		<main class="medium-8 columns" id="content">
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php get_template_part( 'template-parts/content', 'single' ); ?>

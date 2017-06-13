@@ -13,7 +13,7 @@ get_header(); ?>
 
 	<section class="row">
 
-		<main class="medium-8 columns" role="main" id="content">
+		<main class="medium-8 columns" id="content">
 			<?php if ( have_posts() ) : ?>
 
 				<header class="page-header">

@@ -13,7 +13,7 @@ get_header(); ?>
 
 	<div class="row">
 
-		<main class="medium-8 columns" role="main" id="content">
+		<main class="medium-8 columns" id="content">
 
 			<section class="error-404 not-found">
 				<header class="page-header">

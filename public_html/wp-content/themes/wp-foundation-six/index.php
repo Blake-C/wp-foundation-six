@@ -18,7 +18,7 @@ get_header(); ?>
 
 	<div class="row">
 
-		<main class="medium-8 columns" role="main" id="content">
+		<main class="medium-8 columns" id="content">
 			<?php if ( have_posts() ) : ?>
 
 				<?php if ( is_home() && ! is_front_page() ) : ?>
