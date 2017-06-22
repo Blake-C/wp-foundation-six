@@ -7,7 +7,7 @@
  */
 if ( ! function_exists( 'wp_foundation_six_login_page_custom_link' ) ) {
 	function wp_foundation_six_login_page_custom_link() {
-		return site_url();
+		return get_home_url();
 	}
 }
 add_filter( 'login_headerurl','wp_foundation_six_login_page_custom_link' );
