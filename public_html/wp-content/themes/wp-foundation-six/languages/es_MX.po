@@ -1,0 +1,181 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP Foundation 6\n"
+"POT-Creation-Date: 2017-06-21 22:43-0500\n"
+"PO-Revision-Date: 2017-06-21 22:43-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_MX\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:20
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "¡Uups! Esta página no ha sido encontrado."
+
+#: 404.php:24
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"Parece que no se encontró nada en este lugar. Tal vez pruebe uno de los "
+"siguientes enlaces o una búsqueda?"
+
+#: 404.php:32
+msgid "Most Used Categories"
+msgstr "Las Categorías más usadas"
+
+#. translators: %1$s: smiley
+#: 404.php:50
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Trate de buscar en los archivos mensuales.  %1$s"
+
+#. translators: %s: post title
+#: comments.php:36
+#, php-format
+msgctxt "comments title"
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr "Una idea en &ldquo;%s&rdquo;"
+
+#: comments.php:43
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "%1$s idea en &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s ideas en &ldquo;%2$s&rdquo;"
+
+#: functions.php:51
+msgid "Primary Menu"
+msgstr "Menu Principal"
+
+#: functions.php:52
+msgid "Footer Menu"
+msgstr "Menú de Pie de página"
+
+#: functions.php:108
+msgid "Primary Sidebar"
+msgstr "Barra lateral principal"
+
+#: header.php:75
+msgctxt "Link to jump to div with main content"
+msgid "Skip to content"
+msgstr "Saltar al Contenido"
+
+#: header.php:90
+msgctxt "Link to display inline debug for theme files"
+msgid "Show Regions"
+msgstr "Mostrar regiones"
+
+#: inc/components/password-form.php:16
+msgid "To view this protected post, enter the password below:"
+msgstr "Por favor, introduce la contraseña para acceder:"
+
+#: inc/components/password-form.php:19
+msgid "Password:"
+msgstr "Contraseña:"
+
+#: inc/components/password-form.php:25
+msgctxt "Button value attribute on password form"
+msgid "Submit"
+msgstr "Enviar"
+
+#. translators: %s: Name of current post
+#: inc/template-tags/entry-footer.php:34 template-parts/content-page.php:41
+#, php-format
+msgctxt "button to edit page or post"
+msgid "Edit %s"
+msgstr "Editar %s"
+
+#. translators: The post publish date
+#: inc/template-tags/posted-on.php:16
+#, php-format
+msgctxt "post date"
+msgid "Posted: %s"
+msgstr "Ver todos los %s"
+
+#. translators: The post updated date
+#: inc/template-tags/posted-on.php:30
+#, php-format
+msgctxt "updated date"
+msgid "Updated: %s"
+msgstr "Actualizado: %s"
+
+#. translators: The post author, byline
+#: inc/template-tags/posted-on.php:39
+#, php-format
+msgctxt "post author"
+msgid "by %s"
+msgstr "por %s"
+
+#. translators: Title for search results page
+#: search.php:21
+#, php-format
+msgctxt "Search results title"
+msgid "Search Results for: %s"
+msgstr "Buscar Resultados para: %s"
+
+#: searchform.php:3
+msgctxt "Heading for search area, for screen readers"
+msgid "Search Bar"
+msgstr "Barra de búsqueda"
+
+#: searchform.php:8
+msgctxt "Search field label text"
+msgid "Search"
+msgstr "Buscar"
+
+#: searchform.php:9
+msgctxt "Search field placeholder attribute"
+msgid "Search..."
+msgstr "Buscar..."
+
+#: searchform.php:12
+msgctxt "Search button value attribute"
+msgid "Search"
+msgstr "Buscar"
+
+#: template-parts/content-none.php:16
+msgid "Nothing Found"
+msgstr "Nada Encontrado"
+
+#: template-parts/content-none.php:22
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Lo sentimos, pero no encaja nada con los términos de la búsqueda. Inténtalo "
+"de nuevo con algunas palabras diferentes."
+
+#: template-parts/content-none.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Parece que no podemos encontrar lo que estamos buscando. Tal vez la búsqueda "
+"puede ayudar."
+
+#. Theme Name of the plugin/theme
+msgid "WP Foundation 6"
+msgstr "Fundación de WP 6"
+
+#. Description of the plugin/theme
+msgid "Custom Foundation 6 theme for advanced theme development"
+msgstr "Tema personalizado 6 Fundación para el desarrollo del tema avanzado"
+
+#~ msgctxt "submit button"
+#~ msgid "Search"
+#~ msgstr "Buscar"

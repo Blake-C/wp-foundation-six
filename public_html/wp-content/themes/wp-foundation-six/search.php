@@ -18,7 +18,7 @@ get_header(); ?>
 
 				<header class="page-header">
 					<?php /* translators: Title for search results page */ ?>
-					<h2 class="page-title"><?php printf( esc_html_x( 'Search Results for: %s', 'search results', 'wp-foundation-six' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
+					<h2 class="page-title"><?php printf( esc_html_x( 'Search Results for: %s', 'Search results title', 'wp-foundation-six' ), '<span>' . get_search_query() . '</span>' ); ?></h2>
 				</header><!-- .page-header -->
 
 				<?php /* Start the Loop */ ?>

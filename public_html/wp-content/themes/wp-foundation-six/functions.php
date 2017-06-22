@@ -19,7 +19,7 @@ if ( ! function_exists( 'wp_foundation_six_setup' ) ) {
 		/*
 		 * Make theme available for translation.
 		 */
-		load_theme_textdomain( 'wp_foundation_six' );
+		load_theme_textdomain( 'wp_foundation_six', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -78,6 +78,13 @@ if ( ! function_exists( 'wp_foundation_six_setup' ) ) {
 		remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
 		remove_action( 'wp_head', 'wp_generator' ); // Display the XHTML generator that is generated on the wp_head hook, WP version
 	}
+
+	/**
+	 * If you don't want to see inline debug code for
+	 * what file generated a region of a page, set this
+	 * constant to false.
+	 */
+	define( 'INLINE_DEBUG', true );
 }// End if().
 add_action( 'after_setup_theme', 'wp_foundation_six_setup' );
 

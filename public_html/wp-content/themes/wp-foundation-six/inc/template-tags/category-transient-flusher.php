@@ -8,7 +8,7 @@ if ( ! function_exists( 'wp_foundation_six_category_transient_flusher' ) ) {
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 			return;
 		}
-		// Like, beat it. Dig?
+
 		delete_transient( 'wp_foundation_six_categories' );
 	}
 }

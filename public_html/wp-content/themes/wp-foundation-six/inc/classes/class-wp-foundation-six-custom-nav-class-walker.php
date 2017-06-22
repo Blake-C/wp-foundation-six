@@ -29,7 +29,7 @@ if ( ! function_exists( 'wp_foundation_six_topbar_nav_dropdown' ) ) {
 
 		foreach ( $sorted_menu_items as $key => $obj ) {
 			// it is a top lv item?
-			if ( 0 == $obj->menu_item_parent ) {
+			if ( 0 === (int) $obj->menu_item_parent ) {
 				// set the key of the parent
 				$last_top = $key;
 			} else {

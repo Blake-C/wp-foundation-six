@@ -13,16 +13,16 @@ if ( ! function_exists( 'wp_foundation_six_custom_password_form' ) ) {
 		$label = 'pwbox-' . ( empty( $post->ID ) ? rand() : $post->ID );
 
 		$o = '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">
-		' . __( '<p>To view this protected post, enter the password below:</p>' ) .
+			<p>' . __( 'To view this protected post, enter the password below:', 'wp_foundation_six' ) . '</p>' .
 			'<div class="row collapse">' .
 				'<div>' .
-					'<label class="pass-label" for="' . $label . '">' . __( 'Password:' ) . ' </label>' .
+					'<label class="pass-label" for="' . $label . '">' . __( 'Password:', 'wp_foundation_six' ) . ' </label>' .
 				'</div>' .
 				'<div class="small-8 columns">' .
 					'<input name="post_password" id="' . $label . '" type="password" />' .
 				'</div>' .
 				'<div class="small-4 columns">' .
-					'<input type="submit" name="Submit" class="button expanded" value="' . esc_attr__( 'Submit' ) . '" />' .
+					'<input type="submit" name="Submit" class="button expanded" value="' . esc_attr_x( 'Submit', 'Button value attribute on password form', 'wp_foundation_six' ) . '" />' .
 				'</div>' .
 			'</div>' .
 		'</form>';

@@ -13,19 +13,19 @@
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h2 class="page-title">Nothing Found</h2>
+		<h2 class="page-title"><?php esc_html_e( 'Nothing Found', 'wp_foundation_six' ); ?></h2>
 	</header>
 
 	<div class="page-content">
 		<?php if ( is_search() ) : ?>
 
-			<p>Sorry, but nothing matched your search terms. Please try again with some different keywords.</p>
+			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'wp_foundation_six' ); ?></p>
 
 			<?php get_search_form(); ?>
 
 		<?php else : ?>
 
-			<p>It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.</p>
+			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'wp_foundation_six' ); ?></p>
 
 			<?php get_search_form(); ?>
 
