@@ -3,6 +3,7 @@
  * wp_foundation_six functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ * @link https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage#ignoring-files-and-folders
  *
  * @package wp_foundation_six
  */
