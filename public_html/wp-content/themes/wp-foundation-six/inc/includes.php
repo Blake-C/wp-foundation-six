@@ -9,10 +9,10 @@
 
 
 /**
- * Components
+ * Classes
  *
  */
-require get_template_directory() . '/inc/classes/class-wp-foundation-six-custom-nav-class-walker.php';
+// require get_template_directory() . '/inc/classes/name-of-class-file.php';
 
 
 /**
