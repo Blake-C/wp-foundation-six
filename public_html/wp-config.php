@@ -15,10 +15,6 @@ $table_prefix  = 'wp_';
 // Turn on Bug Reports
 // ========================
 if ( ! defined( 'WP_CLI' ) ) {
-	ini_set( 'display_errors', E_ALL );
-	ini_set( 'log_errors', 'On' );
-	ini_set( 'error_log', '/var/www/logs/wp_debug.log' );
-
 	define( 'WP_DEBUG_DISPLAY', true );
 	define( 'WP_DEBUG', true );
 	define( 'WP_DEBUG_LOG', true );
