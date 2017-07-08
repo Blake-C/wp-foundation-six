@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "41e0febf06e556330f55543468f36862",
+    "content-hash": "6e2ec34a910d10e5a94c048e5123eb27",
     "packages": [
         {
             "name": "composer/installers",
@@ -216,7 +216,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/akismet.3.3.2.zip",
-                "reference": null,
+                "reference": "tags/3.3.2",
                 "shasum": null
             },
             "require": {
@@ -236,7 +236,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.6.2.0.zip",
-                "reference": null,
+                "reference": "tags/6.2.0",
                 "shasum": null
             },
             "require": {
@@ -247,16 +247,16 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "2.6.2",
+            "version": "2.6.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/2.6.2"
+                "reference": "tags/2.6.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.2.6.2.zip",
-                "reference": null,
+                "url": "https://downloads.wordpress.org/plugin/redirection.2.6.3.zip",
+                "reference": "tags/2.6.3",
                 "shasum": null
             },
             "require": {
@@ -276,7 +276,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.2.2.6.zip",
-                "reference": null,
+                "reference": "tags/2.2.6",
                 "shasum": null
             },
             "require": {
@@ -287,15 +287,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "4.9",
+            "version": "5.0.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/4.9"
+                "reference": "tags/5.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.9.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.5.0.1.zip",
                 "reference": null,
                 "shasum": null
             },
