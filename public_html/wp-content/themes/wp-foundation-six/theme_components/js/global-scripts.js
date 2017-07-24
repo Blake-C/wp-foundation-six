@@ -7,7 +7,7 @@ import './modules/_foundation-scripts';
 /**
  * Notes:
  *
- * Although jQuery is imported above, it is not bundulded
+ * Although jQuery is imported above, it is not bundled
  * with the transpiled assets. jQuery needs to be global
  * on the website.
  *
@@ -19,16 +19,8 @@ import './modules/_foundation-scripts';
  *
  * The scripts_list const is imported into the webpack
  * config. I've done this so that you do not have to
- * wade through the consfig to find what is being
+ * wade through the config to find what is being
  * compiled out as its own file.
- *
- * Also if you create another js file keep your scripts
- * within an immediately invoked function expression.
- * This will prevent other plugins or your own chunks
- * of code from conflicting with eachother. More info
- * can be found here:
- *
- * @link: http://benalman.com/news/2010/11/immediately-invoked-function-expression/
  *
  * When importing node modules that are not ES6 modules,
  * you do not need to path them as '../../node_modules/'.
