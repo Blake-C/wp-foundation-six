@@ -10,8 +10,9 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 
-	<?php // https://developer.mozilla.org/en-US/docs/Web/HTTP/Controlling_DNS_prefetching ?>
 	<?php
+		// https://developer.mozilla.org/en-US/docs/Web/HTTP/Controlling_DNS_prefetching
+		//
 		// Use to prefech dns
 		// echo '<meta http-equiv="x-dns-prefetch-control" content="on">';
 		// echo '<link rel="dns-prefetch" href="//use.typekit.net">';
@@ -21,7 +22,9 @@
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-	<?php // https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag ?>
+	<?php
+		// https://developer.mozilla.org/en-US/docs/Mozilla/Mobile/Viewport_meta_tag
+	?>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="apple-touch-icon" sizes="57x57" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/icons/apple-touch-icon-57x57.png">
@@ -46,7 +49,9 @@
 	<meta name="msapplication-config" content="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/icons/browserconfig.xml">
 	<meta name="theme-color" content="#1c2185">
 
-	<?php // App Title ?>
+	<?php
+		// App Title
+	?>
 	<meta name="apple-mobile-web-app-title" content="<?php echo esc_attr( get_bloginfo( 'name' ), 'wp_foundation_six' ); ?>">
 	<meta name="application-name" content="<?php echo esc_attr( get_bloginfo( 'name' ), 'wp_foundation_six' ); ?>">
 
