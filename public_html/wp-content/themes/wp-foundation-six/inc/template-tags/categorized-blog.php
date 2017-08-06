@@ -1,11 +1,16 @@
 <?php
-
 /**
- * Returns true if a blog has more than 1 category.
+ * Categorized Blog
  *
- * @return bool
+ * @package wp_foundation_six
  */
+
 if ( ! function_exists( 'wp_foundation_six_categorized_blog' ) ) {
+	/**
+	 * Returns true if a blog has more than 1 category.
+	 *
+	 * @return bool
+	 */
 	function wp_foundation_six_categorized_blog() {
 		$all_the_cool_cats = get_transient( 'wp_foundation_six_categories' );
 

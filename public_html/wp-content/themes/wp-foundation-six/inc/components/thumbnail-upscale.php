@@ -4,14 +4,31 @@
  * Retain the aspect ratio.
  *
  * @link http://alxmedia.se/code/2013/10/thumbnail-upscale-correct-crop-in-wordpress/
+ * @link https://codex.wordpress.org/Function_Reference/image_resize_dimensions
+ * @link https://core.trac.wordpress.org/browser/tags/4.8/src/wp-includes/media.php#L475
+ * @link http://php.net/manual/en/function.imagecopyresampled.php
  *
  * @package wp_foundation_six
  */
 
 if ( ! function_exists( 'wp_foundation_six_thumbnail_upscale' ) ) {
+	/**
+	 * Upscale thumbnails
+	 *
+	 * @method wp_foundation_six_thumbnail_upscale
+	 * @param null|mixed $default - Whether to preempt output of the resize
+	 *                              dimensions.
+	 * @param int        $orig_w  - Original pixel width.
+	 * @param int        $orig_h  - Original pixel height.
+	 * @param int        $new_w   - New pixel width.
+	 * @param int        $new_h   - New pixel height.
+	 * @param array      $crop    - Crop position.
+	 * @return null|array - Null on failure. Returned array matches parameters
+	 *                      for `imagecopyresampled()`.
+	 */
 	function wp_foundation_six_thumbnail_upscale( $default, $orig_w, $orig_h, $new_w, $new_h, $crop ) {
 		if ( ! $crop ) {
-			// let the wordpress default function handle this
+			// let the WordPress default function handle this
 			return null;
 		}
 
@@ -43,6 +60,7 @@ if ( ! function_exists( 'wp_foundation_six_thumbnail_upscale' ) ) {
 			}
 		}
 
+		// the return array matches the parameters to imagecopyresampled()
 		return array( 0, 0, (int) $s_x, (int) $s_y, (int) $new_w, (int) $new_h, (int) $crop_w, (int) $crop_h );
 	}
 }// End if().

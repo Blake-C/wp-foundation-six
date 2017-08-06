@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Load Gravity Forms Script in Footer
  *
@@ -9,8 +8,17 @@
  * immediately after the form.
  *
  * @link https://www.gravityhelp.com/documentation/article/gform_init_scripts_footer/
+ *
+ * @package wp_foundation_six
  */
+
 if ( ! function_exists( 'wp_foundation_six_gform_init_scripts' ) ) {
+	/**
+	 * Forces gravity forms scritps to load in the footer
+	 *
+	 * @method wp_foundation_six_gform_init_scripts
+	 * @return bool - If true load scripts in the footer
+	 */
 	function wp_foundation_six_gform_init_scripts() {
 		return true;
 	}

@@ -1,4 +1,9 @@
 <?php
+/**
+ * The template for displaying meta information for the categories, tags and comments.
+ *
+ * @package wp_foundation_six
+ */
 
 if ( ! function_exists( 'wp_foundation_six_entry_footer' ) ) {
 	/**
@@ -27,6 +32,8 @@ if ( ! function_exists( 'wp_foundation_six_entry_footer' ) ) {
 		}
 
 		/**
+		 * Displays a link to edit the current post, if a user is logged in and allowed to edit the post.
+		 *
 		 * @link: https://codex.wordpress.org/Function_Reference/edit_post_link
 		 */
 		edit_post_link(
@@ -35,7 +42,7 @@ if ( ! function_exists( 'wp_foundation_six_entry_footer' ) ) {
 			'<p class="edit-link">',
 			'</p>',
 			'', // ID
-			'button' // Class
+			'button' // class name
 		);
 	}
 }// End if().

@@ -2,7 +2,7 @@
 /**
  * Template Name: Sample Page Template
  *
- *
+ * @package wp_foundation_six
  */
 
 get_header(); ?>

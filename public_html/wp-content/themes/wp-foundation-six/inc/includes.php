@@ -11,13 +11,13 @@
 /**
  * Classes
  *
+ * Ex:
+ * require get_template_directory() . '/inc/classes/name-of-class-file.php';
  */
-// require get_template_directory() . '/inc/classes/name-of-class-file.php';
 
 
 /**
  * Components
- *
  */
 require get_template_directory() . '/inc/components/body-classes.php';
 require get_template_directory() . '/inc/components/embed-video-container.php';
@@ -31,7 +31,6 @@ require get_template_directory() . '/inc/components/thumbnail-upscale.php';
 
 /**
  * Template Tags
- *
  */
 require get_template_directory() . '/inc/template-tags/categorized-blog.php';
 require get_template_directory() . '/inc/template-tags/category-transient-flusher.php';
@@ -41,7 +40,6 @@ require get_template_directory() . '/inc/template-tags/posted-on.php';
 
 /**
  * Customize the admin sceen
- *
  */
 require get_template_directory() . '/inc/custom-admin-functions/change-howdy-text.php';
 require get_template_directory() . '/inc/custom-admin-functions/login-page-favicon.php';

@@ -19,11 +19,12 @@ get_header(); ?>
 	<div class="row">
 
 		<main class="medium-8 columns" id="content">
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php while ( have_posts() ) : ?>
+				<?php the_post(); ?>
 
 				<?php get_template_part( 'template-parts/content', 'page' ); ?>
 
-				<?php // If comments are open or we have at least one comment, load up the comment template. ?>
+				<?php /* If comments are open or we have at least one comment, load up the comment template. */ ?>
 				<?php if ( comments_open() || get_comments_number() ) : ?>
 					<?php comments_template(); ?>
 				<?php endif; ?>

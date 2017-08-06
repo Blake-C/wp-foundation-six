@@ -1,4 +1,10 @@
 <?php
+/**
+ * The template for displaying meta information for the current post-date/time and author.
+ *
+ * @package wp_foundation_six
+ */
+
 
 if ( ! function_exists( 'wp_foundation_six_posted_on' ) ) {
 	/**

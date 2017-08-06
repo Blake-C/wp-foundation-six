@@ -25,6 +25,8 @@
 
 		<?php
 			/**
+			 * Displays page-links for paginated posts
+			 *
 			 * @link: https://codex.wordpress.org/Function_Reference/wp_link_pages
 			 */
 			wp_link_pages(

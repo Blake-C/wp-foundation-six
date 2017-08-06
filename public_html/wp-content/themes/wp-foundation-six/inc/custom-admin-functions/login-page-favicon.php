@@ -1,11 +1,18 @@
 <?php
-
 /**
- * Login page favicon
+ * Changes the login and admin page favicon
  *
  * @link http://www.kriesi.at/support/topic/adding-favicon-to-wordpress-back-end/
+ *
+ * @package wp_foundation_six
  */
+
 if ( ! function_exists( 'wp_foundation_six_add_login_favicon' ) ) {
+	/**
+	 * Login page favicon
+	 *
+	 * @method wp_foundation_six_add_login_favicon
+	 */
 	function wp_foundation_six_add_login_favicon() {
 		$favicon_path = get_template_directory_uri() . '/assets/icons/favicon.ico';
 

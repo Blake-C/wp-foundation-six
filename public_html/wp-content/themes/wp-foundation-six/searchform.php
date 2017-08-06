@@ -1,3 +1,13 @@
+<?php
+/**
+ * Template for displaying search forms
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package wp_foundation_six
+ */
+?>
+
 <?php wp_foundation_six_dev_helper( pathinfo( __FILE__, PATHINFO_FILENAME ) ); ?>
 
 <h2 class="show-for-sr"><?php echo esc_html_x( 'Search Bar', 'Heading for search area, for screen readers', 'wp_foundation_six' ); ?></h2>

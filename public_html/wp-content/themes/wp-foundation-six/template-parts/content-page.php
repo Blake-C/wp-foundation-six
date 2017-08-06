@@ -20,6 +20,8 @@
 		<?php the_content(); ?>
 		<?php
 			/**
+			 * Displays page-links for paginated posts
+			 *
 			 * @link: https://codex.wordpress.org/Function_Reference/wp_link_pages
 			 */
 			wp_link_pages(
@@ -34,6 +36,8 @@
 	<footer class="entry-footer">
 		<?php
 			/**
+			 * Displays a link to edit the current post, if a user is logged in and allowed to edit the post.
+			 *
 			 * @link: https://codex.wordpress.org/Function_Reference/edit_post_link
 			 */
 			edit_post_link(
@@ -41,8 +45,8 @@
 				sprintf( esc_html_x( 'Edit %s', 'button to edit page or post', 'wp_foundation_six' ), the_title( '<span class="show-for-sr">"', '"</span>', false ) ),
 				'<p class="edit-link">',
 				'</p>',
-				'', // ID
-				'button' // Class
+				'', /* ID */
+				'button' /* class name */
 			);
 		?>
 	</footer>

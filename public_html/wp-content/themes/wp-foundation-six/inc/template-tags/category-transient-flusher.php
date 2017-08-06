@@ -1,9 +1,16 @@
 <?php
-
 /**
- * Flush out the transients used in wp_foundation_six_categorized_blog.
+ * Category Transient Flusher
+ *
+ * @package wp_foundation_six
  */
+
 if ( ! function_exists( 'wp_foundation_six_category_transient_flusher' ) ) {
+	/**
+	 * Flush out the transients used in wp_foundation_six_categorized_blog.
+	 *
+	 * @method wp_foundation_six_category_transient_flusher.
+	 */
 	function wp_foundation_six_category_transient_flusher() {
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 			return;

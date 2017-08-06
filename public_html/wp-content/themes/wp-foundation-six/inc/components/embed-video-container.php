@@ -1,12 +1,18 @@
 <?php
-
 /**
- *
  * Add responsive container to embeds
  *
  * @package wp_foundation_six
  */
+
 if ( ! function_exists( 'wp_foundation_six_embed_video_html' ) ) {
+	/**
+	 * [wp_foundation_six_embed_video_html description]
+	 *
+	 * @method wp_foundation_six_embed_video_html
+	 * @param  string $html - Media HTML.
+	 * @return string - New media HTML
+	 */
 	function wp_foundation_six_embed_video_html( $html ) {
 		return '<div class="responsive-embed">' . $html . '</div>';
 	}

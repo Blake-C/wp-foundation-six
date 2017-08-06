@@ -28,7 +28,8 @@ get_header(); ?>
 				<?php endif; ?>
 
 				<?php /* Start the Loop */ ?>
-				<?php while ( have_posts() ) : the_post(); ?>
+				<?php while ( have_posts() ) : ?>
+					<?php the_post(); ?>
 
 					<?php
 

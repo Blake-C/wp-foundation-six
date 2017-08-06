@@ -1,6 +1,6 @@
 <?php
 /**
- * wp_foundation_six functions and definitions.
+ * WP Foundation Six functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  * @link https://github.com/squizlabs/PHP_CodeSniffer/wiki/Advanced-Usage#ignoring-files-and-folders
@@ -44,10 +44,14 @@ if ( ! function_exists( 'wp_foundation_six_setup' ) ) {
 		 * Custom thumbnail sizes.
 		 *
 		 * @link https://developer.wordpress.org/reference/functions/add_image_size/
+		 *
+		 * Ex:
+		 * add_image_size( 'unique_name', 490, 240, array( 'center', 'top' ) );
 		 */
-		// add_image_size( 'unique_name', 490, 240, array('center', 'top') );
 
-		// This theme uses wp_nav_menu() in one location.
+		/**
+		 * This theme uses wp_nav_menu() in one location.
+		 */
 		register_nav_menus( array(
 			'primary' => __( 'Primary Menu', 'wp_foundation_six' ),
 			'footer' => __( 'Footer Menu', 'wp_foundation_six' ),
@@ -76,7 +80,7 @@ if ( ! function_exists( 'wp_foundation_six_setup' ) ) {
 		remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 ); // prev link
 		remove_action( 'wp_head', 'start_post_rel_link', 10, 0 ); // start link
 		remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 ); // Display relational links for the posts adjacent to the current post.
-		remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
+		remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 ); // Injects rel=shortlink into the head if a shortlink is defined for the current page.
 		remove_action( 'wp_head', 'wp_generator' ); // Display the XHTML generator that is generated on the wp_head hook, WP version
 	}
 
@@ -91,19 +95,19 @@ add_action( 'after_setup_theme', 'wp_foundation_six_setup' );
 
 
 /**
- * remove wp version meta tag and from rss feed
+ * Remove wp version meta tag and from rss feed
  *
  * @link https://thomasgriffin.io/hide-wordpress-meta-generator-tag/
  */
 add_filter( 'the_generator', '__return_false' );
 
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
 if ( ! function_exists( 'wp_foundation_six_widgets_init' ) ) {
+	/**
+	 * Register widget area.
+	 *
+	 * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
+	 */
 	function wp_foundation_six_widgets_init() {
 		register_sidebar( array(
 			'name'          => __( 'Primary Sidebar', 'wp_foundation_six' ),
@@ -119,10 +123,10 @@ if ( ! function_exists( 'wp_foundation_six_widgets_init' ) ) {
 add_action( 'widgets_init', 'wp_foundation_six_widgets_init' );
 
 
-/**
- * Enqueue scripts and styles.
- */
 if ( ! function_exists( 'wp_foundation_six_scripts' ) ) {
+	/**
+	 * Enqueue scripts and styles.
+	 */
 	function wp_foundation_six_scripts() {
 		/* Import CSS (Sass files are in the theme-components folder) */
 		wp_enqueue_style( 'wp-foundation-six-style', get_template_directory_uri() . '/assets/css/global-styles.min.css' );
@@ -140,10 +144,12 @@ if ( ! function_exists( 'wp_foundation_six_scripts' ) ) {
 		 * Conditionally add scripts and styles to pages with template tags
 		 *
 		 * @link https://codex.wordpress.org/Template_Tags
+		 *
+		 * Ex:
+		 * if ( is_front_page() ) {
+		 * wp_enqueue_script( 'wp-foundation-six-home-scripts', get_template_directory_uri() . '/assets/js/scripts-home-min.js', array('jquery'), '21112015', true );
+		 * }
 		*/
-		// if ( is_front_page() ) {
-		// 	wp_enqueue_script( 'wp-foundation-six-home-scripts', get_template_directory_uri() . '/assets/js/scripts-home-min.js', array('jquery'), '21112015', true );
-		// }
 	}
 }
 add_action( 'wp_enqueue_scripts', 'wp_foundation_six_scripts' );

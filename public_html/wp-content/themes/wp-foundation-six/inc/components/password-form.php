@@ -1,12 +1,17 @@
 <?php
-
 /**
- *
  * Custom Post Password Form
  *
- * @package Theme
+ * @package wp_foundation_six
  */
+
 if ( ! function_exists( 'wp_foundation_six_custom_password_form' ) ) {
+	/**
+	 * Customizes the password form to have Foundation Six classes
+	 *
+	 * @method wp_foundation_six_custom_password_form
+	 * @return string - Form element
+	 */
 	function wp_foundation_six_custom_password_form() {
 		global $post;
 

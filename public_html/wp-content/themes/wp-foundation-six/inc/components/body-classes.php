@@ -1,12 +1,17 @@
 <?php
-
 /**
- * Adds custom classes to the array of body classes.
+ * Custom classes to body.
  *
- * @param array $classes Classes for the body element.
- * @return array
+ * @package wp_foundation_six
  */
+
 if ( ! function_exists( 'wp_foundation_six_body_classes' ) ) {
+	/**
+	 * Adds custom classes to the array of body classes.
+	 *
+	 * @param string|array $classes - One or more classes to add to the class list.
+	 * @return array - Array of classes.
+	 */
 	function wp_foundation_six_body_classes( $classes ) {
 		// Adds a class of group-blog to blogs with more than 1 published author.
 		if ( is_multi_author() ) {
