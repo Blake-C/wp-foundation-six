@@ -164,6 +164,7 @@ gulp.task('copy', () => {
 		'!./node_modules{,/**}',
 		'!./theme_components{,/**}',
 		'!./codesniffer.ruleset.xml',
+		'!./phpcs.xml',
 		'!./gulpfile.babel.js',
 		'!./webpack.config.js',
 		'!./webpack.config.babel.js',
