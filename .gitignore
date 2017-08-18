@@ -74,3 +74,4 @@ dist
 node_modules
 npm-debug.log
 object-cache.php
+.vscode
