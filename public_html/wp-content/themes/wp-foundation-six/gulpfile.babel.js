@@ -50,8 +50,7 @@ gulp.task('styles', ['lint:sass'], () => {
 			includePaths: [
 				'node_modules'
 			]
-		})
-		.on('error', $.sass.logError))
+		}).on('error', $.sass.logError))
 		.pipe($.postcss([
 			$.autoprefixer({ browsers: [
 				'last 3 versions',
@@ -95,8 +94,7 @@ gulp.task('images', () => {
 			// as hooks for embedding and styling
 			svgoPlugins: [{cleanupIDs: false}],
 			use: [$.imageminPngquant({quality: '65-80', speed: 4})],
-		})
-		.on('error', function (err) {
+		}).on('error', function (err) {
 			console.log(err); // eslint-disable-line no-console
 			this.end();
 		}))
@@ -173,8 +171,7 @@ gulp.task('copy', () => {
 		'!./.babelrc',
 		'!./.sass-lint.yml',
 		'!./.eslintrc.json'
-	])
-	.pipe($.if(argv.build, gulp.dest(dir.build)));
+	]).pipe($.if(argv.build, gulp.dest(dir.build)));
 });
 
 gulp.task('build', ['styles', 'scripts', 'scripts:jquery', 'images', 'fonts', 'icons', 'copy'], () => {
