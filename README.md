@@ -6,7 +6,7 @@ The WordPress Foundation 6 Developer Framework is meant to be a starting point f
 
 Starting up:
 
-- `git clone git@github.com:Blake-C/wp-foundation-six.git your-project-name`
+- `git clone https://github.com/Blake-C/wp-foundation-six.git your-project-name`
 - `cd your-project-name`
 - `docker-compose up -d`
 - `docker container list -a`
