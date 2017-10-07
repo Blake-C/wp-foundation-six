@@ -26,6 +26,12 @@ const webpackConfig = {
 	devtool: 'source-map',
 	module: {
 		rules: [{
+			/**
+			 * @link https://github.com/webpack/webpack/issues/3017#issuecomment-285954512
+			 * @link https://github.com/jquery/jquery-migrate/issues/273
+			 */
+			parser: { amd: false }
+		}, {
 			test: /\.(js|jsx)$/,
 			enforce: 'pre',
 			loader: 'eslint-loader',
@@ -37,7 +43,17 @@ const webpackConfig = {
 		}, {
 			test: /\.(js|jsx)$/,
 			loader: 'babel-loader',
-			exclude: /(node_modules)/
+			exclude: /(node_modules)/,
+			options: {
+				'presets': [
+					['env', {
+						'targets': {
+							'browsers': ['last 3 versions', 'ie >= 9']
+						},
+						'modules': false
+					}]
+				]
+			}
 		}]
 	},
 	plugins: [
