@@ -1,44 +1,31 @@
 // import $ from 'jquery';
+// import { Foundation } from 'foundation-sites/js/foundation.core';
 
-// import 'foundation-sites/dist/js/plugins/foundation.core.js';
-
-// import 'foundation-sites/dist/js/plugins/foundation.util.box.js';
-// import 'foundation-sites/dist/js/plugins/foundation.util.keyboard.js';
-// import 'foundation-sites/dist/js/plugins/foundation.util.mediaQuery.js';
-// import 'foundation-sites/dist/js/plugins/foundation.util.motion.js';
-// import 'foundation-sites/dist/js/plugins/foundation.util.nest.js';
-// import 'foundation-sites/dist/js/plugins/foundation.util.timerAndImageLoader.js';
-// import 'foundation-sites/dist/js/plugins/foundation.util.touch.js';
-// import 'foundation-sites/dist/js/plugins/foundation.util.triggers.js';
-
-// import 'foundation-sites/dist/js/plugins/foundation.abide.js';
-// import 'foundation-sites/dist/js/plugins/foundation.accordion.js';
-// import 'foundation-sites/dist/js/plugins/foundation.accordionMenu.js';
-// import 'foundation-sites/dist/js/plugins/foundation.drilldown.js';
-// import 'foundation-sites/dist/js/plugins/foundation.dropdown.js';
-// import 'foundation-sites/dist/js/plugins/foundation.dropdownMenu.js';
-// import 'foundation-sites/dist/js/plugins/foundation.equalizer.js';
-// import 'foundation-sites/dist/js/plugins/foundation.interchange.js';
-// import 'foundation-sites/dist/js/plugins/foundation.magellan.js';
-// import 'foundation-sites/dist/js/plugins/foundation.offcanvas.js';
-// import 'foundation-sites/dist/js/plugins/foundation.orbit.js';
-// import 'foundation-sites/dist/js/plugins/foundation.responsiveMenu.js';
-// import 'foundation-sites/dist/js/plugins/foundation.responsiveToggle.js';
-// import 'foundation-sites/dist/js/plugins/foundation.reveal.js';
-// import 'foundation-sites/dist/js/plugins/foundation.slider.js';
-// import 'foundation-sites/dist/js/plugins/foundation.sticky.js';
-// import 'foundation-sites/dist/js/plugins/foundation.tabs.js';
-// import 'foundation-sites/dist/js/plugins/foundation.toggler.js';
-// import 'foundation-sites/dist/js/plugins/foundation.tooltip.js';
-// import 'foundation-sites/dist/js/plugins/foundation.zf.responsiveAccordionTabs.js';
+// Uncomment a module to load it
+// import { Abide } from 'foundation-sites/js/foundation.abide';
+// import { Accordion } from 'foundation-sites/js/foundation.accordion';
+// import { AccordionMenu } from 'foundation-sites/js/foundation.accordionMenu';
+// import { Drilldown } from 'foundation-sites/js/foundation.drilldown';
+// import { Dropdown } from 'foundation-sites/js/foundation.dropdown';
+// import { DropdownMenu } from 'foundation-sites/js/foundation.dropdownMenu';
+// import { Equalizer } from 'foundation-sites/js/foundation.equalizer';
+// import { Interchange } from 'foundation-sites/js/foundation.interchange';
+// import { Magellan } from 'foundation-sites/js/foundation.magellan';
+// import { OffCanvas } from 'foundation-sites/js/foundation.offcanvas';
+// import { Orbit } from 'foundation-sites/js/foundation.orbit';
+// import { ResponsiveMenu } from 'foundation-sites/js/foundation.responsiveMenu';
+// import { ResponsiveToggle } from 'foundation-sites/js/foundation.responsiveToggle';
+// import { Reveal } from 'foundation-sites/js/foundation.reveal';
+// import { Slider } from 'foundation-sites/js/foundation.slider';
+// import { SmoothScroll } from 'foundation-sites/js/foundation.smoothScroll';
+// import { Sticky } from 'foundation-sites/js/foundation.sticky';
+// import { Tabs } from 'foundation-sites/js/foundation.tabs';
+// import { Toggler } from 'foundation-sites/js/foundation.toggler';
+// import { Tooltip } from 'foundation-sites/js/foundation.tooltip';
+// import { ResponsiveAccordionTabs } from 'foundation-sites/js/foundation.responsiveAccordionTabs';
 
 /**
  * Notes:
- *
- * Read the foundation docs on what to include for different
- * foundation components
- *
- * @link http://foundation.zurb.com/sites/docs/javascript.html
  *
  * If you need a components for a single page then create another JS file,
  * inlude it within the scripts-list.js file and import the needed assets.
@@ -50,5 +37,9 @@
  *
  * @link https://webpack.github.io/docs/code-splitting.html
  */
+
+// Foundation.addToJquery($);
+
+// Foundation.plugin(Tabs, 'Tabs');
 
 // $(document).foundation();
