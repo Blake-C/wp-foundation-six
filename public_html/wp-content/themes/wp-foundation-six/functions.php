@@ -128,17 +128,23 @@ if ( ! function_exists( 'wp_foundation_six_scripts' ) ) {
 	 * Enqueue scripts and styles.
 	 */
 	function wp_foundation_six_scripts() {
+		/* Asset file paths set to variables */
+		$modern_jquery  = get_template_directory_uri() . '/assets/js/vendors/jquery.min.js';
+		$global_styles  = get_template_directory_uri() . '/assets/css/global-styles.min.css';
+		$global_scripts = get_template_directory_uri() . '/assets/js/bundle.global-scripts.js';
+		$modernizr      = get_template_directory_uri() . '/assets/js/vendors/bundle.modernizr.js';
+
 		/* Import CSS (Sass files are in the theme-components folder) */
-		wp_enqueue_style( 'wp-foundation-six-style', get_template_directory_uri() . '/assets/css/global-styles.min.css' );
+		wp_enqueue_style( 'wp-foundation-six-style', $global_styles, array(), wfs_cache_bust( $global_styles ) );
 
 		/* Register Modern jQuery */
 		wp_deregister_script( 'jquery' );
-		wp_register_script( 'jquery', get_template_directory_uri() . '/assets/js/vendors/jquery.min.js', array( 'wp-foundation-six-modernizr' ), null, true );
+		wp_register_script( 'jquery', $modern_jquery, array( 'wp-foundation-six-modernizr' ), wfs_cache_bust( $modern_jquery ), true );
 		wp_enqueue_script( 'jquery' );
 
 		/* Import Scripts (Keep to a minimum or import into global-scripts.js file) */
-		wp_enqueue_script( 'wp-foundation-six-global', get_template_directory_uri() . '/assets/js/bundle.global-scripts.js', array( 'jquery', 'wp-foundation-six-modernizr' ), null, true );
-		wp_enqueue_script( 'wp-foundation-six-modernizr', get_template_directory_uri() . '/assets/js/vendors/bundle.modernizr.js', null, null, true );
+		wp_enqueue_script( 'wp-foundation-six-global', $global_scripts, array( 'jquery', 'wp-foundation-six-modernizr' ), wfs_cache_bust( $global_scripts ), true );
+		wp_enqueue_script( 'wp-foundation-six-modernizr', $modernizr, array(), wfs_cache_bust( $modernizr ), true );
 
 		/**
 		 * Conditionally add scripts and styles to pages with template tags
@@ -147,9 +153,10 @@ if ( ! function_exists( 'wp_foundation_six_scripts' ) ) {
 		 *
 		 * Ex:
 		 * if ( is_front_page() ) {
-		 * wp_enqueue_script( 'wp-foundation-six-home-scripts', get_template_directory_uri() . '/assets/js/scripts-home-min.js', array('jquery'), '21112015', true );
+		 *     $scripts_home = get_template_directory_uri() . '/assets/js/scripts-home-min.js';
+		 *     wp_enqueue_script( 'wp-foundation-six-home-scripts', $scripts_home, array('jquery'), wfs_cache_bust( $scripts_home ), true );
 		 * }
-		*/
+		 */
 	}
 }
 add_action( 'wp_enqueue_scripts', 'wp_foundation_six_scripts' );

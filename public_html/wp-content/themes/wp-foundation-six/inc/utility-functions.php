@@ -19,6 +19,21 @@ if ( ! function_exists( 'wp_foundation_six_dev_helper' ) ) {
 	}
 }
 
+if ( ! function_exists( 'wfs_cache_bust' ) ) {
+	/**
+	 * Gets the time when the content of the file was changed.
+	 *
+	 * @method wfs_cache_bust
+	 * @param  string $src Path to files to get time last changed.
+	 * @return string      Returns the time when the data blocks of a file were being written to, that is, the time when the content of the file was changed.
+	 */
+	function wfs_cache_bust( $src ) {
+		$cache_bust = filemtime( realpath( '.' . wp_parse_url( $src, PHP_URL_PATH ) ) );
+
+		return $cache_bust;
+	}
+}
+
 if ( ! function_exists( 'print_pre' ) ) {
 	/**
 	 * Outputs array in HTML pre tags
