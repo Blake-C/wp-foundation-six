@@ -19,7 +19,22 @@ get_header(); ?>
 
 				<?php get_template_part( 'template-parts/content', 'single' ); ?>
 
-				<?php the_post_navigation(); ?>
+				<?php
+					/**
+					 * Displays the navigation to next/previous post, when applicable.
+					 *
+					 * @link https://developer.wordpress.org/reference/functions/the_post_navigation/
+					 */
+					the_post_navigation(
+						array(
+							'prev_text'          => __( 'Previous' ),
+							'next_text'          => __( 'Next' ),
+							'in_same_term'       => false,
+							'taxonomy'           => __( 'post_tag' ),
+							'screen_reader_text' => __( 'Continue Reading' ),
+						)
+					);
+				?>
 
 				<?php /* If comments are open or we have at least one comment, load up the comment template. */ ?>
 				<?php if ( comments_open() || get_comments_number() ) : ?>

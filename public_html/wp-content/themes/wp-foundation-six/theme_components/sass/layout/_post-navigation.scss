@@ -2,24 +2,24 @@
 	@include clearfix;
 
 	background-color: $light-gray;
-	margin-top: 20px;
+	margin: 20px 0;
 	padding: 10px 20px;
 
 	.nav-previous {
-		float: right;
-
-		&:after {
-			content: '\2192';
-			margin-left: 5px;
-		}
-	}
-
-	.nav-next {
 		float: left;
 
 		&:before {
 			content: '\2190';
 			margin-right: 5px;
+		}
+	}
+
+	.nav-next {
+		float: right;
+
+		&:after {
+			content: '\2192';
+			margin-left: 5px;
 		}
 	}
 }
