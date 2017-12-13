@@ -23,7 +23,7 @@ require get_template_directory() . '/inc/components/body-classes.php';
 require get_template_directory() . '/inc/components/embed-video-container.php';
 require get_template_directory() . '/inc/components/excerpt-length.php';
 require get_template_directory() . '/inc/components/excerpt-more.php';
-require get_template_directory() . '/inc/components/gform-init-scripts.php';
+require get_template_directory() . '/inc/components/gform-filters.php';
 require get_template_directory() . '/inc/components/password-form.php';
 require get_template_directory() . '/inc/components/post-classes.php';
 require get_template_directory() . '/inc/components/thumbnail-upscale.php';
