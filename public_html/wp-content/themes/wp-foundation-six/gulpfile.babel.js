@@ -167,9 +167,10 @@ gulp.task('copy', () => {
 		'!./webpack.config.babel.js',
 		'!./package.json',
 		'!./yarn.lock',
+		'!./package-lock.json',
 		'!./.babelrc',
 		'!./.sass-lint.yml',
-		'!./.eslintrc.json'
+		'!./.eslintrc.json',
 	]).pipe($.if(argv.build, gulp.dest(dir.build)));
 });
 
