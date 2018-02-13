@@ -59,6 +59,23 @@ Icon
 Network Trash Folder
 Temporary Items
 
+### Videos ###
+*.wmv
+*.mpg
+*.mpeg
+*.mp4
+*.mov
+*.flv
+*.avi
+*.ogv
+*.ogg
+*.webm
+
+### Audio ###
+*.wav
+*.mp3
+*.wma
+
 ### Created by http://www.gitignore.io ###
 *.css.map
 *.log
@@ -75,3 +92,4 @@ node_modules
 npm-debug.log
 object-cache.php
 .vscode
+.idea
