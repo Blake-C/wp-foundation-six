@@ -47,7 +47,7 @@ get_header(); ?>
 
 					<?php
 						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s' ), convert_smilies( ':)' ) ) . '</p>';
+						$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'wp_foundation_six' ), convert_smilies( ':)' ) ) . '</p>';
 						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 					?>
 

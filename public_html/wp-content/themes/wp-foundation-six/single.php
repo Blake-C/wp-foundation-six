@@ -27,11 +27,11 @@ get_header(); ?>
 					 */
 					the_post_navigation(
 						array(
-							'prev_text'          => __( 'Previous' ),
-							'next_text'          => __( 'Next' ),
+							'prev_text'          => __( 'Previous', 'wp_foundation_six' ),
+							'next_text'          => __( 'Next', 'wp_foundation_six' ),
 							'in_same_term'       => false,
-							'taxonomy'           => __( 'post_tag' ),
-							'screen_reader_text' => __( 'Continue Reading' ),
+							'taxonomy'           => __( 'post_tag', 'wp_foundation_six' ),
+							'screen_reader_text' => __( 'Continue Reading', 'wp_foundation_six' ),
 						)
 					);
 				?>

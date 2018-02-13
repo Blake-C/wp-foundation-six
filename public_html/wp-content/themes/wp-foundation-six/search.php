@@ -24,7 +24,7 @@ get_header(); ?>
 								esc_html_x(
 									'Search Results for: %s',
 									'Search results title',
-									'wp-foundation-six'
+									'wp_foundation_six'
 								),
 								'<span>' . get_search_query() . '</span>'
 							);
