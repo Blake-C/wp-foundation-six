@@ -36,7 +36,7 @@ get_header(); ?>
 					);
 				?>
 
-				<?php /* If comments are open or we have at least one comment, load up the comment template. */ ?>
+				<!-- If comments are open or we have at least one comment, load up the comment template. -->
 				<?php if ( comments_open() || get_comments_number() ) : ?>
 					<?php comments_template(); ?>
 				<?php endif; ?>
