@@ -51,7 +51,8 @@ if ( post_password_required() ) {
 			?>
 		</h2>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+			<!-- Are there comments to navigate through? -->
 			<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
 				<h2 class="show-for-sr">Comment navigation</h2>
 
@@ -62,7 +63,8 @@ if ( post_password_required() ) {
 
 				</div><!-- .nav-links -->
 			</nav><!-- #comment-nav-above -->
-		<?php endif; // Check for comment navigation. ?>
+		<?php endif; ?>
+		<!-- Check for comment navigation. -->
 
 		<ol class="comment-list">
 			<?php
@@ -75,7 +77,8 @@ if ( post_password_required() ) {
 			?>
 		</ol><!-- .comment-list -->
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+			<!-- Are there comments to navigate through? -->
 			<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
 				<h2 class="show-for-sr">Comment navigation</h2>
 				<div class="nav-links">
@@ -85,9 +88,11 @@ if ( post_password_required() ) {
 
 				</div><!-- .nav-links -->
 			</nav><!-- #comment-nav-below -->
-		<?php endif; // Check for comment navigation. ?>
+		<?php endif; ?>
+		<!-- Check for comment navigation. -->
 
-	<?php endif; // Check for have_comments(). ?>
+	<?php endif; ?>
+	<!-- Check for have_comments(). -->
 
 	<!-- If comments are closed and there are comments -->
 	<?php if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>

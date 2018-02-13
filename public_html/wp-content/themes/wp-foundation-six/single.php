@@ -41,7 +41,8 @@ get_header(); ?>
 					<?php comments_template(); ?>
 				<?php endif; ?>
 
-			<?php endwhile; // End of the loop. ?>
+			<?php endwhile; ?>
+			<!-- End of the loop. -->
 		</main><!-- #main -->
 
 		<?php get_sidebar(); ?>
