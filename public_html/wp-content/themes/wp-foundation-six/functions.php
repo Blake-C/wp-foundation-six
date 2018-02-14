@@ -54,7 +54,7 @@ if ( ! function_exists( 'wp_foundation_six_setup' ) ) {
 		 */
 		register_nav_menus( array(
 			'primary' => __( 'Primary Menu', 'wp_foundation_six' ),
-			'footer' => __( 'Footer Menu', 'wp_foundation_six' ),
+			'footer'  => __( 'Footer Menu', 'wp_foundation_six' ),
 		) );
 
 		/**
