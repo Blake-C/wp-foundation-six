@@ -22,7 +22,7 @@ if ( ! function_exists( 'wp_foundation_six_change_howdy_text_toolbar' ) ) {
 
 		$wp_admin_bar->add_node(
 			array(
-				'id' => 'my-account',
+				'id'    => 'my-account',
 				'title' => $rpctitle,
 			)
 		);

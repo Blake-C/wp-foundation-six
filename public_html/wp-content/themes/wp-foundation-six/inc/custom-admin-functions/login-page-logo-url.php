@@ -18,4 +18,4 @@ if ( ! function_exists( 'wp_foundation_six_login_page_custom_link' ) ) {
 		return get_home_url();
 	}
 }
-add_filter( 'login_headerurl','wp_foundation_six_login_page_custom_link' );
+add_filter( 'login_headerurl', 'wp_foundation_six_login_page_custom_link' );

@@ -15,7 +15,7 @@ if ( ! function_exists( 'wp_foundation_six_custom_password_form' ) ) {
 	function wp_foundation_six_custom_password_form() {
 		global $post;
 
-		$label = 'pwbox-' . ( empty( $post->ID ) ? rand() : $post->ID );
+		$label = 'pwbox-' . ( empty( $post->ID ) ? wp_rand() : $post->ID );
 
 		$o = '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">
 			<p>' . __( 'To view this protected post, enter the password below:', 'wp_foundation_six' ) . '</p>' .

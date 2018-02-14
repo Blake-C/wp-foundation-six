@@ -20,7 +20,7 @@ if ( ! function_exists( 'wp_foundation_six_post_classes' ) ) {
 	 * @return array - Returns array of post classes
 	 */
 	function wp_foundation_six_post_classes( $classes, $class, $post_id ) {
-		$classes = array_diff( $classes, array( 'sticky' ) );
+		$classes   = array_diff( $classes, array( 'sticky' ) );
 		$classes[] = is_sticky( $post_id ) === true ? 'sticky-post' : '';
 
 		return $classes;

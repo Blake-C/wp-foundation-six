@@ -33,7 +33,7 @@ if ( ! function_exists( 'wp_foundation_six_thumbnail_upscale' ) ) {
 		}
 
 		$aspect_ratio = $orig_w / $orig_h;
-		$size_ratio = max( $new_w / $orig_w, $new_h / $orig_h );
+		$size_ratio   = max( $new_w / $orig_w, $new_h / $orig_h );
 
 		$crop_w = round( $new_w / $size_ratio );
 		$crop_h = round( $new_h / $size_ratio );
@@ -48,7 +48,7 @@ if ( ! function_exists( 'wp_foundation_six_thumbnail_upscale' ) ) {
 			} elseif ( 'right' === $crop[0] ) {
 				$s_x = $orig_w - $crop_w;
 			} elseif ( 'center' === $crop[0] ) {
-				$s_x = ( $orig_w / 2 ) - ( $crop_w / 2 ) ;
+				$s_x = ( $orig_w / 2 ) - ( $crop_w / 2 );
 			}
 
 			if ( 'top' === $crop[1] ) {

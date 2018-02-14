@@ -20,4 +20,4 @@ if ( ! function_exists( 'wp_foundation_six_category_transient_flusher' ) ) {
 	}
 }
 add_action( 'edit_category', 'wp_foundation_six_category_transient_flusher' );
-add_action( 'save_post',     'wp_foundation_six_category_transient_flusher' );
+add_action( 'save_post', 'wp_foundation_six_category_transient_flusher' );
