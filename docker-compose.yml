@@ -17,7 +17,7 @@ services:
       - php
 
   php:
-    image: digitalblake/wp-foundation-six-php:0.0.2
+    image: digitalblake/wp-foundation-six-php:1.0.0
     volumes:
       - ./:/var/www/
     expose:
