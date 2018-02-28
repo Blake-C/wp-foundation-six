@@ -90,6 +90,11 @@ if ( ! function_exists( 'wp_foundation_six_setup' ) ) {
 	 * constant to false.
 	 */
 	define( 'INLINE_DEBUG', true );
+
+	/**
+	 * Sets the default timezone used by all date/time functions in a script
+	 */
+	date_default_timezone_set( get_option('timezone_string') );
 }// End if().
 add_action( 'after_setup_theme', 'wp_foundation_six_setup' );
 
