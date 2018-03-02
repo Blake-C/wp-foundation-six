@@ -54,7 +54,7 @@ if ( post_password_required() ) {
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 			<!-- Are there comments to navigate through? -->
 			<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-				<h2 class="show-for-sr">Comment navigation</h2>
+				<h2 class="show-for-sr"><?php echo esc_html_x( 'Comment navigation', 'Screen reader comments navigation title', 'wp_foundation_six' ); ?></h2>
 
 				<div class="nav-links">
 
@@ -80,7 +80,7 @@ if ( post_password_required() ) {
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 			<!-- Are there comments to navigate through? -->
 			<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-				<h2 class="show-for-sr">Comment navigation</h2>
+				<h2 class="show-for-sr"><?php echo esc_html_x( 'Comment navigation', 'Screen reader comments navigation title', 'wp_foundation_six' ); ?></h2>
 				<div class="nav-links">
 
 					<div class="nav-previous"><?php previous_comments_link( 'Older Comments' ); ?></div>
@@ -96,7 +96,7 @@ if ( post_password_required() ) {
 
 	<!-- If comments are closed and there are comments -->
 	<?php if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-		<p class="no-comments">Comments are closed.</p>
+		<p class="no-comments"><?php echo esc_html_x( 'Comments are closed.', 'Comment are closed warning', 'wp_foundation_six' ); ?></p>
 	<?php endif; ?>
 
 	<?php comment_form(); ?>
