@@ -5,7 +5,7 @@
  * @package wp_foundation_six
  *
  * Be sure to properly translate any hard coded strings using
- * a tranlation function in case the theme needs to be
+ * a translation function in case the theme needs to be
  * translated.
  *
  * @link https://codex.wordpress.org/I18n_for_WordPress_Developers
