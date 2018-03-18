@@ -6,14 +6,15 @@
     "node": "8.9.3"
   },
   "devDependencies": {
+    "ajv": "5.5.2",
     "autoprefixer": "7.2.5",
     "babel-core": "6.26.0",
-    "babel-loader": "7.1.2",
+    "babel-loader": "7.1.4",
     "babel-preset-env": "1.6.1",
     "browser-sync": "2.23.6",
     "cssnano": "3.10.0",
     "del": "3.0.0",
-    "eslint": "4.16.0",
+    "eslint": "4.19.0",
     "eslint-loader": "1.9.0",
     "gulp": "3.9.1",
     "gulp-babel": "7.0.1",
@@ -31,18 +32,18 @@
     "gulp-size": "3.0.0",
     "gulp-sourcemaps": "2.6.4",
     "gulp-uglify": "3.0.0",
-    "imagemin-pngquant": "5.0.1",
-    "modernizr-webpack-plugin": "1.0.6",
-    "snyk": "1.69.5",
+    "imagemin-pngquant": "5.1.0",
+    "modernizr-webpack-plugin": "1.0.7",
+    "snyk": "1.70.2",
     "webpack": "3.10.0",
-    "webpack-stream": "4.0.0",
+    "webpack-stream": "4.0.2",
     "yargs": "11.0.0"
   },
   "dependencies": {
-    "ajv": "5.5.2",
     "foundation-sites": "6.4.3",
     "jquery": "3.3.1",
-    "jquery-migrate": "3.0.0"
+    "jquery-migrate": "3.0.1",
+    "modernizr": "3.6.0"
   },
   "scripts": {
     "test": "snyk test"
