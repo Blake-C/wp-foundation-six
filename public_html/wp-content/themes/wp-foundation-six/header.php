@@ -4,6 +4,7 @@
  *
  * @package wp_foundation_six
  */
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 

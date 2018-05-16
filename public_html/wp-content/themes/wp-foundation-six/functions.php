@@ -52,22 +52,26 @@ if ( ! function_exists( 'wp_foundation_six_setup' ) ) {
 		/**
 		 * This theme uses wp_nav_menu() in one location.
 		 */
-		register_nav_menus( array(
-			'primary' => __( 'Primary Menu', 'wp_foundation_six' ),
-			'footer'  => __( 'Footer Menu', 'wp_foundation_six' ),
-		) );
+		register_nav_menus(
+			array(
+				'primary' => __( 'Primary Menu', 'wp_foundation_six' ),
+				'footer'  => __( 'Footer Menu', 'wp_foundation_six' ),
+			)
+		);
 
 		/**
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+		add_theme_support(
+			'html5', array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
 		/**
 		 * Remove wp_header meta
@@ -81,7 +85,7 @@ if ( ! function_exists( 'wp_foundation_six_setup' ) ) {
 		remove_action( 'wp_head', 'start_post_rel_link', 10, 0 ); // start link
 		remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 ); // Display relational links for the posts adjacent to the current post.
 		remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 ); // Injects rel=shortlink into the head if a shortlink is defined for the current page.
-		remove_action( 'wp_head', 'wp_generator' ); // Display the XHTML generator that is generated on the wp_head hook, WP version
+		remove_action( 'wp_head', 'wp_generator' ); // Display the XHTML generator that is generated on the wp_head hook, WP version.
 	}
 
 	/**
@@ -109,15 +113,17 @@ if ( ! function_exists( 'wp_foundation_six_widgets_init' ) ) {
 	 * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
 	 */
 	function wp_foundation_six_widgets_init() {
-		register_sidebar( array(
-			'name'          => __( 'Primary Sidebar', 'wp_foundation_six' ),
-			'id'            => 'sidebar-1',
-			'description'   => '',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		) );
+		register_sidebar(
+			array(
+				'name'          => __( 'Primary Sidebar', 'wp_foundation_six' ),
+				'id'            => 'sidebar-1',
+				'description'   => '',
+				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</aside>',
+				'before_title'  => '<h2 class="widget-title">',
+				'after_title'   => '</h2>',
+			)
+		);
 	}
 }
 add_action( 'widgets_init', 'wp_foundation_six_widgets_init' );
@@ -162,9 +168,9 @@ if ( ! function_exists( 'wp_foundation_six_scripts' ) ) {
 add_action( 'wp_enqueue_scripts', 'wp_foundation_six_scripts' );
 
 
-// Include components
+// Include components.
 require get_template_directory() . '/inc/includes.php';
 
 
-// Custom utility functions
+// Custom utility functions.
 require get_template_directory() . '/inc/utility-functions.php';

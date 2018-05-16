@@ -20,7 +20,7 @@ get_header(); ?>
 					<h2 class="page-title">
 						<?php
 							printf(
-								// translators: Title for search results page
+								// translators: Title for search results page.
 								esc_html_x(
 									'Search Results for: %s',
 									'Search results title',

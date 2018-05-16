@@ -36,14 +36,16 @@ if ( post_password_required() ) {
 				);
 			} else {
 				printf( // WPCS: XSS OK.
-					/* translators: 1: number of comments, 2: post title */
-					esc_html( _nx(
-						'%1$s thought on &ldquo;%2$s&rdquo;',
-						'%1$s thoughts on &ldquo;%2$s&rdquo;',
-						$comments_number,
-						'comments title',
-						'wp_foundation_six'
-					) ),
+					esc_html(
+						/* translators: 1: number of comments, 2: post title */
+						_nx(
+							'%1$s thought on &ldquo;%2$s&rdquo;',
+							'%1$s thoughts on &ldquo;%2$s&rdquo;',
+							$comments_number,
+							'comments title',
+							'wp_foundation_six'
+						)
+					),
 					number_format_i18n( $comments_number ),
 					'<span>' . get_the_title() . '</span>'
 				);
