@@ -47,3 +47,21 @@ if ( ! function_exists( 'print_pre' ) ) {
 		echo '</pre>';
 	}
 }
+
+if ( ! function_exists( 'theme_error_log' ) ) {
+	/**
+	 * Custom theme error logging
+	 *
+	 * @method theme_error_log
+	 * @param  string          $message Message to pass to error log
+	 */
+	function theme_error_log( $message ) {
+		$time_stamp = new DateTime( 'NOW' );
+		$time_stamp->setTimezone( new DateTimeZone( 'America/Chicago' ) );
+		$error_time  = $time_stamp->format( 'F j, Y @ G:i:s' );
+		$dir         = get_template_directory();
+		$message_log = "<-------->\n" . $error_time . "\n" . $message . "\n\n";
+
+		error_log( $message_log, 3, $dir . '/theme-error.log'); // @codingStandardsIgnoreLine
+	}
+}
