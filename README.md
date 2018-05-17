@@ -32,4 +32,13 @@ When done:
 
 Read the wiki section of this repo: [Wiki](https://github.com/Blake-C/wp-foundation-six/wiki)
 
+## Known Issues
+
+- Node#moveTo was deprecated. Use Container#append.
+	- Waiting for cssnano v4 to release
+		- https://github.com/ben-eb/cssnano/issues/379
+- (node:65443) DeprecationWarning: Tapable.plugin is deprecated. Use new API on `.hooks` instead
+	- Waiting for modernizr-webpack-plugin update
+		- https://github.com/alexpalombaro/modernizr-webpack-plugin/issues/26
+
 You can reach me at [@BlakeCerecero](https://twitter.com/BlakeCerecero) on Twitter or on LinkedIn at [Blake Cerecero](https://www.linkedin.com/in/blakecerecero/)
