@@ -8,12 +8,12 @@
  * @link https://github.com/eslint/eslint/issues/4787
 */
 import path from 'path';
-import webpack from 'webpack';
 import ModernizrWebpackPlugin from 'modernizr-webpack-plugin';
 import scriptsList from './theme_components/js/scripts-list.js';
 import modernizrFeatureDetects from './theme_components/js/modernizr-feature-detects.js';
 
 const webpackConfig = {
+	mode: 'production',
 	entry: scriptsList,
 	output: {
 		path: path.resolve(__dirname, './assets/js'), // eslint-disable-line no-undef
@@ -24,6 +24,13 @@ const webpackConfig = {
 		modernizr: 'Modernizr'
 	},
 	devtool: 'source-map',
+	stats: {
+		/**
+		 * @link https://webpack.js.org/configuration/stats/
+		 */
+		entrypoints: false,
+		builtAt: false,
+	},
 	module: {
 		rules: [{
 			/**
@@ -48,7 +55,7 @@ const webpackConfig = {
 				'presets': [
 					['env', {
 						'targets': {
-							'browsers': ['last 3 versions', 'ie >= 9']
+							'browsers': ['last 3 versions', 'ie >= 11']
 						},
 						'modules': false
 					}]
@@ -57,13 +64,6 @@ const webpackConfig = {
 		}]
 	},
 	plugins: [
-		new webpack.optimize.UglifyJsPlugin({
-			sourceMap: true,
-			compress: {
-				screw_ie8: true,
-				warnings: false
-			}
-		}),
 		new ModernizrWebpackPlugin({
 			filename: 'vendors/bundle.modernizr.js',
 			minify: {
