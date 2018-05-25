@@ -53,7 +53,7 @@ if ( ! function_exists( 'theme_error_log' ) ) {
 	 * Custom theme error logging
 	 *
 	 * @method theme_error_log
-	 * @param  string          $message Message to pass to error log
+	 * @param  string $message Message to pass to error log.
 	 */
 	function theme_error_log( $message ) {
 		$time_stamp = new DateTime( 'NOW' );

@@ -41,8 +41,8 @@ if ( ! function_exists( 'wp_foundation_six_entry_footer' ) ) {
 			sprintf( esc_html_x( 'Edit %s', 'button to edit page or post', 'wp_foundation_six' ), the_title( '<span class="show-for-sr">"', '"</span>', false ) ),
 			'<p class="edit-link">',
 			'</p>',
-			'', // ID
-			'button' // class name
+			'', // ID.
+			'button' // Class Name.
 		);
 	}
 }// End if().

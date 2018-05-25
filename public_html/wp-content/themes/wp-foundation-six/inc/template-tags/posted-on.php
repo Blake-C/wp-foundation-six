@@ -11,7 +11,7 @@ if ( ! function_exists( 'wp_foundation_six_posted_on' ) ) {
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 */
 	function wp_foundation_six_posted_on() {
-		// Posted on
+		// Posted on.
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 		$time_string = sprintf( $time_string,
 			esc_attr( get_the_date( 'c' ) ),
@@ -24,7 +24,7 @@ if ( ! function_exists( 'wp_foundation_six_posted_on' ) ) {
 		);
 		$posted_on_string = '<span class="posted-on post-meta">' . $posted_on . '</span>';
 
-		// Updated on
+		// Updated on.
 		$updated_on_string = '';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string_updated = '<time class="updated" datetime="%1$s">%2$s</time>';
@@ -41,7 +41,7 @@ if ( ! function_exists( 'wp_foundation_six_posted_on' ) ) {
 			$updated_on_string = ' <span class="updated-on post-meta">' . $updated_on . '</span>';
 		}
 
-		// Author
+		// Author.
 		$byline = sprintf(
 			/* translators: The post author, byline */
 			esc_html_x( 'by %s', 'post author', 'wp_foundation_six' ),

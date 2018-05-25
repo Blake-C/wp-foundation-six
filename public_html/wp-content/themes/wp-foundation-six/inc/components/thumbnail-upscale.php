@@ -28,7 +28,7 @@ if ( ! function_exists( 'wp_foundation_six_thumbnail_upscale' ) ) {
 	 */
 	function wp_foundation_six_thumbnail_upscale( $default, $orig_w, $orig_h, $new_w, $new_h, $crop ) {
 		if ( ! $crop ) {
-			// let the WordPress default function handle this
+			// let the WordPress default function handle this.
 			return null;
 		}
 
@@ -60,7 +60,7 @@ if ( ! function_exists( 'wp_foundation_six_thumbnail_upscale' ) ) {
 			}
 		}
 
-		// the return array matches the parameters to imagecopyresampled()
+		// the return array matches the parameters to imagecopyresampled().
 		return array( 0, 0, (int) $s_x, (int) $s_y, (int) $new_w, (int) $new_h, (int) $crop_w, (int) $crop_h );
 	}
 }// End if().
