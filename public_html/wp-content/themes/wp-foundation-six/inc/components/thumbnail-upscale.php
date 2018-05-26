@@ -63,5 +63,5 @@ if ( ! function_exists( 'wp_foundation_six_thumbnail_upscale' ) ) {
 		// the return array matches the parameters to imagecopyresampled().
 		return array( 0, 0, (int) $s_x, (int) $s_y, (int) $new_w, (int) $new_h, (int) $crop_w, (int) $crop_h );
 	}
-}// End if().
+}
 add_filter( 'image_resize_dimensions', 'wp_foundation_six_thumbnail_upscale', 10, 6 );

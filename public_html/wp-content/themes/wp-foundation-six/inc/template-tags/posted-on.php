@@ -50,4 +50,4 @@ if ( ! function_exists( 'wp_foundation_six_posted_on' ) ) {
 
 		echo '<p>' . $posted_on_string . $updated_on_string . '<span class="byline post-meta"> ' . $byline . '</span></p>'; // WPCS: XSS OK.
 	}
-}// End if().
+}
