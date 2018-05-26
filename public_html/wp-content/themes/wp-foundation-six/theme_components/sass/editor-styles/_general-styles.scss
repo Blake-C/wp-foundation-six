@@ -1,0 +1,29 @@
+body {
+	margin: 9px 10px;
+}
+
+.row {
+	border: 1px dotted $dark-gray;
+	padding: 5px;
+}
+
+.columns {
+	border: 1px dotted $primary-color;
+	padding: 5px;
+}
+
+.mce-content-body {
+	a {
+		&.button {
+			&[data-mce-selected] {
+				@include button();
+			}
+
+			&.expanded {
+				&[data-mce-selected] {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

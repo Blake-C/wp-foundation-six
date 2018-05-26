@@ -27,6 +27,7 @@ require get_template_directory() . '/inc/components/gform-filters.php';
 require get_template_directory() . '/inc/components/password-form.php';
 require get_template_directory() . '/inc/components/post-classes.php';
 require get_template_directory() . '/inc/components/thumbnail-upscale.php';
+require get_template_directory() . '/inc/components/tinymce-custom-styles.php';
 
 
 /**
@@ -46,3 +47,11 @@ require get_template_directory() . '/inc/custom-admin-functions/login-page-favic
 require get_template_directory() . '/inc/custom-admin-functions/login-page-logo-title-tag.php';
 require get_template_directory() . '/inc/custom-admin-functions/login-page-logo-url.php';
 require get_template_directory() . '/inc/custom-admin-functions/login-page-styles.php';
+
+
+/**
+ * Shortcodes
+ */
+require get_template_directory() . '/inc/shortcodes/button.php';
+require get_template_directory() . '/inc/shortcodes/copyright.php';
+require get_template_directory() . '/inc/shortcodes/div-wrapper.php';

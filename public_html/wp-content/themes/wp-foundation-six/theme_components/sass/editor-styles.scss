@@ -1,7 +1,6 @@
 @charset 'UTF-8';
 
 /* Custom variables should be brought in early */
-@import 'helpers/variables';
 @import 'vendors/foundation-settings';
 
 /* Import Foundation Assets, does not output actual styles */
@@ -19,44 +18,42 @@
 	@else {
 		@include foundation-flex-grid;
 	}
-	@include foundation-typography;
 	@include foundation-forms;
 	@include foundation-button;
-	@include foundation-visibility-classes;
 	@include foundation-float-classes;
 	@include foundation-table;
-	@include foundation-responsive-embed;
-
-	// Top Bar
 	@include foundation-callout;
-	@include foundation-menu-icon;
-	@include foundation-menu;
-	@include foundation-title-bar;
-	@include foundation-top-bar;
 
-	// @include foundation-accordion;
+	// @include foundation-menu-icon;
+	// @include foundation-menu;
+	// @include foundation-title-bar;
+	// @include foundation-top-bar;
 	// @include foundation-accordion-menu;
+	// @include foundation-accordion;
 	// @include foundation-badge;
 	// @include foundation-breadcrumbs;
 	// @include foundation-button-group;
 	// @include foundation-card;
 	// @include foundation-close-button;
 	// @include foundation-drilldown-menu;
-	// @include foundation-dropdown;
 	// @include foundation-dropdown-menu;
+	// @include foundation-dropdown;
 	// @include foundation-label;
 	// @include foundation-media-object;
 	// @include foundation-off-canvas;
 	// @include foundation-orbit;
 	// @include foundation-pagination;
 	// @include foundation-progress-bar;
+	// @include foundation-responsive-embed;
+	// @include foundation-reveal;
 	// @include foundation-slider;
 	// @include foundation-sticky;
-	// @include foundation-reveal;
 	// @include foundation-switch;
 	// @include foundation-tabs;
 	// @include foundation-thumbnail;
 	// @include foundation-tooltip;
+	// @include foundation-typography;
+	// @include foundation-visibility-classes;
 
 	@if $flex {
 		@include foundation-flex-classes;
@@ -69,19 +66,4 @@
  */
 @include foundation-everything($flex: false);
 
-@import 'helpers/fonts';
-@import 'helpers/mixins';
-@import 'helpers/functions';
-@import 'helpers/helpers';
-
-@import 'layout/body';
-@import 'layout/comments';
-@import 'layout/footer';
-@import 'layout/header';
-@import 'layout/main-menu';
-@import 'layout/post-navigation';
-@import 'layout/sidebar';
-
-@import 'partials/generic-styles';
-@import 'partials/ie';
-@import 'partials/shame';
+@import 'editor-styles/general-styles';
