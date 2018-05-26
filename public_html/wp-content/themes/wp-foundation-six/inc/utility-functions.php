@@ -43,7 +43,7 @@ if ( ! function_exists( 'print_pre' ) ) {
 	 */
 	function print_pre( $data ) {
 		echo '<pre>';
-			print_r( $data ); // @codingStandardsIgnoreLine
+			print_r( $data ); // phpcs:ignore
 		echo '</pre>';
 	}
 }
@@ -62,6 +62,6 @@ if ( ! function_exists( 'theme_error_log' ) ) {
 		$dir         = get_template_directory();
 		$message_log = "<-------->\n" . $error_time . "\n" . $message . "\n\n";
 
-		error_log( $message_log, 3, $dir . '/theme-error.log'); // @codingStandardsIgnoreLine
+		error_log( $message_log, 3, $dir . '/theme-error.log'); // phpcs:ignore
 	}
 }
