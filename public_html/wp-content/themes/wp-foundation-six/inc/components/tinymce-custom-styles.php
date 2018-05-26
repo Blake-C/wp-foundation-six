@@ -151,29 +151,10 @@ if ( ! function_exists( 'wp_foundation_six_insert_formats' ) ) {
 					),
 				),
 			),
-			// array(
-			// 	'title' => 'Grid',
-			// 	'items' => array(
-			// 		array(
-			// 			'title'   => 'Row',
-			// 			'block'   => 'div',
-			// 			'classes' => 'row',
-			// 			'wrapper' => true,
-			// 			'exact'   => true,
-			// 		),
-			// 		array(
-			// 			'title'   => 'Column',
-			// 			'block'   => 'div',
-			// 			'classes' => 'medium-6 columns',
-			// 			'wrapper' => true,
-			// 			'exact'   => true,
-			// 		),
-			// 	),
-			// ),
 		);
 
 		// Insert the array, JSON ENCODED, into 'style_formats'.
-		$init_array['style_formats'] = json_encode( $style_formats );
+		$init_array['style_formats'] = wp_json_encode( $style_formats );
 
 		return $init_array;
 	}
