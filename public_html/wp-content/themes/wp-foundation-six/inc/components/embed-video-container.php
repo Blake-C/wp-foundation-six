@@ -7,14 +7,14 @@
 
 if ( ! function_exists( 'wp_foundation_six_embed_video_html' ) ) {
 	/**
-	 * [wp_foundation_six_embed_video_html description]
+	 * Adds responsive classes to video embeds.
 	 *
 	 * @method wp_foundation_six_embed_video_html
 	 * @param  string $html - Media HTML.
 	 * @return string - New media HTML
 	 */
 	function wp_foundation_six_embed_video_html( $html ) {
-		return '<div class="responsive-embed">' . $html . '</div>';
+		return '<div class="responsive-embed widescreen">' . $html . '</div>';
 	}
 }
 add_filter( 'embed_oembed_html', 'wp_foundation_six_embed_video_html', 10, 3 );
