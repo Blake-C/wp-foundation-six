@@ -41,10 +41,3 @@ $('#theme_debug_regions').on('click', function(event){
 
 	$('.placeHolderPosition').slideToggle();
 });
-
-/*************** Flex Video ***************/
-$('iframe[src*="player.vimeo.com"],[src*="www.youtube.com"],object[id="flashObj"]').each(function() {
-	if (!$(this).parent().hasClass('flex-video')) {
-		$(this).wrap('<div class="flex-video widescreen"/>');
-	}
-});
