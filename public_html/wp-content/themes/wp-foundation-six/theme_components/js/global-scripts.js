@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import Modernizr from 'modernizr';
 import 'jquery-migrate/dist/jquery-migrate';
 import './modules/_skip-link-focus-fix';
 import './modules/_foundation-scripts';
@@ -35,13 +34,6 @@ import './modules/_foundation-scripts';
  * import 'jquery-migrate/dist/jquery-migrate';
  *
  */
-
-/*************** SVG image replacement ***************/
-if(!Modernizr.svg) {
-	$('img[src*="svg"]').attr('src', function() {
-		return $(this).attr('src').replace('.svg', '.png');
-	});
-}
 
 /*************** Template part region toggle button ***************/
 $('#theme_debug_regions').on('click', function(event){
