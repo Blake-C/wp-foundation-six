@@ -8,11 +8,7 @@
   },
   "parserOptions": {
     "ecmaVersion": 6,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "experimentalObjectRestSpread": true,
-      "jsx": true
-    }
+    "sourceType": "module"
   },
   "rules": {
     "indent": ["warn", "tab"],
