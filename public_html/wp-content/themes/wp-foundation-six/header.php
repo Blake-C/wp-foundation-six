@@ -74,7 +74,7 @@
 	<!--[if lt IE 9]><p class=chromeframe>Your browser is <em>not</em> supported. <a href="http://browsehappy.com/">Upgrade to a different browser</a> to experience this site.</p><![endif]-->
 
 	<?php if ( is_super_admin() && INLINE_DEBUG ) : ?>
-		<a href="#" class="regions"><?php echo esc_html_x( 'Show Regions', 'Link to display inline debug for theme files', 'wp_foundation_six' ); ?></a>
+		<a href="#" id="theme_debug_regions"><?php echo esc_html_x( 'Show Regions', 'Link to display inline debug for theme files', 'wp_foundation_six' ); ?></a>
 	<?php endif; ?>
 
 
