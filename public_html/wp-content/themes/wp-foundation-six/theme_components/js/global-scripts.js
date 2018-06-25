@@ -44,7 +44,7 @@ if(!Modernizr.svg) {
 }
 
 /*************** Template part region toggle button ***************/
-$('.regions').on('click', function(event){
+$('#theme_debug_regions').on('click', function(event){
 	event.preventDefault();
 
 	$('.placeHolderPosition').slideToggle();
