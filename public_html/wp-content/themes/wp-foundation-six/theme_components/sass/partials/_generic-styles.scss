@@ -86,3 +86,10 @@ pre {
 .screen-reader-text {
 	@include element-invisible;
 }
+
+/* Callout */
+.callout {
+	*:last-child {
+		margin-bottom: 0;
+	}
+}
