@@ -29,6 +29,12 @@
 	<!-- Check all files in this directory and the directories below it. -->
 	<file>.</file>
 
+	<!-- Ignore these directories -->
+	<exclude-pattern>./node_modules</exclude-pattern>
+	<exclude-pattern>./bower_components</exclude-pattern>
+	<exclude-pattern>./vendor</exclude-pattern>
+	<exclude-pattern>./assets</exclude-pattern>
+
 	<!-- Include the WordPress ruleset, with exclusions. -->
 	<rule ref="WordPress">
 		<!-- Getting error on placeholder files, index.php -->
