@@ -15,7 +15,7 @@ Starting up:
 - `composer install`
 - `composer update`
 - `cd wp-content/themes/wp-foundation-six/`
-- `yarn`
+- `npm install`
 - `gulp`
 - site will load under http://localhost
 	- database under http://localhost:8000
