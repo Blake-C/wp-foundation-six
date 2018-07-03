@@ -14,6 +14,7 @@ production-config.php
 !/public_html/wp-content/themes/wp-foundation-six/*
 !/public_html/wp-content/mu-plugins/index.php
 !/public_html/wp-content/plugins/index.php
+!/public_html/wp-content/plugins/wp-foundation-six
 
 /public_html/wp-content/themes/wp-foundation-six/assets
 /public_html/wp-content/themes/wp-foundation-six-build
