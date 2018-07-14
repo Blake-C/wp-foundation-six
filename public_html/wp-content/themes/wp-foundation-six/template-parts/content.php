@@ -24,33 +24,33 @@
 
 	<div class="entry-content">
 		<?php
-			the_content(
-				sprintf(
-					wp_kses(
-						'Continue reading %s <span class="meta-nav">&rarr;</span>',
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
-					),
-					the_title( '<span class="show-for-sr">"', '"</span>', false )
-				)
-			);
+		the_content(
+			sprintf(
+				wp_kses(
+					'Continue reading %s <span class="meta-nav">&rarr;</span>',
+					array(
+						'span' => array(
+							'class' => array(),
+						),
+					)
+				),
+				the_title( '<span class="show-for-sr">"', '"</span>', false )
+			)
+		);
 		?>
 
 		<?php
-			/**
-			 * Displays page-links for paginated posts
-			 *
-			 * @link: https://codex.wordpress.org/Function_Reference/wp_link_pages
-			 */
-			wp_link_pages(
-				array(
-					'before' => '<div class="page-links">Pages: ',
-					'after'  => '</div>',
-				)
-			);
+		/**
+		 * Displays page-links for paginated posts
+		 *
+		 * @link: https://codex.wordpress.org/Function_Reference/wp_link_pages
+		 */
+		wp_link_pages(
+			array(
+				'before' => '<div class="page-links">Pages: ',
+				'after'  => '</div>',
+			)
+		);
 		?>
 	</div>
 
