@@ -27,8 +27,9 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-			$comments_number = get_comments_number();
-			if ( 1 === $comments_number ) {
+			$wpfs_comments_number = get_comments_number();
+
+			if ( 1 === $wpfs_comments_number ) {
 				printf(
 					/* translators: %s: post title */
 					esc_html_x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'wp_foundation_six' ),
@@ -41,12 +42,12 @@ if ( post_password_required() ) {
 						_nx(
 							'%1$s thought on &ldquo;%2$s&rdquo;',
 							'%1$s thoughts on &ldquo;%2$s&rdquo;',
-							$comments_number,
+							$wpfs_comments_number,
 							'comments title',
 							'wp_foundation_six'
 						)
 					),
-					number_format_i18n( $comments_number ),
+					number_format_i18n( $wpfs_comments_number ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			}

@@ -69,6 +69,14 @@
 	<!-- Include sniffs for PHP cross-version compatibility. -->
 	<config name="testVersion" value="7.1-99.0"/>
 
+	<!-- Verify that everything in the global namespace is prefixed with a theme specific prefix.
+		 Multiple valid prefixes can be provided as a comma-delimited list. -->
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array" value="wp_foundation_six,wpfs" />
+		</properties>
+	</rule>
+
 	<rule ref="PHPCompatibility">
 			<!-- Whitelist PHP native classes, interfaces, functions and constants which
 				 are back-filled by WP.

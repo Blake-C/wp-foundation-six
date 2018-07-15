@@ -73,7 +73,7 @@
 
 	<!--[if lt IE 9]><p class=chromeframe>Your browser is <em>not</em> supported. <a href="http://browsehappy.com/">Upgrade to a different browser</a> to experience this site.</p><![endif]-->
 
-	<?php if ( is_super_admin() && INLINE_DEBUG ) : ?>
+	<?php if ( is_super_admin() && WPFS_INLINE_DEBUG ) : ?>
 		<a href="#" id="theme_debug_regions"><?php echo esc_html_x( 'Show Regions', 'Link to display inline debug for theme files', 'wp_foundation_six' ); ?></a>
 	<?php endif; ?>
 
@@ -84,14 +84,14 @@
 	<?php if ( has_nav_menu( 'primary' ) ) : ?>
 		<div class="row columns" id="main_menu">
 			<?php
-				$blog_name = get_bloginfo( 'name' ) ? '<li class="menu-text">' . esc_html( get_bloginfo( 'name' ) ) . '</li>' : '';
+				$wpfs_blog_name = get_bloginfo( 'name' ) ? '<li class="menu-text">' . esc_html( get_bloginfo( 'name' ) ) . '</li>' : '';
 
 				/**
 				 * Custom menu
 				 *
 				 * @link https://codex.wordpress.org/Function_Reference/wp_nav_menu
 				*/
-				$menu_args = array(
+				$wpfs_menu_args = array(
 					'theme_location'  => 'primary',
 					'menu'            => '',
 					'container'       => 'false',
@@ -105,12 +105,12 @@
 					'after'           => '',
 					'link_before'     => '',
 					'link_after'      => '',
-					'items_wrap'      => '<ul id="%1$s" class="%2$s">' . $blog_name . '%3$s</ul>',
+					'items_wrap'      => '<ul id="%1$s" class="%2$s">' . $wpfs_blog_name . '%3$s</ul>',
 					'depth'           => 0,
 					'walker'          => '',
 				);
 
-				wp_nav_menu( $menu_args );
+				wp_nav_menu( $wpfs_menu_args );
 			?>
 		</div>
 	<?php endif; ?>
