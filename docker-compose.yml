@@ -1,7 +1,7 @@
 version: '3'
 services:
   cli_tools:
-    image: digitalblake/general-cli:0.0.8
+    image: digitalblake/general-cli:0.1.0
     volumes:
       - ./:/var/www/
     tty: true
