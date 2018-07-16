@@ -95,6 +95,7 @@ gulp.task('images', () => {
 	// TODO: Improve with SVG/PNG sprite generator
 	// TODO: Added Favicon/App Icon generator
 	return gulp.src(`${dir.theme_components}/images/**/*`)
+		.pipe($.newer(`${dir.assets}/images`))
 		.pipe($.imagemin({
 			progressive: true,
 			interlaced: true,
