@@ -9,12 +9,22 @@ const argv = $.yargs.argv;
 const notifyOn = os.platform() !== 'linux' ? true : false;
 
 // Paths for source and distribution files
-const dir = {
-	theme_components: 'theme_components',
-	dev: 'assets',
-	build: '../wp-foundation-six-build',
-	build_assets: '../wp-foundation-six-build/assets'
-};
+function directory_list() {
+	const directory_list = {
+		theme_components: 'theme_components',
+		build_dir: '../wp-foundation-six-build',
+	};
+
+	if ( argv.build ) {
+		directory_list.assets = '../wp-foundation-six-build/assets';
+	} else {
+		directory_list.assets = 'assets';
+	}
+
+	return directory_list;
+}
+
+const dir = directory_list();
 
 // BrowserSync Dev URL to reload
 const proxy_target = 'localhost';
@@ -23,7 +33,7 @@ gulp.task('scripts', () => {
 	return gulp.src([`${dir.theme_components}/js/global-scripts.js`])
 		.pipe($.plumber())
 		.pipe($.webpackStream(webpackConfig, $.webpack))
-		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js`), gulp.dest(`${dir.dev}/js`)))
+		.pipe(gulp.dest(`${dir.assets}/js`))
 		.pipe(reload({stream: true}))
 		.pipe($.if(notifyOn, $.notify({ message: 'Scripts Task Completed.', onLast: true })));
 });
@@ -36,7 +46,7 @@ gulp.task('scripts:jquery', () => {
 		.pipe($.uglify())
 		.pipe($.rename({ suffix: '.min' }))
 		.pipe($.sourcemaps.write('.'))
-		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/js/vendors`), gulp.dest(`${dir.dev}/js/vendors`)));
+		.pipe(gulp.dest(`${dir.assets}/js/vendors`));
 });
 
 gulp.task('styles', ['lint:sass'], () => {
@@ -66,7 +76,7 @@ gulp.task('styles', ['lint:sass'], () => {
 			gzip: true,
 			pretty: true
 		}))
-		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/css`), gulp.dest(`${dir.dev}/css`)))
+		.pipe(gulp.dest(`${dir.assets}/css`))
 		.pipe($.if(!argv.build, $.browserSync.stream({match: '**/*.css'})))
 		.pipe($.if(notifyOn, $.notify({ message: 'Styles Task Completed.', onLast: true })));
 });
@@ -97,19 +107,19 @@ gulp.task('images', () => {
 			console.log(err); // eslint-disable-line no-console
 			this.end();
 		}))
-		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/images`), gulp.dest(`${dir.dev}/images`)));
+		.pipe(gulp.dest(`${dir.assets}/images`));
 });
 
 gulp.task('fonts', () => {
 	// Copy fonts out of theme_components into build directory
 	return gulp.src(`${dir.theme_components}/fonts/**/*`)
-		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/fonts`), gulp.dest(`${dir.dev}/fonts`)));
+		.pipe(gulp.dest(`${dir.assets}/fonts`));
 });
 
 gulp.task('icons', () => {
 	// Copy fonts out of theme_components into build directory
 	return gulp.src(`${dir.theme_components}/icons/**/*`)
-		.pipe($.if(argv.build, gulp.dest(`${dir.build_assets}/icons`), gulp.dest(`${dir.dev}/icons`)));
+		.pipe(gulp.dest(`${dir.assets}/icons`));
 });
 
 
@@ -151,7 +161,7 @@ gulp.task('watch:code', ['styles', 'scripts'], () => {
 });
 
 gulp.task('clean',
-	$.del.bind(null, [dir.build, dir.dev], {force : true})
+	$.del.bind(null, [dir.build_dir, 'assets'], { force : true })
 );
 
 gulp.task('copy', () => {
@@ -171,14 +181,18 @@ gulp.task('copy', () => {
 		'!./.babelrc',
 		'!./.sass-lint.yml',
 		'!./.eslintrc.json',
-	]).pipe($.if(argv.build, gulp.dest(dir.build)));
+	]).pipe($.if(argv.build, gulp.dest(dir.build_dir)));
 });
 
 gulp.task('build', ['styles', 'scripts', 'scripts:jquery', 'images', 'fonts', 'icons', 'copy'], () => {
-	return gulp.src(dir.build_assets + '/**/*')
-		.pipe($.size({title: 'build', gzip: true}))
-		.pipe(gulp.dest( dir.build_assets ))
-		.pipe($.if(notifyOn, $.notify({ message: 'Build Task Completed.', onLast: true })));
+	return gulp.src('./')
+		.pipe($.if(
+			notifyOn,
+			$.notify({
+				message: 'Build Task Completed.',
+				onLast: true
+			})
+		));
 });
 
 gulp.task('build:code', ['styles', 'scripts']);
