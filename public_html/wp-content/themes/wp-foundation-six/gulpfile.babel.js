@@ -3,7 +3,7 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 import webpackConfig from './webpack.config.babel.js';
 import os from 'os';
 
-const $ = gulpLoadPlugins({pattern: ['*']});
+const $ = gulpLoadPlugins({ pattern: ['*'] });
 const reload = $.browserSync.reload;
 const argv = $.yargs.argv;
 const notifyOn = os.platform() !== 'linux' ? true : false;
@@ -92,19 +92,24 @@ gulp.task('lint:sass', () => {
 });
 
 gulp.task('images', () => {
-	// Optimize all images to be used on the site using imageoptim
 	// TODO: Improve with SVG/PNG sprite generator
 	// TODO: Added Favicon/App Icon generator
 	return gulp.src(`${dir.theme_components}/images/**/*`)
 		.pipe($.imagemin({
 			progressive: true,
 			interlaced: true,
-			// don't remove IDs from SVGs, they are often used
-			// as hooks for embedding and styling
-			svgoPlugins: [{cleanupIDs: false}],
-			use: [$.imageminPngquant({quality: '65-80', speed: 4})],
-		}).on('error', function (err) {
-			console.log(err); // eslint-disable-line no-console
+			svgoPlugins: [{
+				// don't remove IDs from SVGs, they are often used
+				// as hooks for embedding and styling
+				cleanupIDs: false
+			}],
+			use: [
+				$.imageminPngquant({
+					quality: '65-80',
+					speed: 4
+				})
+			],
+		}).on('error', () => {
 			this.end();
 		}))
 		.pipe(gulp.dest(`${dir.assets}/images`));
@@ -117,11 +122,10 @@ gulp.task('fonts', () => {
 });
 
 gulp.task('icons', () => {
-	// Copy fonts out of theme_components into build directory
+	// Copy Icons out of theme_components into build directory
 	return gulp.src(`${dir.theme_components}/icons/**/*`)
 		.pipe(gulp.dest(`${dir.assets}/icons`));
 });
-
 
 /**
  * Action Tasks
