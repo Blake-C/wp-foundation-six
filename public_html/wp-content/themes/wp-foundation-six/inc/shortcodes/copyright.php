@@ -24,9 +24,11 @@ if ( ! function_exists( 'wp_foundation_six_copyright_year' ) ) {
 		 * @param string $shortcode Optional. The name of the shortcode, provided for context to enable filtering
 		 * @return array Combined and filtered attribute list.
 		 */
-		$attributes = shortcode_atts( array(
-			'sitename' => get_bloginfo( 'name' ),
-		), $atts, 'copyright' );
+		$attributes = shortcode_atts(
+			array(
+				'sitename' => get_bloginfo( 'name' ),
+			), $atts, 'copyright'
+		);
 
 		return '&copy; ' . date( 'Y' ) . ' ' . $attributes['sitename'];
 	}

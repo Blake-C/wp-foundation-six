@@ -24,9 +24,11 @@ if ( ! function_exists( 'wp_foundation_six_button' ) ) {
 		 * @param string $shortcode Optional. The name of the shortcode, provided for context to enable filtering
 		 * @return array Combined and filtered attribute list.
 		 */
-		$attributes = shortcode_atts( array(
-			'class' => 'button',
-		), $atts, 'button' );
+		$attributes = shortcode_atts(
+			array(
+				'class' => 'button',
+			), $atts, 'button'
+		);
 
 		$content = str_replace( '<a ', '<a class="' . $attributes['class'] . '"', do_shortcode( $content ) );
 

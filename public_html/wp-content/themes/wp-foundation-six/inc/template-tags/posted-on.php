@@ -13,7 +13,8 @@ if ( ! function_exists( 'wp_foundation_six_posted_on' ) ) {
 	function wp_foundation_six_posted_on() {
 		// Posted on.
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
-		$time_string = sprintf( $time_string,
+		$time_string = sprintf(
+			$time_string,
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() )
 		);
@@ -28,7 +29,8 @@ if ( ! function_exists( 'wp_foundation_six_posted_on' ) ) {
 		$updated_on_string = '';
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string_updated = '<time class="updated" datetime="%1$s">%2$s</time>';
-			$time_string_updated = sprintf( $time_string_updated,
+			$time_string_updated = sprintf(
+				$time_string_updated,
 				esc_attr( get_the_modified_date( 'c' ) ),
 				esc_html( get_the_modified_date() )
 			);

@@ -33,9 +33,11 @@ if ( ! function_exists( 'wp_foundation_six_div_wrapper' ) ) {
 		 * @param string $shortcode Optional. The name of the shortcode, provided for context to enable filtering
 		 * @return array Combined and filtered attribute list.
 		 */
-		$attributes = shortcode_atts( array(
-			'class' => $default_class,
-		), $atts, 'div' );
+		$attributes = shortcode_atts(
+			array(
+				'class' => $default_class,
+			), $atts, 'div'
+		);
 
 		return '<div class="' . $attributes['class'] . '">' . do_shortcode( $content ) . '</div>';
 	}
