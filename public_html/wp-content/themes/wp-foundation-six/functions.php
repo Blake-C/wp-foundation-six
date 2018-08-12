@@ -176,22 +176,6 @@ if ( ! function_exists( 'wp_foundation_six_scripts' ) ) {
 add_action( 'wp_enqueue_scripts', 'wp_foundation_six_scripts' );
 
 
-/**
- * Prevent empty p/br tags in shortcode output
- *
- * @link https://wp-mix.com/wordpress-disable-extra-p-tags-shortcodes/
- * @link http://pressfore.com/remove-p-tags-inside-text-widgets-wp48/
- */
-remove_filter( 'the_content', 'wpautop' );
-add_filter( 'the_content', 'wpautop', 12 );
-
-remove_filter( 'widget_text_content', 'wpautop' );
-add_filter( 'widget_text_content', 'wpautop', 12 );
-
-remove_filter( 'acf_the_content', 'wpautop' );
-add_filter( 'acf_the_content', 'wpautop', 12 );
-
-
 // Include components.
 require get_template_directory() . '/inc/includes.php';
 
