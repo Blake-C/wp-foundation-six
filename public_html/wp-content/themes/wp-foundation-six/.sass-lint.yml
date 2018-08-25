@@ -23,8 +23,8 @@ rules:
 
   brace-style:
     - 1
-    - style: stroustrup
-    - allow-single-line: true
+    - style: 1tbs
+    - allow-single-line: false
 
   class-name-format:
     - 1
