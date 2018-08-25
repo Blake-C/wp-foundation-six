@@ -1,24 +1,16 @@
 {
   "root": true,
-  "extends": ["eslint:recommended"],
+  "extends": [
+    "prettier",
+    "eslint:recommended",
+    "plugin:prettier/recommended"
+  ],
   "env": {
     "browser": true,
-    "jquery": true,
-    "es6": true
+    "jquery": true
   },
   "parserOptions": {
-    "ecmaVersion": 6,
+    "ecmaVersion": 8,
     "sourceType": "module"
-  },
-  "rules": {
-    "indent": ["warn", "tab"],
-    "linebreak-style": ["warn", "unix"],
-    "quotes": ["warn", "single"],
-    "semi": ["warn", "always"],
-    "eol-last": 0,
-    "no-console": 1,
-    "no-shadow": 0,
-    "no-underscore-dangle": 0,
-    "no-unused-vars": 1
   }
 }
