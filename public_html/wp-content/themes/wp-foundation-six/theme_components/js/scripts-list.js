@@ -4,7 +4,7 @@
  */
 
 const scriptsList = {
-	'global-scripts': './theme_components/js/global-scripts.js'
-};
+	'global-scripts': './theme_components/js/global-scripts.js',
+}
 
-export default scriptsList;
+export default scriptsList

@@ -2,7 +2,8 @@ body {
 	word-wrap: break-word;
 }
 
-/* Click button for displaying page template parts */
+// Click button for displaying page template parts
+// prettier-ignore
 #theme_debug_regions { // sass-lint:disable-line no-ids
 	background: rgba($black, 0.1);
 	bottom: 10px;

@@ -1,7 +1,7 @@
-import $ from 'jquery';
-import 'jquery-migrate/dist/jquery-migrate';
-import './modules/_skip-link-focus-fix';
-import './modules/_foundation-scripts';
+import $ from 'jquery'
+import 'jquery-migrate/dist/jquery-migrate'
+import './modules/_skip-link-focus-fix'
+import './modules/_foundation-scripts'
 
 /**
  * Notes:
@@ -36,8 +36,8 @@ import './modules/_foundation-scripts';
  */
 
 /*************** Template part region toggle button ***************/
-$('#theme_debug_regions').on('click', function(event){
-	event.preventDefault();
+$('#theme_debug_regions').on('click', function(event) {
+	event.preventDefault()
 
-	$('.placeHolderPosition').slideToggle();
-});
+	$('.placeHolderPosition').slideToggle()
+})

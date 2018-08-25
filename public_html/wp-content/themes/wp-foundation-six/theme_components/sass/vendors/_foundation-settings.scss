@@ -113,20 +113,44 @@ $header-lineheight: 1.4;
 $header-margin-bottom: 0.5rem;
 $header-styles: (
 	small: (
-		'h1': ('font-size': 24),
-		'h2': ('font-size': 20),
-		'h3': ('font-size': 19),
-		'h4': ('font-size': 18),
-		'h5': ('font-size': 17),
-		'h6': ('font-size': 16),
+		'h1': (
+			'font-size': 24,
+		),
+		'h2': (
+			'font-size': 20,
+		),
+		'h3': (
+			'font-size': 19,
+		),
+		'h4': (
+			'font-size': 18,
+		),
+		'h5': (
+			'font-size': 17,
+		),
+		'h6': (
+			'font-size': 16,
+		),
 	),
 	medium: (
-		'h1': ('font-size': 48),
-		'h2': ('font-size': 40),
-		'h3': ('font-size': 31),
-		'h4': ('font-size': 25),
-		'h5': ('font-size': 20),
-		'h6': ('font-size': 16),
+		'h1': (
+			'font-size': 48,
+		),
+		'h2': (
+			'font-size': 40,
+		),
+		'h3': (
+			'font-size': 31,
+		),
+		'h4': (
+			'font-size': 25,
+		),
+		'h5': (
+			'font-size': 20,
+		),
+		'h6': (
+			'font-size': 16,
+		),
 	),
 );
 $header-text-rendering: optimizeLegibility;
@@ -546,7 +570,10 @@ $table-border: 1px solid smart-scale($table-background, $table-color-scale);
 $table-padding: rem-calc(8 10 10);
 $table-hover-scale: 2%;
 $table-row-hover: darken($table-background, $table-hover-scale);
-$table-row-stripe-hover: darken($table-background, $table-color-scale + $table-hover-scale);
+$table-row-stripe-hover: darken(
+	$table-background,
+	$table-color-scale + $table-hover-scale
+);
 $table-is-striped: true;
 $table-striped-background: smart-scale($table-background, $table-color-scale);
 $table-stripe: even;

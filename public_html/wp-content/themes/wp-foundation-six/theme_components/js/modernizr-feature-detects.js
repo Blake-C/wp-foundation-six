@@ -13,7 +13,7 @@ const modernizrFeatureDetects = [
 	'css/transforms',
 	'css/transforms3d',
 	'css/transitions',
-	'svg'
-];
+	'svg',
+]
 
-export default modernizrFeatureDetects;
+export default modernizrFeatureDetects
