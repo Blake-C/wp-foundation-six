@@ -91,7 +91,7 @@ rules:
 
   no-color-keywords: 1
 
-  no-color-literals: 
+  no-color-literals:
     - 1
     - allow-rgba: true
 
