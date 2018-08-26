@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.1.0] - 2018-08-26
+
+### Added
+
+-   Added phpcs.xml to root of project for global files
+
+### Changed
+
+-   Updated wp-foundation-six-php:1.0.0 to wp-foundation-six-php:2.0.0
+-   Updated mariadb:10.1.20 to mariadb:10.3.9
+-   Updated composer packages
+-   Cleaned up formatting of wp-config.php file
+-   Moved changelog.md from theme directory to root project directory
+
 ## [5.0.0] - 2018-08-25
 
 ### Added
