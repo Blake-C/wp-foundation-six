@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.1.1] - 2018-08-26
+
+### Changed
+
+-   Changed `$table_prefix` back to `wp_`
+-   Hot fix for the general cli (v0.1.2) container regrading the table_prefix replacement line in the wp-init shell functions
+
 ## [5.1.0] - 2018-08-26
 
 ### Added
@@ -15,7 +22,6 @@ All notable changes to this project will be documented in this file.
 -   Updated composer packages
 -   Cleaned up formatting of wp-config.php file
 -   Moved changelog.md from theme directory to root project directory
--   Changed `$table_prefix` back to `wp_`
 
 ## [5.0.0] - 2018-08-25
 

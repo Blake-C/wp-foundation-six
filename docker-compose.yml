@@ -1,7 +1,7 @@
 version: '3'
 services:
   cli_tools:
-    image: digitalblake/general-cli:0.1.0
+    image: digitalblake/general-cli:0.1.2
     volumes:
       - ./:/var/www/
     tty: true
@@ -11,7 +11,7 @@ services:
     volumes:
       - ./:/var/www/
     ports:
-      - "80:80"
+      - '80:80'
     depends_on:
       - mysql
       - php
@@ -21,7 +21,7 @@ services:
     volumes:
       - ./:/var/www/
     expose:
-      - "9000"
+      - '9000'
 
   mysql:
     image: mariadb:10.3.9
@@ -38,6 +38,6 @@ services:
     depends_on:
       - mysql
     ports:
-      - "8000:80"
+      - '8000:80'
     environment:
       PMA_ARBITRARY: 1
