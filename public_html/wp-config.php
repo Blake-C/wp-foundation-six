@@ -1,4 +1,9 @@
 <?php
+/**
+ * Development wp-config for local processes.
+ *
+ * @package wp-foundation-six
+ */
 
 // ========================
 // These settings match what
@@ -9,7 +14,7 @@ define( 'DB_USER', 'root' );
 define( 'DB_PASSWORD', 'root' );
 define( 'DB_HOST', 'mysql' );
 
-$table_prefix  = 'wp_';
+$table_prefix = 'ncmy_';
 
 // ========================
 // Turn on Bug Reports
@@ -37,7 +42,7 @@ define( 'NONCE_SALT',       'uBW!%ut#F]]5Etl3MwAi|;9 82#qY9(x:])4BU*y{4BrSHk^hT&
 // ========================
 if ( ! defined( 'WP_CLI' ) ) {
 	define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
-	define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content' );
+	define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content' ); // phpcs:ignore
 } else {
 	define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
 	define( 'WP_CONTENT_URL', 'http://localhost/wp-content' );
@@ -48,7 +53,7 @@ if ( ! defined( 'WP_CLI' ) ) {
 // ========================
 if ( ! defined( 'WP_CLI' ) ) {
 	define( 'WP_PLUGIN_DIR', dirname( __FILE__ ) . '/wp-content/plugins' );
-	define( 'WP_PLUGIN_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content/plugins' );
+	define( 'WP_PLUGIN_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content/plugins' ); // phpcs:ignore
 } else {
 	define( 'WP_PLUGIN_DIR', dirname( __FILE__ ) . '/wp-content/plugins' );
 	define( 'WP_PLUGIN_URL', 'http://localhost/wp-content/plugins' );
@@ -72,4 +77,4 @@ define( 'WPLANG', '' );
 if ( ! defined( 'ABSPATH' ) ) {
 	define( 'ABSPATH', dirname( __FILE__ ) . '/wp/' );
 }
-require_once( ABSPATH . 'wp-settings.php' );
+require_once ABSPATH . 'wp-settings.php';
