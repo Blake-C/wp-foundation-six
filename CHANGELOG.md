@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.1.2] - 2018-08-28
+
+### Changed
+
+-   Added new configs for Prettier
+    -   "arrowParens": "avoid"
+    -   "bracketSpacing": true
+    -   "jsxBracketSameLine": false
+
 ## [5.1.1] - 2018-08-26
 
 ### Changed
