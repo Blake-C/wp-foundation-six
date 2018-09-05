@@ -9,7 +9,9 @@
  */
 
 @mixin hover-active-focus($property, $value) {
-	&:hover, &:active, &:focus {
+	&:hover,
+	&:active,
+	&:focus {
 		#{$property}: $value;
 	}
 } // to use: @include hover-active-focus(property, value);
