@@ -51,6 +51,11 @@
     "modernizr": "3.6.0"
   },
   "scripts": {
-    "snyk-test": "snyk test"
+    "snyk": "snyk test",
+    "prettier": "prettier --write './**/*.{js,scss,md}'",
+    "dev": "npm run prettier && gulp",
+    "serve": "npm run prettier && gulp serve",
+    "watch": "npm run prettier && gulp watch",
+    "build": "npm run prettier && && gulp --build"
   }
 }

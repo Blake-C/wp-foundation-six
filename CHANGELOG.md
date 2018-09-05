@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.2.0] - Next
+
+### Changed
+
+- Updated General CLI from v0.1.2 to v0.2.0
+
+### Added
+
+- Added color setting to phpcs.xml file settings
+- Added new npm run scripts for prettier
+
 ## [5.1.2] - 2018-08-28
 
 ### Changed
