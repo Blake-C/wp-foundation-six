@@ -53,10 +53,6 @@
   "scripts": {
     "snyk": "snyk test",
     "prettier": "prettier --write './**/*.{js,scss,md}'",
-    "dev": "npm run prettier && gulp",
-    "serve": "npm run prettier && gulp serve",
-    "watch": "npm run prettier && gulp watch",
-    "build": "npm run prettier && && gulp --build"
     "phpcs": "../../../vendor/bin/phpcs --standard=phpcs.xml --colors || true",
     "phpfix": "../../../vendor/bin/phpcbf --standard=phpcs.xml --colors || true"
   }
