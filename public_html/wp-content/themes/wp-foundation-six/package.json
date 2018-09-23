@@ -52,7 +52,7 @@
   },
   "scripts": {
     "snyk": "snyk test",
-    "prettier": "prettier --write './**/*.{js,scss,md}'",
+    "prettier": "./node_modules/prettier/bin-prettier.js --write './**/*.{js,scss,md}'",
     "phpcs": "../../../vendor/bin/phpcs --standard=phpcs.xml --colors || true",
     "phpfix": "../../../vendor/bin/phpcbf --standard=phpcs.xml --colors || true"
   }
