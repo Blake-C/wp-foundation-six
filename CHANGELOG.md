@@ -6,12 +6,21 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
-- Updated General CLI from v0.1.2 to v0.2.0
+-   Updated General CLI from v0.1.2 to v0.2.0
+-   Updated composer php requre version to v7 from v5.6
 
 ### Added
 
-- Added color setting to phpcs.xml file settings
-- Added new npm run scripts for prettier
+-   Added color setting to phpcs.xml in theme
+-   Added new npm script for prettier in theme
+-   Added new npm script for phpcs and phpcbf in theme
+    -   npm run phpcs
+    -   npm run phpfix
+-   Added composer packages for phpcs tooling
+    -   phpcodesniffer-composer-installer
+    -   squizlabs/php_codesniffer
+    -   phpcompatibility/php-compatibility
+    -   wp-coding-standards/wpcs
 
 ## [5.1.2] - 2018-08-28
 
