@@ -1,0 +1,8 @@
+TODO:
+	☐	Find a away to run Prettier when JS/SCSS files have been saved while gulp is running. @created(Sun 09.23.2018 05:44:43 PM)
+		We can not do this with npm scripts since that will only trigger Prettier once at the start.
+		Prettier will need to run with gulp when JS/SCSS files as they are saved.
+			Or with Webpack if we only want to run Prettier on JS files.
+	☐	Consider adding semicolons back to Prettier/ESLint @created(Sun 09.23.2018 05:51:19 PM)
+	☐	Update documentation with notes on PHPCS @created(Sun 09.23.2018 05:52:05 PM)
+	☐	Update documentation with notes on Prettier @created(Sun 09.23.2018 05:52:06 PM)
