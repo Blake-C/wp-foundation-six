@@ -1,8 +1,49 @@
 TODO:
-	☐	Find a away to run Prettier when JS/SCSS files have been saved while gulp is running. @created(Sun 09.23.2018 05:44:43 PM)
-		We can not do this with npm scripts since that will only trigger Prettier once at the start.
-		Prettier will need to run with gulp when JS/SCSS files as they are saved.
-			Or with Webpack if we only want to run Prettier on JS files.
+	☐	Find a way to run Prettier when JS/SCSS files have been saved while gulp is running. @created(Sun 09.23.2018 05:44:43 PM)
+			We can not do this with NPM scripts since that will only trigger Prettier once at the start.
+			Prettier will need to run with gulp when JS/SCSS files as they are saved.
+				Or with Webpack if we only want to run Prettier on JS files.
 	☐	Consider adding semicolons back to Prettier/ESLint @created(Sun 09.23.2018 05:51:19 PM)
+			Let's see how things work out on the next few projects and decide on that on if we keep the current configurations or add semicolons back.
 	☐	Update documentation with notes on PHPCS @created(Sun 09.23.2018 05:52:05 PM)
 	☐	Update documentation with notes on Prettier @created(Sun 09.23.2018 05:52:06 PM)
+	☐	Add shortcodes/Editor Formats @created(Sun 09.23.2018 08:13:38 PM)
+			Existing shortcodes: https://en.support.wordpress.com/shortcodes/
+		✔	Buttons @done (Sun 09.23.2018 08:04:38 PM)
+				https://foundation.zurb.com/sites/docs/button.html
+		✔	Callout @done (Sun 09.23.2018 08:04:43 PM)
+				https://foundation.zurb.com/sites/docs/callout.html
+		☐	Badges
+				https://foundation.zurb.com/sites/docs/badge.html
+		☐	Labels
+				https://foundation.zurb.com/sites/docs/label.html
+		☐	Cards
+				https://foundation.zurb.com/sites/docs/card.html
+		☐	Tooltip
+				https://foundation.zurb.com/sites/docs/tooltip.html
+		☐	Modal
+				https://foundation.zurb.com/sites/docs/reveal.html
+				https://github.com/vodkabears/Remodal
+		☐	Sticky
+				https://foundation.zurb.com/sites/docs/sticky.html
+		☐	Smooth Scroll
+				https://foundation.zurb.com/sites/docs/smooth-scroll.html
+		✔	Copyright @done (Sun 09.23.2018 08:05:24 PM)
+	☐	Added documentation on new shortcode and editor formates
+	☐	Fix DeprecationWarning from modernizr-webpack-plugin npm module
+			https://github.com/alexpalombaro/modernizr-webpack-plugin/issues/26
+
+			We can either fix the existing plugin and make a pull request into the main project or checkout one of the other webpack modernizr plugins.
+
+			Alternatives
+				https://www.npmjs.com/package/webpack-modernizr-loader
+				https://www.npmjs.com/package/modernizr-loader
+
+Ideas:
+	☐	Review foundation grid and setup XY grid as default @created(Sun 09.23.2018 07:57:16 PM)
+			https://foundation.zurb.com/sites/docs/xy-grid.html
+	☐	Look into WebPack as main build system @created(Sun 09.23.2018 07:57:44 PM)
+	☐	Build production Docker Images @created(Sun 09.23.2018 07:58:05 PM)
+		☐	Build production docker-compose.yml @created(Sun 09.23.2018 07:58:40 PM)
+	☐	Find a way to provide a drop in script to add additional setup processes @created(Sun 09.23.2018 07:59:09 PM)
+	☐	Add custom PHPCS sniffs for utility functions @created(Sun 09.23.2018 07:59:31 PM)
