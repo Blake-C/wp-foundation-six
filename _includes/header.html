@@ -1,0 +1,30 @@
+<div class="cell shrink header medium-cell-block-container">
+  <div class="grid-x grid-margin-x align-middle">
+    <div class="cell small-6">
+      <h1 class="site-title"><a rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a></h1>
+    </div>
+
+    <div class="cell small-6">
+      <button
+        class="dropdown button small float-right version-button"
+        type="button"
+        data-toggle="example-dropdown-bottom-right"
+      >v{{ page.version }}</button>
+
+      <div
+        class="dropdown-pane versioning-menu"
+        data-position="bottom"
+        data-alignment="right"
+        id="example-dropdown-bottom-right"
+        data-dropdown
+        data-auto-focus="true"
+      >
+        <ul class="vertical menu">
+          <li><a href="/docs/5.1/getting-started">v5.1</a></li>
+          <li><a href="/docs/4.0/getting-started">v4.0</a></li>
+          <li><a href="/docs/3.0/getting-started">v3.0</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+code {
+	background-color: rgba($gray30, 0.05);
+	border-radius: 3px;
+	margin: 0;
+	padding: 0.2em 0.4em;
+
+	&[class*=language-] {
+		border: 0;
+		padding: 0;
+		text-shadow: none;
+	}
+}
+
+pre {
+	&[class*=language-] {
+		margin-bottom: 0.8rem;
+	}
+}
+
+.token {
+	&.entity,
+	&.operator,
+	&.url {
+		background: rgba($black, 0);
+	}
+}

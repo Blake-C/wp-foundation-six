@@ -1,0 +1,67 @@
+.post {
+	> div {
+		height: 100%;
+	}
+}
+
+.h1, h1 {
+	font-size: 2rem;
+}
+
+.h2, h2 {
+	font-size: 1.8rem;
+}
+
+.h3, h3 {
+	font-size: 1.6rem;
+}
+
+.h4, h4 {
+	font-size: 1.4rem;
+}
+
+.h5, h5 {
+	font-size: 1.2rem;
+}
+
+.h6, h6 {
+	font-size: 1rem;
+}
+
+.version-button {
+	background-color: $white;
+	color: $black;
+	font-weight: bold;
+
+	&:hover,
+	&:focus {
+		background-color: lighten($black, 90%);
+		color: $black;
+	}
+
+	&.button {
+		&.dropdown {
+			&:after {
+				border-color: $black transparent transparent;
+			}
+		}
+	}
+}
+
+.versioning-menu {
+	.menu {
+		a {
+			padding: 7px 0;
+		}
+	}
+}
+
+.content {
+	border-bottom: 1px solid rgba($black, 0.1);
+	padding: 15px;
+
+	@media screen and (min-width: 40em) {
+		border-bottom: 0;
+		padding: 40px;
+	}
+}

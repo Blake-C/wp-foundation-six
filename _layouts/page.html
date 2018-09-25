@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<article class="cell medium-auto medium-cell-block-container post">
+
+  <div class="grid-x grid-padding-x">
+
+    <div class="cell auto medium-cell-block-y medium-order-2 large-order-2">
+      <div class="grid-x grid-padding-x">
+        <div class="cell large-8 medium-12 small-12 medium-cell-block-y">
+          <div class="content">
+            <header class="post-header">
+              <h1 class="post-title">{{ page.title | escape }}</h1>
+            </header>
+
+            {{ content }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cell sidebar large-2 medium-3 medium-order-1 large-order-1 medium-cell-block-y">
+      {%- include sidebar.html -%}
+    </div>
+  </div>
+
+</article>

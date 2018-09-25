@@ -1,0 +1,15 @@
+<nav class="sidebar-nav">
+  <ul class="vertical menu">
+    {%- assign page_node = site.pages | sort: "order" -%}
+
+    {%- for page_item in page_node -%}
+      {% if page.url contains page_item.version and page_item.title %}
+        <li>
+          <a class="page-link" href="{{ page_item.url | relative_url }}">
+            {{ page_item.title | escape }}
+          </a>
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+  </ul>
+</nav>

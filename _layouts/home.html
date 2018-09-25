@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<article class="cell medium-auto medium-cell-block-container home">
+
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+      <div class="cell small-12 medium-12 large-12">
+        {%- if page.title -%}
+          <h1 class="page-heading">{{ page.title }}</h1>
+        {%- endif -%}
+
+        {{ content }}
+
+
+        <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+      </div>
+    </div>
+  </div>
+
+</article>
