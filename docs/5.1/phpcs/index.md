@@ -6,24 +6,27 @@ version: 5.1
 order: 10
 ---
 
-PHP CodeSniffers (PHPCS) is a tool for linting your PHP code against rulesets that have been specified in the phpcs.xml file that has been added to the wp-foundation-six theme.
+PHP CodeSniffers (PHPCS) is a tool for styling and sniffing your PHP code against rulesets that have been specified in the phpcs.xml file that has been added to the wp-foundation-six theme.
+
+[Read more about why and how it should be used](https://stackoverflow.com/questions/982333/how-useful-is-php-codesniffer-code-standards-enforcement-in-general/5985349#5985349)
 
 **Documentation:**
 - [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer)
 - [WordPress-Coding-Standards](https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards)
 - [PHPCompatibility](https://github.com/PHPCompatibility/PHPCompatibility)
 
-Refer to the above documentation for setting up these tools on your local machine and text editor. For the purposes on this documentation I will focus on how to use these tools on the command line with this project.
+Refer to the above documentation and Google for setting up these tools on your local machine and text editor. For the purposes of this documentation I will focus on how to use these tools on the command line with this project.
 
 ## PHPCS
 
 To run the code sniffers without installing them on your machine run `composer install` from within the public_html directory. If you do not have composer installed on your machine you can use the general-cli docker container and run `composer install` from there. Refer to the Docker part of this documentation for instructions on how to use [Docker](/docs/5.1/docker).
 
-You will have access to PHPCS from within the theme directory using `npm run -s phpcs`. This will run PHPCS on all PHP file in the theme directory. I'm using npm to alias the command to the correct directory where PHPCS is installed. If you need to run PHPCS on a single file add the files path to the end of the same command; `npm run -s phpcs header.php` or `npm run -s phpcs template/parts/content.php`. PHPCS must be ran from the root of the theme directory.
+You will have access to PHPCS from within the theme directory using `npm run -s phpcs`. This will run PHPCS on all PHP files in the theme directory. I'm using npm to alias the command to the correct directory where PHPCS is installed. If you need to run PHPCS on a single file add the files path to the end of the same command; `npm run -s phpcs header.php` or `npm run -s phpcs template/parts/content.php`. PHPCS must be ran from the root of the theme directory.
 
 If you noticed the `-s` in the commands, this is to prevent npm from spitting out errors when PHPCS needs to write its own errors to the console. The `-s` is a shorthand for `--silent`.
 
 **npm run -s phpcs output on all files with no errors:**
+
 ```bash
 npm run -s phpcs
 
@@ -33,7 +36,8 @@ npm run -s phpcs
 ................................................... 51 / 51 (100%)
 ```
 
-**npm run -s phpcs ran on a single file with error:**
+**npm run -s phpcs output from single file with errors:**
+
 ```bash
 npm run -s phpcs header.php
 
@@ -61,7 +65,7 @@ Time: 278ms; Memory: 12Mb
 
 You also get access to PHPCBF which can auto fix some issues for you without you acting upon the files. To run PHPCBF run `npm run -s phpfix` or `npm run -s phpfix header.php`. I would strongly suggest that if you have multiple files, you run this command on them one at a time and review the results before committing your code back to the repo.
 
-**npm run -s phpfix ran fixing errors**
+**npm run -s phpfix output from fixing errors**
 
 ```bash
 npm run -s phpfix header.php
@@ -84,3 +88,20 @@ A TOTAL OF 2 ERRORS WERE FIXED IN 1 FILE
 
 Time: 698ms; Memory: 12Mb
 ```
+
+---
+
+## Author Notes
+
+**Currently used versions:**
+- PHP CodeSniffer: "3.3.0",
+- WP Coding Standards: "0.14.1"
+- PHP Compatibility: "8.1.0"
+
+**Install locations**
+- Local Machine
+	- Used with text editor/IDE
+- Within the Docker general-cli container
+	- Used on command line in docker
+- Project composer.json
+	- Used with npm run command within project on local machine
