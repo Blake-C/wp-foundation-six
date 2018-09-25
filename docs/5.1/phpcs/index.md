@@ -19,23 +19,25 @@ Refer to the above documentation for setting up these tools on your local machin
 
 To run the code sniffers without installing them on your machine run `composer install` from within the public_html directory. If you do not have composer installed on your machine you can use the general-cli docker container and run `composer install` from there. Refer to the Docker part of this documentation for instructions on how to use [Docker](/docs/5.1/docker).
 
-You will have access to PHPCS from with the theme directory using `npm run phpcs`. This will run PHPCS on all PHP file in the theme directory. I'm using npm to alias the command to the correct directory where PHPCS is installed. If you need to run PHPCS on a single file add the files path to the end of the same command; `npm run phpcs header.php` or `npm run phpcs template/parts/content.php`. PHPCS must be ran from the root of the theme directory.
+You will have access to PHPCS from within the theme directory using `npm run -s phpcs`. This will run PHPCS on all PHP file in the theme directory. I'm using npm to alias the command to the correct directory where PHPCS is installed. If you need to run PHPCS on a single file add the files path to the end of the same command; `npm run -s phpcs header.php` or `npm run -s phpcs template/parts/content.php`. PHPCS must be ran from the root of the theme directory.
 
-**npm run phpcs output on all files with no errors:**
+If you noticed the `-s` in the commands, this is to prevent npm from spitting out errors when PHPCS needs to write its own errors to the console. The `-s` is a shorthand for `--silent`.
+
+**npm run -s phpcs output on all files with no errors:**
 ```bash
-npm run phpcs
+npm run -s phpcs
 
-> wp-foundation-six@0.0.0 phpcs /Users/bcerecero/Downloads/wp-foundation-six-development/public_html/wp-content/themes/wp-foundation-six
+> wp-foundation-six@0.0.0 phpcs /public_html/wp-content/themes/wp-foundation-six
 > ../../../vendor/bin/phpcs --standard=phpcs.xml --colors
 
 ................................................... 51 / 51 (100%)
 ```
 
-**npm run phpcs ran on a single file with error:**
+**npm run -s phpcs ran on a single file with error:**
 ```bash
-npm run phpcs header.php
+npm run -s phpcs header.php
 
-> wp-foundation-six@0.0.0 phpcs /Users/bcerecero/Downloads/wp-foundation-six-development/public_html/wp-content/themes/wp-foundation-six
+> wp-foundation-six@0.0.0 phpcs /public_html/wp-content/themes/wp-foundation-six
 > ../../../vendor/bin/phpcs --standard=phpcs.xml --colors "header.php"
 
 E 1 / 1 (100%)
@@ -57,14 +59,14 @@ Time: 278ms; Memory: 12Mb
 
 ## PHPCBF
 
-You also get access to PHPCBF which can auto fix some issues for you without you acting upon the files. To run PHPCBF run `npm run phpfix` or `npm run phpfix header.php`. I would strongly suggest that if you have multiple files, you run this command on them one at a time and review the results before committing your code back to the repo.
+You also get access to PHPCBF which can auto fix some issues for you without you acting upon the files. To run PHPCBF run `npm run -s phpfix` or `npm run -s phpfix header.php`. I would strongly suggest that if you have multiple files, you run this command on them one at a time and review the results before committing your code back to the repo.
 
-**npm run phpfix ran fixing errors**
+**npm run -s phpfix ran fixing errors**
 
 ```bash
-npm run phpfix header.php
+npm run -s phpfix header.php
 
-> wp-foundation-six@0.0.0 phpfix /Users/bcerecero/Downloads/wp-foundation-six-development/public_html/wp-content/themes/wp-foundation-six
+> wp-foundation-six@0.0.0 phpfix /public_html/wp-content/themes/wp-foundation-six
 > ../../../vendor/bin/phpcbf --standard=phpcs.xml --colors "header.php"
 
 F 1 / 1 (100%)
