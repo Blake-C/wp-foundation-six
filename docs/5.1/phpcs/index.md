@@ -77,11 +77,11 @@ You also get access to PHPCBF which can auto fix some issues for you without you
 **gulp phpfix -f header.php output from fixing errors**
 
 ```bash
-gulp phpcbf -f header.php
+gulp phpfix -f header.php
 [22:09:39] Failed to load external module @babel/register
 [22:09:39] Requiring external module babel-register
 [22:09:40] Using gulpfile ~/Downloads/wp-foundation-six-development/public_html/wp-content/themes/wp-foundation-six/gulpfile.babel.js
-[22:09:41] Starting 'phpcbf'...
+[22:09:41] Starting 'phpfix'...
 [22:09:41] ../../../vendor/bin/phpcbf --standard=phpcs.xml --colors header.php
 F 1 / 1 (100%)
 
@@ -99,7 +99,7 @@ A TOTAL OF 2 ERRORS WERE FIXED IN 1 FILE
 Time: 626ms; Memory: 12Mb
 
 
-[22:09:41] Finished 'phpcbf' after 762 ms
+[22:09:41] Finished 'phpfix' after 762 ms
 ```
 
 ---
