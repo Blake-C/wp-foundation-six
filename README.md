@@ -30,7 +30,9 @@ When done:
 
 ## Full instructions
 
-Read the wiki section of this repo: [Wiki](https://github.com/Blake-C/wp-foundation-six/wiki)
+I have moved the project documentation for the last time. I feel this will be it's permanent home.
+
+[https://blake-c.github.io/wp-foundation-six/](https://blake-c.github.io/wp-foundation-six/)
 
 ## Known Issues
 
