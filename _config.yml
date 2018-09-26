@@ -17,7 +17,7 @@ title: WP Foundation Six
 email:
 description: >- # this means to ignore newlines until "baseurl:"
   WordPress Development Theme Framework using Foundation 6 for Sites
-baseurl: "/wp-foundation-six/" # the subpath of your site, e.g. /blog
+baseurl: "/wp-foundation-six" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: blakecerecero
 github_username:  blake-c
