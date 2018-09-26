@@ -29,7 +29,72 @@ const dir = directory_list()
 // BrowserSync Dev URL to reload
 const proxy_target = 'localhost'
 
-gulp.task('scripts', () => {
+// Fetch command line arguments
+// @link https://www.sitepoint.com/pass-parameters-gulp-tasks/
+const arg = (argList => {
+	let arg = {}
+	let a
+	let opt
+	let thisOpt
+	let curOpt
+
+	for (a = 0; a < argList.length; a++) {
+		thisOpt = argList[a].trim()
+		opt = thisOpt.replace(/^-+/, '')
+
+		if (opt === thisOpt) {
+			// argument value
+			if (curOpt) arg[curOpt] = opt
+			curOpt = null
+		} else {
+			// argument name
+			curOpt = opt
+			arg[curOpt] = true
+		}
+	}
+
+	return arg
+})(process.argv) // eslint-disable-line no-undef
+
+gulp.task(
+	'prettier-js',
+	$.shell.task('./node_modules/prettier/bin-prettier.js --write "./**/*.js"')
+)
+
+gulp.task(
+	'prettier-scss',
+	$.shell.task(
+		'./node_modules/prettier/bin-prettier.js --write "./**/*.scss"'
+	)
+)
+
+gulp.task(
+	'phpcs',
+	$.shell.task(
+		`../../../vendor/bin/phpcs --standard=phpcs.xml --colors ${
+			arg.f ? arg.f : ''
+		}`,
+		{
+			verbose: true,
+			ignoreErrors: true,
+		}
+	)
+)
+
+gulp.task(
+	'phpfix',
+	$.shell.task(
+		`../../../vendor/bin/phpcbf --standard=phpcs.xml --colors ${
+			arg.f ? arg.f : ''
+		}`,
+		{
+			verbose: true,
+			ignoreErrors: true,
+		}
+	)
+)
+
+gulp.task('scripts', ['prettier-js'], () => {
 	return gulp
 		.src([`${dir.theme_components}/js/global-scripts.js`])
 		.pipe($.plumber())
@@ -102,7 +167,7 @@ gulp.task('styles', ['lint:sass'], () => {
 		)
 })
 
-gulp.task('lint:sass', () => {
+gulp.task('lint:sass', ['prettier-scss'], () => {
 	return gulp
 		.src(`${dir.theme_components}/sass/**/*.scss`)
 		.pipe($.plumber())
