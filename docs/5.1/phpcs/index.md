@@ -21,30 +21,37 @@ Refer to the above documentation and Google for setting up these tools on your l
 
 To run the code sniffers without installing them on your machine run `composer install` from within the public_html directory. If you do not have composer installed on your machine you can use the general-cli docker container and run `composer install` from there. Refer to the Docker part of this documentation for instructions on how to use [Docker](/docs/5.1/docker).
 
-You will have access to PHPCS from within the theme directory using `npm run -s phpcs`. This will run PHPCS on all PHP files in the theme directory. I'm using npm to alias the command to the correct directory where PHPCS is installed. If you need to run PHPCS on a single file add the files path to the end of the same command; `npm run -s phpcs header.php` or `npm run -s phpcs template/parts/content.php`. PHPCS must be ran from the root of the theme directory.
+You will have access to PHPCS from within the theme directory using `gulp phpcs`. This will run PHPCS on all PHP files in the theme directory. I'm using gulp to alias the command to the correct directory where PHPCS is installed. If you need to run PHPCS on a single file add the files path to the end of the same command; `gulp phpcs -f header.php` or `gulp phpcs -f template-parts/content.php`. PHPCS must be ran from the root of the theme directory.
 
-If you noticed the `-s` in the commands, this is to prevent npm from spitting out errors when PHPCS needs to write its own errors to the console. The `-s` is a shorthand for `--silent`.
+FYI, if you have phpcs installed globally on your machine you will not have to worry about the `-f` in the command. `-f` is only there to pass the file into the gulp task to be added as an argument to the main phpcs command. Running phpcs globally is as simple as running `phpcs` or `phpcs header.php`.
 
-**npm run -s phpcs output on all files with no errors:**
+**gulp phpcs output on all files with no errors:**
 
 ```bash
-npm run -s phpcs
-
-> wp-foundation-six@0.0.0 phpcs /public_html/wp-content/themes/wp-foundation-six
-> ../../../vendor/bin/phpcs --standard=phpcs.xml --colors
-
+gulp phpcs
+[22:07:19] Failed to load external module @babel/register
+[22:07:19] Requiring external module babel-register
+[22:07:20] Using gulpfile ~/Downloads/wp-foundation-six-development/public_html/wp-content/themes/wp-foundation-six/gulpfile.babel.js
+[22:07:20] Starting 'phpcs'...
+[22:07:20] ../../../vendor/bin/phpcs --standard=phpcs.xml --colors
 ................................................... 51 / 51 (100%)
+
+
+Time: 7.19 secs; Memory: 14Mb
+
+[22:07:28] Finished 'phpcs' after 7.31 s
 ```
 
-**npm run -s phpcs output from single file with errors:**
+**gulp phpcs output from single file with errors:**
 
 ```bash
-npm run -s phpcs header.php
-
-> wp-foundation-six@0.0.0 phpcs /public_html/wp-content/themes/wp-foundation-six
-> ../../../vendor/bin/phpcs --standard=phpcs.xml --colors "header.php"
-
-E 1 / 1 (100%)
+gulp phpcs
+[22:06:31] Failed to load external module @babel/register
+[22:06:31] Requiring external module babel-register
+[22:06:32] Using gulpfile ~/Downloads/wp-foundation-six-development/public_html/wp-content/themes/wp-foundation-six/gulpfile.babel.js
+[22:06:32] Starting 'phpcs'...
+[22:06:32] ../../../vendor/bin/phpcs --standard=phpcs.xml --colors
+....................................E.............. 51 / 51 (100%)
 
 
 
@@ -58,21 +65,24 @@ FOUND 2 ERRORS AFFECTING 1 LINE
 PHPCBF CAN FIX THE 2 MARKED SNIFF VIOLATIONS AUTOMATICALLY
 ------------------------------------------------------------------------------------------------------------------------------------
 
-Time: 278ms; Memory: 12Mb
+Time: 6.98 secs; Memory: 14Mb
+
+[22:06:39] Finished 'phpcs' after 7.13 s
 ```
 
 ## PHPCBF
 
-You also get access to PHPCBF which can auto fix some issues for you without you acting upon the files. To run PHPCBF run `npm run -s phpfix` or `npm run -s phpfix header.php`. I would strongly suggest that if you have multiple files, you run this command on them one at a time and review the results before committing your code back to the repo.
+You also get access to PHPCBF which can auto fix some issues for you without you acting upon the files. To run PHPCBF run `gulp phpfix` or `gulp phpfix -f header.php`. I would strongly suggest that if you have multiple files, you run this command on them one at a time and review the results before committing your code back to the repo.
 
-**npm run -s phpfix output from fixing errors**
+**gulp phpfix -f header.php output from fixing errors**
 
 ```bash
-npm run -s phpfix header.php
-
-> wp-foundation-six@0.0.0 phpfix /public_html/wp-content/themes/wp-foundation-six
-> ../../../vendor/bin/phpcbf --standard=phpcs.xml --colors "header.php"
-
+gulp phpcbf -f header.php
+[22:09:39] Failed to load external module @babel/register
+[22:09:39] Requiring external module babel-register
+[22:09:40] Using gulpfile ~/Downloads/wp-foundation-six-development/public_html/wp-content/themes/wp-foundation-six/gulpfile.babel.js
+[22:09:41] Starting 'phpcbf'...
+[22:09:41] ../../../vendor/bin/phpcbf --standard=phpcs.xml --colors header.php
 F 1 / 1 (100%)
 
 
@@ -86,7 +96,10 @@ header.php                                            2      0
 A TOTAL OF 2 ERRORS WERE FIXED IN 1 FILE
 ----------------------------------------------------------------------
 
-Time: 698ms; Memory: 12Mb
+Time: 626ms; Memory: 12Mb
+
+
+[22:09:41] Finished 'phpcbf' after 762 ms
 ```
 
 ---
@@ -104,4 +117,4 @@ Time: 698ms; Memory: 12Mb
 - Within the Docker general-cli container
 	- Used on command line in docker
 - Project composer.json
-	- Used with npm run command within project on local machine
+	- Used with gulp commands within project on local machine
