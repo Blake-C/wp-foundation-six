@@ -43,7 +43,7 @@ const scriptsList = {
 }
 ```
 
-If you or any third part scripts need [Modernizr](https://modernizr.com/) feature detects you'll want to add the feature you want to check to the modernizr-feature-detects.js file. For a list of proper feature detects you'll want to look at this list of [Modernizr configs](https://github.com/Modernizr/Modernizr/blob/master/lib/config-all.json). This file is pulled into the webpack.config.babel.js as an array for a custom modernizr build.
+If you or any third part scripts need [Modernizr](https://modernizr.com/) feature detects you'll want to add the feature you want to check to the modernizr-feature-detects.js file. For a list of proper feature detects you'll want to look at this list of [Modernizr config](https://github.com/Modernizr/Modernizr/blob/master/lib/config-all.json). This file is pulled into the webpack.config.babel.js as an array for a custom modernizr build.
 
 ```js
 // public_html/wp-content/themes/wp-foundation-six/theme_components/js/modernizr-feature-detects.js
@@ -59,3 +59,24 @@ const modernizrFeatureDetects = [
 
 export default modernizrFeatureDetects;
 ```
+
+## Prettier
+
+Prettier is an auto formatting tool that has been setup to work with eslint within the project settings. The way it has been setup in this project is to run when the scripts and style tasks are being executed. The main gulp tasks that will execute are:
+
+```bash
+gulp prettier-js
+gulp prettier-scss
+```
+
+These tasks are dependents on the main gulp, gulp watch, and any other tasks that manage scripts and styles. While running Prettier will be automatic it would be to your benefit to also set the tooling locally and in your IDE.
+
+Install Prettier globally on your local machine and then setup your text editor to work with Prettier. With this setup you can have your text editor run Prettier as you save your files but more importantly see the errors and formatting changes first hand without having Prettier be a black box of changes.
+
+To installed Prettier globally just run `npm install -g prettier`. Depending on which editor you are using you will have to setup different plugins to integrate Prettier with your workflow.
+
+**Documentation**
+- [Refer to the supported editors at the bottom of Prettiers home page](https://prettier.io/)
+- [Here are my own instructions on setting up Sublime Text with Prettier](https://digitalblake.com/2018/08/30/setting-up-sublime-text-3-with-prettier-on-macos-high-sierra/)
+- [ESlint and Prettier on VSCode](https://www.youtube.com/watch?v=YIvjKId9m2c)
+- [Another ESlint and Prettier on VSCode](https://www.youtube.com/watch?v=bfyI9yl3qfE)
