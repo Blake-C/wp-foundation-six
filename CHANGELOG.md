@@ -2,20 +2,30 @@
 
 All notable changes to this project will be documented in this file.
 
-## [5.2.0] - Next
+## [#.#.#] - Next
+
+### Changed
+
+### Added
+
+## [5.1.3] - 2018-09-25
 
 ### Changed
 
 -   Updated General CLI from v0.1.2 to v0.2.0
--   Updated composer php requre version to v7 from v5.6
+-   Updated composer php require version to v7 from v5.6
+-   Updated NPM packages
+-   Updated Composer packages
+-   Updated README file with new documentation home
 
 ### Added
 
 -   Added color setting to phpcs.xml in theme
--   Added new npm script for prettier in theme
--   Added new npm script for phpcs and phpcbf in theme
-    -   npm run phpcs
-    -   npm run phpfix
+-   Added new gulp task for prettier in theme
+-   Added new gulp task for phpcs and phpcbf in theme
+    -   gulp phpcs -f header.php
+    -   gulp phpfix -f header.php
+-   Added gulp-shell to assist in running Prettier and PHPCS through gulp
 -   Added composer packages for phpcs tooling
     -   phpcodesniffer-composer-installer
     -   squizlabs/php_codesniffer
@@ -76,7 +86,7 @@ All notable changes to this project will be documented in this file.
     -   Formatting changes for Prettier.
     -   Updated ignores list on copy task for the new Prettier config files.
 -   Ran Prettier on all JavaScript files
--   Ran Prettier on all SCSS fils
+-   Ran Prettier on all SCSS files
     -   Needed a `// prettier-ignore` line above `// sass-lint:disable-line no-ids` to prevent the ignore line from dropping to the next line.
         -   You'll have to watch out for this in the future when using Prettier and disabling a single line with sass-lint. The comment needs to remain on the same line; to do this and use Prettier we need the prettier-ignore line above the sass-lint line.
         -   This change was made to the \_generic-styles.scss file.
