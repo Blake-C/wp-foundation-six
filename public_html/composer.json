@@ -10,7 +10,7 @@
 		"composer/installers": "1.*",
 		"johnpbloch/wordpress-core-installer": "^1.0",
 		"johnpbloch/wordpress-core": "^4.8",
-		"wpackagist-plugin/wordpress-seo" : "^8.0",
+		"wpackagist-plugin/wordpress-seo" : "^8.3",
 		"wpackagist-plugin/google-analytics-for-wordpress" : "^7.1",
 		"wpackagist-plugin/redirection" : "^3.4",
 		"wpackagist-plugin/regenerate-thumbnails" : "^3.0",
