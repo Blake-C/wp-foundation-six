@@ -30,15 +30,27 @@ TODO:
 		☐	Smooth Scroll
 				https://foundation.zurb.com/sites/docs/smooth-scroll.html
 		✔	Copyright @done (Sun 09.23.2018 08:05:24 PM)
-	☐	Added documentation on new shortcode and editor formates
+	☐	Added documentation on new shortcode and editor formats
 	☐	Fix DeprecationWarning from modernizr-webpack-plugin npm module
 			https://github.com/alexpalombaro/modernizr-webpack-plugin/issues/26
 
 			We can either fix the existing plugin and make a pull request into the main project or checkout one of the other webpack modernizr plugins.
 
+			(High) This package has a Regular Expression Denial of Service (ReDoS) security vulnerability from an outdated underscores package.
+			(Low)  Also has Prototype Pollution from lodash
+
 			Alternatives
 				https://www.npmjs.com/package/webpack-modernizr-loader
 				https://www.npmjs.com/package/modernizr-loader
+	☐	Investigate having a gulp task the pulls the currently saved php file and run phpcs on it only @created(Wed 09.26.2018 09:52:02 AM)
+			This would make it quicker to run the task while gulp is also initialized.
+	☐	Investigate having the gulp-shell plugin run webpack rather than webpack-stream @created(Wed 09.26.2018 09:54:28 AM)
+			This would be a good opportunity to remove an npm package from the project.
+			Currently webpack-stream just triggers webpack as the gulp scripts tasks runs. There should be no reason why gulp-shell could not do that same thing.
+	☐	Once we are sure, hide the output from Prettier as the gulp task runs. @created(Wed 09.26.2018 09:59:00 AM)
+			Currently it pollutes the output from the other gulp tasks without any real information.
+	☐	See if we should add gulp-plumber to the Prettier and PHPCS gulp tasks. @created(Wed 09.26.2018 09:58:58 AM)
+			I don't currently thing we need plumber on these task, but we need to be sure.
 
 Ideas:
 	☐	Review foundation grid and setup XY grid as default @created(Sun 09.23.2018 07:57:16 PM)
