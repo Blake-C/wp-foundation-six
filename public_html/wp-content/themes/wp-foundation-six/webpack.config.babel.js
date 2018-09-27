@@ -28,8 +28,11 @@ const webpackConfig = {
 		/**
 		 * @link https://webpack.js.org/configuration/stats/
 		 */
-		entrypoints: false,
+		assets: true,
 		builtAt: false,
+		entrypoints: false,
+		hash: false,
+		modules: false,
 	},
 	module: {
 		rules: [

@@ -98,10 +98,13 @@ gulp.task(
 
 gulp.task('scripts', ['prettier-js'], () => {
 	return gulp
-		.src([`${dir.theme_components}/js/global-scripts.js`])
-		.pipe($.plumber())
-		.pipe($.webpackStream(webpackConfig, $.webpack))
-		.pipe(gulp.dest(`${dir.assets}/js`))
+		.src('')
+		.pipe(
+			$.shell('./node_modules/webpack-cli/bin/cli.js', {
+				verbose: true,
+				ignoreErrors: true,
+			})
+		)
 		.pipe(reload({ stream: true }))
 		.pipe(
 			$.if(
