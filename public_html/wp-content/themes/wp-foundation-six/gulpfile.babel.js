@@ -58,13 +58,15 @@ const arg = (argList => {
 
 gulp.task(
 	'prettier-js',
-	$.shell.task('./node_modules/prettier/bin-prettier.js --write "./**/*.js"')
+	$.shell.task(
+		'./node_modules/prettier/bin-prettier.js --write --loglevel warn "./**/*.js"'
+	)
 )
 
 gulp.task(
 	'prettier-scss',
 	$.shell.task(
-		'./node_modules/prettier/bin-prettier.js --write "./**/*.scss"'
+		'./node_modules/prettier/bin-prettier.js --write --loglevel warn "./**/*.scss"'
 	)
 )
 

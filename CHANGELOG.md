@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
+-   Changed gulp prettier tasks log level to warn
+
 ### Added
 
 ## [5.1.3] - 2018-09-25
