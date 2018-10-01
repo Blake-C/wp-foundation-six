@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
+### Added
+
+## [5.1.4] - 2018-10-01
+
+### Changed
+
 -   Changed gulp prettier tasks log level to warn
 -   Updated gulp scripts tasks to use gulp-shell
 -   Updated webpack config to only output assets and errors
