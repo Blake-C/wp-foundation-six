@@ -59,7 +59,7 @@ const webpackConfig = env => {
 				{
 					test: /\.(js|jsx)$/,
 					loader: 'babel-loader',
-					exclude: /node_modules(?!\/foundation-sites)/,
+					exclude: /node_modules/,
 					options: {
 						presets: [
 							[
