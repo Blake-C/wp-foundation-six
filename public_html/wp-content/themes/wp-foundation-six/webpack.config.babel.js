@@ -15,7 +15,7 @@ const webpackConfig = env => {
 		mode: 'production',
 		entry: scriptsList,
 		output: {
-			path: path.resolve(__dirname, env.output),
+			path: path.resolve(__dirname, env.output), // eslint-disable-line no-undef
 			filename: 'bundle.[name].js',
 		},
 		externals: {
