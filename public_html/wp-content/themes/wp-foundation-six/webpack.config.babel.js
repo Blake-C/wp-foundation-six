@@ -63,7 +63,7 @@ const webpackConfig = env => {
 					options: {
 						presets: [
 							[
-								'env',
+								'@babel/preset-env',
 								{
 									targets: {
 										browsers: [

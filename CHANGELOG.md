@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+## [5.1.5] - 2018-10-01
+
+### Changed
+
+-   Updated excludes in babel loader in webpack config
+    -   exclude: /node_modules(?!\/foundation-sites)/
+    -   exclude: /node_modules/
+-   Switched out all babel packages for @babel name scoped packages
+-   Switched all "env" to "@babel/preset-env"
+
 ## [5.1.4] - 2018-10-01
 
 ### Changed
