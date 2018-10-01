@@ -96,7 +96,20 @@ gulp.task(
 	)
 )
 
-gulp.task('scripts', ['prettier-js'], () => {
+gulp.task(
+	'modernizr',
+	$.shell.task(
+		`./node_modules/modernizr/bin/modernizr -c modernizr-config.json -d ${
+			dir.assets
+		}/js/vendors/modernizr.js`,
+		{
+			verbose: true,
+			ignoreErrors: true,
+		}
+	)
+)
+
+gulp.task('scripts', ['prettier-js', 'modernizr'], () => {
 	return gulp
 		.src('')
 		.pipe(
@@ -303,6 +316,7 @@ gulp.task('copy', () => {
 			'!./.eslintrc.json',
 			'!./.prettierignore',
 			'!./.prettierrc',
+			'!./modernizr-config.json',
 		])
 		.pipe($.if(argv.build, gulp.dest(dir.build_dir)))
 })

@@ -146,7 +146,7 @@ if ( ! function_exists( 'wp_foundation_six_scripts' ) ) {
 		$modern_jquery  = get_template_directory_uri() . '/assets/js/vendors/jquery.min.js';
 		$global_styles  = get_template_directory_uri() . '/assets/css/global-styles.min.css';
 		$global_scripts = get_template_directory_uri() . '/assets/js/bundle.global-scripts.js';
-		$modernizr      = get_template_directory_uri() . '/assets/js/vendors/bundle.modernizr.js';
+		$modernizr      = get_template_directory_uri() . '/assets/js/vendors/modernizr.js';
 
 		/* Import CSS (Sass files are in the theme-components folder) */
 		wp_enqueue_style( 'wp-foundation-six-style', $global_styles, array(), wpfs_cache_bust( $global_styles ) );

@@ -1,0 +1,17 @@
+{
+  "minify": true,
+  "options": [
+    "html5printshiv", 
+    "html5shiv", 
+    "prefixed", 
+    "setClasses"
+  ],
+  "feature-detects": [
+    "css/animations",
+    "css/backgroundsize",
+    "css/transforms",
+    "css/transforms3d",
+    "css/transitions",
+    "svg"
+  ]
+}

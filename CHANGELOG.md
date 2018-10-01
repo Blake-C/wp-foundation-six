@@ -7,11 +7,17 @@ All notable changes to this project will be documented in this file.
 ### Changed
 
 -   Changed gulp prettier tasks log level to warn
--   Removed webpack-stream
 -   Updated gulp scripts tasks to use gulp-shell
 -   Updated webpack config to only output assets and errors
+-   Renamed modernizr output file as modernizr.js
+-   Removed webpack-stream npm package
+-   Removed modernizr-webpack-plugin npm package
+-   Removed webpack config for modernizr
 
 ### Added
+
+-   Added modernizr-config.json files for modernizr settings
+-   Added gulp-shell task for building modernizr from npm source
 
 ## [5.1.3] - 2018-09-25
 

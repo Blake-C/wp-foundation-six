@@ -8,9 +8,7 @@
  * @link https://github.com/eslint/eslint/issues/4787
  */
 import path from 'path'
-import ModernizrWebpackPlugin from 'modernizr-webpack-plugin'
 import scriptsList from './theme_components/js/scripts-list.js'
-import modernizrFeatureDetects from './theme_components/js/modernizr-feature-detects.js'
 
 const webpackConfig = {
 	mode: 'production',
@@ -77,19 +75,6 @@ const webpackConfig = {
 			},
 		],
 	},
-	plugins: [
-		new ModernizrWebpackPlugin({
-			filename: 'vendors/bundle.modernizr.js',
-			minify: {
-				output: {
-					comments: false,
-					beautify: false,
-				},
-			},
-			options: ['html5printshiv', 'html5shiv', 'prefixed', 'setClasses'],
-			'feature-detects': modernizrFeatureDetects,
-		}),
-	],
 }
 
 export default webpackConfig

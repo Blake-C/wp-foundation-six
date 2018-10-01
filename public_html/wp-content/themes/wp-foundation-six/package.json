@@ -38,7 +38,6 @@
     "gulp-sourcemaps": "2.6.4",
     "gulp-uglify": "3.0.1",
     "imagemin-pngquant": "6.0.0",
-    "modernizr-webpack-plugin": "1.0.7",
     "prettier": "1.14.3",
     "snyk": "1.99.0",
     "webpack": "4.20.2",
