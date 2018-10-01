@@ -43,21 +43,28 @@ const scriptsList = {
 }
 ```
 
-If you or any third part scripts need [Modernizr](https://modernizr.com/) feature detects you'll want to add the feature you want to check to the modernizr-feature-detects.js file. For a list of proper feature detects you'll want to look at this list of [Modernizr config](https://github.com/Modernizr/Modernizr/blob/master/lib/config-all.json). This file is pulled into the webpack.config.babel.js as an array for a custom modernizr build.
+If you or any third part scripts need [Modernizr](https://modernizr.com/) feature detects you'll want to add the feature you want to check to the modernizr-config.json file. For a list of proper feature detects you'll want to look at this list of [Modernizr config](https://github.com/Modernizr/Modernizr/blob/master/lib/config-all.json).
 
 ```js
-// public_html/wp-content/themes/wp-foundation-six/theme_components/js/modernizr-feature-detects.js
+// public_html/wp-content/themes/wp-foundation-six/modernizr-config.json
 
-const modernizrFeatureDetects = [
-	'css/animations',
-	'css/backgroundsize',
-	'css/transforms',
-	'css/transforms3d',
-	'css/transitions',
-	'svg'
-];
-
-export default modernizrFeatureDetects;
+{
+  "minify": true,
+  "options": [
+    "html5printshiv",
+    "html5shiv",
+    "prefixed",
+    "setClasses"
+  ],
+  "feature-detects": [
+    "css/animations",
+    "css/backgroundsize",
+    "css/transforms",
+    "css/transforms3d",
+    "css/transitions",
+    "svg"
+  ]
+}
 ```
 
 ## Prettier
