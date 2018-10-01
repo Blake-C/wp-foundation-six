@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file.
 -   Removed webpack-stream npm package
 -   Removed modernizr-webpack-plugin npm package
 -   Removed webpack config for modernizr
+-   Fixed issue with webpack not writing to the build directory
 
 ### Added
 

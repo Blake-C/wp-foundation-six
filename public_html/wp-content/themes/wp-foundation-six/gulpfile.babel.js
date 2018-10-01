@@ -110,10 +110,12 @@ gulp.task(
 )
 
 gulp.task('scripts', ['prettier-js', 'modernizr'], () => {
+	const webpack_cli = './node_modules/webpack-cli/bin/cli.js'
+
 	return gulp
 		.src('')
 		.pipe(
-			$.shell('./node_modules/webpack-cli/bin/cli.js', {
+			$.shell(`${webpack_cli} --env.output ${dir.assets}/js`, {
 				verbose: true,
 				ignoreErrors: true,
 			})
