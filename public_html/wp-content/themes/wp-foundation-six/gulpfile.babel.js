@@ -1,6 +1,5 @@
 import gulp from 'gulp'
 import gulpLoadPlugins from 'gulp-load-plugins'
-import webpackConfig from './webpack.config.babel.js'
 import os from 'os'
 
 const $ = gulpLoadPlugins({ pattern: ['*'] })

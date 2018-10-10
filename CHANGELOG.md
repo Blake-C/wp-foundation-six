@@ -6,6 +6,9 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
+-   Removed webpackConfig variable from gulp file
+    -   This was left over from when webpack-stream was being used
+
 ### Added
 
 ## [5.1.5] - 2018-10-01
