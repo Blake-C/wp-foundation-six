@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file.
 -   Upgraded wp-coding-standards/wpcs to 1.1.0
 -   Fixed new phpcs issues that came from phpcs plugin upgrades
 -   Upgraded core composer packages
+-   Upgraded digitalblake/general-cli to 0.3.0
 
 ### Added
 
