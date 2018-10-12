@@ -12,6 +12,7 @@ All notable changes to this project will be documented in this file.
 -   Upgraded phpcompatibility/php-compatibility to 9.0.0
 -   Upgraded wp-coding-standards/wpcs to 1.1.0
 -   Fixed new phpcs issues that came from phpcs plugin upgrades
+-   Upgraded core composer packages
 
 ### Added
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0be6a369ed2689593bf9e2fc5a5a52ed",
+    "content-hash": "debcbda84e74fbe9781e2f9a794a174b",
     "packages": [
         {
             "name": "composer/installers",
@@ -306,7 +306,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/wordpress-seo.8.4.zip",
-                "reference": null,
+                "reference": "tags/8.4",
                 "shasum": null
             },
             "require": {
