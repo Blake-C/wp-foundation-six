@@ -11,6 +11,8 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+-   Added config for markdown at 4 spaces rather than tabs
+
 ## [5.1.5] - 2018-10-01
 
 ### Changed
