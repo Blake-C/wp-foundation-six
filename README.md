@@ -6,27 +6,22 @@ The WordPress Foundation 6 Developer Framework is meant to be a starting point f
 
 Starting up:
 
-- `git clone https://github.com/Blake-C/wp-foundation-six.git your-project-name`
-- `cd your-project-name`
-- `docker-compose up -d`
-- `docker container list -a`
-	- get the id (############) of the general-cli container
-- `docker exec -it ############ zsh`
-- `composer install`
-- `composer update`
-- `cd wp-content/themes/wp-foundation-six/`
-- `npm install`
-- `gulp`
-- site will load under http://localhost
-	- database under http://localhost:8000
-		- server: mysql
-		- user: root
-		- password: root
+-   `git clone https://github.com/Blake-C/wp-foundation-six.git your-project-name`
+-   `cd your-project-name`
+-   `docker-compose up -d`
+-   `docker container list -a` - get the id (############) of the general-cli container
+-   `docker exec -it ############ zsh`
+-   `composer install`
+-   `composer update`
+-   `cd wp-content/themes/wp-foundation-six/`
+-   `npm install`
+-   `gulp`
+-   site will load under http://localhost - database under http://localhost:8000 - server: mysql - user: root - password: root
 
 When done:
 
-- `exit`
-- `docker-compose down`
+-   `exit`
+-   `docker-compose down`
 
 ## Full instructions
 
