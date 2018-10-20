@@ -190,7 +190,7 @@ function styles_task() {
 			})
 		)
 		.pipe(gulp.dest(`${dir.assets}/css`))
-		.pipe($.if(!argv.build, $.browserSync.stream({ match: '**/*.css' })))
+		.pipe($.browserSync.stream({ match: '**/*.css' }))
 }
 
 gulp.task('styles', gulp.series('lint:sass', styles_task))
@@ -311,7 +311,11 @@ gulp.task(
 
 gulp.task('clean', $.del.bind(null, [dir.build_dir, 'assets'], { force: true }))
 
-function copy_task() {
+function copy_task(done) {
+	if (!argv.build) {
+		return done()
+	}
+
 	return gulp
 		.src([
 			'./**/*',
@@ -333,12 +337,13 @@ function copy_task() {
 			'!./.prettierrc',
 			'!./modernizr-config.json',
 		])
-		.pipe($.if(argv.build, gulp.dest(dir.build_dir)))
+		.pipe(gulp.dest(dir.build_dir))
 }
 
 gulp.task(
 	'build',
 	gulp.series(
+		'phpcs',
 		gulp.parallel(
 			'styles',
 			'scripts',
