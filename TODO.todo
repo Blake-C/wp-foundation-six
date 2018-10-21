@@ -30,7 +30,7 @@ TODO:
 		☐	Smooth Scroll
 				https://foundation.zurb.com/sites/docs/smooth-scroll.html
 		✔	Copyright @done (Sun 09.23.2018 08:05:24 PM)
-	☐	Added documentation on new shortcode and editor formats
+	☐	Added documentation on new shortcode and editor formats @created(Sun 09.23.2018 07:57:16 PM)
 	✔	Investigate security issues with modernizr @done (Sat 10.20.2018 10:47:21 PM)
 			(High) This package has a Regular Expression Denial of Service (ReDoS) security vulnerability from an outdated underscores package.
 			(Low)  Also has Prototype Pollution from lodash
