@@ -52,8 +52,8 @@
 	<meta name="theme-color" content="#1c2185">
 
 	<!-- App Title -->
-	<meta name="apple-mobile-web-app-title" content="<?php echo esc_attr( get_bloginfo( 'name' ), 'wp_foundation_six' ); ?>">
-	<meta name="application-name" content="<?php echo esc_attr( get_bloginfo( 'name' ), 'wp_foundation_six' ); ?>">
+	<meta name="apple-mobile-web-app-title" content="<?php bloginfo( 'name' ); ?>">
+	<meta name="application-name" content="<?php bloginfo( 'name' ); ?>">
 
 	<?php wp_head(); ?>
 </head>
@@ -62,12 +62,12 @@
 	<a class="skip-link show-for-sr" href="#content"><?php echo esc_html_x( 'Skip to content', 'Link to jump to div with main content', 'wp_foundation_six' ); ?></a>
 
 	<?php if ( get_bloginfo( 'name' ) ) : ?>
-		<h1 class="show-for-sr"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></h1>
+		<h1 class="show-for-sr"><?php bloginfo( 'name' ); ?></h1>
 	<?php endif; ?>
 
 	<?php if ( is_front_page() ) : ?>
 		<?php if ( get_bloginfo( 'description' ) ) : ?>
-			<p class="show-for-sr"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></p>
+			<p class="show-for-sr"><?php bloginfo( 'description' ); ?></p>
 		<?php endif; ?>
 	<?php endif; ?>
 
@@ -84,7 +84,7 @@
 	<?php if ( has_nav_menu( 'primary' ) ) : ?>
 		<div class="row columns" id="main_menu">
 			<?php
-				$wpfs_blog_name = get_bloginfo( 'name' ) ? '<li class="menu-text">' . esc_html( get_bloginfo( 'name' ) ) . '</li>' : '';
+				$wpfs_blog_name = get_bloginfo( 'name' ) ? '<li class="menu-text">' . get_bloginfo( 'name' ) . '</li>' : '';
 
 				/**
 				 * Custom menu
