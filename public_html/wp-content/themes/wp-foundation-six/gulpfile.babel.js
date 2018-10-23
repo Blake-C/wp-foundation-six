@@ -28,33 +28,6 @@ function directory_list() {
 
 const dir = directory_list()
 
-// Fetch command line arguments
-// @link https://www.sitepoint.com/pass-parameters-gulp-tasks/
-const arg = (argList => {
-	let arg = {}
-	let a
-	let opt
-	let thisOpt
-	let curOpt
-
-	for (a = 0; a < argList.length; a++) {
-		thisOpt = argList[a].trim()
-		opt = thisOpt.replace(/^-+/, '')
-
-		if (opt === thisOpt) {
-			// argument value
-			if (curOpt) arg[curOpt] = opt
-			curOpt = null
-		} else {
-			// argument name
-			curOpt = opt
-			arg[curOpt] = true
-		}
-	}
-
-	return arg
-})(process.argv) // eslint-disable-line no-undef
-
 gulp.task(
 	'prettier-js',
 	$.shell.task(
@@ -71,7 +44,7 @@ gulp.task(
 
 gulp.task(
 	'phpcs',
-	$.shell.task(`${phpcs} ${arg.f ? arg.f : ''}`, {
+	$.shell.task(`${phpcs} ${argv.file ? argv.file : ''}`, {
 		verbose: true,
 		ignoreErrors: true,
 	})
@@ -79,7 +52,7 @@ gulp.task(
 
 gulp.task(
 	'phpfix',
-	$.shell.task(`../../../vendor/bin/phpcbf ${arg.f ? arg.f : ''}`, {
+	$.shell.task(`../../../vendor/bin/phpcbf ${argv.file ? argv.file : ''}`, {
 		verbose: true,
 		ignoreErrors: true,
 	})

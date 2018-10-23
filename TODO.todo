@@ -65,6 +65,13 @@ TODO:
 			I don't currently thing we need plumber on these task, but we need to be sure.
 
 			These tasks do not use the normal gulp piping as the other tasks. They do not errors out and quit in the terminal. They output their errors and continue to operate.
+	☐	Update docs to account for 'gulp phpcs --file header.php' change @created(Tue 10.23.2018 03:44:07 PM)
+			We will not longer be using the gulp phpcs -f header.php argument. Gulp 4 is throwing errors when using -f.
+			'-f' is used as a gulp argument for specifying the gulp file to be using.
+
+			'--gulpfile', -f          Manually set path of gulpfile. Useful if you have
+			                          multiple gulpfiles. This will set the CWD to the
+			                          gulpfile directory as well.                   [string]
 
 Ideas:
 	☐	Review foundation grid and setup XY grid as default @created(Sun 09.23.2018 07:57:16 PM)
