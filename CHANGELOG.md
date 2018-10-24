@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 
 -   Removed webpackConfig variable from gulp file
     -   This was left over from when webpack-stream was being used
+-   Fixed formatting of foundation-settings scripts file
 -   Fixed new phpcs issues that came from phpcs plugin upgrades
 -   Updated squizlabs/php_codesniffer to 3.3.2
 -   Updated phpcompatibility/php-compatibility to 9.0.0
