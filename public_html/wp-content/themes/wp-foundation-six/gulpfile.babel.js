@@ -1,11 +1,14 @@
 import gulp from 'gulp'
 import gulpLoadPlugins from 'gulp-load-plugins'
-import os from 'os'
 
 const $ = gulpLoadPlugins({ pattern: ['*'] })
-const reload = $.browserSync.reload
 const argv = $.yargs.argv
-const notifyOn = os.platform() !== 'linux' ? true : false
+
+function reload(done) {
+	$.browserSync.reload()
+
+	done()
+}
 
 // Paths for source and distribution files
 function directory_list() {
@@ -24,9 +27,6 @@ function directory_list() {
 }
 
 const dir = directory_list()
-
-// BrowserSync Dev URL to reload
-const proxy_target = 'localhost'
 
 // Fetch command line arguments
 // @link https://www.sitepoint.com/pass-parameters-gulp-tasks/
@@ -108,27 +108,23 @@ gulp.task(
 	)
 )
 
-gulp.task('scripts', ['prettier-js', 'modernizr'], () => {
-	const webpack_cli = './node_modules/webpack-cli/bin/cli.js'
+gulp.task(
+	'webpack',
+	$.shell.task(
+		`'./node_modules/webpack-cli/bin/cli.js' --env.output ${dir.assets}/js`,
+		{
+			verbose: true,
+			ignoreErrors: true,
+		}
+	)
+)
 
-	return gulp
-		.src('')
-		.pipe(
-			$.shell(`${webpack_cli} --env.output ${dir.assets}/js`, {
-				verbose: true,
-				ignoreErrors: true,
-			})
-		)
-		.pipe(reload({ stream: true }))
-		.pipe(
-			$.if(
-				notifyOn,
-				$.notify({ message: 'Scripts Task Completed.', onLast: true })
-			)
-		)
-})
+gulp.task(
+	'scripts',
+	gulp.series(gulp.parallel('prettier-js', 'modernizr'), 'webpack')
+)
 
-gulp.task('scripts:jquery', () => {
+function jquery_task() {
 	// Sets up modern jQuery for WordPress to use in functions.php
 	return gulp
 		.src('./node_modules/jquery/dist/jquery.js')
@@ -138,9 +134,26 @@ gulp.task('scripts:jquery', () => {
 		.pipe($.rename({ suffix: '.min' }))
 		.pipe($.sourcemaps.write('.'))
 		.pipe(gulp.dest(`${dir.assets}/js/vendors`))
-})
+}
 
-gulp.task('styles', ['lint:sass'], () => {
+gulp.task('scripts:jquery', gulp.series(jquery_task))
+
+function style_lint() {
+	return gulp
+		.src(`${dir.theme_components}/sass/**/*.scss`)
+		.pipe($.plumber())
+		.pipe(
+			$.sassLint({
+				config: './.sass-lint.yml',
+			})
+		)
+		.pipe($.sassLint.format())
+		.pipe($.sassLint.failOnError())
+}
+
+gulp.task('lint:sass', gulp.series('prettier-scss', style_lint))
+
+function styles_task() {
 	return gulp
 		.src(`${dir.theme_components}/sass/**/*.scss`)
 		.pipe($.plumber())
@@ -178,28 +191,11 @@ gulp.task('styles', ['lint:sass'], () => {
 		)
 		.pipe(gulp.dest(`${dir.assets}/css`))
 		.pipe($.if(!argv.build, $.browserSync.stream({ match: '**/*.css' })))
-		.pipe(
-			$.if(
-				notifyOn,
-				$.notify({ message: 'Styles Task Completed.', onLast: true })
-			)
-		)
-})
+}
 
-gulp.task('lint:sass', ['prettier-scss'], () => {
-	return gulp
-		.src(`${dir.theme_components}/sass/**/*.scss`)
-		.pipe($.plumber())
-		.pipe(
-			$.sassLint({
-				config: './.sass-lint.yml',
-			})
-		)
-		.pipe($.sassLint.format())
-		.pipe($.sassLint.failOnError())
-})
+gulp.task('styles', gulp.series('lint:sass', styles_task))
 
-gulp.task('images', () => {
+function images_task() {
 	// TODO: Improve with SVG/PNG sprite generator
 	// TODO: Added Favicon/App Icon generator
 	return gulp
@@ -227,77 +223,95 @@ gulp.task('images', () => {
 			})
 		)
 		.pipe(gulp.dest(`${dir.assets}/images`))
-})
+}
 
-gulp.task('fonts', () => {
-	// Copy fonts out of theme_components into build directory
+gulp.task('images', gulp.series(images_task))
+
+function font_task() {
 	return gulp
 		.src(`${dir.theme_components}/fonts/**/*`)
 		.pipe(gulp.dest(`${dir.assets}/fonts`))
-})
+}
 
-gulp.task('icons', () => {
-	// Copy Icons out of theme_components into build directory
+gulp.task('fonts', gulp.series(font_task))
+
+function icons_task() {
 	return gulp
 		.src(`${dir.theme_components}/icons/**/*`)
 		.pipe(gulp.dest(`${dir.assets}/icons`))
-})
+}
 
-/**
- * Action Tasks
- *
- *
- */
+gulp.task('icons', gulp.series(icons_task))
+
+function serve_task() {
+	const files = ['**/*.php']
+	const location = dir.theme_components
+
+	$.browserSync(files, {
+		proxy: {
+			target: 'localhost',
+		},
+		open: false,
+		browser: 'google chrome',
+		notify: false,
+	})
+
+	gulp.watch(`${location}/sass/**/*`, gulp.series('styles'))
+	gulp.watch(`${location}/js/**/*`, gulp.series('scripts', reload))
+	gulp.watch(`${location}/fonts/**/*`, gulp.series('fonts', reload))
+	gulp.watch(`${location}/images/**/*`, gulp.series('images', reload))
+}
+
 gulp.task(
 	'serve',
-	['styles', 'scripts', 'scripts:jquery', 'images', 'fonts', 'icons'],
-	() => {
-		var files = ['**/*.php']
-
-		$.browserSync(files, {
-			proxy: {
-				target: proxy_target,
-			},
-			open: false,
-			browser: 'google chrome',
-			notify: false,
-		})
-
-		gulp.watch([`${dir.theme_components}/sass/**/*`], ['styles'])
-		gulp.watch([`${dir.theme_components}/js/**/*`], ['scripts']).on(
-			'change',
-			reload
-		)
-		gulp.watch([`${dir.theme_components}/fonts/**/*`], ['fonts']).on(
-			'change',
-			reload
-		)
-		gulp.watch([`${dir.theme_components}/images/**/*`], ['images']).on(
-			'change',
-			reload
-		)
-	}
+	gulp.series(
+		gulp.parallel(
+			'styles',
+			'scripts',
+			'scripts:jquery',
+			'images',
+			'fonts',
+			'icons'
+		),
+		serve_task
+	)
 )
+
+function watch_task() {
+	gulp.watch(`${dir.theme_components}/sass/**/*`, gulp.series('styles'))
+	gulp.watch(`${dir.theme_components}/js/**/*`, gulp.series('scripts'))
+	gulp.watch(`${dir.theme_components}/fonts/**/*`, gulp.series('fonts'))
+	gulp.watch(`${dir.theme_components}/images/**/*`, gulp.series('images'))
+}
 
 gulp.task(
 	'watch',
-	['styles', 'scripts', 'scripts:jquery', 'images', 'fonts', 'icons'],
-	() => {
-		gulp.watch([`${dir.theme_components}/sass/**/*`], ['styles'])
-		gulp.watch([`${dir.theme_components}/js/**/*`], ['scripts'])
-		gulp.watch([`${dir.theme_components}/fonts/**/*`], ['fonts'])
-		gulp.watch([`${dir.theme_components}/images/**/*`], ['images'])
-	}
+	gulp.series(
+		gulp.parallel(
+			'styles',
+			'scripts',
+			'scripts:jquery',
+			'images',
+			'fonts',
+			'icons'
+		),
+		watch_task
+	)
 )
 
-gulp.task('watch:code', ['styles', 'scripts'], () => {
-	gulp.watch([`${dir.theme_components}/sass/**/*`], ['styles'])
-	gulp.watch([`${dir.theme_components}/js/**/*`], ['scripts'])
-})
+function watch_code_task() {
+	gulp.watch(`${dir.theme_components}/sass/**/*`, gulp.series('styles'))
+	gulp.watch(`${dir.theme_components}/js/**/*`, gulp.series('scripts'))
+}
+
+gulp.task(
+	'watch:code',
+	gulp.series(gulp.parallel('styles', 'scripts'), watch_code_task)
+)
 
 gulp.task('clean', $.del.bind(null, [dir.build_dir, 'assets'], { force: true }))
 
-gulp.task('copy', () => {
+function copy_task() {
 	return gulp
 		.src([
 			'./**/*',
@@ -320,26 +334,23 @@ gulp.task('copy', () => {
 			'!./modernizr-config.json',
 		])
 		.pipe($.if(argv.build, gulp.dest(dir.build_dir)))
-})
+}
 
 gulp.task(
 	'build',
-	['styles', 'scripts', 'scripts:jquery', 'images', 'fonts', 'icons', 'copy'],
-	() => {
-		return gulp.src('./').pipe(
-			$.if(
-				notifyOn,
-				$.notify({
-					message: 'Build Task Completed.',
-					onLast: true,
-				})
-			)
+	gulp.series(
+		gulp.parallel(
+			'styles',
+			'scripts',
+			'scripts:jquery',
+			'images',
+			'fonts',
+			'icons',
+			copy_task
 		)
-	}
+	)
 )
 
-gulp.task('build:code', ['styles', 'scripts'])
+gulp.task('build:code', gulp.series(gulp.parallel('styles', 'scripts')))
 
-gulp.task('default', ['clean'], () => {
-	gulp.start('build')
-})
+gulp.task('default', gulp.series('clean', 'build'))

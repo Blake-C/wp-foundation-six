@@ -8,14 +8,16 @@ All notable changes to this project will be documented in this file.
 
 -   Removed webpackConfig variable from gulp file
     -   This was left over from when webpack-stream was being used
--   Upgraded squizlabs/php_codesniffer to 3.3.2
--   Upgraded phpcompatibility/php-compatibility to 9.0.0
--   Upgraded wp-coding-standards/wpcs to 1.1.0
+-   Updated squizlabs/php_codesniffer to 3.3.2
+-   Updated phpcompatibility/php-compatibility to 9.0.0
+-   Updated wp-coding-standards/wpcs to 1.1.0
 -   Fixed new phpcs issues that came from phpcs plugin upgrades
--   Upgraded core composer packages
--   Upgraded digitalblake/general-cli to 0.3.0
--   Upgraded digitalblake/wp-foundation-six-php to 2.1.0
--   Upgraded theme npm modules
+-   Updated core composer packages
+-   Updated digitalblake/general-cli to 0.3.0
+-   Updated digitalblake/wp-foundation-six-php to 2.1.0
+-   Updated theme npm modules
+-   Updated gulp from v3 to v4
+    -   Updated the gulpfile to support v4
 
 ### Added
 
