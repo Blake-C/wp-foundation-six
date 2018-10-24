@@ -49,7 +49,7 @@ TODO:
 			Alternatives
 				https://www.npmjs.com/package/webpack-modernizr-loader
 				https://www.npmjs.com/package/modernizr-loader
-	☐	Investigate having a gulp task that pulls the currently saved php file and run phpcs on it only @created(Wed 09.26.2018 09:52:02 AM)
+	✔	Investigate having a gulp task that pulls the currently saved php file and run phpcs on it only @created(Wed 09.26.2018 09:52:02 AM) @done (Sat 10.20.2018 08:45:22 PM)
 			This would make it quicker to run the task while gulp is also initialized.
 	✔	Investigate having the gulp-shell plugin run webpack rather than webpack-stream @created(Wed 09.26.2018 09:54:28 AM) @done (Thu 09.27.2018 12:49:21 PM)
 			This would be a good opportunity to remove an npm package from the project.

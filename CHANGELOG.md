@@ -8,10 +8,10 @@ All notable changes to this project will be documented in this file.
 
 -   Removed webpackConfig variable from gulp file
     -   This was left over from when webpack-stream was being used
+-   Fixed new phpcs issues that came from phpcs plugin upgrades
 -   Updated squizlabs/php_codesniffer to 3.3.2
 -   Updated phpcompatibility/php-compatibility to 9.0.0
 -   Updated wp-coding-standards/wpcs to 1.1.0
--   Fixed new phpcs issues that came from phpcs plugin upgrades
 -   Updated core composer packages
 -   Updated digitalblake/general-cli to 0.3.0
 -   Updated digitalblake/wp-foundation-six-php to 2.1.0
@@ -22,6 +22,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 -   Added config for markdown at 4 spaces rather than tabs
+-   Added phpcs to serve, watch, and build gulp tasks
 
 ## [5.1.5] - 2018-10-01
 

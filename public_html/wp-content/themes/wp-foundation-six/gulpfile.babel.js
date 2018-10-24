@@ -3,6 +3,7 @@ import gulpLoadPlugins from 'gulp-load-plugins'
 
 const $ = gulpLoadPlugins({ pattern: ['*'] })
 const argv = $.yargs.argv
+const phpcs = '../../../vendor/bin/phpcs'
 
 function reload(done) {
 	$.browserSync.reload()
@@ -15,12 +16,11 @@ function directory_list() {
 	const directory_list = {
 		theme_components: 'theme_components',
 		build_dir: '../wp-foundation-six-build',
+		assets: 'assets',
 	}
 
 	if (argv.build) {
 		directory_list.assets = '../wp-foundation-six-build/assets'
-	} else {
-		directory_list.assets = 'assets'
 	}
 
 	return directory_list
@@ -71,28 +71,18 @@ gulp.task(
 
 gulp.task(
 	'phpcs',
-	$.shell.task(
-		`../../../vendor/bin/phpcs --standard=phpcs.xml --colors ${
-			arg.f ? arg.f : ''
-		}`,
-		{
-			verbose: true,
-			ignoreErrors: true,
-		}
-	)
+	$.shell.task(`${phpcs} ${arg.f ? arg.f : ''}`, {
+		verbose: true,
+		ignoreErrors: true,
+	})
 )
 
 gulp.task(
 	'phpfix',
-	$.shell.task(
-		`../../../vendor/bin/phpcbf --standard=phpcs.xml --colors ${
-			arg.f ? arg.f : ''
-		}`,
-		{
-			verbose: true,
-			ignoreErrors: true,
-		}
-	)
+	$.shell.task(`../../../vendor/bin/phpcbf ${arg.f ? arg.f : ''}`, {
+		verbose: true,
+		ignoreErrors: true,
+	})
 )
 
 gulp.task(
@@ -244,10 +234,12 @@ function icons_task() {
 gulp.task('icons', gulp.series(icons_task))
 
 function serve_task() {
-	const files = ['**/*.php']
-	const location = dir.theme_components
+	/**
+	 * @link https://www.joezimjs.com/javascript/complete-guide-upgrading-gulp-4/
+	 */
+	const assets = dir.theme_components
 
-	$.browserSync(files, {
+	$.browserSync('**/*.php', {
 		proxy: {
 			target: 'localhost',
 		},
@@ -256,10 +248,17 @@ function serve_task() {
 		notify: false,
 	})
 
-	gulp.watch(`${location}/sass/**/*`, gulp.series('styles'))
-	gulp.watch(`${location}/js/**/*`, gulp.series('scripts', reload))
-	gulp.watch(`${location}/fonts/**/*`, gulp.series('fonts', reload))
-	gulp.watch(`${location}/images/**/*`, gulp.series('images', reload))
+	gulp.watch('**/*.php').on('change', function(path) {
+		return $.shell.task(`${phpcs} ${path}`, {
+			verbose: true,
+			ignoreErrors: true,
+		})()
+	})
+
+	gulp.watch(`${assets}/sass/**/*`, gulp.series('styles'))
+	gulp.watch(`${assets}/js/**/*`, gulp.series('scripts', reload))
+	gulp.watch(`${assets}/fonts/**/*`, gulp.series('fonts', reload))
+	gulp.watch(`${assets}/images/**/*`, gulp.series('images', reload))
 }
 
 gulp.task(
@@ -278,6 +277,12 @@ gulp.task(
 )
 
 function watch_task() {
+	gulp.watch('**/*.php').on('change', function(path) {
+		return $.shell.task(`${phpcs} ${path}`, {
+			verbose: true,
+			ignoreErrors: true,
+		})()
+	})
 	gulp.watch(`${dir.theme_components}/sass/**/*`, gulp.series('styles'))
 	gulp.watch(`${dir.theme_components}/js/**/*`, gulp.series('scripts'))
 	gulp.watch(`${dir.theme_components}/fonts/**/*`, gulp.series('fonts'))
@@ -300,6 +305,12 @@ gulp.task(
 )
 
 function watch_code_task() {
+	gulp.watch('**/*.php').on('change', function(path) {
+		return $.shell.task(`${phpcs} ${path}`, {
+			verbose: true,
+			ignoreErrors: true,
+		})()
+	})
 	gulp.watch(`${dir.theme_components}/sass/**/*`, gulp.series('styles'))
 	gulp.watch(`${dir.theme_components}/js/**/*`, gulp.series('scripts'))
 }
