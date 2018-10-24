@@ -36,7 +36,9 @@ if ( ! function_exists( 'wp_foundation_six_div_wrapper' ) ) {
 		$attributes = shortcode_atts(
 			array(
 				'class' => $default_class,
-			), $atts, 'div'
+			),
+			$atts,
+			'div'
 		);
 
 		return '<div class="' . $attributes['class'] . '">' . do_shortcode( $content ) . '</div>';

@@ -21,7 +21,8 @@ if ( ! function_exists( 'wp_foundation_six_posted_on' ) ) {
 
 		$posted_on = sprintf(
 			/* translators: The post publish date */
-			esc_html_x( 'Posted: %s', 'post date', 'wp_foundation_six' ), $time_string
+			esc_html_x( 'Posted: %s', 'post date', 'wp_foundation_six' ),
+			$time_string
 		);
 		$posted_on_string = '<span class="posted-on post-meta">' . $posted_on . '</span>';
 
@@ -37,7 +38,8 @@ if ( ! function_exists( 'wp_foundation_six_posted_on' ) ) {
 
 			$updated_on = sprintf(
 				/* translators: The post updated date */
-				esc_html_x( 'Updated: %s', 'updated date', 'wp_foundation_six' ), $time_string_updated
+				esc_html_x( 'Updated: %s', 'updated date', 'wp_foundation_six' ),
+				$time_string_updated
 			);
 
 			$updated_on_string = ' <span class="updated-on post-meta">' . $updated_on . '</span>';

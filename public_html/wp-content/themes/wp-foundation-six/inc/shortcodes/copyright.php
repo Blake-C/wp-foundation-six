@@ -27,7 +27,9 @@ if ( ! function_exists( 'wp_foundation_six_copyright_year' ) ) {
 		$attributes = shortcode_atts(
 			array(
 				'sitename' => get_bloginfo( 'name' ),
-			), $atts, 'copyright'
+			),
+			$atts,
+			'copyright'
 		);
 
 		return '&copy; ' . date( 'Y' ) . ' ' . $attributes['sitename'];

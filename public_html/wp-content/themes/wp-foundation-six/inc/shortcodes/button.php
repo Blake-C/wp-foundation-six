@@ -27,7 +27,9 @@ if ( ! function_exists( 'wp_foundation_six_button' ) ) {
 		$attributes = shortcode_atts(
 			array(
 				'class' => 'button',
-			), $atts, 'button'
+			),
+			$atts,
+			'button'
 		);
 
 		$content = str_replace( '<a ', '<a class="' . $attributes['class'] . '"', do_shortcode( $content ) );
