@@ -7,17 +7,18 @@ services:
     tty: true
 
   nginx:
-    image: digitalblake/wp-foundation-six-nginx:0.0.0
+    image: digitalblake/wp-foundation-six-nginx:1.0.0
     volumes:
       - ./:/var/www/
     ports:
+      - '443:443'
       - '80:80'
     depends_on:
       - mysql
       - php
 
   php:
-    image: digitalblake/wp-foundation-six-php:2.1.0
+    image: digitalblake/wp-foundation-six-php:2.1.1
     volumes:
       - ./:/var/www/
     expose:

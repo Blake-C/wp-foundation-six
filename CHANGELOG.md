@@ -15,7 +15,8 @@ All notable changes to this project will be documented in this file.
 -   Updated wp-coding-standards/wpcs to 1.1.0
 -   Updated core composer packages
 -   Updated digitalblake/general-cli to 0.3.0
--   Updated digitalblake/wp-foundation-six-php to 2.1.0
+-   Updated digitalblake/wp-foundation-six-php to 2.1.1
+-   Updated digitalblake/wp-foundation-six-nginx to 1.0.0
 -   Updated theme npm modules
 -   Updated gulp from v3 to v4
     -   Updated the gulpfile to support v4
@@ -24,6 +25,7 @@ All notable changes to this project will be documented in this file.
 
 -   Added config for markdown at 4 spaces rather than tabs
 -   Added phpcs to serve, watch, and build gulp tasks
+-   Added NGINX support for SSL and HTTP2
 
 ## [5.1.5] - 2018-10-01
 
