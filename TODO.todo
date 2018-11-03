@@ -72,6 +72,7 @@ TODO:
 			'--gulpfile', -f          Manually set path of gulpfile. Useful if you have
 			                          multiple gulpfiles. This will set the CWD to the
 			                          gulpfile directory as well.                   [string]
+	☐	Add docs notes on `gulp serve --https`
 	☐	Add numbered pagination to post archive page @created(Sat 10.27.2018 06:02:04 PM)
 	☐	Add gallery template using foundations orbit slider @created(Sat 10.27.2018 06:22:10 PM)
 

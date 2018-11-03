@@ -24,8 +24,9 @@ All notable changes to this project will be documented in this file.
 ### Added
 
 -   Added config for markdown at 4 spaces rather than tabs
--   Added phpcs to serve, watch, and build gulp tasks
+-   Added phpcs and phpcbf to serve, watch, and build gulp tasks
 -   Added NGINX support for SSL and HTTP2
+-   Added gulp serve --https argument
 
 ## [5.1.5] - 2018-10-01
 

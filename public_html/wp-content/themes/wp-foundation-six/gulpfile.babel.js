@@ -4,6 +4,7 @@ import gulpLoadPlugins from 'gulp-load-plugins'
 const $ = gulpLoadPlugins({ pattern: ['*'] })
 const argv = $.yargs.argv
 const phpcs = '../../../vendor/bin/phpcs'
+const phpfix = '../../../vendor/bin/phpcbf'
 
 function reload(done) {
 	$.browserSync.reload()
@@ -52,7 +53,7 @@ gulp.task(
 
 gulp.task(
 	'phpfix',
-	$.shell.task(`../../../vendor/bin/phpcbf ${argv.file ? argv.file : ''}`, {
+	$.shell.task(`${phpfix} ${argv.file ? argv.file : ''}`, {
 		verbose: true,
 		ignoreErrors: true,
 	})
@@ -213,17 +214,15 @@ function serve_task() {
 	 */
 	const assets = dir.theme_components
 
+	// pass '--https' as an argument into the gulp serve task
 	$.browserSync('**/*.php', {
 		proxy: {
-			target: 'localhost',
+			target: `${argv.https ? 'https' : 'http'}://localhost`,
 		},
-		open: false,
-		browser: 'google chrome',
-		notify: false,
 	})
 
 	gulp.watch('**/*.php').on('change', function(path) {
-		return $.shell.task(`${phpcs} ${path}`, {
+		$.shell.task(`${phpfix} ${path} && ${phpcs} ${path}`, {
 			verbose: true,
 			ignoreErrors: true,
 		})()
@@ -252,7 +251,7 @@ gulp.task(
 
 function watch_task() {
 	gulp.watch('**/*.php').on('change', function(path) {
-		return $.shell.task(`${phpcs} ${path}`, {
+		$.shell.task(`${phpfix} ${path} && ${phpcs} ${path}`, {
 			verbose: true,
 			ignoreErrors: true,
 		})()
@@ -280,7 +279,7 @@ gulp.task(
 
 function watch_code_task() {
 	gulp.watch('**/*.php').on('change', function(path) {
-		return $.shell.task(`${phpcs} ${path}`, {
+		$.shell.task(`${phpfix} ${path} && ${phpcs} ${path}`, {
 			verbose: true,
 			ignoreErrors: true,
 		})()
