@@ -219,6 +219,8 @@ function serve_task() {
 		proxy: {
 			target: `${argv.https ? 'https' : 'http'}://localhost`,
 		},
+		open: false,
+		notify: false,
 	})
 
 	gulp.watch('**/*.php').on('change', function(path) {
