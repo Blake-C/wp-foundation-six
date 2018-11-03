@@ -14,7 +14,7 @@
     "browser-sync": "2.26.3",
     "cssnano": "4.1.7",
     "del": "3.0.0",
-    "eslint": "5.7.0",
+    "eslint": "5.8.0",
     "eslint-config-prettier": "3.1.0",
     "eslint-loader": "2.1.1",
     "eslint-plugin-prettier": "3.0.0",
@@ -36,13 +36,13 @@
     "gulp-uglify": "3.0.1",
     "imagemin-pngquant": "6.0.0",
     "prettier": "1.14.3",
-    "snyk": "1.105.0",
-    "webpack": "4.23.0",
+    "snyk": "1.106.0",
+    "webpack": "4.24.0",
     "webpack-cli": "3.1.2",
     "yargs": "12.0.2"
   },
   "dependencies": {
-    "foundation-sites": "6.4.3",
+    "foundation-sites": "6.5.0",
     "jquery": "3.3.1",
     "jquery-migrate": "3.0.1",
     "modernizr": "3.6.0"
