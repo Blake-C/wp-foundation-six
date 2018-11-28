@@ -28,6 +28,7 @@ All notable changes to this project will be documented in this file.
 -   Added phpcs and phpcbf to serve, watch, and build gulp tasks
 -   Added NGINX support for SSL and HTTP2
 -   Added gulp serve --https argument
+-   Added ldap php module to wp-foundation-six-php docker image
 
 ## [5.1.5] - 2018-10-01
 
