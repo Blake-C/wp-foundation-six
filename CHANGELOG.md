@@ -21,6 +21,7 @@ All notable changes to this project will be documented in this file.
 -   Updated gulp from v3 to v4
     -   Updated the gulpfile to support v4
 -   Updated foundation to 6.5.0 from 6.4.3
+-   Updated project to use node 10.15.0
 
 ### Added
 
