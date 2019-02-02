@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
-## [6.0.0] - 2019-2-01
+## [6.0.0] - 2019-02-01
 
 ### Changed
 
