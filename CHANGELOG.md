@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
+### Added
+
+## [6.0.0] - 2019-2-01
+
+### Changed
+
 -   Removed webpackConfig variable from gulp file
     -   This was left over from when webpack-stream was being used
 -   Fixed formatting of foundation-settings scripts file
