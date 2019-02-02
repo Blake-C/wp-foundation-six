@@ -17,6 +17,7 @@ All notable changes to this project will be documented in this file.
 -   Updated digitalblake/general-cli to 0.3.0
 -   Updated digitalblake/wp-foundation-six-php to 2.1.1
 -   Updated digitalblake/wp-foundation-six-nginx to 1.0.0
+-   Updated digitalblake/general-cli to 1.0.0
 -   Updated theme npm modules
 -   Updated gulp from v3 to v4
     -   Updated the gulpfile to support v4
