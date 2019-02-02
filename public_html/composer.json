@@ -8,13 +8,13 @@
 	"require": {
 		"php": ">=7",
 		"composer/installers": "^1.6",
-		"johnpbloch/wordpress-core-installer": "1.0.0.2",
-		"johnpbloch/wordpress-core": "^4.9",
-		"wpackagist-plugin/wordpress-seo" : "^8.4",
-		"wpackagist-plugin/google-analytics-for-wordpress" : "^7.2",
-		"wpackagist-plugin/redirection" : "^3.5",
-		"wpackagist-plugin/regenerate-thumbnails" : "^3.0",
-		"wpackagist-plugin/akismet" : "^4.0"
+		"johnpbloch/wordpress-core-installer": "^1.0",
+		"johnpbloch/wordpress-core": "^5.0",
+		"wpackagist-plugin/wordpress-seo" : "^9.5",
+		"wpackagist-plugin/google-analytics-for-wordpress" : "^7.4",
+		"wpackagist-plugin/redirection" : "^3.7",
+		"wpackagist-plugin/regenerate-thumbnails" : "^3.1",
+		"wpackagist-plugin/akismet" : "^4.1"
 	},
 	"require-dev": {
 		"dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
