@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+## [6.0.1] - 2019-02-13
+
+### Changed
+
+-   Updated node_modules
+
 ## [6.0.0] - 2019-02-01
 
 ### Changed
