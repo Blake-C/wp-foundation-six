@@ -18,7 +18,11 @@ Starting up:
 -   `cd wp-content/themes/wp-foundation-six/`
 -   `npm install`
 -   `gulp`
--   site will load under http://localhost - database under http://localhost:8000 - server: mysql - user: root - password: root
+-   site will load under http://localhost
+    - database under http://localhost:8000
+        - server: mysql
+        - user: root
+        - password: root
 
 When done:
 
