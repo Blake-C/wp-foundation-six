@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
 -   Updated favi/app icons with only less legacy support
 -   Removed the site description and title from header.php
 -   Added rule to ESLint config to warn on console.logs in JavaScript files
+-   Exposed docker mysql services port
 
 ### Added
 
