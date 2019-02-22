@@ -6,12 +6,18 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
+### Added
+
+## [6.1.0] - 2019-02-22
+
+### Changed
+
 -   Updated favi/app icons with only less legacy support
 -   Removed the site description and title from header.php
 -   Added rule to ESLint config to warn on console.logs in JavaScript files
 -   Exposed docker mysql services port
-
-### Added
+-   Updated node modules
+-   Updated composer packages
 
 ## [6.0.1] - 2019-02-13
 
