@@ -29,27 +29,52 @@ function directory_list() {
 
 const dir = directory_list()
 
-gulp.task(
-	'prettier-js',
-	$.shell.task(
-		'./node_modules/prettier/bin-prettier.js --write --loglevel warn "./**/*.js"'
-	)
-)
+function prettier_js(done) {
+	if (argv.skip_lint) {
+		return done()
+	}
 
-gulp.task(
-	'prettier-scss',
-	$.shell.task(
-		'./node_modules/prettier/bin-prettier.js --write --loglevel warn "./**/*.scss"'
-	)
-)
+	return gulp
+		.src('package.json', { read: false })
+		.pipe(
+			$.shell(
+				'./node_modules/prettier/bin-prettier.js --write --loglevel warn "./**/*.js"'
+			)
+		)
+}
 
-gulp.task(
-	'phpcs',
-	$.shell.task(`${phpcs} ${argv.file ? argv.file : ''}`, {
-		verbose: true,
-		ignoreErrors: true,
-	})
-)
+gulp.task('prettier-js', gulp.series(prettier_js))
+
+function prettier_scss(done) {
+	if (argv.skip_lint) {
+		return done()
+	}
+
+	return gulp
+		.src('package.json', { read: false })
+		.pipe(
+			$.shell(
+				'./node_modules/prettier/bin-prettier.js --write --loglevel warn "./**/*.scss"'
+			)
+		)
+}
+
+gulp.task('prettier-scss', gulp.series(prettier_scss))
+
+function process_phpcs(done) {
+	if (argv.skip_lint) {
+		return done()
+	}
+
+	return gulp.src('package.json', { read: false }).pipe(
+		$.shell(`${phpcs} ${argv.file ? argv.file : ''}`, {
+			verbose: true,
+			ignoreErrors: true,
+		})
+	)
+}
+
+gulp.task('phpcs', gulp.series(process_phpcs))
 
 gulp.task(
 	'phpfix',
@@ -102,7 +127,11 @@ function jquery_task() {
 
 gulp.task('scripts:jquery', gulp.series(jquery_task))
 
-function style_lint() {
+function style_lint(done) {
+	if (argv.skip_lint) {
+		return done()
+	}
+
 	return gulp
 		.src(`${dir.theme_components}/sass/**/*.scss`)
 		.pipe($.plumber())

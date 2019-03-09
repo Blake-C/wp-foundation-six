@@ -7,6 +7,8 @@ All notable changes to this project will be documented in this file.
 ### Changed
 
 -   Added .todo, .log, and .logs to the --build ignore list
+-   Added --skip_lint argument to gulp lint tasks
+-   Updated docker general-cli to v1.1.0
 
 ### Added
 
