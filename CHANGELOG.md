@@ -6,6 +6,8 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
+-   Added .todo, .log, and .logs to the --build ignore list
+
 ### Added
 
 ## [6.1.0] - 2019-02-22

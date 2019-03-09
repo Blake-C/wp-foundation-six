@@ -322,6 +322,9 @@ function copy_task(done) {
 			'!./.prettierignore',
 			'!./.prettierrc',
 			'!./modernizr-config.json',
+			'!./*.todo',
+			'!./*.log',
+			'!./*.logs',
 		])
 		.pipe(gulp.dest(dir.build_dir))
 }
