@@ -18,7 +18,7 @@
 	<arg value="psv"/>
 
 	<!-- Strip the filepaths down to the relevant bit. -->
-	<arg name="basepath" value="./"/>
+	<!-- <arg name="basepath" value="./"/> -->
 
 	<!-- Turns color ouput on by default -->
 	<arg name="colors" />

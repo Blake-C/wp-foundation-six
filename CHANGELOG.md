@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file.
 -   Added --skip_lint argument to gulp lint tasks
 -   Updated docker general-cli to v1.1.0
 -   Updated composer packages
+-   Turned off `<arg name="basepath" value="./"/>` in phpcs.xml to avoid vscode issue
 
 ### Added
 
