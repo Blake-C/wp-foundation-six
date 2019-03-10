@@ -15,6 +15,9 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+-   Added imageminMozjpeg, imageminGifsicle, and imageminSvgo npm modules to images task
+-   Added plumber to gulp images task to prevent errors from stopping task
+
 ## [6.1.0] - 2019-02-22
 
 ### Changed

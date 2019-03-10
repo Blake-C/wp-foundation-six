@@ -194,26 +194,34 @@ function images_task() {
 	// TODO: Added Favicon/App Icon generator
 	return gulp
 		.src(`${dir.theme_components}/images/**/*`)
+		.pipe($.plumber())
 		.pipe($.newer(`${dir.assets}/images`))
 		.pipe(
-			$.imagemin({
-				progressive: true,
-				interlaced: true,
-				svgoPlugins: [
-					{
-						// don't remove IDs from SVGs, they are often used
-						// as hooks for embedding and styling
-						cleanupIDs: false,
-					},
-				],
-				use: [
-					$.imageminPngquant({
-						quality: '65-80',
-						speed: 4,
-					}),
-				],
-			}).on('error', () => {
-				this.end()
+			$.imagemin([
+				// https://www.npmjs.com/package/imagemin-pngquant
+				$.imageminPngquant({
+					speed: 4,
+					strip: true,
+					quality: [0.6, 0.8],
+					dithering: false,
+				}),
+				// https://www.npmjs.com/package/imagemin-mozjpeg
+				$.imageminMozjpeg({
+					quality: 60,
+					progressive: true,
+				}),
+				// https://www.npmjs.com/package/imagemin-gifsicle
+				$.imageminGifsicle({
+					interlaced: true,
+					optimizationLevel: 3,
+					colors: 50,
+				}),
+				// https://www.npmjs.com/package/imagemin-gifsicle
+				$.imageminSvgo({
+					cleanupIDs: false,
+				}),
+			]).on('error', error => {
+				console.log(error) // eslint-disable-line no-console
 			})
 		)
 		.pipe(gulp.dest(`${dir.assets}/images`))
