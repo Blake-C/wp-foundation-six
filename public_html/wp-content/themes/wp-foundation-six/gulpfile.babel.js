@@ -70,6 +70,8 @@ function phpcs_task(done) {
 	)
 }
 
+gulp.task('phpcs', gulp.series(phpcs_task))
+
 gulp.task(
 	'phpfix',
 	$.shell.task(`${phpfix} ${argv.file ? argv.file : ''}`, {
@@ -355,7 +357,7 @@ function copy_task(done) {
 gulp.task(
 	'build',
 	gulp.series(
-		phpcs_task,
+		'phpcs',
 		gulp.parallel(
 			'styles',
 			'scripts',
