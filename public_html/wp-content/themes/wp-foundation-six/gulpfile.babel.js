@@ -43,8 +43,6 @@ function prettier_js(done) {
 		)
 }
 
-gulp.task('prettier-js', gulp.series(prettier_js))
-
 function prettier_scss(done) {
 	if (argv.skip_lint) {
 		return done()
@@ -59,9 +57,7 @@ function prettier_scss(done) {
 		)
 }
 
-gulp.task('prettier-scss', gulp.series(prettier_scss))
-
-function process_phpcs(done) {
+function phpcs_task(done) {
 	if (argv.skip_lint) {
 		return done()
 	}
@@ -73,8 +69,6 @@ function process_phpcs(done) {
 		})
 	)
 }
-
-gulp.task('phpcs', gulp.series(process_phpcs))
 
 gulp.task(
 	'phpfix',
@@ -110,7 +104,7 @@ gulp.task(
 
 gulp.task(
 	'scripts',
-	gulp.series(gulp.parallel('prettier-js', 'modernizr'), 'webpack')
+	gulp.series(gulp.parallel(prettier_js, 'modernizr'), 'webpack')
 )
 
 function jquery_task() {
@@ -124,8 +118,6 @@ function jquery_task() {
 		.pipe($.sourcemaps.write('.'))
 		.pipe(gulp.dest(`${dir.assets}/js/vendors`))
 }
-
-gulp.task('scripts:jquery', gulp.series(jquery_task))
 
 function style_lint(done) {
 	if (argv.skip_lint) {
@@ -144,7 +136,7 @@ function style_lint(done) {
 		.pipe($.sassLint.failOnError())
 }
 
-gulp.task('lint:sass', gulp.series('prettier-scss', style_lint))
+gulp.task('lint:sass', gulp.series(prettier_scss, style_lint))
 
 function styles_task() {
 	return gulp
@@ -227,23 +219,17 @@ function images_task() {
 		.pipe(gulp.dest(`${dir.assets}/images`))
 }
 
-gulp.task('images', gulp.series(images_task))
-
 function font_task() {
 	return gulp
 		.src(`${dir.theme_components}/fonts/**/*`)
 		.pipe(gulp.dest(`${dir.assets}/fonts`))
 }
 
-gulp.task('fonts', gulp.series(font_task))
-
 function icons_task() {
 	return gulp
 		.src(`${dir.theme_components}/icons/**/*`)
 		.pipe(gulp.dest(`${dir.assets}/icons`))
 }
-
-gulp.task('icons', gulp.series(icons_task))
 
 function serve_task() {
 	/**
@@ -269,8 +255,8 @@ function serve_task() {
 
 	gulp.watch(`${assets}/sass/**/*`, gulp.series('styles'))
 	gulp.watch(`${assets}/js/**/*`, gulp.series('scripts', reload))
-	gulp.watch(`${assets}/fonts/**/*`, gulp.series('fonts', reload))
-	gulp.watch(`${assets}/images/**/*`, gulp.series('images', reload))
+	gulp.watch(`${assets}/fonts/**/*`, gulp.series(font_task, reload))
+	gulp.watch(`${assets}/images/**/*`, gulp.series(images_task, reload))
 }
 
 gulp.task(
@@ -279,10 +265,10 @@ gulp.task(
 		gulp.parallel(
 			'styles',
 			'scripts',
-			'scripts:jquery',
-			'images',
-			'fonts',
-			'icons'
+			jquery_task,
+			images_task,
+			font_task,
+			icons_task
 		),
 		serve_task
 	)
@@ -297,8 +283,8 @@ function watch_task() {
 	})
 	gulp.watch(`${dir.theme_components}/sass/**/*`, gulp.series('styles'))
 	gulp.watch(`${dir.theme_components}/js/**/*`, gulp.series('scripts'))
-	gulp.watch(`${dir.theme_components}/fonts/**/*`, gulp.series('fonts'))
-	gulp.watch(`${dir.theme_components}/images/**/*`, gulp.series('images'))
+	gulp.watch(`${dir.theme_components}/fonts/**/*`, gulp.series(font_task))
+	gulp.watch(`${dir.theme_components}/images/**/*`, gulp.series(images_task))
 }
 
 gulp.task(
@@ -307,10 +293,10 @@ gulp.task(
 		gulp.parallel(
 			'styles',
 			'scripts',
-			'scripts:jquery',
-			'images',
-			'fonts',
-			'icons'
+			jquery_task,
+			images_task,
+			font_task,
+			icons_task
 		),
 		watch_task
 	)
@@ -369,14 +355,14 @@ function copy_task(done) {
 gulp.task(
 	'build',
 	gulp.series(
-		'phpcs',
+		phpcs_task,
 		gulp.parallel(
 			'styles',
 			'scripts',
-			'scripts:jquery',
-			'images',
-			'fonts',
-			'icons',
+			jquery_task,
+			images_task,
+			font_task,
+			icons_task,
 			copy_task
 		)
 	)

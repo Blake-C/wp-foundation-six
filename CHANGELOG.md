@@ -12,6 +12,7 @@ All notable changes to this project will be documented in this file.
 -   Updated composer packages
 -   Updated npm modules
 -   Turned off `<arg name="basepath" value="./"/>` in phpcs.xml to avoid vscode issue
+-   Reduced the number of named tasks in gulpfile
 
 ### Added
 
