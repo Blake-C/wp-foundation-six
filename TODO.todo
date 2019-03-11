@@ -73,6 +73,7 @@ TODO:
 			                          multiple gulpfiles. This will set the CWD to the
 			                          gulpfile directory as well.                   [string]
 	☐	Add docs notes on `gulp serve --https`
+	☐   Add docs notes on `gulp phpcs --skip_lint` @created(Sun. 03/10/2019 - 10:26:12 PM)
 	☐	Add numbered pagination to post archive page @created(Sat 10.27.2018 06:02:04 PM)
 	☐	Add gallery template using foundations orbit slider @created(Sat 10.27.2018 06:22:10 PM)
 	☐	Remove the "Documentation for v6 still needs to be updated" note in the readme.md file @created(Sat 02.02.2019 12:23:14 AM)
