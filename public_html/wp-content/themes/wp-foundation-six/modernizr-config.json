@@ -1,17 +1,26 @@
 {
   "minify": true,
   "options": [
-    "html5printshiv", 
-    "html5shiv", 
-    "prefixed", 
+    "html5printshiv",
+    "html5shiv",
+    "prefixed",
     "setClasses"
   ],
   "feature-detects": [
     "css/animations",
     "css/backgroundsize",
+    "css/columns",
+    "css/cssgrid",
+    "css/flexbox",
+    "css/flexboxlegacy",
+    "css/flexboxtweener",
+    "css/flexwrap",
+    "css/gradients",
+    "css/supports",
     "css/transforms",
     "css/transforms3d",
     "css/transitions",
-    "svg"
+    "svg",
+    "touchevents"
   ]
 }

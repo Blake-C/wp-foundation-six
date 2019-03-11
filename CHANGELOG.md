@@ -6,19 +6,20 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
--   Added .todo, .log, and .logs to the --build ignore list
--   Added --skip_lint argument to gulp lint tasks
 -   Updated docker general-cli to v1.1.0
 -   Updated composer packages
 -   Updated npm modules
 -   Turned off `<arg name="basepath" value="./"/>` in phpcs.xml to avoid vscode issue
--   Reduced the number of named tasks in gulpfile
 -   Turned off sass-lint indentation rule, it's being handled by Prettier
+-   Reduced the number of named tasks in gulpfile
 
 ### Added
 
+-   Added .todo, .log, and .logs to the --build ignore list
+-   Added --skip_lint argument to gulp lint tasks
 -   Added imageminMozjpeg, imageminGifsicle, and imageminSvgo npm modules to images task
 -   Added plumber to gulp images task to prevent errors from stopping task
+-   Added feature checks in modernizr config
 
 ## [6.1.0] - 2019-02-22
 
