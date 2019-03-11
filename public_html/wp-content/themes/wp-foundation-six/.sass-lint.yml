@@ -69,9 +69,9 @@ rules:
   id-name-format:
     - 1
     - convention: '([a-z0-9]+-?)+'
-
+  # Turning off indentation rule as it conflicts with Prettier
   indentation:
-    - 1
+    - 0
     - size: tab
 
   leading-zero:

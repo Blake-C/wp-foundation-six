@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file.
 -   Updated npm modules
 -   Turned off `<arg name="basepath" value="./"/>` in phpcs.xml to avoid vscode issue
 -   Reduced the number of named tasks in gulpfile
+-   Turned off sass-lint indentation rule, it's being handled by Prettier
 
 ### Added
 
