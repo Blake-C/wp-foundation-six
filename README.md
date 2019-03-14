@@ -6,23 +6,38 @@ The WordPress Foundation 6 Developer Framework is meant to be a starting point f
 
 ## TL;DR
 
-Starting up:
+Setup:
 
 -   `git clone https://github.com/Blake-C/wp-foundation-six.git your-project-name`
 -   `cd your-project-name`
+-   `rm -rf .git`
+-   `git init && git add -A`
+-   `git commit -m "Initial Commit"`
 -   `docker-compose up -d`
 -   `docker container list -a` - get the id (############) of the general-cli container
 -   `docker exec -it ############ zsh`
+
+From here you have two options auto or manual.
+
+Auto:
+
+-   `wp-init`
+
+Manual Steps:
+
 -   `composer install`
 -   `composer update`
 -   `cd wp-content/themes/wp-foundation-six/`
 -   `npm install`
 -   `gulp`
+
+Access the database:
+
 -   site will load under http://localhost
-    - database under http://localhost:8000
-        - server: mysql
-        - user: root
-        - password: root
+    -   database under http://localhost:8000
+        -   server: mysql
+        -   user: root
+        -   password: root
 
 When done:
 
@@ -34,7 +49,3 @@ When done:
 I have moved the project documentation for the last time. I feel this will be it's permanent home.
 
 [https://blake-c.github.io/wp-foundation-six/](https://blake-c.github.io/wp-foundation-six/)
-
-## Known Issues
-
-The item that used to be in this list have been moved to the issues section of the repo.
