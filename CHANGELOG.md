@@ -7,7 +7,9 @@ All notable changes to this project will be documented in this file.
 ### Changed
 
 -   Updated project to php v7.3
--   Updated docker general-cli to v1.1.0
+-   Updated general-cli from v1.1.0 to
+-   Updated digitalblake/general-cli to v2.0.0
+    -   with php v7.3
 -   Updated composer packages
 -   Updated npm modules
 -   Turned off `<arg name="basepath" value="./"/>` in phpcs.xml to avoid vscode issue
