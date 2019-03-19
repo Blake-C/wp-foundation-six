@@ -6,6 +6,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
+-   Updated project to php v7.3
 -   Updated docker general-cli to v1.1.0
 -   Updated composer packages
 -   Updated npm modules
