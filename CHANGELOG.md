@@ -12,6 +12,7 @@ All notable changes to this project will be documented in this file.
 -   Turned off `<arg name="basepath" value="./"/>` in phpcs.xml to avoid vscode issue
 -   Turned off sass-lint indentation rule, it's being handled by Prettier
 -   Reduced the number of named tasks in gulpfile
+-   Used short jquery-migrate import
 
 ### Added
 

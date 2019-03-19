@@ -1,5 +1,5 @@
 import $ from 'jquery'
-import 'jquery-migrate/dist/jquery-migrate'
+import 'jquery-migrate'
 import './modules/_skip-link-focus-fix'
 import './modules/_foundation-scripts'
 
