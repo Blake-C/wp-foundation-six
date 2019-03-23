@@ -6,26 +6,34 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
--   Updated project to php v7.3
--   Updated general-cli from v1.1.0 to
--   Updated digitalblake/general-cli to v2.0.0
-    -   with php v7.3
+-   Updated wp-foundation-six-php to v3.0.0
+    -   Updated PHP from v7.2 to v7.3 [release notes](http://php.net/releases/7_3_0.php)
+    -   Updated xDebug to v2.7.0 [release notes](https://xdebug.org/updates.php)
+    -   Reference the [PHP end of life chart](http://php.net/supported-versions.php)
+-   Updated general-cli to v2.0.0
+    -   Updated PHP from v7.2 to v7.3 [release notes](http://php.net/releases/7_3_0.php)
 -   Updated composer packages
 -   Updated npm modules
--   Turned off `<arg name="basepath" value="./"/>` in phpcs.xml to avoid vscode issue
+-   Turned off `<arg name="basepath" value="./"/>` in phpcs.xml to avoid the VSCode PHPCS plugin from missing code smells. The plugin is expecting the full path to the file being sniffed and having `basepath` in phpcs.xml breaks the file lookup.
+    -   Until the plugin is fixed we have to remove `basepath`.
 -   Turned off sass-lint indentation rule, it's being handled by Prettier
 -   Reduced the number of named tasks in gulpfile
--   Used short jquery-migrate import
--   Removed the content-formatting function
-    -   This function turned off the autop and test formatting that WordPress would do by default. This was to allow us to nest shortcodes with spaces and returns without having paragraph tags being created. This broke recently and has been causing trouble. I’ve decided to remove this to avoid future issues. You will have to place your shortcodes directly next to each other.
+-   Used short jquery-migrate import in the `global-scripts.js` file
+-   Removed the `content-formatting.php` function that was removing the auto paragraph functionality in core WordPress.
+    -   This function turned off the `autop` and text formatting that WordPress would do by default. This was to allow us to nest short-codes with spaces and returns without having paragraph tags being created. This broke recently and has been causing trouble. I’ve decided to remove this to avoid future issues. You will have to place your short-codes directly next to each other.
 
 ### Added
 
--   Added .todo, .log, and .logs to the --build ignore list
+-   Added .todo, .log, and .logs to the --build ignore list in `gulpfile.babel.js`
 -   Added --skip_lint argument to gulp lint tasks
+    -   This was added to speed up the ejection and build tasks. When working on the theme you are still expected to run the linting tasks, however, when building and ejecting this is not required.
+    -   More specifically the phpcs and prettier tasks will be skipped. The eslint process is being handled by webpack and will not be skipped.
 -   Added imageminMozjpeg, imageminGifsicle, and imageminSvgo npm modules to images task
--   Added plumber to gulp images task to prevent errors from stopping task
+    -   The images will be further optimized. If the current setting over optimize please look in the `gulpfile.babel.js` file at the theme level and adjust the image tasks setting to whichever best fits your needs
+-   Added plumber to gulp images task to prevent errors from stopping task.
+    -   In previous versions of the image task if an image caused this task to error out the watch and serve tasks would stop. This should not longer be the case.
 -   Added feature checks in modernizr config
+    -   See the `modernizr-config.json` file in the theme to see the additions
 
 ## [6.1.0] - 2019-02-22
 
