@@ -16,6 +16,8 @@ All notable changes to this project will be documented in this file.
 -   Turned off sass-lint indentation rule, it's being handled by Prettier
 -   Reduced the number of named tasks in gulpfile
 -   Used short jquery-migrate import
+-   Removed the content-formatting function
+    -   This function turned off the autop and test formatting that WordPress would do by default. This was to allow us to nest shortcodes with spaces and returns without having paragraph tags being created. This broke recently and has been causing trouble. I’ve decided to remove this to avoid future issues. You will have to place your shortcodes directly next to each other.
 
 ### Added
 
