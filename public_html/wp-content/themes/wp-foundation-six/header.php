@@ -43,6 +43,8 @@
 	<meta name="apple-mobile-web-app-title" content="<?php bloginfo( 'name' ); ?>">
 	<meta name="application-name" content="<?php bloginfo( 'name' ); ?>">
 
+	<?php wpfs_search_results_meta_description(); ?>
+
 	<?php wp_head(); ?>
 </head>
 

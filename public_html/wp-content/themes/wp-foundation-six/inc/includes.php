@@ -37,6 +37,7 @@ require get_template_directory() . '/inc/template-tags/categorized-blog.php';
 require get_template_directory() . '/inc/template-tags/category-transient-flusher.php';
 require get_template_directory() . '/inc/template-tags/entry-footer.php';
 require get_template_directory() . '/inc/template-tags/posted-on.php';
+require get_template_directory() . '/inc/template-tags/search-results-meta-description.php';
 
 
 /**
