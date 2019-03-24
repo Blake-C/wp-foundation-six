@@ -21,6 +21,10 @@ All notable changes to this project will be documented in this file.
 -   Used short jquery-migrate import in the `global-scripts.js` file
 -   Removed the `content-formatting.php` function that was removing the auto paragraph functionality in core WordPress.
     -   This function turned off the `autop` and text formatting that WordPress would do by default. This was to allow us to nest short-codes with spaces and returns without having paragraph tags being created. This broke recently and has been causing trouble. I’ve decided to remove this to avoid future issues. You will have to place your short-codes directly next to each other.
+-   Adjusted search form template to better associate search label and inputs
+-   Adjusted default colors to pass accessibility contrast test
+-   Adjusted template headings to have the correct HTML headers
+-   Added missing search results meta description
 
 ### Added
 
