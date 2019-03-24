@@ -12,7 +12,7 @@
 		"johnpbloch/wordpress-core": "^5.1",
 		"wpackagist-plugin/wordpress-seo" : "^10.0",
 		"wpackagist-plugin/google-analytics-for-wordpress" : "^7.4",
-		"wpackagist-plugin/redirection" : "^4.0",
+		"wpackagist-plugin/redirection" : "^4.1",
 		"wpackagist-plugin/regenerate-thumbnails" : "^3.1",
 		"wpackagist-plugin/akismet" : "^4.1"
 	},

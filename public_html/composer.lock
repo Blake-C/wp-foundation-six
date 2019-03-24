@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8d77b328faf3c847df084ca5e1a727d2",
+    "content-hash": "06a607c2da6117865ddc4e8e8785ac11",
     "packages": [
         {
             "name": "composer/installers",
@@ -257,16 +257,16 @@
         },
         {
             "name": "wpackagist-plugin/redirection",
-            "version": "4.1",
+            "version": "4.1.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/redirection/",
-                "reference": "tags/4.1"
+                "reference": "tags/4.1.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/redirection.4.1.zip",
-                "reference": "tags/4.1",
+                "url": "https://downloads.wordpress.org/plugin/redirection.4.1.1.zip",
+                "reference": "tags/4.1.1",
                 "shasum": null
             },
             "require": {
@@ -297,15 +297,15 @@
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "10.0",
+            "version": "10.0.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/10.0"
+                "reference": "tags/10.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.10.0.zip",
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.10.0.1.zip",
                 "reference": null,
                 "shasum": null
             },
