@@ -42,7 +42,22 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<?php the_posts_navigation(); ?>
+				<?php
+					/**
+					 * The posts pagination function outputs a set of page
+					 * numbers with links to the previous and next pages of posts.
+					 *
+					 * @link https://codex.wordpress.org/Function_Reference/the_posts_pagination
+					 */
+					the_posts_pagination(
+						array(
+							'mid_size'  => 2,
+							'prev_text' => __( 'Back', 'wp_foundation_six' ),
+							'next_text' => __( 'Next', 'wp_foundation_six' ),
+							'type'      => 'list',
+						)
+					);
+				?>
 
 			<?php else : ?>
 

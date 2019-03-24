@@ -34,6 +34,7 @@ All notable changes to this project will be documented in this file.
     -   In previous versions of the image task if an image caused this task to error out the watch and serve tasks would stop. This should not longer be the case.
 -   Added feature checks in modernizr config
     -   See the `modernizr-config.json` file in the theme to see the additions
+-   Added archive, index, and search post pagination.
 
 ## [6.1.0] - 2019-02-22
 

@@ -1,0 +1,47 @@
+.pagination {
+	ul {
+		background-color: $gray244;
+		border-radius: 3px;
+		font-size: 0;
+		margin: 10px 0;
+		padding: 4px;
+		text-align: center;
+	}
+
+	li {
+		display: inline-block;
+		list-style-type: none;
+
+		&:first-child {
+			> * {
+				margin-left: 0;
+			}
+		}
+	}
+
+	a,
+	.current {
+		background-color: $accent-blue;
+		border-radius: 3px;
+		color: $white;
+		display: block;
+		font-size: rem-calc(16);
+		margin: 0 4px;
+		padding: 5px 10px;
+	}
+
+	a {
+		transition: background-color 0.3s;
+
+		&:hover,
+		&:focus {
+			background-color: darken($accent-blue, 10%);
+			color: $white;
+		}
+	}
+
+	.current {
+		background-color: darken($gray244, 10%);
+		color: $black;
+	}
+}
