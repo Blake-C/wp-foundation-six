@@ -13,7 +13,7 @@
 
 <section class="no-results not-found">
 	<header class="page-header">
-		<h2 class="page-title"><?php esc_html_e( 'Nothing Found', 'wp_foundation_six' ); ?></h2>
+		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'wp_foundation_six' ); ?></h1>
 	</header>
 
 	<div class="page-content">

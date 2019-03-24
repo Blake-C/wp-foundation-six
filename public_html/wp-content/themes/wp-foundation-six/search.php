@@ -17,7 +17,7 @@ get_header(); ?>
 			<?php if ( have_posts() ) : ?>
 
 				<header class="page-header">
-					<h2 class="page-title">
+					<h1 class="page-title">
 						<?php
 							printf(
 								// translators: Title for search results page.
@@ -29,7 +29,7 @@ get_header(); ?>
 								'<span>' . get_search_query() . '</span>'
 							);
 						?>
-					</h2>
+					</h1>
 				</header><!-- .page-header -->
 
 				<?php while ( have_posts() ) : ?>

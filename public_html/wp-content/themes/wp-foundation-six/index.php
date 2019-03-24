@@ -23,7 +23,7 @@ get_header(); ?>
 
 				<?php if ( is_home() && ! is_front_page() ) : ?>
 					<header>
-						<h2 class="page-title show-for-sr"><?php single_post_title(); ?></h2>
+						<h1 class="page-title show-for-sr"><?php single_post_title(); ?></h1>
 					</header>
 				<?php endif; ?>
 
