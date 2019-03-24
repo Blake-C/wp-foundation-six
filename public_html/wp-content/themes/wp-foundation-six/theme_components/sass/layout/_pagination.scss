@@ -1,6 +1,6 @@
 .pagination {
 	ul {
-		background-color: $gray244;
+		background-color: $accent-1;
 		border-radius: 3px;
 		font-size: 0;
 		margin: 10px 0;
@@ -41,7 +41,7 @@
 	}
 
 	.current {
-		background-color: darken($gray244, 10%);
+		background-color: darken($accent-1, 10%);
 		color: $black;
 	}
 }

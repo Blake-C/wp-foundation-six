@@ -1,5 +1,5 @@
 .main-menu {
-	background-color: $light-gray;
+	background-color: $accent-1;
 	margin: 0;
 
 	li {
@@ -8,6 +8,7 @@
 	}
 
 	a {
+		color: $black;
 		display: block;
 		padding: 10px 20px;
 
