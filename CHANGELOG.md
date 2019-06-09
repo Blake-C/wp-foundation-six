@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
 -   Removed root level phpcs.xml files.
 -   Changed login_headertitle to login_headertext, login_headertitle has been deprecated.
     -   [https://developer.wordpress.org/reference/hooks/login_headertitle/](https://developer.wordpress.org/reference/hooks/login_headertitle/)
+-   Updated composer modules
 
 ### Added
 
