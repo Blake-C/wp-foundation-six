@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
+### Added
+
+## [7.1.0] - 2019-06-08
+
+### Changed
+
 -   Turned off `<arg name="basepath" value="./"/>` in phpcs.xml to avoid the VSCode PHPCS plugin from missing code smells. Missed the root level and plugin phpcs.xml files.
     -   Until the plugin is fixed we have to remove `basepath`.
 -   Removed root level phpcs.xml files.
