@@ -8,6 +8,14 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+## [7.1.1] - 2019-06-09
+
+### Changed
+
+-   Updated node modules
+-   Moved browser targets to package.json in the browserslist key
+    -   This was done for both autoprefixer and @babel/preset-env
+
 ## [7.1.0] - 2019-06-08
 
 ### Changed

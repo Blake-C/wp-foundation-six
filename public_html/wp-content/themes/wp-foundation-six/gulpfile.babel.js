@@ -83,9 +83,7 @@ gulp.task(
 gulp.task(
 	'modernizr',
 	$.shell.task(
-		`./node_modules/modernizr/bin/modernizr -c modernizr-config.json -d ${
-			dir.assets
-		}/js/vendors/modernizr.js`,
+		`./node_modules/modernizr/bin/modernizr -c modernizr-config.json -d ${dir.assets}/js/vendors/modernizr.js`,
 		{
 			verbose: true,
 			ignoreErrors: true,
@@ -158,12 +156,6 @@ function styles_task() {
 			$.postcss([
 				$.autoprefixer({
 					grid: true,
-					browsers: [
-						'last 3 versions',
-						'ie >= 8',
-						'Android >= 2.3',
-						'ios >= 7',
-					],
 				}),
 				$.cssnano(),
 			])

@@ -65,12 +65,6 @@ const webpackConfig = env => {
 							[
 								'@babel/preset-env',
 								{
-									targets: {
-										browsers: [
-											'last 3 versions',
-											'ie >= 11',
-										],
-									},
 									modules: false,
 								},
 							],
