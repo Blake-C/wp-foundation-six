@@ -18,4 +18,4 @@ if ( ! function_exists( 'wp_foundation_six_change_title_on_logo' ) ) {
 		return get_bloginfo( 'name' );
 	}
 }
-add_filter( 'login_headertitle', 'wp_foundation_six_change_title_on_logo' );
+add_filter( 'login_headertext', 'wp_foundation_six_change_title_on_logo' );

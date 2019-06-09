@@ -8,7 +8,9 @@ All notable changes to this project will be documented in this file.
 
 -   Turned off `<arg name="basepath" value="./"/>` in phpcs.xml to avoid the VSCode PHPCS plugin from missing code smells. Missed the root level and plugin phpcs.xml files.
     -   Until the plugin is fixed we have to remove `basepath`.
--   Removed root level phpcs.xml files
+-   Removed root level phpcs.xml files.
+-   Changed login_headertitle to login_headertext, login_headertitle has been deprecated.
+    -   [https://developer.wordpress.org/reference/hooks/login_headertitle/](https://developer.wordpress.org/reference/hooks/login_headertitle/)
 
 ### Added
 
