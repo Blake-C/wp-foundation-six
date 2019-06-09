@@ -12,6 +12,8 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+-   Added display block to main element to fix positioning issue in Internet Explorer 11
+
 ## [7.0.0] - 2019-03-24
 
 ### Changed
