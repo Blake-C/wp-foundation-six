@@ -23,6 +23,7 @@ if ( ! defined( 'WP_CLI' ) ) {
 	define( 'WP_DEBUG_DISPLAY', true );
 	define( 'WP_DEBUG', true );
 	define( 'WP_DEBUG_LOG', true );
+	define( 'QM_ENABLE_CAPS_PANEL', true );
 }
 
 // ========================
