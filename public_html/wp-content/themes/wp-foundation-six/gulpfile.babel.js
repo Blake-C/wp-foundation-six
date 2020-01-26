@@ -124,16 +124,17 @@ function style_lint(done) {
 		return done()
 	}
 
-	return gulp
-		.src(`${dir.theme_components}/sass/**/*.scss`)
-		.pipe($.plumber())
-		.pipe(
-			$.sassLint({
-				config: './.sass-lint.yml',
-			})
+	const stylelint_src = './node_modules/stylelint/bin/stylelint.js'
+
+	return gulp.src('package.json', { read: false }).pipe(
+		$.shell(
+			`${stylelint_src} '${dir.theme_components}/sass/**/*.scss' --fix`,
+			{
+				verbose: true,
+				ignoreErrors: true,
+			}
 		)
-		.pipe($.sassLint.format())
-		.pipe($.sassLint.failOnError())
+	)
 }
 
 gulp.task('lint:sass', gulp.series(prettier_scss, style_lint))

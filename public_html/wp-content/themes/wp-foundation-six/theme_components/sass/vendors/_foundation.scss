@@ -1,11 +1,11 @@
 /**
  * Foundation for Sites by ZURB
- * Version 6.5.0
+ * Version 6.6.1
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
 
-// Dependencies
+// --- Dependencies ---
 @import 'foundation-sites/scss/vendor/normalize';
 @import 'foundation-sites/_vendor/sassy-lists/stylesheets/helpers/missing-dependencies';
 @import 'foundation-sites/_vendor/sassy-lists/stylesheets/helpers/true';
@@ -21,10 +21,8 @@
 @import 'foundation-settings';
 
 // --- Components ---
-
 // Utilities
 @import 'foundation-sites/scss/util/util';
-
 // Global styles
 @import 'foundation-sites/scss/global';
 @import 'foundation-sites/scss/forms/forms';
@@ -33,7 +31,6 @@
 // Grids
 @import 'foundation-sites/scss/grid/grid';
 @import 'foundation-sites/scss/xy-grid/xy-grid';
-
 // Generic components
 @import 'foundation-sites/scss/components/button';
 @import 'foundation-sites/scss/components/button-group';
@@ -43,7 +40,6 @@
 @import 'foundation-sites/scss/components/slider';
 @import 'foundation-sites/scss/components/switch';
 @import 'foundation-sites/scss/components/table';
-
 // Basic components
 @import 'foundation-sites/scss/components/badge';
 @import 'foundation-sites/scss/components/breadcrumbs';
@@ -60,7 +56,6 @@
 @import 'foundation-sites/scss/components/responsive-embed';
 @import 'foundation-sites/scss/components/tabs';
 @import 'foundation-sites/scss/components/thumbnail';
-
 // Menu-based containers
 @import 'foundation-sites/scss/components/menu';
 @import 'foundation-sites/scss/components/menu-icon';

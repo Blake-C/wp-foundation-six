@@ -34,7 +34,6 @@
     "gulp-rename": "2.0.0",
     "gulp-rsync": "0.0.8",
     "gulp-sass": "^4.0.1",
-    "gulp-sass-lint": "1.4.0",
     "gulp-shell": "0.7.1",
     "gulp-size": "3.0.0",
     "gulp-sourcemaps": "^2.6.5",
@@ -44,7 +43,10 @@
     "imagemin-pngquant": "8.0.0",
     "imagemin-svgo": "7.0.0",
     "prettier": "1.19.1",
-    "snyk": "1.280.0",
+    "snyk": "1.280.1",
+    "stylelint": "13.0.0",
+    "stylelint-config-wordpress": "16.0.0",
+    "stylelint-order": "4.0.0",
     "webpack": "4.41.5",
     "webpack-cli": "3.3.10",
     "what-input": "5.2.6",
@@ -55,5 +57,48 @@
     "jquery": "3.4.1",
     "jquery-migrate": "3.1.0",
     "modernizr": "3.8.0"
+  },
+  "stylelint": {
+    "plugins": [
+      "stylelint-order"
+    ],
+    "extends": [
+      "stylelint-config-wordpress/scss"
+    ],
+    "rules": {
+      "order/properties-alphabetical-order": true,
+      "string-quotes": "single",
+      "color-no-invalid-hex": true,
+      "declaration-no-important": true,
+      "selector-no-vendor-prefix": true,
+      "selector-max-id": 0,
+      "at-rule-empty-line-before": [
+        "always",
+        {
+          "except": [
+            "blockless-after-blockless"
+          ],
+          "ignore": [
+            "after-comment"
+          ],
+          "ignoreAtRules": [
+            "include",
+            "extend",
+            "import",
+            "if",
+            "else"
+          ]
+        }
+      ],
+      "rule-empty-line-before": [
+        "always",
+        {
+          "ignore": [
+            "after-comment",
+            "first-nested"
+          ]
+        }
+      ]
+    }
   }
 }

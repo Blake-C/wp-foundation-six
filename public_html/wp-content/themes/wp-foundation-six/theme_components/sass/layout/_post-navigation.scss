@@ -8,7 +8,7 @@
 	.nav-previous {
 		float: left;
 
-		&:before {
+		&::before {
 			content: '\2190';
 			margin-right: 5px;
 		}
@@ -17,7 +17,7 @@
 	.nav-next {
 		float: right;
 
-		&:after {
+		&::after {
 			content: '\2192';
 			margin-left: 5px;
 		}
