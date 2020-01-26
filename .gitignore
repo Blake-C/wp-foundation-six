@@ -82,11 +82,13 @@ Temporary Items
 *.log
 *.sql
 *.zip
+*.code-workspace
 .phpintel
 .sass-cache
 .tmp
 advanced-cache.php
 cache
+.cache
 db.php
 dist
 node_modules
