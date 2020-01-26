@@ -6,7 +6,35 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
+-   Updated wp-foundation-six-php from v3.0.0 to v4.0.0
+    -   Updated php from v7.3 to v7.4.2
+    -   Updated xdebug from v2.7.0 to v2.9.1
+-   Updated mariadb from v10.3.9 to v10.4.11
+-   Updated wp-foundation-six-nginx from v1.0.0 to v2.0.0
+    -   Updated nginx from 1.14.0-alpine to 1.17.8-alpine
+-   Updated general-cli from v2.0.0 to v3.0.0
+-   Updated composer packages
+-   Updated node modules
+-   Formatting changes occurred on docker-compose file from VSCode
+-   Fixed a number of phpcs issues brought about because of phpcs/wpcs updates
+-   Updated sass lint node module
+    -   Removed sass-lint
+    -   Removed .sass-lint.yml file
+    -   Removed gulp-sass-lint node module
+    -   Added stylelint
+    -   Added configurations for stylelint in package.json
+    -   Added stylelintignore file
+    -   Updated snyk node module
+    -   Updated lint:sass task in gulpfile
+    -   Updated foundation styles from 6.5.0 to 6.6.1
+    -   Updated styles for stylelint node module
+
 ### Added
+
+-   Added Query Monitor WordPress Plugin
+    -   Added QM_ENABLE_CAPS_PANEL constant to wp-config.php
+-   Added ignore for .cache & .code-workspace directories
+-   Added local php.ini
 
 ## [7.1.1] - 2019-06-09
 
