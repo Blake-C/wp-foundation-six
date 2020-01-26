@@ -15,13 +15,13 @@ if ( ! function_exists( 'wp_foundation_six_entry_footer' ) ) {
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( ', ' );
 			if ( $categories_list && wp_foundation_six_categorized_blog() ) {
-				printf( '<p class="cat-links">Posted in %1$s</p>', $categories_list ); // WPCS: XSS OK.
+				printf( '<p class="cat-links">Posted in %1$s</p>', $categories_list ); // phpcs:ignore
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', ', ' );
 			if ( $tags_list ) {
-				printf( '<p class="tags-links">Tagged %1$s</p>', $tags_list ); // WPCS: XSS OK.
+				printf( '<p class="tags-links">Tagged %1$s</p>', $tags_list ); // phpcs:ignore
 			}
 		}
 

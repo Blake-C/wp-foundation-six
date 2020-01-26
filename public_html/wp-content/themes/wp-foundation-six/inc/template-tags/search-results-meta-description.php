@@ -23,7 +23,7 @@ if ( ! function_exists( 'wpfs_search_results_meta_description' ) ) {
 				get_search_query()
 			);
 
-			echo '<meta name="description" content="' . $wpfs_search_page_meta_description . '" />'; // WPCS: XSS OK.
+			echo '<meta name="description" content="' . $wpfs_search_page_meta_description . '" />'; // phpcs:ignore
 		}
 	}
 }

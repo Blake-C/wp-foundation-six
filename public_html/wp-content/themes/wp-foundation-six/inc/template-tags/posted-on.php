@@ -52,6 +52,6 @@ if ( ! function_exists( 'wp_foundation_six_posted_on' ) ) {
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		echo '<p>' . $posted_on_string . $updated_on_string . '<span class="byline post-meta"> ' . $byline . '</span></p>'; // WPCS: XSS OK.
+		echo '<p>' . $posted_on_string . $updated_on_string . '<span class="byline post-meta"> ' . $byline . '</span></p>'; // phpcs:ignore
 	}
 }

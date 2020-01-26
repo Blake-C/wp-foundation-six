@@ -32,7 +32,7 @@ if ( ! function_exists( 'wp_foundation_six_copyright_year' ) ) {
 			'copyright'
 		);
 
-		return '&copy; ' . date( 'Y' ) . ' ' . $attributes['sitename'];
+		return '&copy; ' . gmdate( 'Y' ) . ' ' . $attributes['sitename'];
 	}
 }
 add_shortcode( 'copyright', 'wp_foundation_six_copyright_year' );

@@ -33,10 +33,10 @@ if ( post_password_required() ) {
 				printf(
 					/* translators: %s: post title */
 					esc_html_x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'wp_foundation_six' ),
-					'<span>' . get_the_title() . '</span>'
+					'<span>' . esc_html( get_the_title() ) . '</span>'
 				);
 			} else {
-				printf( // WPCS: XSS OK.
+				printf( // phpcs:ignore
 					esc_html(
 						/* translators: 1: number of comments, 2: post title */
 						_nx(
@@ -47,8 +47,8 @@ if ( post_password_required() ) {
 							'wp_foundation_six'
 						)
 					),
-					number_format_i18n( $wpfs_comments_number ),
-					'<span>' . get_the_title() . '</span>'
+					esc_html( number_format_i18n( $wpfs_comments_number ) ),
+					'<span>' . esc_html( get_the_title() ) . '</span>'
 				);
 			}
 			?>

@@ -64,33 +64,33 @@
 	<?php if ( has_nav_menu( 'primary' ) ) : ?>
 		<div class="row columns" id="main_menu">
 			<?php
-				$wpfs_blog_name = get_bloginfo( 'name' ) ? '<li class="menu-text">' . get_bloginfo( 'name' ) . '</li>' : '';
+			$wpfs_blog_name = get_bloginfo( 'name' ) ? '<li class="menu-text">' . get_bloginfo( 'name' ) . '</li>' : '';
 
-				/**
-				 * Custom menu
-				 *
-				 * @link https://codex.wordpress.org/Function_Reference/wp_nav_menu
-				*/
-				$wpfs_menu_args = array(
-					'theme_location'  => 'primary',
-					'menu'            => '',
-					'container'       => 'false',
-					'container_class' => '',
-					'container_id'    => '',
-					'menu_class'      => 'main-menu',
-					'menu_id'         => '',
-					'echo'            => true,
-					'fallback_cb'     => 'wp_page_menu',
-					'before'          => '',
-					'after'           => '',
-					'link_before'     => '',
-					'link_after'      => '',
-					'items_wrap'      => '<ul id="%1$s" class="%2$s">' . $wpfs_blog_name . '%3$s</ul>',
-					'depth'           => 0,
-					'walker'          => '',
-				);
+			/**
+			 * Custom menu
+			 *
+			 * @link https://codex.wordpress.org/Function_Reference/wp_nav_menu
+			*/
+			$wpfs_menu_args = array(
+				'theme_location'  => 'primary',
+				'menu'            => '',
+				'container'       => 'false',
+				'container_class' => '',
+				'container_id'    => '',
+				'menu_class'      => 'main-menu',
+				'menu_id'         => '',
+				'echo'            => true,
+				'fallback_cb'     => 'wp_page_menu',
+				'before'          => '',
+				'after'           => '',
+				'link_before'     => '',
+				'link_after'      => '',
+				'items_wrap'      => '<ul id="%1$s" class="%2$s">' . $wpfs_blog_name . '%3$s</ul>',
+				'depth'           => 0,
+				'walker'          => '',
+			);
 
-				wp_nav_menu( $wpfs_menu_args );
+			wp_nav_menu( $wpfs_menu_args );
 			?>
 		</div>
 	<?php endif; ?>
