@@ -214,6 +214,8 @@ function images_task() {
 		.pipe(gulp.dest(`${dir.assets}/images`))
 }
 
+gulp.task('images', gulp.series(images_task))
+
 function font_task() {
 	return gulp
 		.src(`${dir.theme_components}/fonts/**/*`)

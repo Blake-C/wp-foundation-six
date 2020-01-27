@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file.
 -   Updated wp-foundation-six-nginx from v1.0.0 to v2.0.0
     -   Updated nginx from 1.14.0-alpine to 1.17.8-alpine
 -   Updated general-cli from v2.0.0 to v3.0.0
+    -   Added automake to general-cli container so that gifsicle could build from source and run gulp images task
 -   Updated composer packages
 -   Updated node modules
 -   Formatting changes occurred on docker-compose file from VSCode
