@@ -222,11 +222,15 @@ function font_task() {
 		.pipe(gulp.dest(`${dir.assets}/fonts`))
 }
 
+gulp.task('fonts', gulp.series(font_task))
+
 function icons_task() {
 	return gulp
 		.src(`${dir.theme_components}/icons/**/*`)
 		.pipe(gulp.dest(`${dir.assets}/icons`))
 }
+
+gulp.task('icons', gulp.series(icons_task))
 
 function serve_task() {
 	/**

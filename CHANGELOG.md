@@ -36,6 +36,7 @@ All notable changes to this project will be documented in this file.
     -   Added QM_ENABLE_CAPS_PANEL constant to wp-config.php
 -   Added ignore for .cache & .code-workspace directories
 -   Added local php.ini
+-   Added independent images, fonts, and icons task to gulp
 
 ## [7.1.1] - 2019-06-09
 
