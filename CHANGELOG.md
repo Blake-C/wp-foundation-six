@@ -6,14 +6,16 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
--   Updated wp-foundation-six-php from v3.0.0 to v4.0.0
-    -   Updated php from v7.3 to v7.4.2
-    -   Updated xdebug from v2.7.0 to v2.9.1
+-   Updated wp-foundation-six-php from v3.0.0 to v4.1.0
+    -   Updated php from v7.3 to v7.4.6
+    -   Updated xdebug from v2.7.0 to v2.9.6
 -   Updated mariadb from v10.3.9 to v10.4.11
 -   Updated wp-foundation-six-nginx from v1.0.0 to v2.0.0
     -   Updated nginx from 1.14.0-alpine to 1.17.8-alpine
--   Updated general-cli from v2.0.0 to v3.0.0
+-   Updated general-cli from v2.0.0 to v3.1.0
     -   Added automake to general-cli container so that gifsicle could build from source and run gulp images task
+    - Updated node from v12.14.1 to v12.18.0
+    - Updated WordPress-Coding-Standards from v2.2.0 to v2.3.0
 -   Updated composer packages
 -   Updated node modules
 -   Formatting changes occurred on docker-compose file from VSCode

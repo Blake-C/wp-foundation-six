@@ -1,7 +1,7 @@
 version: "3"
 services:
   cli_tools:
-    image: digitalblake/general-cli:3.0.1
+    image: digitalblake/general-cli:3.1.0
     volumes:
       - ./:/var/www/
     tty: true
@@ -18,7 +18,7 @@ services:
       - php
 
   php:
-    image: digitalblake/wp-foundation-six-php:4.0.0
+    image: digitalblake/wp-foundation-six-php:4.1.0
     volumes:
       - ./:/var/www/
       - ./php/php.ini:/usr/local/etc/php/php.ini
