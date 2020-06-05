@@ -247,7 +247,7 @@ function serve_task() {
 		notify: false,
 	})
 
-	gulp.watch('**/*.php').on('change', function(path) {
+	gulp.watch('**/*.php').on('change', function (path) {
 		$.shell.task(`${phpfix} ${path} && ${phpcs} ${path}`, {
 			verbose: true,
 			ignoreErrors: true,
@@ -276,7 +276,7 @@ gulp.task(
 )
 
 function watch_task() {
-	gulp.watch('**/*.php').on('change', function(path) {
+	gulp.watch('**/*.php').on('change', function (path) {
 		$.shell.task(`${phpfix} ${path} && ${phpcs} ${path}`, {
 			verbose: true,
 			ignoreErrors: true,
@@ -304,7 +304,7 @@ gulp.task(
 )
 
 function watch_code_task() {
-	gulp.watch('**/*.php').on('change', function(path) {
+	gulp.watch('**/*.php').on('change', function (path) {
 		$.shell.task(`${phpfix} ${path} && ${phpcs} ${path}`, {
 			verbose: true,
 			ignoreErrors: true,

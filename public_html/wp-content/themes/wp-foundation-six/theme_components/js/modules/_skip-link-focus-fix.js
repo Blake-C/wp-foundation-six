@@ -5,7 +5,7 @@
  *
  * Learn more: https://git.io/vWdr2
  */
-;(function() {
+;(function () {
 	let is_webkit = navigator.userAgent.toLowerCase().indexOf('webkit') > -1
 	let is_opera = navigator.userAgent.toLowerCase().indexOf('opera') > -1
 	let is_ie = navigator.userAgent.toLowerCase().indexOf('msie') > -1
@@ -17,7 +17,7 @@
 	) {
 		window.addEventListener(
 			'hashchange',
-			function() {
+			function () {
 				var id = location.hash.substring(1),
 					element
 

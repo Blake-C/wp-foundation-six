@@ -36,7 +36,7 @@ import './modules/_foundation-scripts'
  */
 
 /*************** Template part region toggle button ***************/
-$('#theme_debug_regions').on('click', function(event) {
+$('#theme_debug_regions').on('click', function (event) {
 	event.preventDefault()
 
 	$('.placeHolderPosition').slideToggle()
