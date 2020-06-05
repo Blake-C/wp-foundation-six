@@ -70,7 +70,7 @@
 	</rule>
 
 	<!-- Include sniffs for PHP cross-version compatibility. -->
-	<config name="testVersion" value="7.2-99.0"/>
+	<config name="testVersion" value="7.4-99.0"/>
 
 	<!-- Verify that everything in the global namespace is prefixed with a theme specific prefix.
 		 Multiple valid prefixes can be provided as a comma-delimited list. -->

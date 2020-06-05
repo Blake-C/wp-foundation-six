@@ -20,6 +20,7 @@ All notable changes to this project will be documented in this file.
 -   Updated node modules
 -   Formatting changes occurred on docker-compose file from VSCode
 -   Fixed a number of phpcs issues brought about because of phpcs/wpcs updates
+-   Updated PHP cross-version compatibility php phpcs.xml to 7.4
 -   Updated sass lint node module
     -   Removed sass-lint
     -   Removed .sass-lint.yml file
