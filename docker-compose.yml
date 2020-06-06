@@ -26,7 +26,7 @@ services:
       - "9000"
 
   mysql:
-    image: mariadb:10.4.11
+    image: mariadb:10.4.13
     volumes:
       - ./data/mysql:/var/lib/mysql
     ports:
