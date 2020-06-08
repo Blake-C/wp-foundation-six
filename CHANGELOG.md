@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
+### Added
+
+## [8.0.0] - Next
+
+### Changed
+
 -   Updated wp-foundation-six-php from v3.0.0 to v4.1.0
     -   Updated php from v7.3 to v7.4.6
     -   Updated xdebug from v2.7.0 to v2.9.6
