@@ -29,9 +29,7 @@ body {
 figure {
 	background: $accent-1;
 	margin: 0;
-	max-width: 100% !important; /* stylelint-disable-line declaration-no-important */
 	padding: 1em 20px;
-	width: auto !important; /* stylelint-disable-line declaration-no-important */
 
 	img {
 		display: block;
@@ -46,20 +44,28 @@ figure {
 }
 
 /* Wordpress styles */
-.alignright {
-	float: right;
-	margin: 0 0 0 25px;
+@include breakpoint(medium) {
+	.alignright {
+		float: right;
+		margin: 0 0 0 16px;
+	}
+
+	.alignleft {
+		float: left;
+		margin: 0 16px 0 0;
+	}
+
+	.aligncenter {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
-.alignleft {
-	float: left;
-	margin: 0 25px 0 0;
-}
-
-.aligncenter {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+.alignfull {
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	width: auto;
 }
 
 pre {
@@ -68,6 +74,7 @@ pre {
 	color: $code-color;
 	font-family: $code-font-family;
 	font-weight: $code-font-weight;
+	margin-bottom: 16px;
 	padding: $code-padding;
 	white-space: pre-wrap;
 }
@@ -77,13 +84,19 @@ pre {
 	height: 2.48rem;
 }
 
+/* Buttons */
+
 .edit-link {
 	margin-bottom: 0;
 
 	.button {
 		margin-bottom: 0;
-		margin-top: 25px;
+		margin-top: 16px;
 	}
+}
+
+.wp-block-button {
+	margin-bottom: 16px;
 }
 
 .screen-reader-text {
@@ -95,4 +108,13 @@ pre {
 	*:last-child {
 		margin-bottom: 0;
 	}
+}
+
+.wp-block-media-text,
+.wp-block-cover {
+	margin-bottom: 16px;
+}
+
+.has-background-dim {
+	color: $white;
 }

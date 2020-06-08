@@ -1,0 +1,43 @@
+.wp-block-gallery {
+	margin-bottom: 16px;
+	padding: 16px 16px 0;
+
+	&.alignleft {
+		margin: 0 16px 16px 0;
+
+		@include breakpoint(small only) {
+			margin: 0 0 16px 0;
+			max-width: 100%;
+		}
+	}
+
+	&.alignright {
+		margin: 0 0 16px 16px;
+
+		@include breakpoint(small only) {
+			margin: 0 0 16px 0;
+			max-width: 100%;
+		}
+	}
+
+	.blocks-gallery-item {
+		a + {
+			figcaption {
+				margin-top: 0;
+				padding: 10px;
+				pointer-events: none;
+			}
+		}
+
+		figure {
+			background-color: transparent;
+			padding: 0;
+		}
+	}
+
+	.blocks-gallery-caption {
+		margin-bottom: 16px;
+		margin-top: 0;
+		width: 100%;
+	}
+}
