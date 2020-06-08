@@ -8,6 +8,8 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+-   Added new stylelint rules
+
 ## [8.0.0] - Next
 
 ### Changed

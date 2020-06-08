@@ -66,6 +66,8 @@
       "stylelint-config-wordpress/scss"
     ],
     "rules": {
+      "font-weight-notation": "named-where-possible",
+      "function-url-quotes": "always",
       "order/properties-alphabetical-order": true,
       "string-quotes": "single",
       "color-no-invalid-hex": true,
