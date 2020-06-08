@@ -12,10 +12,11 @@ All notable changes to this project will be documented in this file.
 -   Updated mariadb from v10.3.9 to v10.4.13
 -   Updated wp-foundation-six-nginx from v1.0.0 to v2.0.0
     -   Updated nginx from 1.14.0-alpine to 1.17.8-alpine
--   Updated general-cli from v2.0.0 to v3.1.0
+-   Updated general-cli from v2.0.0 to v3.1.1
     -   Added automake to general-cli container so that gifsicle could build from source and run gulp images task
     - Updated node from v12.14.1 to v12.18.0
     - Updated WordPress-Coding-Standards from v2.2.0 to v2.3.0
+    - Updated the theme unit test data to pull in Gutenberg blocks
 -   Updated composer packages
 -   Updated node modules
 -   Formatting changes occurred on docker-compose file from VSCode
