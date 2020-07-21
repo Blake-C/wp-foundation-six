@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file.
 -   Added stylelint-config-prettier npm package
 -   Added detect browser npm package to add html class based on browser usage
 -   Added editor class wrapper around editor styles to limit admin impact
+-   Added es6 to .eslintrc.json env
 
 ## [8.0.0] - Next
 
