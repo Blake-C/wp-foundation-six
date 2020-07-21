@@ -6,9 +6,12 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
+-   Moved stylelint config out of package.json and into .stylelintrc
+
 ### Added
 
 -   Added new stylelint rules
+-   Added stylelint-config-prettier npm package
 -   Added detect browser npm package to add html class based on browser usage
 -   Added editor class wrapper around editor styles to limit admin impact
 

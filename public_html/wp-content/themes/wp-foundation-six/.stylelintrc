@@ -1,0 +1,48 @@
+{
+	"plugins": [
+		"stylelint-order"
+	],
+	"extends": [
+		"stylelint-config-wordpress/scss",
+		"stylelint-config-prettier"
+	],
+	"rules": {
+		"order/properties-alphabetical-order": true,
+		"string-quotes": "single",
+		"color-no-invalid-hex": true,
+		"declaration-no-important": true,
+		"selector-no-vendor-prefix": true,
+		"no-descending-specificity": null,
+		"selector-max-id": 0,
+		"function-url-quotes": "always",
+		"at-rule-empty-line-before": [
+			"always",
+			{
+				"except": [
+					"blockless-after-blockless"
+				],
+				"ignore": [
+					"after-comment"
+				],
+				"ignoreAtRules": [
+					"include",
+					"extend",
+					"import",
+					"if",
+					"else",
+					"mixin",
+					"at-root"
+				]
+			}
+		],
+		"rule-empty-line-before": [
+			"always",
+			{
+				"ignore": [
+					"after-comment",
+					"first-nested"
+				]
+			}
+		]
+	}
+}

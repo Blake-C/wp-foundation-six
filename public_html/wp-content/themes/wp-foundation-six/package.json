@@ -8,6 +8,9 @@
   "browserslist": [
     "> 1% or last 3 versions"
   ],
+  "scripts": {
+    "stylelint-check": "stylelint-config-prettier-check"
+  },
   "devDependencies": {
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
@@ -45,6 +48,7 @@
     "prettier": "^2.0.5",
     "snyk": "^1.336.0",
     "stylelint": "^13.6.0",
+    "stylelint-config-prettier": "8.0.2",
     "stylelint-config-wordpress": "^17.0.0",
     "stylelint-order": "^4.1.0",
     "webpack": "^4.43.0",
@@ -58,52 +62,5 @@
     "jquery": "^3.5.1",
     "jquery-migrate": "^3.3.0",
     "modernizr": "^3.11.2"
-  },
-  "stylelint": {
-    "plugins": [
-      "stylelint-order"
-    ],
-    "extends": [
-      "stylelint-config-wordpress/scss"
-    ],
-    "rules": {
-      "order/properties-alphabetical-order": true,
-      "string-quotes": "single",
-      "color-no-invalid-hex": true,
-      "declaration-no-important": true,
-      "selector-no-vendor-prefix": true,
-      "no-descending-specificity": null,
-      "selector-max-id": 0,
-      "function-url-quotes": "always",
-      "at-rule-empty-line-before": [
-        "always",
-        {
-          "except": [
-            "blockless-after-blockless"
-          ],
-          "ignore": [
-            "after-comment"
-          ],
-          "ignoreAtRules": [
-            "include",
-            "extend",
-            "import",
-            "if",
-            "else",
-            "mixin",
-            "at-root"
-          ]
-        }
-      ],
-      "rule-empty-line-before": [
-        "always",
-        {
-          "ignore": [
-            "after-comment",
-            "first-nested"
-          ]
-        }
-      ]
-    }
   }
 }
