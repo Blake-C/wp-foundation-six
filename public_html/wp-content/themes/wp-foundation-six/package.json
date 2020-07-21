@@ -53,6 +53,7 @@
     "yargs": "^15.3.1"
   },
   "dependencies": {
+    "detect-browser": "5.1.1",
     "foundation-sites": "^6.6.3",
     "jquery": "^3.5.1",
     "jquery-migrate": "^3.3.0",
@@ -66,14 +67,14 @@
       "stylelint-config-wordpress/scss"
     ],
     "rules": {
-      "font-weight-notation": "named-where-possible",
-      "function-url-quotes": "always",
       "order/properties-alphabetical-order": true,
       "string-quotes": "single",
       "color-no-invalid-hex": true,
       "declaration-no-important": true,
       "selector-no-vendor-prefix": true,
+      "no-descending-specificity": null,
       "selector-max-id": 0,
+      "function-url-quotes": "always",
       "at-rule-empty-line-before": [
         "always",
         {
@@ -88,7 +89,9 @@
             "extend",
             "import",
             "if",
-            "else"
+            "else",
+            "mixin",
+            "at-root"
           ]
         }
       ],

@@ -3,6 +3,8 @@ import 'jquery-migrate'
 import './modules/_skip-link-focus-fix'
 import './modules/_foundation-scripts'
 
+import { detect } from 'detect-browser'
+
 /**
  * Notes:
  *
@@ -41,3 +43,10 @@ $('#theme_debug_regions').on('click', function (event) {
 
 	$('.placeHolderPosition').slideToggle()
 })
+
+/*************** Browser Version ***************/
+const browser = detect()
+const browser_version = browser.version.split('.')
+const browser_html_class = browser.name + '-' + browser_version[0]
+
+$('html').addClass(browser_html_class)
