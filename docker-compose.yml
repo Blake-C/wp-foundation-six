@@ -1,47 +1,47 @@
-version: "3"
+version: '3'
 services:
-  cli_tools:
-    image: digitalblake/general-cli:3.1.1
-    volumes:
-      - ./:/var/www/
-    tty: true
+    cli_tools:
+        image: digitalblake/general-cli:3.1.1
+        volumes:
+            - ./:/var/www/
+        tty: true
 
-  nginx:
-    image: digitalblake/wp-foundation-six-nginx:2.0.0
-    volumes:
-      - ./:/var/www/
-    ports:
-      - "443:443"
-      - "80:80"
-    depends_on:
-      - mysql
-      - php
+    nginx:
+        image: digitalblake/wp-foundation-six-nginx:2.0.0
+        volumes:
+            - ./:/var/www/
+        ports:
+            - '443:443'
+            - '80:80'
+        depends_on:
+            - mysql
+            - php
 
-  php:
-    image: digitalblake/wp-foundation-six-php:4.1.0
-    volumes:
-      - ./:/var/www/
-      - ./php/php.ini:/usr/local/etc/php/php.ini
-    expose:
-      - "9000"
+    php:
+        image: digitalblake/wp-foundation-six-php:4.1.0
+        volumes:
+            - ./:/var/www/
+            - ./php/php.ini:/usr/local/etc/php/php.ini
+        expose:
+            - '9000'
 
-  mysql:
-    image: mariadb:10.4.13
-    volumes:
-      - ./data/mysql:/var/lib/mysql
-    ports:
-      - "3306:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: wp_foundation_six
-      MYSQL_PASSWORD: root
+    mysql:
+        image: mariadb:10.4.13
+        volumes:
+            - ./data/mysql:/var/lib/mysql
+        ports:
+            - '3306:3306'
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: wp_foundation_six
+            MYSQL_PASSWORD: root
 
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    restart: always
-    depends_on:
-      - mysql
-    ports:
-      - "8000:80"
-    environment:
-      PMA_ARBITRARY: 1
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        restart: always
+        depends_on:
+            - mysql
+        ports:
+            - '8000:80'
+        environment:
+            PMA_ARBITRARY: 1

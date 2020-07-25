@@ -6,11 +6,7 @@
 /* Import Foundation Assets, does not output actual styles */
 @import 'vendors/foundation';
 
-@mixin foundation-everything(
-	$flex: true,
-	$prototype: false,
-	$xy-grid: $xy-grid
-) {
+@mixin foundation-everything($flex: true, $prototype: false, $xy-grid: $xy-grid) {
 	@if $flex {
 		$global-flexbox: true !global;
 	}

@@ -10,11 +10,7 @@
 	let is_opera = navigator.userAgent.toLowerCase().indexOf('opera') > -1
 	let is_ie = navigator.userAgent.toLowerCase().indexOf('msie') > -1
 
-	if (
-		(is_webkit || is_opera || is_ie) &&
-		document.getElementById &&
-		window.addEventListener
-	) {
+	if ((is_webkit || is_opera || is_ie) && document.getElementById && window.addEventListener) {
 		window.addEventListener(
 			'hashchange',
 			function () {
@@ -28,11 +24,7 @@
 				element = document.getElementById(id)
 
 				if (element) {
-					if (
-						!/^(?:a|select|input|button|textarea)$/i.test(
-							element.tagName
-						)
-					) {
+					if (!/^(?:a|select|input|button|textarea)$/i.test(element.tagName)) {
 						element.tabIndex = -1
 					}
 
