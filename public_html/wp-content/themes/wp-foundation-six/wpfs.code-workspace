@@ -1,13 +1,12 @@
 {
 	"folders": [
 		{
-			"path": "."
+			"path": ".",
+			"name": "WPFS Theme"
 		},
 		{
-			"path": "../../.."
+			"path": "../../../..",
+			"name": "Root"
 		}
-	],
-	"settings": {
-		"phpcs.executablePath": "../../../vendor/bin/phpcs"
-	}
+	]
 }

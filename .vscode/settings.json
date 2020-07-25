@@ -1,0 +1,3 @@
+{
+    "phpcs.executablePath": "./public_html/vendor/bin/phpcs"
+}
