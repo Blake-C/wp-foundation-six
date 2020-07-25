@@ -7,6 +7,8 @@ All notable changes to this project will be documented in this file.
 ### Changed
 
 -   Moved stylelint config out of package.json and into .stylelintrc
+-   Removed all third party plugins for WordPress from composer.json
+-   Fixed wp-foundation-six plugin documentation notes
 
 ### Added
 
@@ -15,6 +17,7 @@ All notable changes to this project will be documented in this file.
 -   Added detect browser npm package to add html class based on browser usage
 -   Added editor class wrapper around editor styles to limit admin impact
 -   Added es6 to .eslintrc.json env
+-   Added Visual Studio Code Workspace config into theme
 
 ## [8.0.0] - Next
 
