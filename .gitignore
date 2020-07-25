@@ -82,7 +82,6 @@ Temporary Items
 *.log
 *.sql
 *.zip
-*.code-workspace
 .phpintel
 .sass-cache
 .tmp
