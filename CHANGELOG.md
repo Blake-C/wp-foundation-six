@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
 -   Moved stylelint config out of package.json and into .stylelintrc
 -   Removed all third party plugins for WordPress from composer.json
 -   Fixed wp-foundation-six plugin documentation notes
+-   Changed prettier width to 120 and added prettierrc to root directory
 
 ### Added
 
@@ -17,7 +18,8 @@ All notable changes to this project will be documented in this file.
 -   Added detect browser npm package to add html class based on browser usage
 -   Added editor class wrapper around editor styles to limit admin impact
 -   Added es6 to .eslintrc.json env
--   Added Visual Studio Code Workspace config into theme
+-   Added Visual Studio Code Workspace config into theme and root of project
+-   Added phpcs pathing for directories in VSCode
 
 ## [8.0.0] - Next
 
@@ -31,9 +33,9 @@ All notable changes to this project will be documented in this file.
     -   Updated nginx from 1.14.0-alpine to 1.17.8-alpine
 -   Updated general-cli from v2.0.0 to v3.1.1
     -   Added automake to general-cli container so that gifsicle could build from source and run gulp images task
-    - Updated node from v12.14.1 to v12.18.0
-    - Updated WordPress-Coding-Standards from v2.2.0 to v2.3.0
-    - Updated the theme unit test data to pull in Gutenberg blocks
+    -   Updated node from v12.14.1 to v12.18.0
+    -   Updated WordPress-Coding-Standards from v2.2.0 to v2.3.0
+    -   Updated the theme unit test data to pull in Gutenberg blocks
 -   Updated composer packages
 -   Updated node modules
 -   Formatting changes occurred on docker-compose file from VSCode
