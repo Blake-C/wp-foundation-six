@@ -8,5 +8,21 @@
 			"path": "../../../..",
 			"name": "Root"
 		}
-	]
+	],
+	"extensions": {
+		"recommendations": [
+			"bmewburn.vscode-intelephense-client",
+			"dbaeumer.vscode-eslint",
+			"editorconfig.editorconfig",
+			"esbenp.prettier-vscode",
+			"felixfbecker.php-debug",
+			"ikappas.phpcs",
+			"neilbrayfield.php-docblocker",
+			"stylelint.vscode-stylelint"
+		]
+	},
+	"settings": {
+		"phpcs.standard": "WordPress",
+		"editor.rulers": [80, 120]
+	}
 }
