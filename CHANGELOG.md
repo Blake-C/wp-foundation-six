@@ -19,7 +19,9 @@ All notable changes to this project will be documented in this file.
 -   Added editor class wrapper around editor styles to limit admin impact
 -   Added es6 to .eslintrc.json env
 -   Added Visual Studio Code Workspace config into theme and root of project
--   Added phpcs pathing for directories in VSCode
+    -   Added workspace recommend extensions and settings
+    -   Added VSCode PHP Debugging
+    -   Added phpcs pathing for directories in VSCode
 
 ## [8.0.0] - Next
 
