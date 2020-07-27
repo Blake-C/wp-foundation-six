@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file.
 -   Removed all third party plugins for WordPress from composer.json
 -   Fixed wp-foundation-six plugin documentation notes
 -   Changed prettier width to 120 and added prettierrc to root directory
+-   Updated node modules
 
 ### Added
 
