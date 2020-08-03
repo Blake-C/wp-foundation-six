@@ -305,6 +305,7 @@ function copy_task(done) {
 			'!./*.todo',
 			'!./*.log',
 			'!./*.logs',
+			'!./*.code-workspace',
 		])
 		.pipe(gulp.dest(dir.build_dir))
 }
