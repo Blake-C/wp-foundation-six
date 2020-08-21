@@ -6,11 +6,20 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
+### Added
+
+## [8.1.0] - 2020-08-21
+
+### Changed
+
 -   Moved stylelint config out of package.json and into .stylelintrc
 -   Removed all third party plugins for WordPress from composer.json
 -   Fixed wp-foundation-six plugin documentation notes
 -   Changed prettier width to 120 and added prettierrc to root directory
 -   Updated node modules
+-   Updated composer packages
+-   Updated wp-foundation-six-nginx from v2.0.0 to v2.0.1
+    -   Added timeouts
 
 ### Added
 
@@ -24,7 +33,7 @@ All notable changes to this project will be documented in this file.
     -   Added VSCode PHP Debugging
     -   Added phpcs pathing for directories in VSCode
 
-## [8.0.0] - Next
+## [8.0.0] - 2020-06-07
 
 ### Changed
 
