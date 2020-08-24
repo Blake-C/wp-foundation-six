@@ -8,6 +8,12 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+## [8.2.0] - 2020-08-24
+
+### Changed
+
+-   Updated nginx from v1.17.8-alpine to v1.18.0-alpine
+
 ## [8.1.0] - 2020-08-21
 
 ### Changed

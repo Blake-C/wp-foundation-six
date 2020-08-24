@@ -7,7 +7,7 @@ services:
         tty: true
 
     nginx:
-        image: digitalblake/wp-foundation-six-nginx:2.0.1
+        image: digitalblake/wp-foundation-six-nginx:2.1.0
         volumes:
             - ./:/var/www/
         ports:
