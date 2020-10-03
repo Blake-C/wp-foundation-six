@@ -66,6 +66,9 @@ const webpackConfig = env => {
 								'@babel/preset-env',
 								{
 									modules: false,
+									// debug: true,
+									useBuiltIns: 'usage',
+									corejs: 3,
 								},
 							],
 						],
