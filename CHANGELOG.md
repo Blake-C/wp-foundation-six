@@ -6,11 +6,14 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 
--   Added useBuiltIns: 'usage', and corejs: 3 to webpack config to fix auto polyfill setup
+-   Updated npm modules
+    -   Added postcss as peer dependency
+    -   Changed gulp-postcss to gpostcss in gulpfile.babel.js to prevent conflict with postcss
 
 ### Added
 
 -   Added core-js to fix auto polyfill setup
+-   Added useBuiltIns: 'usage', and corejs: 3 to webpack config to fix auto polyfill setup
 
 ## [8.2.0] - 2020-08-24
 

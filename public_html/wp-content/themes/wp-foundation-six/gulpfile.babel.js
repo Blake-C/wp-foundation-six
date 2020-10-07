@@ -1,7 +1,12 @@
 import gulp from 'gulp'
 import gulpLoadPlugins from 'gulp-load-plugins'
 
-const $ = gulpLoadPlugins({ pattern: ['*'] })
+const $ = gulpLoadPlugins({
+	pattern: ['*'],
+	rename: {
+		'gulp-postcss': 'gpostcss',
+	},
+})
 const argv = $.yargs.argv
 const phpcs = '../../../vendor/bin/phpcs'
 const phpfix = '../../../vendor/bin/phpcbf'
@@ -137,7 +142,7 @@ function styles_task() {
 				.on('error', $.sass.logError)
 		)
 		.pipe(
-			$.postcss([
+			$.gpostcss([
 				$.autoprefixer({
 					grid: true,
 				}),
