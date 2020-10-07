@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
 -   Updated npm modules
     -   Added postcss as peer dependency
     -   Changed gulp-postcss to gpostcss in gulpfile.babel.js to prevent conflict with postcss
+-   Updated composer modules
 
 ### Added
 
