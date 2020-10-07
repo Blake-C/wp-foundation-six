@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file.
 
 -   Added core-js to fix auto polyfill setup
 -   Added useBuiltIns: 'usage', and corejs: 3 to webpack config to fix auto polyfill setup
+-   Added new editor settings for project
 
 ## [8.2.0] - 2020-08-24
 

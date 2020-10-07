@@ -22,7 +22,19 @@
 		]
 	},
 	"settings": {
+		"css.validate": false,
+		"editor.rulers": [80, 120],
+		"files.associations": {
+			".stylelintrc": "json"
+		},
+		"intelephense.format.enable": false,
+		"less.validate": false,
+		"php.suggest.basic": false,
+		"php.validate.enable": false,
+		"phpcs.composerJsonPath": "",
+		"phpcs.showSources": true,
 		"phpcs.standard": "WordPress",
-		"editor.rulers": [80, 120]
+		"scss.validate": false,
+		"stylelint.validate": ["css", "less", "sass", "scss"]
 	}
 }
