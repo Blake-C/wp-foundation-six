@@ -90,7 +90,7 @@ gulp.task(
 
 gulp.task(
 	'webpack',
-	$.shell.task(`'./node_modules/webpack-cli/bin/cli.js' --env.output ${dir.assets}/js`, {
+	$.shell.task(`'./node_modules/webpack-cli/bin/cli.js' --env output="${dir.assets}/js"`, {
 		verbose: true,
 		ignoreErrors: true,
 	})
