@@ -1,3 +1,9 @@
 {
-    "phpcs.executablePath": "./public_html/vendor/bin/phpcs"
+	"phpcs.executablePath": "./public_html/vendor/bin/phpcs",
+	"files.exclude": {
+		"data": true,
+		"ejected": true,
+		"public_html/wp/wp-content/themes": true,
+		"public_html/wp-content/uploads": true
+	}
 }

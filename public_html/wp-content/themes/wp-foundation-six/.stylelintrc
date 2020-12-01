@@ -13,6 +13,28 @@
 		"selector-no-vendor-prefix": true,
 		"no-descending-specificity": null,
 		"selector-max-id": 0,
-		"function-url-quotes": "always"
+		"function-url-quotes": "always",
+		"at-rule-empty-line-before": [
+			"always",
+			{
+				"ignore": [
+					"after-comment",
+					"first-nested",
+					"blockless-after-blockless"
+				],
+				"ignoreAtRules": [
+					"else"
+				]
+			}
+		],
+		"rule-empty-line-before": [
+			"always-multi-line",
+			{
+				"ignore": [
+					"after-comment",
+					"first-nested"
+				]
+			}
+		]
 	}
 }

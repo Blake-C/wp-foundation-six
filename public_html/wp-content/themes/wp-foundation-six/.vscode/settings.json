@@ -1,3 +1,6 @@
 {
-    "phpcs.executablePath": "../../../vendor/bin/phpcs"
+	"phpcs.executablePath": "../../../vendor/bin/phpcs",
+	"files.exclude": {
+		"**/fonts": true
+	}
 }
