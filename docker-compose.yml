@@ -10,6 +10,7 @@ services:
         image: digitalblake/wp-foundation-six-nginx:2.1.0
         volumes:
             - ./:/var/www/
+            - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
         ports:
             - '443:443'
             - '80:80'
@@ -38,6 +39,8 @@ services:
 
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
+        volumes:
+            - ./php/php.ini:/usr/local/etc/php/php.ini
         restart: always
         depends_on:
             - mysql
