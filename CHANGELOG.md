@@ -10,12 +10,18 @@ All notable changes to this project will be documented in this file.
     -   Added postcss as peer dependency
     -   Changed gulp-postcss to gpostcss in gulpfile.babel.js to prevent conflict with postcss
 -   Updated composer modules
+-   Updated vscode settings
+-   Removed editorconfig
+    -   We are using prettier and the two were conflicting
+-   Linked phpmyadmin to local php.ini
 
 ### Added
 
 -   Added core-js to fix auto polyfill setup
 -   Added useBuiltIns: 'usage', and corejs: 3 to webpack config to fix auto polyfill setup
 -   Added new editor settings for project
+-   Added new stylelint rules
+-   Added local nginx configs
 
 ## [8.2.0] - 2020-08-24
 
