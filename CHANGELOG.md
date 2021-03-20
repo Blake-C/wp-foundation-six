@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file.
 -   Removed editorconfig
     -   We are using prettier and the two were conflicting
 -   Linked phpmyadmin to local php.ini
+-   Updated browserslist
 
 ### Added
 
@@ -22,6 +23,7 @@ All notable changes to this project will be documented in this file.
 -   Added new editor settings for project
 -   Added new stylelint rules
 -   Added local nginx configs
+-   Added gifsicle to fix issues on linux with gifsicle not compiling
 
 ## [8.2.0] - 2020-08-24
 
