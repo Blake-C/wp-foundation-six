@@ -3,7 +3,7 @@
 		"stylelint-order"
 	],
 	"extends": [
-		"stylelint-config-wordpress/scss",
+		"@wordpress/stylelint-config/scss",
 		"stylelint-config-prettier"
 	],
 	"rules": {

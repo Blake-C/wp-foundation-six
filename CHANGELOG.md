@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file.
     -   We are using prettier and the two were conflicting
 -   Linked phpmyadmin to local php.ini
 -   Updated browserslist
+-   Removed stylelint-config-wordpress from node modules
 
 ### Added
 
@@ -24,6 +25,7 @@ All notable changes to this project will be documented in this file.
 -   Added new stylelint rules
 -   Added local nginx configs
 -   Added gifsicle to fix issues on linux with gifsicle not compiling
+-   Added @wordpress/stylelint-config to node modules
 
 ## [8.2.0] - 2020-08-24
 
