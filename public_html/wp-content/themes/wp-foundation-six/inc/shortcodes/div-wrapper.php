@@ -16,7 +16,7 @@ if ( ! function_exists( 'wp_foundation_six_div_wrapper' ) ) {
 	 * @param  string $tag      The shortcode tag name.
 	 * @return string           Shortcode data
 	 */
-	function wp_foundation_six_div_wrapper( $atts, $content = null, $tag ) {
+	function wp_foundation_six_div_wrapper( $atts, $content, $tag ) {
 		$default_class = '';
 
 		if ( 'column' === $tag ) {

@@ -16,6 +16,10 @@ All notable changes to this project will be documented in this file.
 -   Linked phpmyadmin to local php.ini
 -   Updated browserslist
 -   Removed stylelint-config-wordpress from node modules
+-   Updated docker php container from v4.1.0 to v5.0.0_8.0.3-fpm
+-   Updates php.ini file
+-   Updated xdebug from v2.9.6 to v3.0.3
+-   Fixed depreciation warning in wp_foundation_six_div_wrapper
 
 ### Added
 
@@ -26,6 +30,8 @@ All notable changes to this project will be documented in this file.
 -   Added local nginx configs
 -   Added gifsicle to fix issues on linux with gifsicle not compiling
 -   Added @wordpress/stylelint-config to node modules
+-   Added a info_php.php file
+-   Added a info_xdebug.php file
 
 ## [8.2.0] - 2020-08-24
 

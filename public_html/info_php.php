@@ -1,0 +1,1 @@
+<?php phpinfo(); // phpcs:ignore ?>
