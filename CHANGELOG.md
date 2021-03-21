@@ -22,6 +22,7 @@ All notable changes to this project will be documented in this file.
 -   Fixed depreciation warning in wp_foundation_six_div_wrapper
 -   Updated mariadb from v10.4.13 to v10.5.9
 -   Updated working directory
+-   Updated nginx container from v2.1.0 to v3.0.0
 
 ### Added
 
