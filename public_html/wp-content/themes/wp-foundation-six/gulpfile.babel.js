@@ -60,7 +60,7 @@ function phpcs_task(done) {
 	}
 
 	return gulp.src('package.json', { read: false }).pipe(
-		$.shell(`${phpcs} ${argv.file ? argv.file : ''}`, {
+		$.shell(`php ${phpcs} ${argv.file ? argv.file : ''}`, {
 			verbose: true,
 			ignoreErrors: true,
 		})
@@ -71,7 +71,7 @@ gulp.task('phpcs', gulp.series(phpcs_task))
 
 gulp.task(
 	'phpfix',
-	$.shell.task(`${phpfix} ${argv.file ? argv.file : ''}`, {
+	$.shell.task(`php ${phpfix} ${argv.file ? argv.file : ''}`, {
 		verbose: true,
 		ignoreErrors: true,
 	})
@@ -232,7 +232,7 @@ function serve_task() {
 	})
 
 	gulp.watch('**/*.php').on('change', function (path) {
-		$.shell.task(`${phpfix} ${path} && ${phpcs} ${path}`, {
+		$.shell.task(`php ${phpfix} ${path} && php ${phpcs} ${path}`, {
 			verbose: true,
 			ignoreErrors: true,
 		})()
@@ -251,7 +251,7 @@ gulp.task(
 
 function watch_task() {
 	gulp.watch('**/*.php').on('change', function (path) {
-		$.shell.task(`${phpfix} ${path} && ${phpcs} ${path}`, {
+		$.shell.task(`php ${phpfix} ${path} && php ${phpcs} ${path}`, {
 			verbose: true,
 			ignoreErrors: true,
 		})()
@@ -269,7 +269,7 @@ gulp.task(
 
 function watch_code_task() {
 	gulp.watch('**/*.php').on('change', function (path) {
-		$.shell.task(`${phpfix} ${path} && ${phpcs} ${path}`, {
+		$.shell.task(`php ${phpfix} ${path} && php ${phpcs} ${path}`, {
 			verbose: true,
 			ignoreErrors: true,
 		})()

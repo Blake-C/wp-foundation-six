@@ -33,6 +33,7 @@ All notable changes to this project will be documented in this file.
 -   Added @wordpress/stylelint-config to node modules
 -   Added a info_php.php file
 -   Added a info_xdebug.php file
+-   Added php in front of the phpcs phpcbf commands in gulp files
 
 ## [8.2.0] - 2020-08-24
 
