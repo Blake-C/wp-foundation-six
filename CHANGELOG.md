@@ -21,6 +21,7 @@ All notable changes to this project will be documented in this file.
 -   Updated xdebug from v2.9.6 to v3.0.3
 -   Fixed depreciation warning in wp_foundation_six_div_wrapper
 -   Updated mariadb from v10.4.13 to v10.5.9
+-   Updated working directory
 
 ### Added
 

@@ -3,13 +3,13 @@ services:
     cli_tools:
         image: digitalblake/general-cli:3.1.1
         volumes:
-            - ./:/var/www/
+            - ./:/home/webdev/www
         tty: true
 
     nginx:
         image: digitalblake/wp-foundation-six-nginx:2.1.0
         volumes:
-            - ./:/var/www/
+            - ./:/home/webdev/www
             - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
         ports:
             - '443:443'
@@ -21,7 +21,7 @@ services:
     php:
         image: digitalblake/wp-foundation-six-php:5.0.0_8.0.3-fpm
         volumes:
-            - ./:/var/www/
+            - ./:/home/webdev/www
             - ./php/php.ini:/usr/local/etc/php/php.ini
         expose:
             - '9000'
