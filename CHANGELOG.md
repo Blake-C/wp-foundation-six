@@ -23,6 +23,7 @@ All notable changes to this project will be documented in this file.
 -   Updated mariadb from v10.4.13 to v10.5.9
 -   Updated working directory
 -   Updated nginx container from v2.1.0 to v3.0.0
+-   Removed general-cli:3.1.1
 
 ### Added
 
@@ -36,6 +37,7 @@ All notable changes to this project will be documented in this file.
 -   Added a info_php.php file
 -   Added a info_xdebug.php file
 -   Added php in front of the phpcs phpcbf commands in gulp files
+-   Added light-cli:1.0.0
 
 ## [8.2.0] - 2020-08-24
 
