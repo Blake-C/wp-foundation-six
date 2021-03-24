@@ -8,6 +8,7 @@
  * @link https://github.com/eslint/eslint/issues/4787
  */
 import path from 'path'
+import ESLintPlugin from 'eslint-webpack-plugin'
 import scriptsList from './theme_components/js/scripts-list.js'
 
 const webpackConfig = env => {
@@ -44,20 +45,6 @@ const webpackConfig = env => {
 				},
 				{
 					test: /\.(js|jsx)$/,
-					enforce: 'pre',
-					exclude: /(node_modules)/,
-					use: [
-						{
-							loader: 'eslint-loader',
-							options: {
-								failOnWarning: false,
-								failOnError: true,
-							},
-						},
-					],
-				},
-				{
-					test: /\.(js|jsx)$/,
 					loader: 'babel-loader',
 					exclude: /node_modules(?!\/foundation-sites)/,
 					options: {
@@ -76,6 +63,17 @@ const webpackConfig = env => {
 				},
 			],
 		},
+		plugins: [
+			new ESLintPlugin({
+				extensions: ['js', 'jsx'],
+				exclude: 'node_modules',
+				fix: true,
+				emitWarning: true,
+				failOnWarning: false,
+				emitError: true,
+				failOnError: true,
+			}),
+		],
 	}
 }
 
