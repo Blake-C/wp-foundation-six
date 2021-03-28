@@ -27,6 +27,7 @@ All notable changes to this project will be documented in this file.
 -   Removed eslint-loader v4.0.2
 -   Removed snyk v1.502.0
 -   Fixed xdebug.remote_log to xdebug.log in php.ini
+-   Removed gulp and all its dependencies
 
 ### Added
 
@@ -42,6 +43,7 @@ All notable changes to this project will be documented in this file.
 -   Added php in front of the phpcs phpcbf commands in gulp files
 -   Added light-cli:1.0.0
 -   Added eslint-webpack-plugin v2.5.2
+-   Added node scripts as build system
 
 ## [8.2.0] - 2020-08-24
 
