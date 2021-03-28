@@ -26,6 +26,7 @@ All notable changes to this project will be documented in this file.
 -   Removed general-cli:3.1.1
 -   Removed eslint-loader v4.0.2
 -   Removed snyk v1.502.0
+-   Fixed xdebug.remote_log to xdebug.log in php.ini
 
 ### Added
 
