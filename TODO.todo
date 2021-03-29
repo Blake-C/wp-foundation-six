@@ -4,7 +4,7 @@ TODO:
 			Prettier will need to run with gulp when JS/SCSS files as they are saved.
 				Or with Webpack if we only want to run Prettier on JS files.
 			Found a way to do this with gulp-shell and attach the new gulp tasks as dependencies to the existing script and style tasks.
-	☐	Consider adding semicolons back to Prettier/ESLint @created(Sun 09.23.2018 05:51:19 PM)
+	✘ Consider adding semicolons back to Prettier/ESLint @created(Sun 09.23.2018 05:51:19 PM) @cancelled(Sun. 03/28/2021 - 10:46:50 PM)
 			Let's see how things work out on the next few projects and decide on that on if we keep the current configurations or add semicolons back.
 	✔	Update documentation with notes on PHPCS @created(Sun 09.23.2018 05:52:05 PM) @done (Tue 09.25.2018 11:07:23 PM)
 	✔	Update documentation with notes on Prettier @created(Sun 09.23.2018 05:52:06 PM) @done (Tue 09.25.2018 11:07:20 PM)
@@ -30,7 +30,7 @@ TODO:
 		✘	Smooth Scroll @cancelled (Fri 02.01.2019 11:38:19 PM)
 				https://foundation.zurb.com/sites/docs/smooth-scroll.html
 		✔	Copyright @done (Sun 09.23.2018 08:05:24 PM)
-	☐	Added documentation on new shortcode and editor formats @created(Sun 09.23.2018 07:57:16 PM)
+	✘ Added documentation on new shortcode and editor formats @created(Sun 09.23.2018 07:57:16 PM) @cancelled(Sun. 03/28/2021 - 10:46:46 PM)
 	✔	Investigate security issues with modernizr @done (Sat 10.20.2018 10:47:21 PM)
 			(High) This package has a Regular Expression Denial of Service (ReDoS) security vulnerability from an outdated underscores package.
 			(Low)  Also has Prototype Pollution from lodash
@@ -65,24 +65,49 @@ TODO:
 			I don't currently thing we need plumber on these task, but we need to be sure.
 
 			These tasks do not use the normal gulp piping as the other tasks. They do not errors out and quit in the terminal. They output their errors and continue to operate.
-	☐	Update docs to account for 'gulp phpcs --file header.php' change @created(Tue 10.23.2018 03:44:07 PM)
+	✘ Update docs to account for 'gulp phpcs --file header.php' change @created(Tue 10.23.2018 03:44:07 PM) @cancelled(Sun. 03/28/2021 - 10:46:31 PM)
 			We will not longer be using the gulp phpcs -f header.php argument. Gulp 4 is throwing errors when using -f.
 			'-f' is used as a gulp argument for specifying the gulp file to be using.
 
 			'--gulpfile', -f          Manually set path of gulpfile. Useful if you have
 			                          multiple gulpfiles. This will set the CWD to the
 			                          gulpfile directory as well.                   [string]
-	☐	Add docs notes on `gulp serve --https`
-	☐   Add docs notes on `gulp phpcs --skip_lint` @created(Sun. 03/10/2019 - 10:26:12 PM)
-	☐	Add numbered pagination to post archive page @created(Sat 10.27.2018 06:02:04 PM)
-	☐	Add gallery template using foundations orbit slider @created(Sat 10.27.2018 06:22:10 PM)
+	✘ Add docs notes on `gulp serve --https` @cancelled(Sun. 03/28/2021 - 10:46:22 PM)
+	✘   Add docs notes on `gulp phpcs --skip_lint` @created(Sun. 03/10/2019 - 10:26:12 PM) @cancelled(Sun. 03/28/2021 - 10:46:20 PM)
+	✔ Add numbered pagination to post archive page @created(Sat 10.27.2018 06:02:04 PM) @done(Sun. 03/28/2021 - 10:45:59 PM)
+	✘ Add gallery template using foundations orbit slider @created(Sat 10.27.2018 06:22:10 PM) @cancelled(Sun. 03/28/2021 - 10:45:52 PM)
 	☐	Remove the "Documentation for v6 still needs to be updated" note in the readme.md file @created(Sat 02.02.2019 12:23:14 AM)
+	✔ Probably want to switch back to zsh @done(Sun. 03/21/2021 - 04:45:31 AM)
+		We wont need to worry about the dsh command not working
+		We wont have to rework the starting scripts
+	✔ Reinstall OMZ @done(Sun. 03/21/2021 - 04:45:33 AM)
+		Or perhaps looks for a more light weight prompt?
+	✔ Move the starting scripts to light-cli project @done(Sun. 03/21/2021 - 05:02:59 AM)
+	✘ Move php over to alpine linux @cancelled(Sat. 03/27/2021 - 09:26:13 PM)
+	✔ Look into getting npm installs times faster @done(Sun. 03/28/2021 - 10:44:52 PM)
+		✔ Find another image optimization tool @done(Sun. 03/28/2021 - 10:44:50 PM)
+		✘ Move everything over to webpack @cancelled(Sun. 03/28/2021 - 10:44:46 PM)
+		✔ NPM Scripts @done(Sun. 03/28/2021 - 10:44:40 PM)
+			✔ Images @done(Sun. 03/28/2021 - 02:56:51 PM)
+			✔ Live Server @done(Sun. 03/28/2021 - 10:44:38 PM)
+			✔ Watch @done(Sun. 03/28/2021 - 05:48:06 PM)
+			✔ Copy Build @done(Sun. 03/28/2021 - 04:05:15 PM)
+	✔ Add tools to light-cli @done(Sun. 03/28/2021 - 10:45:31 PM)
+		✘ add rename @cancelled(Sun. 03/28/2021 - 10:44:57 PM)
+		✔ add imagemagick @done(Sun. 03/28/2021 - 10:44:58 PM)
+		✔ move php @done(Sun. 03/28/2021 - 10:45:24 PM)
+			Moved php8 binary to php
+		✔ add browser-sync @done(Sun. 03/28/2021 - 10:45:03 PM)
+	☐ Look into removing imagemagick from light-cli
+	☐ Look into have phpcs run single files using npm scripts
+	☐ Look into injecting css updates using npm scripts
+	☐ Look into not having tasks run when watch starts with nodemon
 
 Ideas:
-	☐	Review foundation grid and setup XY grid as default @created(Sun 09.23.2018 07:57:16 PM)
+	✘ Review foundation grid and setup XY grid as default @created(Sun 09.23.2018 07:57:16 PM) @cancelled(Sat. 03/27/2021 - 10:32:46 PM)
 			https://foundation.zurb.com/sites/docs/xy-grid.html
-	☐	Look into WebPack as main build system @created(Sun 09.23.2018 07:57:44 PM)
+	✘ Look into WebPack as main build system @created(Sun 09.23.2018 07:57:44 PM) @cancelled(Sun. 03/28/2021 - 10:47:06 PM)
 	☐	Build production Docker Images @created(Sun 09.23.2018 07:58:05 PM)
 		☐	Build production docker-compose.yml @created(Sun 09.23.2018 07:58:40 PM)
-	☐	Find a way to provide a drop in script to add additional setup processes @created(Sun 09.23.2018 07:59:09 PM)
+	✘ Find a way to provide a drop in script to add additional setup processes @created(Sun 09.23.2018 07:59:09 PM) @cancelled(Sat. 03/27/2021 - 10:33:08 PM)
 	☐	Add custom PHPCS sniffs for utility functions @created(Sun 09.23.2018 07:59:31 PM)

@@ -4,6 +4,8 @@ The WordPress Foundation 6 Developer Framework is meant to be a starting point f
 
 ## TL;DR
 
+These steps are only meant to be used for the initial setup. Once the project is initialized all you need to do is `docker-compose up -d` or if you have the short cut commands installed `dup`.
+
 ### Setup
 
 -   `git clone https://github.com/Blake-C/wp-foundation-six.git your-project-name`
