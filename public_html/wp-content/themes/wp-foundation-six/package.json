@@ -43,7 +43,7 @@
     "images": "echo \"Starting Images Task\" && npm run clean:images && npm run images:copy && npm run images:mogrify:check",
     "build:message": "echo \"\nIt might appear as if the tasks are running out of order, \nbut they are running in parallel. This speeds up builds x2.\n\"",
     "build": "npm run build:message && npm run clean && mkdir -p ./assets/ && npm run static:assets & npm run scripts & npm run styles & npm run images & wait && echo \"Build Complete\"",
-    "build:prod": "npm run build && mkdir -p ../wp-foundation-six-build && ls | grep -Ev \"node|gulp|workspace|webpack|postcss|package|modernizr|theme_components\" | xargs -I '{}' cp -r '{}' ../wp-foundation-six-build/",
+    "build:pro": "npm run build && mkdir -p ../wp-foundation-six-build && ls | grep -Ev \"node|gulp|workspace|webpack|postcss|package|modernizr|theme_components\" | xargs -I '{}' cp -r '{}' ../wp-foundation-six-build/",
     "livereload": "npx browser-sync start --no-notify --no-open --proxy 'http://localhost'",
     "serve": "npm run livereload & npm run watch",
     "watch:code": "npm run scripts:watch & npm run styles:watch",
