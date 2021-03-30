@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "engines": {
-    "node": "12.18.0"
+    "node": "14.16.0"
   },
   "browserslist": [
     "> 1% or last 3 versions"
@@ -42,11 +42,13 @@
     "images:watch": "nodemon -e jpg,jpeg,png,gif --watch theme_components/images --exec \"npm run images && npx browser-sync reload\"",
     "images": "echo \"Starting Images Task\" && npm run clean:images && npm run images:copy && npm run images:mogrify:check",
     "build:message": "echo \"\nIt might appear as if the tasks are running out of order, \nbut they are running in parallel. This speeds up builds x2.\n\"",
-    "build": "npm run build:message && npm run clean && mkdir -p ./assets/ && npm run static:assets && npm run phpcs & npm run scripts & npm run styles & npm run images & wait && echo \"Build Complete\"",
+    "build": "npm run build:message && npm run clean && mkdir -p ./assets/ && npm run static:assets & npm run scripts & npm run styles & npm run images & wait && echo \"Build Complete\"",
     "build:prod": "npm run build && mkdir -p ../wp-foundation-six-build && ls | grep -Ev \"node|gulp|workspace|webpack|postcss|package|modernizr|theme_components\" | xargs -I '{}' cp -r '{}' ../wp-foundation-six-build/",
     "livereload": "npx browser-sync start --no-notify --no-open --proxy 'http://localhost'",
     "serve": "npm run livereload & npm run watch",
-    "watch": "npm run scripts:watch & npm run styles:watch & npm run static:assets:watch & npm run phpcs:watch & npm run images:watch"
+    "watch:code": "npm run scripts:watch & npm run styles:watch",
+    "watch:all": "npm run scripts:watch & npm run styles:watch & npm run static:assets:watch & npm run phpcs:watch & npm run images:watch",
+    "watch": "npm run scripts:watch & npm run styles:watch & npm run static:assets:watch & npm run images:watch"
   },
   "devDependencies": {
     "@babel/core": "7.13.10",
@@ -71,7 +73,8 @@
     "stylelint-config-prettier": "8.0.2",
     "stylelint-order": "^4.1.0",
     "webpack": "5.27.0",
-    "webpack-cli": "4.5.0"
+    "webpack-cli": "4.5.0",
+    "what-input": "5.2.10"
   },
   "dependencies": {
     "detect-browser": "^5.2.0",

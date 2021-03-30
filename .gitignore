@@ -94,3 +94,4 @@ node_modules
 npm-debug.log
 object-cache.php
 .idea
+.pnpm-store
