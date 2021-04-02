@@ -11,7 +11,7 @@
 			"port": 9000,
 			"ignore": ["**/vendor/**/*.php"],
 			"pathMappings": {
-				"/var/www/public_html": "${workspaceFolder}/public_html"
+				"/home/webdev/www/public_html": "${workspaceFolder}/public_html"
 			}
 			// "log": true,
 			// "externalConsole": false,
