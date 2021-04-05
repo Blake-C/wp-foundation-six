@@ -102,6 +102,10 @@ TODO:
 	☐ Look into have phpcs run single files using npm scripts
 	☐ Look into injecting css updates using npm scripts
 	☐ Look into not having tasks run when watch starts with nodemon
+	☐ Find new name for project
+		☐ Rename all wp_foundation_six & wpfs functions to new name
+	☐ Release update in new repo
+	☐ Update readme.md file to use new commands
 
 Ideas:
 	✘ Review foundation grid and setup XY grid as default @created(Sun 09.23.2018 07:57:16 PM) @cancelled(Sat. 03/27/2021 - 10:32:46 PM)
