@@ -46,6 +46,7 @@ All notable changes to this project will be documented in this file.
 -   Added eslint-webpack-plugin v2.5.2
 -   Added node scripts as build system
 -   Added pnpm as package manager
+-   Added upload_limit to phpmyadmin docker-compose settings
 
 ## [8.2.0] - 2020-08-24
 
