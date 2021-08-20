@@ -48,6 +48,14 @@ All notable changes to this project will be documented in this file.
 -   Added pnpm as package manager
 -   Added upload_limit to phpmyadmin docker-compose settings
 
+## [8.2.1] - 2021-08-19
+
+### Added
+
+-   Added maxupload to phpmyadmin docker environment variables
+-   Added php.ini to phpmyadmin docker container
+-   Added Import instructions to readme.md
+
 ## [8.2.0] - 2020-08-24
 
 ### Changed
