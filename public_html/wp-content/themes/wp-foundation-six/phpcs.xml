@@ -24,7 +24,7 @@
 	<arg name="colors" />
 
 	<!-- Check up to 8 files simultanously. -->
-	<arg name="parallel" value="8"/>
+	<!-- <arg name="parallel" value="8"/> -->
 
 	<!-- Only check the PHP files. JS files are checked separately with JSCS and JSHint. -->
 	<arg name="extensions" value="php"/>
@@ -65,12 +65,12 @@
 		 as set in the "Requires at least" tag in the readme.txt file. -->
 	<rule ref="WordPress.WP.DeprecatedFunctions">
 		<properties>
-			<property name="minimum_supported_version" value="4.9.8" />
+			<property name="minimum_supported_version" value="5.8.0" />
 		</properties>
 	</rule>
 
 	<!-- Include sniffs for PHP cross-version compatibility. -->
-	<config name="testVersion" value="7.4-99.0"/>
+	<config name="testVersion" value="8.0-99.0"/>
 
 	<!-- Verify that everything in the global namespace is prefixed with a theme specific prefix.
 		 Multiple valid prefixes can be provided as a comma-delimited list. -->
