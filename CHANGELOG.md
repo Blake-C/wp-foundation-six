@@ -8,6 +8,8 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+-   Added maxupload to phpmyadmin docker environment variables
+-   Added php.ini to phpmyadmin docker container
 ## [8.2.0] - 2020-08-24
 
 ### Changed
