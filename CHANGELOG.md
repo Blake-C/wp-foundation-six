@@ -47,6 +47,7 @@ All notable changes to this project will be documented in this file.
 -   Added node scripts as build system
 -   Added pnpm as package manager
 -   Added upload_limit to phpmyadmin docker-compose settings
+-   Added .nvmrc
 
 ## [8.2.1] - 2021-08-19
 
