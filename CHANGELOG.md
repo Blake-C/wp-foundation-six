@@ -16,7 +16,7 @@ All notable changes to this project will be documented in this file.
 -   Linked phpmyadmin to local php.ini
 -   Updated browserslist
 -   Removed stylelint-config-wordpress from node modules
--   Updated docker php container from v4.1.0 to v5.0.0_8.0.3-fpm
+-   Updated docker php container from v4.1.0 to v5.2.0_8.0.10-fpm
 -   Updates php.ini file
 -   Updated xdebug from v2.9.6 to v3.0.3
 -   Fixed depreciation warning in wp_foundation_six_div_wrapper
