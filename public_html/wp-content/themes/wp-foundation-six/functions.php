@@ -144,22 +144,14 @@ if ( ! function_exists( 'wp_foundation_six_scripts' ) ) {
 	 */
 	function wp_foundation_six_scripts() {
 		/* Asset file paths set to variables */
-		$modern_jquery  = get_template_directory_uri() . '/assets/js/vendors/jquery.min.js';
 		$global_styles  = get_template_directory_uri() . '/assets/css/global-styles.min.css';
 		$global_scripts = get_template_directory_uri() . '/assets/js/bundle.global-scripts.js';
-		$modernizr      = get_template_directory_uri() . '/assets/js/vendors/modernizr.js';
 
 		/* Import CSS (Sass files are in the theme-components folder) */
 		wp_enqueue_style( 'wp-foundation-six-style', $global_styles, array(), wpfs_cache_bust( $global_styles ) );
 
-		/* Register Modern jQuery */
-		wp_deregister_script( 'jquery' );
-		wp_register_script( 'jquery', $modern_jquery, array( 'wp-foundation-six-modernizr' ), wpfs_cache_bust( $modern_jquery ), true );
-		wp_enqueue_script( 'jquery' );
-
 		/* Import Scripts (Keep to a minimum or import into global-scripts.js file) */
-		wp_enqueue_script( 'wp-foundation-six-global', $global_scripts, array( 'jquery', 'wp-foundation-six-modernizr' ), wpfs_cache_bust( $global_scripts ), true );
-		wp_enqueue_script( 'wp-foundation-six-modernizr', $modernizr, array(), wpfs_cache_bust( $modernizr ), true );
+		wp_enqueue_script( 'wp-foundation-six-global', $global_scripts, array( 'jquery' ), wpfs_cache_bust( $global_scripts ), true );
 
 		/**
 		 * Conditionally add scripts and styles to pages with template tags
