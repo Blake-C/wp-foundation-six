@@ -2,8 +2,7 @@ import $ from 'jquery'
 import 'jquery-migrate'
 import './modules/_skip-link-focus-fix'
 import './modules/_foundation-scripts'
-
-import { detect } from 'detect-browser'
+import { browser } from './modules/_browser-version'
 
 /**
  * Notes:
@@ -37,16 +36,19 @@ import { detect } from 'detect-browser'
  *
  */
 
+$('html').removeClass('no-js')
+$('html').addClass('js')
+
+// Give IE user an unoptimized experience.
+if (browser.name === 'ie') {
+	var script = document.createElement('script')
+	script.src = '/wp-content/themes/wp-foundation-six/assets/js/bundle.ie-scripts.js'
+	document.getElementsByTagName('head')[0].appendChild(script)
+}
+
 /*************** Template part region toggle button ***************/
 $('#theme_debug_regions').on('click', function (event) {
 	event.preventDefault()
 
 	$('.placeHolderPosition').slideToggle()
 })
-
-/*************** Browser Version ***************/
-const browser = detect()
-const browser_version = browser.version.split('.')
-const browser_html_class = browser.name + '-' + browser_version[0]
-
-$('html').addClass(browser_html_class)
