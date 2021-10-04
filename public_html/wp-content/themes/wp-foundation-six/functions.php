@@ -75,6 +75,40 @@ if ( ! function_exists( 'wp_foundation_six_setup' ) ) {
 		);
 
 		/**
+		 * Add custom theme color palette.
+		 * Remove anything you don't need.
+		 */
+		add_theme_support(
+			'editor-color-palette',
+			array(
+				array(
+					'name'  => __( 'Primary', 'wp_foundation_six' ),
+					'slug'  => 'primary',
+					'color' => '#ffffff',
+				),
+				array(
+					'name'  => __( 'Secondary', 'wp_foundation_six' ),
+					'slug'  => 'secondary',
+					'color' => '#ffffff',
+				),
+				array(
+					'name'  => __( 'Tricerary', 'wp_foundation_six' ),
+					'slug'  => 'tricerary',
+					'color' => '#ffffff',
+				),
+				array(
+					'name'  => __( 'White', 'wp_foundation_six' ),
+					'slug'  => 'white',
+					'color' => '#ffffff',
+				),
+				array(
+					'name'  => __( 'Black', 'wp_foundation_six' ),
+					'slug'  => 'black',
+					'color' => '#222222',
+				),
+			)
+		);
+		/**
 		 * Remove wp_header meta
 		 */
 		remove_action( 'wp_head', 'feed_links_extra', 3 ); // Display the links to the extra feeds such as category feeds.
