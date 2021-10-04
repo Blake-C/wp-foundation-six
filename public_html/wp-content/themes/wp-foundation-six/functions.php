@@ -108,6 +108,14 @@ if ( ! function_exists( 'wp_foundation_six_setup' ) ) {
 				),
 			)
 		);
+
+		/**
+		 * Sample disables:
+		 * add_theme_support( 'disable-custom-colors' );
+		 * add_theme_support( 'disable-custom-gradients' );
+		 * add_theme_support( 'editor-gradient-presets', array() );
+		 */
+
 		/**
 		 * Remove wp_header meta
 		 */
