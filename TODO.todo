@@ -107,6 +107,11 @@ TODO:
 	☐ Release update in new repo
 	☐ Update readme.md file to use new commands
 	☐ Add rsync back to light-cli
+		The wp-eject task needs rsync
+	☐ Look into shell script so we don't have to rename the commands we run
+		Running: npm install -> pnpm install if pnpm is in directory
+		Running: gulp <task> -> pnpm run <task>
+		Running: gulp --build -> pnpm run build:pro
 
 Ideas:
 	✘ Review foundation grid and setup XY grid as default @created(Sun 09.23.2018 07:57:16 PM) @cancelled(Sat. 03/27/2021 - 10:32:46 PM)
