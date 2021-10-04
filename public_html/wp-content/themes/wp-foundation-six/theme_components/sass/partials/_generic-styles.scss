@@ -25,24 +25,6 @@ body {
 	display: none;
 }
 
-/* Foundation figure was coming out of the layout container */
-figure {
-	background: $accent-1;
-	margin: 0;
-	padding: 1em 20px;
-
-	img {
-		display: block;
-		margin: 0 auto;
-	}
-
-	figcaption {
-		font-size: 12px;
-		margin: 13px 0 0;
-		text-align: center;
-	}
-}
-
 /* Wordpress styles */
 @include breakpoint(medium) {
 	.alignright {
