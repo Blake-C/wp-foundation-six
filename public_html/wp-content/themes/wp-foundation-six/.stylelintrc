@@ -1,11 +1,7 @@
 {
-	"plugins": [
-		"stylelint-order"
-	],
-	"extends": [
-		"@wordpress/stylelint-config/scss",
-		"stylelint-config-prettier"
-	],
+	"plugins": ["stylelint-order"],
+	"extends": ["@wordpress/stylelint-config/scss", "stylelint-config-prettier"],
+	"customSyntax": "postcss-scss",
 	"rules": {
 		"order/properties-alphabetical-order": true,
 		"color-no-invalid-hex": true,
@@ -17,23 +13,14 @@
 		"at-rule-empty-line-before": [
 			"always",
 			{
-				"ignore": [
-					"after-comment",
-					"first-nested",
-					"blockless-after-blockless"
-				],
-				"ignoreAtRules": [
-					"else"
-				]
+				"ignore": ["after-comment", "first-nested", "blockless-after-blockless"],
+				"ignoreAtRules": ["else"]
 			}
 		],
 		"rule-empty-line-before": [
 			"always-multi-line",
 			{
-				"ignore": [
-					"after-comment",
-					"first-nested"
-				]
+				"ignore": ["after-comment", "first-nested"]
 			}
 		]
 	}
