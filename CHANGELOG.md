@@ -30,6 +30,7 @@ All notable changes to this project will be documented in this file.
 -   Removed gulp and all its dependencies
 -   Updated supported node version to v14.16.0
 -   Changed jsxBracketSameLine to bracketSameLine in prettier config. jsxBracketSameLine has been deprecated
+-   Added wpfs plugin to workspace listing
 
 ### Added
 

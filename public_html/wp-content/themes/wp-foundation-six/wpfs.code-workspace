@@ -5,6 +5,10 @@
 			"name": "WPFS Theme"
 		},
 		{
+			"path": "../../plugins/wp-foundation-six",
+			"name": "WPFS Plugin"
+		},
+		{
 			"path": "../../../..",
 			"name": "Root"
 		}
