@@ -112,6 +112,9 @@ TODO:
 		Running: npm install -> pnpm install if pnpm is in directory
 		Running: gulp <task> -> pnpm run <task>
 		Running: gulp --build -> pnpm run build:pro
+	☐ stylelint is being kept on v13 because v14 has issues with an old config in the wordpress style rules.
+		When the wordpress style rules are fixed update stylelint to v14.
+		Warning: Unknown rule function-calc-no-invalid  function-calc-no-invalid
 
 Ideas:
 	✘ Review foundation grid and setup XY grid as default @created(Sun 09.23.2018 07:57:16 PM) @cancelled(Sat. 03/27/2021 - 10:32:46 PM)
