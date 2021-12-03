@@ -115,6 +115,7 @@ TODO:
 	☐ stylelint is being kept on v13 because v14 has issues with an old config in the wordpress style rules.
 		When the wordpress style rules are fixed update stylelint to v14.
 		Warning: Unknown rule function-calc-no-invalid  function-calc-no-invalid
+		Also, VSCODE wants v14 so it will throw an error as long as we are on v13 in the package.json
 
 Ideas:
 	✘ Review foundation grid and setup XY grid as default @created(Sun 09.23.2018 07:57:16 PM) @cancelled(Sat. 03/27/2021 - 10:32:46 PM)
