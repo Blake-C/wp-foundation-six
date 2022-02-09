@@ -30,5 +30,12 @@
 				"type:wordpress-theme"
 			]
 		}
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true,
+			"composer/installers": true,
+			"johnpbloch/wordpress-core-installer": true
+		}
 	}
 }
