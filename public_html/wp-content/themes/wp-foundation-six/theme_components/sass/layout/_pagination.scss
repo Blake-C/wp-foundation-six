@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 .pagination {
 	ul {
 		background-color: $accent-1;
@@ -35,13 +37,13 @@
 
 		&:hover,
 		&:focus {
-			background-color: darken($accent-blue, 10%);
+			background-color: color.adjust($accent-blue, $lightness: -10%);
 			color: $white;
 		}
 	}
 
 	.current {
-		background-color: darken($accent-1, 10%);
+		background-color: color.adjust($accent-1, $lightness: -10%);
 		color: $black;
 	}
 }
