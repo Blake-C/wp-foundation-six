@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "engines": {
-    "node": "16.13.1"
+    "node": "^16.13.0"
   },
   "browserslist": [
     "> 1% or last 3 versions"
