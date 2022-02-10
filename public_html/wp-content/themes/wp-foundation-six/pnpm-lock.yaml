@@ -16,8 +16,6 @@ specifiers:
   eslint-plugin-prettier: 4.0.0
   eslint-webpack-plugin: 3.1.1
   foundation-sites: 6.7.4
-  jquery: 3.6.0
-  jquery-migrate: ^3.3.2
   modernizr: 3.11.8
   nodemon: 2.0.15
   postcss: 8.4.6
@@ -35,9 +33,7 @@ specifiers:
 
 dependencies:
   detect-browser: 5.3.0
-  foundation-sites: 6.7.4_jquery@3.6.0+what-input@5.2.10
-  jquery: 3.6.0
-  jquery-migrate: 3.3.2_jquery@3.6.0
+  foundation-sites: 6.7.4_what-input@5.2.10
   modernizr: 3.11.8
 
 devDependencies:
@@ -2634,7 +2630,7 @@ packages:
     resolution: {integrity: sha512-zAoAQiudy+r5SvnSw3KJy5os/oRJYHzrzja/tBDqrZtNhUw8bt6y8OBzMWcjWr+8liV8Eb6yOhw8WZ7VFZ5ZzA==}
     dev: true
 
-  /foundation-sites/6.7.4_jquery@3.6.0+what-input@5.2.10:
+  /foundation-sites/6.7.4_what-input@5.2.10:
     resolution: {integrity: sha512-2QPaZJ0Od0DyklhQyKC3zPbr8AAUXSkr1scZJrQTgj/KTLresuCgUBfi7ft32NlOWhuqVXisjOgTE8N5EPS3cg==}
     engines: {node: '>=12.0'}
     peerDependencies:
@@ -2642,7 +2638,6 @@ packages:
       motion-ui: latest
       what-input: '>=5.2.10'
     dependencies:
-      jquery: 3.6.0
       what-input: 5.2.10
     dev: false
 
@@ -3118,18 +3113,6 @@ packages:
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true
-
-  /jquery-migrate/3.3.2_jquery@3.6.0:
-    resolution: {integrity: sha512-L3gYhr7yEtLUSAeqXSicVa0vRD4aGwjw/bWY8YzrO2o/qDY1BaMyP3oB3bZf5Auy3Hu9ynliio0CTyDWCBPVDw==}
-    peerDependencies:
-      jquery: '>=3 <4'
-    dependencies:
-      jquery: 3.6.0
-    dev: false
-
-  /jquery/3.6.0:
-    resolution: {integrity: sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==}
-    dev: false
 
   /js-tokens/4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}

@@ -17,7 +17,6 @@
     "scripts:prettier": "prettier --write --loglevel warn \"./**/*.js\" && echo \"Ran Prettier on Scripts\"",
     "scripts:webpack": "webpack --env output=\"./assets/js\"",
     "scripts:modernizr": "modernizr -c modernizr-config.json -d ./assets/js/vendors/modernizr.js",
-    "scripts:jquery": "cp ./node_modules/jquery/dist/jquery.min.js ./assets/js/vendors && cp ./node_modules/jquery/dist/jquery.min.map ./assets/js/vendors",
     "scripts:watch": "nodemon -e js --watch theme_components/js --exec \"npm run scripts && npx browser-sync reload\"",
     "scripts": "npm run clean:scripts && npm run scripts:prettier && npm run scripts:webpack && npm run scripts:modernizr && npm run scripts:jquery && echo \"Scripts Done\"",
     "styles:stylelint:check": "stylelint-config-prettier-check",
@@ -81,8 +80,6 @@
   "dependencies": {
     "detect-browser": "5.3.0",
     "foundation-sites": "6.7.4",
-    "jquery": "3.6.0",
-    "jquery-migrate": "^3.3.2",
     "modernizr": "3.11.8"
   }
 }

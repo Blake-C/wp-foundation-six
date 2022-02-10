@@ -1,5 +1,4 @@
 import $ from 'jquery'
-import 'jquery-migrate'
 import './modules/_skip-link-focus-fix'
 import './modules/_foundation-scripts'
 import { browser } from './modules/_browser-version'
