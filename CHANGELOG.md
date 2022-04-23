@@ -31,6 +31,7 @@ All notable changes to this project will be documented in this file.
 -   Updated supported node version to v14.16.0
 -   Changed jsxBracketSameLine to bracketSameLine in prettier config. jsxBracketSameLine has been deprecated
 -   Added wpfs plugin to workspace listing
+-   Removed jQuery from npm scripts
 
 ### Added
 
@@ -44,7 +45,7 @@ All notable changes to this project will be documented in this file.
 -   Added a info_php.php file
 -   Added a info_xdebug.php file
 -   Added php in front of the phpcs phpcbf commands in gulp files
--   Added light-cli:1.0.0
+-   Added light-cli:2.0.0
 -   Added eslint-webpack-plugin v2.5.2
 -   Added node scripts as build system
 -   Added pnpm as package manager
