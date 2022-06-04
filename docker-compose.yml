@@ -1,7 +1,7 @@
 version: '3'
 services:
     cli_tools:
-        image: digitalblake/light-cli:2.0.0
+        image: digitalblake/light-cli:2.0.1
         volumes:
             - ./:/home/webdev/www
         tty: true

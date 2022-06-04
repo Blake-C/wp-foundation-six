@@ -45,7 +45,7 @@ All notable changes to this project will be documented in this file.
 -   Added a info_php.php file
 -   Added a info_xdebug.php file
 -   Added php in front of the phpcs phpcbf commands in gulp files
--   Added light-cli:2.0.0
+-   Added light-cli:2.0.1
 -   Added eslint-webpack-plugin v2.5.2
 -   Added node scripts as build system
 -   Added pnpm as package manager
