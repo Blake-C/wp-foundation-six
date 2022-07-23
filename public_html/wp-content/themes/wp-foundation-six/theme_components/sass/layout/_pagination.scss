@@ -1,4 +1,5 @@
 @use 'sass:color';
+@use '../helpers' as *;
 
 .pagination {
 	ul {

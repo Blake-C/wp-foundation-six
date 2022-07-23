@@ -1,3 +1,5 @@
+@use '../helpers' as *;
+
 .post-navigation {
 	@include clearfix;
 

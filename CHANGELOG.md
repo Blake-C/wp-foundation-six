@@ -32,6 +32,7 @@ All notable changes to this project will be documented in this file.
 -   Changed jsxBracketSameLine to bracketSameLine in prettier config. jsxBracketSameLine has been deprecated
 -   Added wpfs plugin to workspace listing
 -   Removed jQuery from npm scripts
+-   Updated styles to use @use and @forward
 
 ### Added
 

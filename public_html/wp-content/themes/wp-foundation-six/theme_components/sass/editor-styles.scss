@@ -1,10 +1,9 @@
 @charset 'UTF-8';
 
-/* Import Foundation Assets, does not output actual styles */
-@import 'vendors/foundation';
-
 /* Custom variables should be brought in early */
-@import 'helpers/variables';
+@use 'helpers' as *;
+@use 'editor';
+@use 'partials';
 
 .mce-content-body,
 .acf-block-preview {
@@ -85,13 +84,4 @@
 	}
 
 	@include foundation-everything($flex: false, $prototype: false);
-
-	@import 'helpers/fonts';
-	@import 'helpers/mixins';
-	@import 'helpers/functions';
-	@import 'helpers/helpers';
-
-	@import 'partials/generic-styles';
 }
-
-@import 'editor-styles/general-styles';

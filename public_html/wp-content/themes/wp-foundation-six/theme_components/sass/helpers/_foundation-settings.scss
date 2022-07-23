@@ -60,7 +60,8 @@
 //  55. Top Bar
 //  56. Xy Grid
 
-@import 'foundation-sites/scss/util/util';
+@use 'sass:color';
+@use 'foundation' as *;
 
 // 1. Global
 // ---------
@@ -82,7 +83,7 @@ $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
 $body-font-color: $black;
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$body-font-family: 'Helvetica Neue', helvetica, roboto, arial, sans-serif;
 $body-safe-padding: false;
 $body-antialiased: true;
 $global-margin: 1rem;
@@ -142,7 +143,7 @@ $block-grid-max: 8;
 $header-font-family: $body-font-family;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
-$font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
+$font-family-monospace: consolas, 'Liberation Mono', courier, monospace;
 $header-color: inherit;
 $header-lineheight: 1.4;
 $header-margin-bottom: 0.5rem;
@@ -188,15 +189,15 @@ $header-styles: (
 		),
 	),
 );
-$header-text-rendering: optimizeLegibility;
+$header-text-rendering: optimizelegibility;
 $small-font-size: 80%;
 $header-small-font-color: $medium-gray;
 $paragraph-lineheight: 1.6;
 $paragraph-margin-bottom: 1rem;
-$paragraph-text-rendering: optimizeLegibility;
+$paragraph-text-rendering: optimizelegibility;
 $enable-code-inline: true;
 $anchor-color: $primary-color;
-$anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
+$anchor-color-hover: color.adjust($anchor-color, $lightness: -14%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
@@ -323,7 +324,7 @@ $button-padding: 0.85em 1em;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;
-$button-background-hover: scale-color($button-background, $lightness: -15%);
+$button-background-hover: color.adjust($button-background, $lightness: -15%);
 $button-color: $white;
 $button-color-alt: $black;
 $button-radius: $global-radius;
@@ -783,15 +784,15 @@ $table-color-scale: 5%;
 $table-border: 1px solid smart-scale($table-background, $table-color-scale);
 $table-padding: rem-calc(8 10 10);
 $table-hover-scale: 2%;
-$table-row-hover: darken($table-background, $table-hover-scale);
-$table-row-stripe-hover: darken($table-background, $table-color-scale + $table-hover-scale);
+$table-row-hover: color.adjust($table-background, $lightness: $table-hover-scale);
+$table-row-stripe-hover: color.adjust($table-background, $lightness: $table-color-scale + $table-hover-scale);
 $table-is-striped: true;
 $table-striped-background: smart-scale($table-background, $table-color-scale);
 $table-stripe: even;
 $table-head-background: smart-scale($table-background, $table-color-scale * 0.5);
-$table-head-row-hover: darken($table-head-background, $table-hover-scale);
+$table-head-row-hover: color.adjust($table-head-background, $lightness: $table-hover-scale);
 $table-foot-background: smart-scale($table-background, $table-color-scale);
-$table-foot-row-hover: darken($table-foot-background, $table-hover-scale);
+$table-foot-row-hover: color.adjust($table-foot-background, $lightness: $table-hover-scale);
 $table-head-font-color: $body-font-color;
 $table-foot-font-color: $body-font-color;
 $show-header-for-stacked: false;

@@ -1,10 +1,8 @@
 @charset 'UTF-8';
 
-/* Custom variables should be brought in early */
-@import 'helpers/variables';
-
-/* Import Foundation Assets, does not output actual styles */
-@import 'vendors/foundation';
+@use 'helpers' as *;
+@use 'layout';
+@use 'partials';
 
 @mixin foundation-everything($flex: true, $prototype: false, $xy-grid: $xy-grid) {
 	@if $flex {
@@ -87,20 +85,3 @@
 }
 
 @include foundation-everything($flex: false, $prototype: false);
-
-@import 'helpers/fonts';
-@import 'helpers/mixins';
-@import 'helpers/functions';
-@import 'helpers/helpers';
-
-@import 'layout/body';
-@import 'layout/comments';
-@import 'layout/footer';
-@import 'layout/header';
-@import 'layout/main-menu';
-@import 'layout/pagination';
-@import 'layout/post-navigation';
-@import 'layout/sidebar';
-
-@import 'partials/generic-styles';
-@import 'partials/wp-block-gallery';
