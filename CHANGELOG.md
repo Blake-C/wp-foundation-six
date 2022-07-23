@@ -10,6 +10,8 @@ All notable changes to this project will be documented in this file.
     -   Added postcss as peer dependency
     -   Changed gulp-postcss to gpostcss in gulpfile.babel.js to prevent conflict with postcss
 -   Updated composer modules
+    -   Updated WordPress from v5.9.2 to v6.0.1
+    -   Updated squizlabs/php_codesniffer from v3.6.2 to v3.7.1
 -   Updated vscode settings
 -   Removed editorconfig
     -   We are using prettier and the two were conflicting
