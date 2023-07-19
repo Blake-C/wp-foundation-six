@@ -4,6 +4,7 @@
 	"customSyntax": "postcss-scss",
 	"rules": {
 		"scss/comment-no-empty": null,
+		"comment-no-empty": null,
 		"order/properties-alphabetical-order": true,
 		"color-no-invalid-hex": true,
 		"declaration-no-important": true,
