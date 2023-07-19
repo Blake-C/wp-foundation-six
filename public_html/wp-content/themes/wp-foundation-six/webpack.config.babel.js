@@ -11,6 +11,8 @@ import path from 'path'
 import ESLintPlugin from 'eslint-webpack-plugin'
 import scriptsList from './theme_components/js/scripts-list.js'
 
+const __dirname = path.resolve(path.dirname(''))
+
 const webpackConfig = env => {
 	return {
 		mode: 'production',

@@ -33,6 +33,8 @@ All notable changes to this project will be documented in this file.
 -   Added wpfs plugin to workspace listing
 -   Removed jQuery from npm scripts
 -   Updated styles to use @use and @forward
+-   Renamed postcss.config.js to postcss.config.cjs for common.js
+-   Updated --loglevel to --log-level on prettier commands
 
 ### Added
 
@@ -52,6 +54,13 @@ All notable changes to this project will be documented in this file.
 -   Added pnpm as package manager
 -   Added upload_limit to phpmyadmin docker-compose settings
 -   Added .nvmrc
+-   Added type module to package.json file
+-   Added \_\_dirname variable to webpack.config
+-   Added .js to local import declarations
+-   Added nulled options to stylelint config for depreciated options
+    -   function-whitespace-after
+    -   media-feature-range-operator-space-after
+    -   media-feature-range-operator-space-before
 
 ## [8.2.1] - 2021-08-19
 

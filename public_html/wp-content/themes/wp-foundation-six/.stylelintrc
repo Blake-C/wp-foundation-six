@@ -11,6 +11,9 @@
 		"no-descending-specificity": null,
 		"selector-max-id": 0,
 		"function-url-quotes": "always",
+		"function-whitespace-after": null,
+		"media-feature-range-operator-space-after": null,
+		"media-feature-range-operator-space-before": null,
 		"at-rule-empty-line-before": [
 			"always",
 			{

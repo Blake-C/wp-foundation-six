@@ -41,7 +41,7 @@ function prettier_js(done) {
 
 	return gulp
 		.src('package.json', { read: false })
-		.pipe($.shell('./node_modules/prettier/bin-prettier.js --write --loglevel warn "./**/*.js"'))
+		.pipe($.shell('./node_modules/prettier/bin-prettier.js --write --log-level warn "./**/*.js"'))
 }
 
 function prettier_scss(done) {
@@ -51,7 +51,7 @@ function prettier_scss(done) {
 
 	return gulp
 		.src('package.json', { read: false })
-		.pipe($.shell('./node_modules/prettier/bin-prettier.js --write --loglevel warn "./**/*.scss"'))
+		.pipe($.shell('./node_modules/prettier/bin-prettier.js --write --log-level warn "./**/*.scss"'))
 }
 
 function phpcs_task(done) {

@@ -1,7 +1,7 @@
 import $ from 'jquery'
-import './modules/_skip-link-focus-fix'
-import './modules/_foundation-scripts'
-import { browser } from './modules/_browser-version'
+import './modules/_skip-link-focus-fix.js'
+import './modules/_foundation-scripts.js'
+import { browser } from './modules/_browser-version.js'
 
 /**
  * Notes:
