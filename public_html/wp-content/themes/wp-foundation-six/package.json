@@ -20,7 +20,6 @@
     "scripts:modernizr": "modernizr -c modernizr-config.json -d ./assets/js/vendors/modernizr.js",
     "scripts:watch": "nodemon -e js --watch theme_components/js --exec \"npm run scripts && npx browser-sync reload\"",
     "scripts": "npm run clean:scripts && npm run scripts:prettier && npm run scripts:webpack && npm run scripts:modernizr && echo \"Completed: Scripts Task\"",
-    "styles:stylelint:check": "stylelint-config-prettier-check",
     "styles:prettier": "prettier --write --log-level warn ./theme_components/sass/**/*.scss && echo \"Completed: Prettier for Styles\"",
     "styles:stylelint": "stylelint ./theme_components/sass/**/*.scss --fix && echo \"Completed: Stylelint\"",
     "styles:lint": "npm run styles:prettier && npm run styles:stylelint",
