@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file.
 -   Removed editorconfig
     -   We are using prettier and the two were conflicting
 -   Linked phpmyadmin to local php.ini
+-   Updated phpmyadmin to latest stable
 -   Updated browserslist
 -   Removed stylelint-config-wordpress from node modules
 -   Updated docker php container from v4.1.0 to v6.0.0_8.0.10-fpm

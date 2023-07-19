@@ -38,7 +38,7 @@ services:
             MYSQL_PASSWORD: root
 
     phpmyadmin:
-        image: phpmyadmin/phpmyadmin
+        image: phpmyadmin
         volumes:
             - ./php/php.ini:/usr/local/etc/php/php.ini
         restart: always
