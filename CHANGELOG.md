@@ -9,22 +9,19 @@ All notable changes to this project will be documented in this file.
 -   Updated npm modules
     -   Added postcss as peer dependency
     -   Changed gulp-postcss to gpostcss in gulpfile.babel.js to prevent conflict with postcss
--   Updated composer modules
-    -   Updated WordPress from v5.9.2 to v6.0.1
-    -   Updated squizlabs/php_codesniffer from v3.6.2 to v3.7.1
 -   Updated vscode settings
 -   Removed editorconfig
     -   We are using prettier and the two were conflicting
 -   Linked phpmyadmin to local php.ini
 -   Updated browserslist
 -   Removed stylelint-config-wordpress from node modules
--   Updated docker php container from v4.1.0 to v5.2.0_8.0.10-fpm
+-   Updated docker php container from v4.1.0 to v6.0.0_8.0.10-fpm
 -   Updates php.ini file
 -   Updated xdebug from v2.9.6 to v3.0.3
 -   Fixed depreciation warning in wp_foundation_six_div_wrapper
 -   Updated mariadb from v10.4.13 to v10.5.9
 -   Updated working directory
--   Updated nginx container from v2.1.0 to v4.0.0
+-   Updated nginx container from v2.1.0 to v5.0.0
 -   Removed general-cli:3.1.1
 -   Removed eslint-loader v4.0.2
 -   Removed snyk v1.502.0
