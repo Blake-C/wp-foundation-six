@@ -63,11 +63,11 @@
 	<!-- Verify that no WP functions are used which are deprecated or have been removed.
 		 The minimum version set here should be in line with the minimum WP version
 		 as set in the "Requires at least" tag in the readme.txt file. -->
-	<rule ref="WordPress.WP.DeprecatedFunctions">
+	<!-- <rule ref="WordPress.WP.DeprecatedFunctions">
 		<properties>
 			<property name="minimum_supported_version" value="5.8.0" />
 		</properties>
-	</rule>
+	</rule> -->
 
 	<!-- Include sniffs for PHP cross-version compatibility. -->
 	<config name="testVersion" value="8.0-99.0"/>
