@@ -42,6 +42,8 @@
 	<rule ref="WordPress">
 		<!-- Getting error on placeholder files, index.php -->
 		<exclude name="Squiz.Commenting.FileComment.SpacingAfterComment" />
+		<exclude name="Generic.CodeAnalysis.UnusedFunctionParameter.Found" />
+		<exclude name="Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed" />
 	</rule>
 
 	<!-- Verify that the text_domain is set to the desired text-domain.

@@ -15,8 +15,10 @@ if ( ! function_exists( 'wp_foundation_six_thumbnail_upscale' ) ) {
 	/**
 	 * Upscale thumbnails
 	 *
+	 * @link https://developer.wordpress.org/reference/hooks/image_resize_dimensions/
+	 *
 	 * @method wp_foundation_six_thumbnail_upscale
-	 * @param null|mixed $default - Whether to preempt output of the resize
+	 * @param null|mixed $preempt    - Whether to preempt output of the resize
 	 *                              dimensions.
 	 * @param int        $orig_w  - Original pixel width.
 	 * @param int        $orig_h  - Original pixel height.
@@ -26,7 +28,7 @@ if ( ! function_exists( 'wp_foundation_six_thumbnail_upscale' ) ) {
 	 * @return null|array - Null on failure. Returned array matches parameters
 	 *                      for `imagecopyresampled()`.
 	 */
-	function wp_foundation_six_thumbnail_upscale( $default, $orig_w, $orig_h, $new_w, $new_h, $crop ) {
+	function wp_foundation_six_thumbnail_upscale( $preempt, $orig_w, $orig_h, $new_w, $new_h, $crop ) {
 		if ( ! $crop ) {
 			// let the WordPress default function handle this.
 			return null;

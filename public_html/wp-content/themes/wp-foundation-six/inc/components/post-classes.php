@@ -15,11 +15,11 @@ if ( ! function_exists( 'wp_foundation_six_post_classes' ) ) {
 	 * @method wp_foundation_six_post_classes
 	 *
 	 * @param array $classes - One or more classes to add to the class list.
-	 * @param array $class - An array of additional classes added to the post.
+	 * @param array $css_class - An array of additional classes added to the post.
 	 * @param int   $post_id - The post ID.
 	 * @return array - Returns array of post classes
 	 */
-	function wp_foundation_six_post_classes( $classes, $class, $post_id ) {
+	function wp_foundation_six_post_classes( $classes, $css_class, $post_id ) {
 		$classes   = array_diff( $classes, array( 'sticky' ) );
 		$classes[] = is_sticky( $post_id ) === true ? 'sticky-post' : '';
 
