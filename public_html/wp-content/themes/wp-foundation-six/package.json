@@ -81,5 +81,6 @@
     "detect-browser": "5.3.0",
     "foundation-sites": "6.7.5",
     "modernizr": "3.12.0"
-  }
+  },
+  "packageManager": "pnpm@7.9.4+sha1.79f42969cf7f47298f4ac0ee58a106e664dd7a1e"
 }
