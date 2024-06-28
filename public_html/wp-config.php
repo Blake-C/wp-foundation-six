@@ -42,10 +42,10 @@ define( 'NONCE_SALT',       'uBW!%ut#F]]5Etl3MwAi|;9 82#qY9(x:])4BU*y{4BrSHk^hT&
 // Custom Content Directory
 // ========================
 if ( ! defined( 'WP_CLI' ) ) {
-	define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
+	define( 'WP_CONTENT_DIR', __DIR__ . '/wp-content' );
 	define( 'WP_CONTENT_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content' ); // phpcs:ignore
 } else {
-	define( 'WP_CONTENT_DIR', dirname( __FILE__ ) . '/wp-content' );
+	define( 'WP_CONTENT_DIR', __DIR__ . '/wp-content' );
 	define( 'WP_CONTENT_URL', 'http://localhost/wp-content' );
 }
 
@@ -53,10 +53,10 @@ if ( ! defined( 'WP_CLI' ) ) {
 // Custom Plugin Directory
 // ========================
 if ( ! defined( 'WP_CLI' ) ) {
-	define( 'WP_PLUGIN_DIR', dirname( __FILE__ ) . '/wp-content/plugins' );
+	define( 'WP_PLUGIN_DIR', __DIR__ . '/wp-content/plugins' );
 	define( 'WP_PLUGIN_URL', 'http://' . $_SERVER['HTTP_HOST'] . '/wp-content/plugins' ); // phpcs:ignore
 } else {
-	define( 'WP_PLUGIN_DIR', dirname( __FILE__ ) . '/wp-content/plugins' );
+	define( 'WP_PLUGIN_DIR', __DIR__ . '/wp-content/plugins' );
 	define( 'WP_PLUGIN_URL', 'http://localhost/wp-content/plugins' );
 }
 
@@ -76,6 +76,6 @@ define( 'WPLANG', '' );
 // Load WordPress Settings
 // =======================
 if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', dirname( __FILE__ ) . '/wp/' );
+	define( 'ABSPATH', __DIR__ . '/wp/' );
 }
 require_once ABSPATH . 'wp-settings.php';
