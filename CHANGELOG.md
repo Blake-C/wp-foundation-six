@@ -16,7 +16,7 @@ All notable changes to this project will be documented in this file.
 -   Updated phpmyadmin to latest stable
 -   Updated browserslist
 -   Removed stylelint-config-wordpress from node modules
--   Updated docker php container from v4.1.0 to v6.0.0_8.0.10-fpm
+-   Updated docker php container from v4.1.0 to v7.0.0_8.2-fpm
 -   Updates php.ini file
 -   Updated xdebug from v2.9.6 to v3.0.3
 -   Fixed depreciation warning in wp_foundation_six_div_wrapper
@@ -28,13 +28,15 @@ All notable changes to this project will be documented in this file.
 -   Removed snyk v1.502.0
 -   Fixed xdebug.remote_log to xdebug.log in php.ini
 -   Removed gulp and all its dependencies
--   Updated supported node version to v14.16.0
+-   Updated supported node version to v20.12.1
 -   Changed jsxBracketSameLine to bracketSameLine in prettier config. jsxBracketSameLine has been deprecated
 -   Added wpfs plugin to workspace listing
 -   Removed jQuery from npm scripts
 -   Updated styles to use @use and @forward
 -   Renamed postcss.config.js to postcss.config.cjs for common.js
 -   Updated --loglevel to --log-level on prettier commands
+-   Updated composer packages
+-   Updated wp-config.php to use **DIR** instead of dirname( **FILE** )
 
 ### Added
 
@@ -48,7 +50,7 @@ All notable changes to this project will be documented in this file.
 -   Added a info_php.php file
 -   Added a info_xdebug.php file
 -   Added php in front of the phpcs phpcbf commands in gulp files
--   Added light-cli:3.0.0
+-   Added light-cli:4.0.0
 -   Added eslint-webpack-plugin v2.5.2
 -   Added node scripts as build system
 -   Added pnpm as package manager
@@ -61,6 +63,8 @@ All notable changes to this project will be documented in this file.
     -   function-whitespace-after
     -   media-feature-range-operator-space-after
     -   media-feature-range-operator-space-before
+-   Added pnpm-store store to cli_tools volumes
+-   Added phpcs.xml to root directory to stop phpcs errors in wp-config.php
 
 ## [8.2.1] - 2021-08-19
 
