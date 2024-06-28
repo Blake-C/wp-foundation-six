@@ -1,4 +1,3 @@
-version: '3'
 services:
     cli_tools:
         image: digitalblake/light-cli:3.0.0
