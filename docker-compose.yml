@@ -3,6 +3,7 @@ services:
         image: digitalblake/light-cli:4.0.0
         volumes:
             - ./:/home/webdev/www
+            - ./.pnpm-store:/home/webdev/node/.local/share/pnpm/store
         tty: true
 
     nginx:
