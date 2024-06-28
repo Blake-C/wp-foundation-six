@@ -19,7 +19,7 @@ services:
             - php
 
     php:
-        image: digitalblake/wp-foundation-six-php:6.0.0_8.0.10-fpm
+        image: digitalblake/wp-foundation-six-php:7.0.0_8.2-fpm
         volumes:
             - ./:/home/webdev/www
             - ./php/php.ini:/usr/local/etc/php/php.ini
