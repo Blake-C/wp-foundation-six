@@ -28,4 +28,4 @@ if ( ! function_exists( 'wp_foundation_six_change_howdy_text_toolbar' ) ) {
 		);
 	}
 }
-add_filter( 'admin_bar_menu', 'wp_foundation_six_change_howdy_text_toolbar' );
+add_filter( 'admin_bar_menu', 'wp_foundation_six_change_howdy_text_toolbar', 9999 );
