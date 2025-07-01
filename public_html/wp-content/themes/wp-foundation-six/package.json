@@ -46,7 +46,7 @@
     "imagemin-pngquant": "^9.0.0",
     "imagemin-svgo": "^8.0.0",
     "prettier": "^2.0.5",
-    "snyk": "1.373.1",
+    "snyk": "1.1297.3",
     "stylelint": "13.6.1",
     "stylelint-config-prettier": "8.0.2",
     "stylelint-config-wordpress": "^17.0.0",
