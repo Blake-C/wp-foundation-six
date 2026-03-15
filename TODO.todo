@@ -76,7 +76,7 @@ TODO:
 	✘   Add docs notes on `gulp phpcs --skip_lint` @created(Sun. 03/10/2019 - 10:26:12 PM) @cancelled(Sun. 03/28/2021 - 10:46:20 PM)
 	✔ Add numbered pagination to post archive page @created(Sat 10.27.2018 06:02:04 PM) @done(Sun. 03/28/2021 - 10:45:59 PM)
 	✘ Add gallery template using foundations orbit slider @created(Sat 10.27.2018 06:22:10 PM) @cancelled(Sun. 03/28/2021 - 10:45:52 PM)
-	☐	Remove the "Documentation for v6 still needs to be updated" note in the readme.md file @created(Sat 02.02.2019 12:23:14 AM)
+	✘ Remove the "Documentation for v6 still needs to be updated" note in the readme.md file @created(Sat 02.02.2019 12:23:14 AM) @cancelled(Fri. 03/13/2026 - 03:43:28 PM)
 	✔ Probably want to switch back to zsh @done(Sun. 03/21/2021 - 04:45:31 AM)
 		We wont need to worry about the dsh command not working
 		We wont have to rework the starting scripts
@@ -98,21 +98,21 @@ TODO:
 		✔ move php @done(Sun. 03/28/2021 - 10:45:24 PM)
 			Moved php8 binary to php
 		✔ add browser-sync @done(Sun. 03/28/2021 - 10:45:03 PM)
-	☐ Look into removing imagemagick from light-cli
-	☐ Look into have phpcs run single files using npm scripts
-	☐ Look into injecting css updates using npm scripts
-	☐ Look into not having tasks run when watch starts with nodemon
-	☐ Find new name for project
-		☐ Rename all wp_foundation_six & wpfs functions to new name
-	☐ Release update in new repo
-	☐ Update readme.md file to use new commands
-	☐ Add rsync back to light-cli
+	✘ Look into removing imagemagick from light-cli @cancelled(Sun. 03/15/2026 - 02:07:44 AM)
+	✔ Look into have phpcs run single files using npm scripts @done(Sun. 03/15/2026 - 04:19:38 AM)
+	✔ Look into injecting css updates using npm scripts @done(Sun. 03/15/2026 - 04:34:29 AM)
+	✔ Look into not having tasks run when watch starts with nodemon @done(Sun. 03/15/2026 - 02:18:06 AM)
+	✔ Find new name for project @done(Fri. 03/13/2026 - 03:41:48 PM)
+		✔ Rename all wp_foundation_six & wpfs functions to new name @done(Fri. 03/13/2026 - 03:41:50 PM)
+	✔ Release update in new repo @done(Fri. 03/13/2026 - 03:41:56 PM)
+	✔ Update readme.md file to use new commands @done(Fri. 03/13/2026 - 03:41:56 PM)
+	✘ Add rsync back to light-cli @cancelled(Fri. 03/13/2026 - 03:42:14 PM)
 		The wp-eject task needs rsync
-	☐ Look into shell script so we don't have to rename the commands we run
+	✘ Look into shell script so we don't have to rename the commands we run @cancelled(Fri. 03/13/2026 - 03:42:22 PM)
 		Running: npm install -> pnpm install if pnpm is in directory
 		Running: gulp <task> -> pnpm run <task>
 		Running: gulp --build -> pnpm run build:pro
-	☐ stylelint is being kept on v13 because v14 has issues with an old config in the wordpress style rules.
+	✘ stylelint is being kept on v13 because v14 has issues with an old config in the wordpress style rules. @cancelled(Fri. 03/13/2026 - 03:42:44 PM)
 		When the wordpress style rules are fixed update stylelint to v14.
 		Warning: Unknown rule function-calc-no-invalid  function-calc-no-invalid
 		Also, VSCODE wants v14 so it will throw an error as long as we are on v13 in the package.json
@@ -121,7 +121,7 @@ Ideas:
 	✘ Review foundation grid and setup XY grid as default @created(Sun 09.23.2018 07:57:16 PM) @cancelled(Sat. 03/27/2021 - 10:32:46 PM)
 			https://foundation.zurb.com/sites/docs/xy-grid.html
 	✘ Look into WebPack as main build system @created(Sun 09.23.2018 07:57:44 PM) @cancelled(Sun. 03/28/2021 - 10:47:06 PM)
-	☐	Build production Docker Images @created(Sun 09.23.2018 07:58:05 PM)
-		☐	Build production docker-compose.yml @created(Sun 09.23.2018 07:58:40 PM)
+	✔ Build production Docker Images @created(Sun 09.23.2018 07:58:05 PM) @done(Sun. 03/15/2026 - 09:54:19 AM)
+		✔ Build production docker-compose.yml @created(Sun 09.23.2018 07:58:40 PM) @done(Sun. 03/15/2026 - 09:54:17 AM)
 	✘ Find a way to provide a drop in script to add additional setup processes @created(Sun 09.23.2018 07:59:09 PM) @cancelled(Sat. 03/27/2021 - 10:33:08 PM)
-	☐	Add custom PHPCS sniffs for utility functions @created(Sun 09.23.2018 07:59:31 PM)
+	✔ Add custom PHPCS sniffs for utility functions @created(Sun 09.23.2018 07:59:31 PM) @done(Sun. 03/15/2026 - 05:43:12 AM)
